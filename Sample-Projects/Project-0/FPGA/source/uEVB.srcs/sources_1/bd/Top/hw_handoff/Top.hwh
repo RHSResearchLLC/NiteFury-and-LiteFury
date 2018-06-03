@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun  3 19:47:44 2018" VIVADOVERSION="2018.1">
+
+  <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="Top" PACKAGE="fbg484" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="A_in" SIGIS="undef" SIGNAME="External_Ports_A_in">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="External_Ports" PORT="B_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="B_out" SIGIS="undef" SIGNAME="External_Ports_A_in">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="External_Ports" PORT="A_in"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES/>
+
+</EDKSYSTEM>
