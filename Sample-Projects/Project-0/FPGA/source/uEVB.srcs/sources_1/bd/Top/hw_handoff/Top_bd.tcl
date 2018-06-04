@@ -310,18 +310,22 @@ proc create_root_design { parentCell } {
 
   # Create interface ports
   set DDR3 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR3 ]
-  set SYS_CLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 SYS_CLK ]
-  set diff_clock_rtl_0 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 diff_clock_rtl_0 ]
+  set pcie_clkin [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 pcie_clkin ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {100000000} \
-   ] $diff_clock_rtl_0
+   ] $pcie_clkin
   set pcie_mgt [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:pcie_7x_mgt_rtl:1.0 pcie_mgt ]
+  set sys_clk [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 sys_clk ]
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {100000000} \
+   ] $sys_clk
 
   # Create ports
-  set reset_rtl_0 [ create_bd_port -dir I -type rst reset_rtl_0 ]
+  set pci_reset [ create_bd_port -dir I -type rst pci_reset ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
- ] $reset_rtl_0
+ ] $pci_reset
+  set pcie_clkreq_l [ create_bd_port -dir O -from 0 -to 0 pcie_clkreq_l ]
 
   # Create instance: axi_smc, and set properties
   set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
@@ -370,20 +374,24 @@ proc create_root_design { parentCell } {
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
 
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+
   # Create interface connections
-  connect_bd_intf_net -intf_net SYS_CLK_1 [get_bd_intf_ports SYS_CLK] [get_bd_intf_pins mig_7series_0/SYS_CLK]
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
-  connect_bd_intf_net -intf_net diff_clock_rtl_0_1 [get_bd_intf_ports diff_clock_rtl_0] [get_bd_intf_pins util_ds_buf/CLK_IN_D]
+  connect_bd_intf_net -intf_net diff_clock_rtl_0_1 [get_bd_intf_ports pcie_clkin] [get_bd_intf_pins util_ds_buf/CLK_IN_D]
+  connect_bd_intf_net -intf_net diff_clock_rtl_1_1 [get_bd_intf_ports sys_clk] [get_bd_intf_pins mig_7series_0/SYS_CLK]
   connect_bd_intf_net -intf_net mig_7series_0_DDR3 [get_bd_intf_ports DDR3] [get_bd_intf_pins mig_7series_0/DDR3]
   connect_bd_intf_net -intf_net xdma_0_M_AXI [get_bd_intf_pins axi_smc/S00_AXI] [get_bd_intf_pins xdma_0/M_AXI]
   connect_bd_intf_net -intf_net xdma_0_pcie_mgt [get_bd_intf_ports pcie_mgt] [get_bd_intf_pins xdma_0/pcie_mgt]
 
   # Create port connections
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_smc/aclk1] [get_bd_pins mig_7series_0/ui_clk]
-  connect_bd_net -net reset_rtl_0_1 [get_bd_ports reset_rtl_0] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/sys_rst_n]
+  connect_bd_net -net reset_rtl_0_1 [get_bd_ports pci_reset] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/sys_rst_n]
   connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
   connect_bd_net -net xdma_0_axi_aclk [get_bd_pins axi_smc/aclk] [get_bd_pins xdma_0/axi_aclk]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins mig_7series_0/aresetn] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces xdma_0/M_AXI] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr

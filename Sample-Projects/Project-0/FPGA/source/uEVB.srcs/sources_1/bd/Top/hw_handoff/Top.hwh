@@ -1,17 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun  3 21:28:55 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun  3 22:22:58 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="Top" PACKAGE="fbg484" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" NAME="reset_rtl_0" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="mig_7series_0" PORT="sys_rst"/>
-        <CONNECTION INSTANCE="xdma_0" PORT="sys_rst_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="SYS_CLK_clk_p" SIGIS="clk"/>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="SYS_CLK_clk_n" SIGIS="clk"/>
     <PORT DIR="IO" LEFT="15" NAME="DDR3_dq" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="IO" LEFT="1" NAME="DDR3_dqs_p" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="IO" LEFT="1" NAME="DDR3_dqs_n" RIGHT="0" SIGIS="undef"/>
@@ -30,19 +22,24 @@
     <PORT DIR="I" LEFT="3" NAME="pcie_mgt_rxp" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" LEFT="3" NAME="pcie_mgt_txn" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" LEFT="3" NAME="pcie_mgt_txp" RIGHT="0" SIGIS="undef"/>
-    <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="diff_clock_rtl_0_clk_p" RIGHT="0" SIGIS="clk"/>
-    <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="diff_clock_rtl_0_clk_n" RIGHT="0" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="pcie_clkin_clk_p" RIGHT="0" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="pcie_clkin_clk_n" RIGHT="0" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk_clk_p" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk_clk_n" SIGIS="clk"/>
+    <PORT DIR="I" NAME="pci_reset" SIGIS="rst" SIGNAME="External_Ports_pci_reset">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mig_7series_0" PORT="sys_rst"/>
+        <CONNECTION INSTANCE="xdma_0" PORT="sys_rst_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="pcie_clkreq_l" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
-    <BUSINTERFACE BUSNAME="External_Interface_SYS_CLK" NAME="SYS_CLK" TYPE="TARGET">
-      <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-      <PORTMAPS>
-        <PORTMAP LOGICAL="CLK_P" PHYSICAL="SYS_CLK_clk_p"/>
-        <PORTMAP LOGICAL="CLK_N" PHYSICAL="SYS_CLK_clk_n"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="mig_7series_0_DDR3" DATAWIDTH="8" NAME="DDR3" TYPE="INITIATOR">
       <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
       <PARAMETER NAME="TIMEPERIOD_PS" VALUE="1250"/>
@@ -83,12 +80,20 @@
         <PORTMAP LOGICAL="txp" PHYSICAL="pcie_mgt_txp"/>
       </PORTMAPS>
     </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="External_Interface_diff_clock_rtl_0" NAME="diff_clock_rtl_0" TYPE="TARGET">
+    <BUSINTERFACE BUSNAME="External_Interface_pcie_clkin" NAME="pcie_clkin" TYPE="TARGET">
       <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
       <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
       <PORTMAPS>
-        <PORTMAP LOGICAL="CLK_P" PHYSICAL="diff_clock_rtl_0_clk_p"/>
-        <PORTMAP LOGICAL="CLK_N" PHYSICAL="diff_clock_rtl_0_clk_n"/>
+        <PORTMAP LOGICAL="CLK_P" PHYSICAL="pcie_clkin_clk_p"/>
+        <PORTMAP LOGICAL="CLK_N" PHYSICAL="pcie_clkin_clk_n"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_sys_clk" NAME="sys_clk" TYPE="TARGET">
+      <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="CLK_P" PHYSICAL="sys_clk_clk_p"/>
+        <PORTMAP LOGICAL="CLK_N" PHYSICAL="sys_clk_clk_n"/>
       </PORTMAPS>
     </BUSINTERFACE>
   </EXTERNALINTERFACES>
@@ -111,6 +116,11 @@
         <PORT CLKFREQUENCY="250000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="xdma_0_axi_aclk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xdma_0" PORT="axi_aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="3" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="axi_smc_S00_AXI_awid">
@@ -453,11 +463,6 @@
         <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="axi_smc_M00_AXI_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_7series_0" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1766,9 +1771,9 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x9FFFFFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="sys_rst" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
+        <PORT DIR="I" NAME="sys_rst" SIGIS="rst" SIGNAME="External_Ports_pci_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset_rtl_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="pci_reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="15" NAME="ddr3_dq" RIGHT="0" SIGIS="undef"/>
@@ -2074,7 +2079,7 @@
             <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_rvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="External_Interface_SYS_CLK" NAME="SYS_CLK" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
+        <BUSINTERFACE BUSNAME="External_Interface_sys_clk" NAME="SYS_CLK" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
           <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PORTMAPS>
@@ -2105,7 +2110,7 @@
         <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_DS_ODIV2" RIGHT="0" SIGIS="clk"/>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="External_Interface_diff_clock_rtl_0" NAME="CLK_IN_D" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
+        <BUSINTERFACE BUSNAME="External_Interface_pcie_clkin" NAME="CLK_IN_D" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
           <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PORTMAPS>
@@ -3224,9 +3229,9 @@
             <CONNECTION INSTANCE="util_ds_buf" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="sys_rst_n" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
+        <PORT DIR="I" NAME="sys_rst_n" SIGIS="rst" SIGNAME="External_Ports_pci_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset_rtl_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="pci_reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="user_lnk_up" SIGIS="undef"/>
@@ -3518,6 +3523,23 @@
         <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_7series_0" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_xlconstant_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="pcie_clkreq_l"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

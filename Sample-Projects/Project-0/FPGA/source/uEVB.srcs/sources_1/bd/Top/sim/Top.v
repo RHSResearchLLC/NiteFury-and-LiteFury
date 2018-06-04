@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Sun Jun  3 21:28:28 2018
+//Date        : Sun Jun  3 22:22:50 2018
 //Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
 //Command     : generate_target Top.bd
 //Design      : Top
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=2,da_xdma_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Top.hwdef" *) 
+(* CORE_GENERATION_INFO = "Top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=2,da_xdma_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Top.hwdef" *) 
 module Top
    (DDR3_addr,
     DDR3_ba,
@@ -25,15 +25,16 @@ module Top
     DDR3_ras_n,
     DDR3_reset_n,
     DDR3_we_n,
-    SYS_CLK_clk_n,
-    SYS_CLK_clk_p,
-    diff_clock_rtl_0_clk_n,
-    diff_clock_rtl_0_clk_p,
+    pci_reset,
+    pcie_clkin_clk_n,
+    pcie_clkin_clk_p,
+    pcie_clkreq_l,
     pcie_mgt_rxn,
     pcie_mgt_rxp,
     pcie_mgt_txn,
     pcie_mgt_txp,
-    reset_rtl_0);
+    sys_clk_clk_n,
+    sys_clk_clk_p);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR3, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) output [14:0]DDR3_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 BA" *) output [2:0]DDR3_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 CAS_N" *) output DDR3_cas_n;
@@ -48,18 +49,17 @@ module Top
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 RAS_N" *) output DDR3_ras_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 RESET_N" *) output DDR3_reset_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 WE_N" *) output DDR3_we_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 SYS_CLK CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SYS_CLK, CAN_DEBUG false, FREQ_HZ 100000000" *) input SYS_CLK_clk_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 SYS_CLK CLK_P" *) input SYS_CLK_clk_p;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clock_rtl_0 CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME diff_clock_rtl_0, CAN_DEBUG false, FREQ_HZ 100000000" *) input [0:0]diff_clock_rtl_0_clk_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clock_rtl_0 CLK_P" *) input [0:0]diff_clock_rtl_0_clk_p;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.PCI_RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.PCI_RESET, POLARITY ACTIVE_LOW" *) input pci_reset;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 pcie_clkin CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME pcie_clkin, CAN_DEBUG false, FREQ_HZ 100000000" *) input [0:0]pcie_clkin_clk_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 pcie_clkin CLK_P" *) input [0:0]pcie_clkin_clk_p;
+  output [0:0]pcie_clkreq_l;
   (* X_INTERFACE_INFO = "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_mgt rxn" *) input [3:0]pcie_mgt_rxn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_mgt rxp" *) input [3:0]pcie_mgt_rxp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_mgt txn" *) output [3:0]pcie_mgt_txn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_mgt txp" *) output [3:0]pcie_mgt_txp;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET_RTL_0, POLARITY ACTIVE_LOW" *) input reset_rtl_0;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 sys_clk CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, CAN_DEBUG false, FREQ_HZ 100000000" *) input sys_clk_clk_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 sys_clk CLK_P" *) input sys_clk_clk_p;
 
-  wire SYS_CLK_1_CLK_N;
-  wire SYS_CLK_1_CLK_P;
   wire [28:0]axi_smc_M00_AXI_ARADDR;
   wire [1:0]axi_smc_M00_AXI_ARBURST;
   wire [3:0]axi_smc_M00_AXI_ARCACHE;
@@ -95,6 +95,8 @@ module Top
   wire axi_smc_M00_AXI_WVALID;
   wire [0:0]diff_clock_rtl_0_1_CLK_N;
   wire [0:0]diff_clock_rtl_0_1_CLK_P;
+  wire diff_clock_rtl_1_1_CLK_N;
+  wire diff_clock_rtl_1_1_CLK_P;
   wire [14:0]mig_7series_0_DDR3_ADDR;
   wire [2:0]mig_7series_0_DDR3_BA;
   wire mig_7series_0_DDR3_CAS_N;
@@ -153,6 +155,7 @@ module Top
   wire [3:0]xdma_0_pcie_mgt_txn;
   wire [3:0]xdma_0_pcie_mgt_txp;
   wire [0:0]xlconstant_0_dout;
+  wire [0:0]xlconstant_1_dout;
 
   assign DDR3_addr[14:0] = mig_7series_0_DDR3_ADDR;
   assign DDR3_ba[2:0] = mig_7series_0_DDR3_BA;
@@ -165,13 +168,14 @@ module Top
   assign DDR3_ras_n = mig_7series_0_DDR3_RAS_N;
   assign DDR3_reset_n = mig_7series_0_DDR3_RESET_N;
   assign DDR3_we_n = mig_7series_0_DDR3_WE_N;
-  assign SYS_CLK_1_CLK_N = SYS_CLK_clk_n;
-  assign SYS_CLK_1_CLK_P = SYS_CLK_clk_p;
-  assign diff_clock_rtl_0_1_CLK_N = diff_clock_rtl_0_clk_n[0];
-  assign diff_clock_rtl_0_1_CLK_P = diff_clock_rtl_0_clk_p[0];
+  assign diff_clock_rtl_0_1_CLK_N = pcie_clkin_clk_n[0];
+  assign diff_clock_rtl_0_1_CLK_P = pcie_clkin_clk_p[0];
+  assign diff_clock_rtl_1_1_CLK_N = sys_clk_clk_n;
+  assign diff_clock_rtl_1_1_CLK_P = sys_clk_clk_p;
+  assign pcie_clkreq_l[0] = xlconstant_1_dout;
   assign pcie_mgt_txn[3:0] = xdma_0_pcie_mgt_txn;
   assign pcie_mgt_txp[3:0] = xdma_0_pcie_mgt_txp;
-  assign reset_rtl_0_1 = reset_rtl_0;
+  assign reset_rtl_0_1 = pci_reset;
   assign xdma_0_pcie_mgt_rxn = pcie_mgt_rxn[3:0];
   assign xdma_0_pcie_mgt_rxp = pcie_mgt_rxp[3:0];
   Top_axi_smc_0 axi_smc
@@ -298,8 +302,8 @@ module Top
         .s_axi_wready(axi_smc_M00_AXI_WREADY),
         .s_axi_wstrb(axi_smc_M00_AXI_WSTRB),
         .s_axi_wvalid(axi_smc_M00_AXI_WVALID),
-        .sys_clk_n(SYS_CLK_1_CLK_N),
-        .sys_clk_p(SYS_CLK_1_CLK_P),
+        .sys_clk_n(diff_clock_rtl_1_1_CLK_N),
+        .sys_clk_p(diff_clock_rtl_1_1_CLK_P),
         .sys_rst(reset_rtl_0_1),
         .ui_clk(mig_7series_0_ui_clk));
   Top_util_ds_buf_0 util_ds_buf
@@ -352,4 +356,6 @@ module Top
         .usr_irq_req(1'b0));
   Top_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));
+  Top_xlconstant_1_0 xlconstant_1
+       (.dout(xlconstant_1_dout));
 endmodule

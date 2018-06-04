@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Sun Jun  3 21:28:28 2018
+//Date        : Sun Jun  3 22:22:50 2018
 //Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
 //Command     : generate_target Top_wrapper.bd
 //Design      : Top_wrapper
@@ -24,15 +24,16 @@ module Top_wrapper
     DDR3_ras_n,
     DDR3_reset_n,
     DDR3_we_n,
-    SYS_CLK_clk_n,
-    SYS_CLK_clk_p,
-    diff_clock_rtl_0_clk_n,
-    diff_clock_rtl_0_clk_p,
+    pci_reset,
+    pcie_clkin_clk_n,
+    pcie_clkin_clk_p,
+    pcie_clkreq_l,
     pcie_mgt_rxn,
     pcie_mgt_rxp,
     pcie_mgt_txn,
     pcie_mgt_txp,
-    reset_rtl_0);
+    sys_clk_clk_n,
+    sys_clk_clk_p);
   output [14:0]DDR3_addr;
   output [2:0]DDR3_ba;
   output DDR3_cas_n;
@@ -47,15 +48,16 @@ module Top_wrapper
   output DDR3_ras_n;
   output DDR3_reset_n;
   output DDR3_we_n;
-  input SYS_CLK_clk_n;
-  input SYS_CLK_clk_p;
-  input [0:0]diff_clock_rtl_0_clk_n;
-  input [0:0]diff_clock_rtl_0_clk_p;
+  input pci_reset;
+  input [0:0]pcie_clkin_clk_n;
+  input [0:0]pcie_clkin_clk_p;
+  output [0:0]pcie_clkreq_l;
   input [3:0]pcie_mgt_rxn;
   input [3:0]pcie_mgt_rxp;
   output [3:0]pcie_mgt_txn;
   output [3:0]pcie_mgt_txp;
-  input reset_rtl_0;
+  input sys_clk_clk_n;
+  input sys_clk_clk_p;
 
   wire [14:0]DDR3_addr;
   wire [2:0]DDR3_ba;
@@ -71,15 +73,16 @@ module Top_wrapper
   wire DDR3_ras_n;
   wire DDR3_reset_n;
   wire DDR3_we_n;
-  wire SYS_CLK_clk_n;
-  wire SYS_CLK_clk_p;
-  wire [0:0]diff_clock_rtl_0_clk_n;
-  wire [0:0]diff_clock_rtl_0_clk_p;
+  wire pci_reset;
+  wire [0:0]pcie_clkin_clk_n;
+  wire [0:0]pcie_clkin_clk_p;
+  wire [0:0]pcie_clkreq_l;
   wire [3:0]pcie_mgt_rxn;
   wire [3:0]pcie_mgt_rxp;
   wire [3:0]pcie_mgt_txn;
   wire [3:0]pcie_mgt_txp;
-  wire reset_rtl_0;
+  wire sys_clk_clk_n;
+  wire sys_clk_clk_p;
 
   Top Top_i
        (.DDR3_addr(DDR3_addr),
@@ -96,13 +99,14 @@ module Top_wrapper
         .DDR3_ras_n(DDR3_ras_n),
         .DDR3_reset_n(DDR3_reset_n),
         .DDR3_we_n(DDR3_we_n),
-        .SYS_CLK_clk_n(SYS_CLK_clk_n),
-        .SYS_CLK_clk_p(SYS_CLK_clk_p),
-        .diff_clock_rtl_0_clk_n(diff_clock_rtl_0_clk_n),
-        .diff_clock_rtl_0_clk_p(diff_clock_rtl_0_clk_p),
+        .pci_reset(pci_reset),
+        .pcie_clkin_clk_n(pcie_clkin_clk_n),
+        .pcie_clkin_clk_p(pcie_clkin_clk_p),
+        .pcie_clkreq_l(pcie_clkreq_l),
         .pcie_mgt_rxn(pcie_mgt_rxn),
         .pcie_mgt_rxp(pcie_mgt_rxp),
         .pcie_mgt_txn(pcie_mgt_txn),
         .pcie_mgt_txp(pcie_mgt_txp),
-        .reset_rtl_0(reset_rtl_0));
+        .sys_clk_clk_n(sys_clk_clk_n),
+        .sys_clk_clk_p(sys_clk_clk_p));
 endmodule

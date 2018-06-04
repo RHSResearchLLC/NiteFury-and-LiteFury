@@ -1,0 +1,628 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sun Jun  3 22:01:19 2018
+# Process ID: 6960
+# Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2116 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
+# Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.log
+# Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 892.852 ; gain = 218.793
+update_compile_order -fileset sources_1
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a200tfbg484-2
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/Top_axi_smc_0.dcp' for cell 'Top_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0.dcp' for cell 'Top_i/mig_7series_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.dcp' for cell 'Top_i/util_ds_buf'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0.dcp' for cell 'Top_i/xdma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_0_0/Top_xlconstant_0_0.dcp' for cell 'Top_i/xlconstant_0'
+INFO: [Netlist 29-17] Analyzing 2376 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.1
+INFO: [Device 21-403] Loading part xc7a200tfbg484-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:123]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:123]
+create_generated_clock: Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2098.105 ; gain = 613.855
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+Finished Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/Top_axi_smc_0.dcp'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 921 instances were transformed.
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 24 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 48 instances
+  RAM16X1S => RAM32X1S (RAMS32): 13 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 788 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 20 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 9 instances
+
+open_run: Time (s): cpu = 00:01:38 ; elapsed = 00:01:20 . Memory (MB): peak = 2106.801 ; gain = 1208.465
+close_design
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd]
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a200tfbg484-2
+Top: Top_wrapper
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2118.152 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_wrapper' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hdl/Top_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:13]
+INFO: [Synth 8-6157] synthesizing module 'Top_axi_smc_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_axi_smc_0' (1#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Top_mig_7series_0_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_mig_7series_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Top_mig_7series_0_0' (2#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_mig_7series_0_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'mig_7series_0' of module 'Top_mig_7series_0_0' requires 63 connections, but only 54 given [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:250]
+INFO: [Synth 8-6157] synthesizing module 'Top_util_ds_buf_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_util_ds_buf_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_util_ds_buf_0' (3#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_util_ds_buf_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'util_ds_buf' of module 'Top_util_ds_buf_0' requires 4 connections, but only 3 given [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:305]
+INFO: [Synth 8-6157] synthesizing module 'Top_xdma_0_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xdma_0_0' (4#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xdma_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'xdma_0' of module 'Top_xdma_0_0' requires 48 connections, but only 43 given [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:309]
+INFO: [Synth 8-6157] synthesizing module 'Top_xlconstant_0_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xlconstant_0_0' (5#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top' (6#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'Top_wrapper' (7#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hdl/Top_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2118.152 ; gain = 0.000
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2118.152 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2118.152 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/Top_axi_smc_0.dcp' for cell 'Top_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0.dcp' for cell 'Top_i/mig_7series_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.dcp' for cell 'Top_i/util_ds_buf'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0.dcp' for cell 'Top_i/xdma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_0_0/Top_xlconstant_0_0.dcp' for cell 'Top_i/xlconstant_0'
+INFO: [Netlist 29-17] Analyzing 2367 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 9 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 8 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc:344]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc:351]
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:123]
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+Finished Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 921 instances were transformed.
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 24 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 48 instances
+  RAM16X1S => RAM32X1S (RAMS32): 13 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 788 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 20 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 9 instances
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:01:03 ; elapsed = 00:00:50 . Memory (MB): peak = 2257.313 ; gain = 139.160
+33 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:03 ; elapsed = 00:00:50 . Memory (MB): peak = 2257.313 ; gain = 139.160
+set_property package_pin "" [get_ports [list  {pcie_mgt_txp[3]}]]
+set_property package_pin "" [get_ports [list  {pcie_mgt_rxp[2]}]]
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a200tfbg484-2
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/Top_axi_smc_0.dcp' for cell 'Top_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0.dcp' for cell 'Top_i/mig_7series_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.dcp' for cell 'Top_i/util_ds_buf'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0.dcp' for cell 'Top_i/xdma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_0_0/Top_xlconstant_0_0.dcp' for cell 'Top_i/xlconstant_0'
+INFO: [Netlist 29-17] Analyzing 2376 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:123]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:123]
+create_generated_clock: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2323.582 ; gain = 66.270
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+Finished Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/Top_axi_smc_0.dcp'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 921 instances were transformed.
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 24 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 48 instances
+  RAM16X1S => RAM32X1S (RAMS32): 13 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 788 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 20 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 9 instances
+
+open_run: Time (s): cpu = 00:00:56 ; elapsed = 00:00:43 . Memory (MB): peak = 2328.207 ; gain = 70.895
+set_property target_constrs_file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc [current_fileset -constrset]
+set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[3]}]]
+CRITICAL WARNING: [Constraints 18-4427] You are overriding a physical property set by a constraint that originated in a read only source. Your changes will not be saved with a project save. If you wish to make this change permanent, it is recommended you use an unmanaged Tcl file. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:85]
+set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[2]}]]
+CRITICAL WARNING: [Constraints 18-4427] You are overriding a physical property set by a constraint that originated in a read only source. Your changes will not be saved with a project save. If you wish to make this change permanent, it is recommended you use an unmanaged Tcl file. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:83]
+set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[1]}]]
+CRITICAL WARNING: [Constraints 18-4427] You are overriding a physical property set by a constraint that originated in a read only source. Your changes will not be saved with a project save. If you wish to make this change permanent, it is recommended you use an unmanaged Tcl file. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:81]
+set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[0]}]]
+CRITICAL WARNING: [Constraints 18-4427] You are overriding a physical property set by a constraint that originated in a read only source. Your changes will not be saved with a project save. If you wish to make this change permanent, it is recommended you use an unmanaged Tcl file. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:79]
+place_ports {pcie_mgt_rxn[0]} A10
+place_ports {pcie_mgt_rxn[1]} A8
+place_ports {pcie_mgt_rxn[2]} C11
+place_ports {pcie_mgt_rxn[3]} C9
+save_constraints
+place_ports {pcie_clkin_clk_p[0]} F6
+save_constraints
+open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd}
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- xilinx.com:ip:xdma:4.1 - xdma_0
+Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf
+Adding cell -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Successfully read diagram <Top> from BD file <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd>
+open_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2328.207 ; gain = 0.000
+create_bd_port -dir O pcie_clkreq_l
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+set_property location {2.5 664 43} [get_bd_cells xlconstant_1]
+startgroup
+connect_bd_net [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
+endgroup
+regenerate_bd_layout
+set_property name pci_reset [get_bd_ports sys_reset_n]
+save_bd_design
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_ad598355.ui> 
+validate_bd_design
+validate_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2340.336 ; gain = 12.129
+save_bd_design
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_ad598355.ui> 
+generate_target all [get_files C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd]
+INFO: [BD 41-1662] The design 'Top.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v
+VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/sim/Top.v
+VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hdl/Top_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf .
+Exporting to file c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/bd_0/hw_handoff/Top_axi_smc_0.hwh
+Generated Block Design Tcl file c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/bd_0/hw_handoff/Top_axi_smc_0_bd.tcl
+Generated Hardware Definition File c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/bd_0/synth/Top_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
+Exporting to file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hw_handoff/Top.hwh
+Generated Block Design Tcl file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hw_handoff/Top_bd.tcl
+Generated Hardware Definition File C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.hwdef
+generate_target: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2461.273 ; gain = 95.328
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd]
+launch_runs Top_mig_7series_0_0_synth_1
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Top_mig_7series_0_0, cache-ID = 2c79e4653b045413; cache size = 65.308 MB.
+config_ip_cache: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2484.441 ; gain = 19.727
+[Sun Jun  3 22:23:07 2018] Launched Top_mig_7series_0_0_synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_mig_7series_0_0_synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2484.441 ; gain = 19.727
+wait_on_run Top_mig_7series_0_0_synth_1
+[Sun Jun  3 22:23:08 2018] Waiting for Top_mig_7series_0_0_synth_1 to finish...
+[Sun Jun  3 22:23:13 2018] Waiting for Top_mig_7series_0_0_synth_1 to finish...
+[Sun Jun  3 22:23:18 2018] Waiting for Top_mig_7series_0_0_synth_1 to finish...
+[Sun Jun  3 22:23:23 2018] Waiting for Top_mig_7series_0_0_synth_1 to finish...
+
+*** Running vivado
+    with args -log Top_mig_7series_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_mig_7series_0_0.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Top_mig_7series_0_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP Top_mig_7series_0_0, cache-ID = 2c79e4653b045413.
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  3 22:23:22 2018...
+[Sun Jun  3 22:23:23 2018] Top_mig_7series_0_0_synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 2484.441 ; gain = 0.000
+launch_runs Top_xlconstant_1_0_synth_1
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Top_xlconstant_1_0, cache-ID = 15864ee479052583; cache size = 65.308 MB.
+[Sun Jun  3 22:23:26 2018] Launched Top_xlconstant_1_0_synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_xlconstant_1_0_synth_1/runme.log
+wait_on_run Top_xlconstant_1_0_synth_1
+[Sun Jun  3 22:23:26 2018] Waiting for Top_xlconstant_1_0_synth_1 to finish...
+[Sun Jun  3 22:23:31 2018] Waiting for Top_xlconstant_1_0_synth_1 to finish...
+[Sun Jun  3 22:23:36 2018] Waiting for Top_xlconstant_1_0_synth_1 to finish...
+[Sun Jun  3 22:23:41 2018] Waiting for Top_xlconstant_1_0_synth_1 to finish...
+
+*** Running vivado
+    with args -log Top_xlconstant_1_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_xlconstant_1_0.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Top_xlconstant_1_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP Top_xlconstant_1_0, cache-ID = 15864ee479052583.
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  3 22:23:36 2018...
+[Sun Jun  3 22:23:41 2018] Top_xlconstant_1_0_synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.422 ; gain = 0.000
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a200tfbg484-2
+Top: Top_wrapper
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 2608.285 ; gain = 29.863
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_wrapper' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hdl/Top_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:13]
+INFO: [Synth 8-6157] synthesizing module 'Top_axi_smc_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_axi_smc_0' (1#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Top_mig_7series_0_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_mig_7series_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Top_mig_7series_0_0' (2#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_mig_7series_0_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'mig_7series_0' of module 'Top_mig_7series_0_0' requires 63 connections, but only 54 given [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:254]
+INFO: [Synth 8-6157] synthesizing module 'Top_util_ds_buf_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_util_ds_buf_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_util_ds_buf_0' (3#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_util_ds_buf_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'util_ds_buf' of module 'Top_util_ds_buf_0' requires 4 connections, but only 3 given [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:309]
+INFO: [Synth 8-6157] synthesizing module 'Top_xdma_0_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xdma_0_0' (4#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xdma_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'xdma_0' of module 'Top_xdma_0_0' requires 48 connections, but only 43 given [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:313]
+INFO: [Synth 8-6157] synthesizing module 'Top_xlconstant_0_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xlconstant_0_0' (5#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Top_xlconstant_1_0' [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xlconstant_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xlconstant_1_0' (6#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6960-DESKTOP-HN3HE5I/realtime/Top_xlconstant_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Top' (7#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'Top_wrapper' (8#1) [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hdl/Top_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2648.445 ; gain = 70.023
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2648.445 ; gain = 70.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2648.445 ; gain = 70.023
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/Top_axi_smc_0.dcp' for cell 'Top_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0.dcp' for cell 'Top_i/mig_7series_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.dcp' for cell 'Top_i/util_ds_buf'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0.dcp' for cell 'Top_i/xdma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_0_0/Top_xlconstant_0_0.dcp' for cell 'Top_i/xlconstant_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_1_0/Top_xlconstant_1_0.dcp' for cell 'Top_i/xlconstant_1'
+INFO: [Netlist 29-17] Analyzing 2367 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 9 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 9 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc:344]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc:351]
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc] for cell 'Top_i/mig_7series_0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_mig_7series_0_0/Top_mig_7series_0_0/user_design/constraints/Top_mig_7series_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc:123]
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_0/source/Top_xdma_0_0_pcie2_ip-PCIE_X0Y0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_3/pcie2_fifo_generator_dma_cpl.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/dma_cpl_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/ip_4/pcie2_fifo_generator_tgt_brdg.xdc] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/Top_xdma_0_0_axi_stream_intf_i/Top_xdma_0_0_rx_demux_i/tgt_brdg_fifo_inst/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/Top_xdma_0_0_board.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xdma_0_0/source/Top_xdma_0_0_pcie3_7vx_ip.xdc] for cell 'Top_i/xdma_0/inst'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0_board.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Finished Parsing XDC File [c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xdc] for cell 'Top_i/util_ds_buf/U0'
+Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+Finished Parsing XDC File [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc]
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addra_to_rd_clk'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_async_clocks.inst_cdc_addrb_to_wr_clk'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/pl_received_hot_rst_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'Top_i/xdma_0/inst/Top_xdma_0_0_pcie2_to_pcie3_wrapper_i/pcie2_ip_i/inst/inst/phy_lnk_up_cdc'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'Top_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2018.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 921 instances were transformed.
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 24 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 48 instances
+  RAM16X1S => RAM32X1S (RAMS32): 13 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 788 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 20 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 9 instances
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:01:00 ; elapsed = 00:00:49 . Memory (MB): peak = 3035.230 ; gain = 456.809
+36 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:00:51 . Memory (MB): peak = 3035.230 ; gain = 456.809
+place_ports {pcie_clkreq_l[0]} G1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {pcie_clkreq_l[0]}]]
+set_property IOSTANDARD LVDS_25 [get_ports [list sys_clk_clk_p]]
+set_property OFFCHIP_TERM NONE [get_ports [list sys_clk_clk_p]]
+set_property PULLTYPE NONE [get_ports [list sys_clk_clk_p]]
+place_ports pci_reset J1
+set_property IOSTANDARD LVCMOS33 [get_ports [list pci_reset]]
+save_constraints
+close_design
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1
+
+reset_run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 3035.230 ; gain = 0.000
+launch_runs synth_1 -jobs 2
+[Sun Jun  3 22:29:39 2018] Launched synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1/runme.log
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jun  3 22:30:54 2018] Launched synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Sun Jun  3 22:33:16 2018] Launched synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  3 22:33:28 2018...

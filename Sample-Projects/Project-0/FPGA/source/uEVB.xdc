@@ -1,0 +1,12 @@
+set_property PACKAGE_PIN A10 [get_ports {pcie_mgt_rxn[0]}]
+set_property PACKAGE_PIN A8 [get_ports {pcie_mgt_rxn[1]}]
+set_property PACKAGE_PIN C11 [get_ports {pcie_mgt_rxn[2]}]
+set_property PACKAGE_PIN C9 [get_ports {pcie_mgt_rxn[3]}]
+set_property PACKAGE_PIN F6 [get_ports {pcie_clkin_clk_p[0]}]
+
+set_property PACKAGE_PIN G1 [get_ports {pcie_clkreq_l[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pcie_clkreq_l[0]}]
+set_property IOSTANDARD LVDS_25 [get_ports sys_clk_clk_p]
+set_property IOSTANDARD LVDS_25 [get_ports sys_clk_clk_n]
+set_property PACKAGE_PIN J1 [get_ports pci_reset]
+set_property IOSTANDARD LVCMOS33 [get_ports pci_reset]

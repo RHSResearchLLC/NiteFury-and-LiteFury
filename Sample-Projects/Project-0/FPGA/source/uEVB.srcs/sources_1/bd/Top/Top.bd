@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xDA017D545529A01C" bd:device="xc7a200tfbg484-2" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.1" bd:top="Top" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x7E904C308138A1B9" bd:device="xc7a200tfbg484-2" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.1" bd:top="Top" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -13,32 +13,6 @@
       </spirit:parameter>
     </spirit:parameters>
     <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>SYS_CLK</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="diff_clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="diff_clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>CAN_DEBUG</spirit:name>
-            <spirit:value>false</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>100000000</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
       <spirit:busInterface>
         <spirit:name>DDR3</spirit:name>
         <spirit:master/>
@@ -162,7 +136,7 @@
         <spirit:abstractionType spirit:library="interface" spirit:name="pcie_7x_mgt_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
       </spirit:busInterface>
       <spirit:busInterface>
-        <spirit:name>diff_clock_rtl_0</spirit:name>
+        <spirit:name>pcie_clkin</spirit:name>
         <spirit:slave/>
         <spirit:busType spirit:library="interface" spirit:name="diff_clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="diff_clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -188,7 +162,33 @@
         </spirit:parameters>
       </spirit:busInterface>
       <spirit:busInterface>
-        <spirit:name>RST.RESET_RTL_0</spirit:name>
+        <spirit:name>sys_clk</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="diff_clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="diff_clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>CAN_DEBUG</spirit:name>
+            <spirit:value>false</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>FREQ_HZ</spirit:name>
+            <spirit:value>100000000</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="user"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.PCI_RESET</spirit:name>
         <spirit:displayName>Reset</spirit:displayName>
         <spirit:description>Reset</spirit:description>
         <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -200,7 +200,7 @@
               <spirit:name>RST</spirit:name>
             </spirit:logicalPort>
             <spirit:physicalPort>
-              <spirit:name>reset_rtl_0</spirit:name>
+              <spirit:name>pci_reset</spirit:name>
             </spirit:physicalPort>
           </spirit:portMap>
         </spirit:portMaps>
@@ -227,9 +227,19 @@
       </spirit:views>
       <spirit:ports>
         <spirit:port>
-          <spirit:name>reset_rtl_0</spirit:name>
+          <spirit:name>pci_reset</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>pcie_clkreq_l</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
           </spirit:wire>
         </spirit:port>
       </spirit:ports>
@@ -293,6 +303,13 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_xlconstant_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconstant_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_xlconstant_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -309,7 +326,7 @@
     <spirit:adHocConnections>
       <spirit:adHocConnection>
         <spirit:name>reset_rtl_0_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="reset_rtl_0"/>
+        <spirit:externalPortReference spirit:portRef="pci_reset"/>
         <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="sys_rst"/>
         <spirit:internalPortReference spirit:componentRef="xdma_0" spirit:portRef="sys_rst_n"/>
       </spirit:adHocConnection>
@@ -333,19 +350,24 @@
         <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
         <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="aresetn"/>
       </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconstant_1_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconstant_1" spirit:portRef="dout"/>
+        <spirit:externalPortReference spirit:portRef="pcie_clkreq_l"/>
+      </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="SYS_CLK/SYS_CLK_1">
-        <spirit:activeInterface spirit:busRef="SYS_CLK" spirit:componentRef="mig_7series_0"/>
-      </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="DDR3/mig_7series_0_DDR3">
         <spirit:activeInterface spirit:busRef="DDR3" spirit:componentRef="mig_7series_0"/>
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="pcie_mgt/xdma_0_pcie_mgt">
         <spirit:activeInterface spirit:busRef="pcie_mgt" spirit:componentRef="xdma_0"/>
       </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="diff_clock_rtl_0/diff_clock_rtl_0_1">
+      <spirit:hierConnection spirit:interfaceRef="pcie_clkin/diff_clock_rtl_0_1">
         <spirit:activeInterface spirit:busRef="CLK_IN_D" spirit:componentRef="util_ds_buf"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="sys_clk/diff_clock_rtl_1_1">
+        <spirit:activeInterface spirit:busRef="SYS_CLK" spirit:componentRef="mig_7series_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
