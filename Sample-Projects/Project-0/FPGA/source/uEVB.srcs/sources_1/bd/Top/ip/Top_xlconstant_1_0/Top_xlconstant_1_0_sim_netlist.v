@@ -1,28 +1,28 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Sun Jun  3 21:37:28 2018
+// Date        : Sat Jun  9 22:07:42 2018
 // Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top Top_xlconstant_1_0 -prefix
-//               Top_xlconstant_1_0_ Top_xlconstant_0_0_sim_netlist.v
-// Design      : Top_xlconstant_0_0
+// Command     : write_verilog -force -mode funcsim
+//               C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_1_0/Top_xlconstant_1_0_sim_netlist.v
+// Design      : Top_xlconstant_1_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7a200tfbg484-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "Top_xlconstant_0_0,xlconstant_v1_1_4_xlconstant,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "xlconstant_v1_1_4_xlconstant,Vivado 2018.1" *) 
+(* CHECK_LICENSE_TYPE = "Top_xlconstant_1_0,xlconstant_v1_1_4_xlconstant,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "xlconstant_v1_1_4_xlconstant,Vivado 2018.1" *) 
 (* NotValidForBitStream *)
 module Top_xlconstant_1_0
    (dout);
   output [0:0]dout;
 
-  wire \<const1> ;
+  wire \<const0> ;
 
-  assign dout[0] = \<const1> ;
-  VCC VCC
-       (.P(\<const1> ));
+  assign dout[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
 endmodule
 `ifndef GLBL
 `define GLBL

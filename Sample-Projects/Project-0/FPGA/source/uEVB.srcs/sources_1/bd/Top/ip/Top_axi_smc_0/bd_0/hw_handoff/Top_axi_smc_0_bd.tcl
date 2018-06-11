@@ -169,7 +169,9 @@ proc create_hier_cell_s00_nodes { parentCell nameHier } {
 
   # Create pins
   create_bd_pin -dir I -type clk m_sc_clk
+  create_bd_pin -dir I -type rst m_sc_resetn
   create_bd_pin -dir I -type clk s_sc_clk
+  create_bd_pin -dir I -type rst s_sc_resetn
 
   # Create instance: s00_ar_node, and set properties
   set s00_ar_node [ create_bd_cell -type ip -vlnv xilinx.com:ip:sc_node:1.0 s00_ar_node ]
@@ -430,7 +432,9 @@ proc create_hier_cell_s00_nodes { parentCell nameHier } {
 
   # Create port connections
   connect_bd_net -net m_sc_clk_1 [get_bd_pins m_sc_clk] [get_bd_pins s00_ar_node/m_sc_aclk] [get_bd_pins s00_aw_node/m_sc_aclk] [get_bd_pins s00_b_node/s_sc_aclk] [get_bd_pins s00_r_node/s_sc_aclk] [get_bd_pins s00_w_node/m_sc_aclk]
+  connect_bd_net -net m_sc_resetn_1 [get_bd_pins m_sc_resetn] [get_bd_pins s00_ar_node/m_sc_aresetn] [get_bd_pins s00_aw_node/m_sc_aresetn] [get_bd_pins s00_b_node/s_sc_aresetn] [get_bd_pins s00_r_node/s_sc_aresetn] [get_bd_pins s00_w_node/m_sc_aresetn]
   connect_bd_net -net s_sc_clk_1 [get_bd_pins s_sc_clk] [get_bd_pins s00_ar_node/s_sc_aclk] [get_bd_pins s00_aw_node/s_sc_aclk] [get_bd_pins s00_b_node/m_sc_aclk] [get_bd_pins s00_r_node/m_sc_aclk] [get_bd_pins s00_w_node/s_sc_aclk]
+  connect_bd_net -net s_sc_resetn_1 [get_bd_pins s_sc_resetn] [get_bd_pins s00_ar_node/s_sc_aresetn] [get_bd_pins s00_aw_node/s_sc_aresetn] [get_bd_pins s00_b_node/m_sc_aresetn] [get_bd_pins s00_r_node/m_sc_aresetn] [get_bd_pins s00_w_node/s_sc_aresetn]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -476,6 +480,7 @@ proc create_hier_cell_s00_entry_pipeline { parentCell nameHier } {
 
   # Create pins
   create_bd_pin -dir I -type clk aclk
+  create_bd_pin -dir I -type rst aresetn
 
   # Create instance: s00_mmu, and set properties
   set s00_mmu [ create_bd_cell -type ip -vlnv xilinx.com:ip:sc_mmu:1.0 s00_mmu ]
@@ -560,6 +565,7 @@ proc create_hier_cell_s00_entry_pipeline { parentCell nameHier } {
 
   # Create port connections
   connect_bd_net -net aclk_1 [get_bd_pins aclk] [get_bd_pins s00_mmu/aclk] [get_bd_pins s00_si_converter/aclk] [get_bd_pins s00_transaction_regulator/aclk]
+  connect_bd_net -net aresetn_1 [get_bd_pins aresetn] [get_bd_pins s00_mmu/aresetn] [get_bd_pins s00_si_converter/aresetn] [get_bd_pins s00_transaction_regulator/aresetn]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -605,6 +611,7 @@ proc create_hier_cell_m00_exit_pipeline { parentCell nameHier } {
 
   # Create pins
   create_bd_pin -dir I -type clk aclk
+  create_bd_pin -dir I -type rst aresetn
 
   # Create instance: m00_exit, and set properties
   set m00_exit [ create_bd_cell -type ip -vlnv xilinx.com:ip:sc_exit:1.0 m00_exit ]
@@ -642,6 +649,7 @@ proc create_hier_cell_m00_exit_pipeline { parentCell nameHier } {
 
   # Create port connections
   connect_bd_net -net aclk_1 [get_bd_pins aclk] [get_bd_pins m00_exit/aclk]
+  connect_bd_net -net aresetn_1 [get_bd_pins aresetn] [get_bd_pins m00_exit/aresetn]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -685,17 +693,48 @@ proc create_hier_cell_clk_map { parentCell nameHier } {
 
   # Create pins
   create_bd_pin -dir O -type clk M00_ACLK
-  create_bd_pin -dir O -type rst M00_ARESETN
+  create_bd_pin -dir O -from 0 -to 0 -type rst M00_ARESETN
   create_bd_pin -dir O -type clk S00_ACLK
-  create_bd_pin -dir O -type rst S00_ARESETN
+  create_bd_pin -dir O -from 0 -to 0 -type rst S00_ARESETN
   create_bd_pin -dir I -type clk aclk
   create_bd_pin -dir I -type clk aclk1
+  create_bd_pin -dir I -type rst aresetn
+  create_bd_pin -dir O -type rst aresetn_out
   create_bd_pin -dir O -type clk swbd_aclk
-  create_bd_pin -dir O -type rst swbd_aresetn
+  create_bd_pin -dir O -from 0 -to 0 -type rst swbd_aresetn
+
+  # Create instance: one, and set properties
+  set one [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 one ]
+
+  # Create instance: psr0, and set properties
+  set psr0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 psr0 ]
+  set_property -dict [ list \
+   CONFIG.C_AUX_RESET_HIGH {0} \
+   CONFIG.C_AUX_RST_WIDTH {1} \
+ ] $psr0
+
+  # Create instance: psr_aclk, and set properties
+  set psr_aclk [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 psr_aclk ]
+  set_property -dict [ list \
+   CONFIG.C_AUX_RESET_HIGH {0} \
+   CONFIG.C_AUX_RST_WIDTH {1} \
+ ] $psr_aclk
+
+  # Create instance: psr_aclk1, and set properties
+  set psr_aclk1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 psr_aclk1 ]
+  set_property -dict [ list \
+   CONFIG.C_AUX_RESET_HIGH {0} \
+   CONFIG.C_AUX_RST_WIDTH {1} \
+ ] $psr_aclk1
 
   # Create port connections
-  connect_bd_net -net clk_map_aclk1_net [get_bd_pins M00_ACLK] [get_bd_pins aclk1]
-  connect_bd_net -net clk_map_aclk_net [get_bd_pins S00_ACLK] [get_bd_pins aclk] [get_bd_pins swbd_aclk]
+  connect_bd_net -net clk_map_aclk1_net [get_bd_pins M00_ACLK] [get_bd_pins aclk1] [get_bd_pins psr0/slowest_sync_clk] [get_bd_pins psr_aclk1/slowest_sync_clk]
+  connect_bd_net -net clk_map_aclk_net [get_bd_pins S00_ACLK] [get_bd_pins aclk] [get_bd_pins swbd_aclk] [get_bd_pins psr_aclk/slowest_sync_clk]
+  connect_bd_net -net clk_map_aresetn_net [get_bd_pins aresetn] [get_bd_pins psr0/aux_reset_in] [get_bd_pins psr_aclk/aux_reset_in] [get_bd_pins psr_aclk1/aux_reset_in]
+  connect_bd_net -net one_dout [get_bd_pins one/dout] [get_bd_pins psr0/ext_reset_in]
+  connect_bd_net -net psr0_interconnect_aresetn [get_bd_pins psr0/interconnect_aresetn] [get_bd_pins psr_aclk/ext_reset_in] [get_bd_pins psr_aclk1/ext_reset_in]
+  connect_bd_net -net psr_aclk1_interconnect_aresetn [get_bd_pins M00_ARESETN] [get_bd_pins psr_aclk1/interconnect_aresetn]
+  connect_bd_net -net psr_aclk_interconnect_aresetn [get_bd_pins S00_ARESETN] [get_bd_pins swbd_aresetn] [get_bd_pins psr_aclk/interconnect_aresetn]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -753,6 +792,10 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.ASSOCIATED_BUSIF {M00_AXI} \
  ] $aclk1
+  set aresetn [ create_bd_port -dir I -type rst aresetn ]
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_LOW} \
+ ] $aresetn
 
   # Create instance: clk_map
   create_hier_cell_clk_map [current_bd_instance .] clk_map
@@ -828,7 +871,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net aclk1_1 [get_bd_ports aclk1] [get_bd_pins clk_map/aclk1]
   connect_bd_net -net aclk_1 [get_bd_pins clk_map/S00_ACLK] [get_bd_pins s00_axi2sc/aclk] [get_bd_pins s00_entry_pipeline/aclk] [get_bd_pins s00_nodes/s_sc_clk]
   connect_bd_net -net aclk_net [get_bd_ports aclk] [get_bd_pins clk_map/aclk]
+  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins clk_map/aresetn]
+  connect_bd_net -net aresetn_2 [get_bd_pins clk_map/S00_ARESETN] [get_bd_pins s00_entry_pipeline/aresetn] [get_bd_pins s00_nodes/s_sc_resetn]
+  connect_bd_net -net aresetn_net -boundary_type upper [get_bd_pins clk_map/aresetn_out]
   connect_bd_net -net m_sc_clk_1 [get_bd_pins clk_map/M00_ACLK] [get_bd_pins m00_exit_pipeline/aclk] [get_bd_pins m00_sc2axi/aclk] [get_bd_pins s00_nodes/m_sc_clk]
+  connect_bd_net -net m_sc_resetn_1 [get_bd_pins clk_map/M00_ARESETN] [get_bd_pins m00_exit_pipeline/aresetn] [get_bd_pins s00_nodes/m_sc_resetn]
   connect_bd_net -net swbd_aclk_net -boundary_type upper [get_bd_pins clk_map/swbd_aclk]
   connect_bd_net -net swbd_aresetn_net -boundary_type upper [get_bd_pins clk_map/swbd_aresetn]
 

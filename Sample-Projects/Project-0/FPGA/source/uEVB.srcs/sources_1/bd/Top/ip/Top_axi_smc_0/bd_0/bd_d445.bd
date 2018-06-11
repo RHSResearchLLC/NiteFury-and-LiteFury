@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xE7B5E4C3EF8F5825" bd:bdsource="SBD" bd:device="xc7a200tfbg484-2" bd:isScoped="true" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.1" bd:top="bd_d445" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x99A840774FD75821" bd:bdsource="SBD" bd:device="xc7a200tfbg484-2" bd:isScoped="true" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.1" bd:top="bd_d445" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -699,6 +699,35 @@
           </spirit:parameter>
         </spirit:parameters>
       </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.ARESETN</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>aresetn</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>POLARITY</spirit:name>
+            <spirit:value>ACTIVE_LOW</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="user"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
       <spirit:views>
@@ -717,6 +746,12 @@
         </spirit:port>
         <spirit:port>
           <spirit:name>aclk1</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>aresetn</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
@@ -888,6 +923,15 @@
         <spirit:internalPortReference spirit:componentRef="clk_map" spirit:portRef="aclk1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
+        <spirit:name>aresetn_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="clk_map" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>aresetn_net</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="clk_map" spirit:portRef="aresetn_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
         <spirit:name>swbd_aclk_net</spirit:name>
         <spirit:internalPortReference spirit:componentRef="clk_map" spirit:portRef="swbd_aclk"/>
       </spirit:adHocConnection>
@@ -903,11 +947,23 @@
         <spirit:internalPortReference spirit:componentRef="s00_nodes" spirit:portRef="s_sc_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
+        <spirit:name>aresetn_2</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="clk_map" spirit:portRef="S00_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="s00_entry_pipeline" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_nodes" spirit:portRef="s_sc_resetn"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
         <spirit:name>m_sc_clk_1</spirit:name>
         <spirit:internalPortReference spirit:componentRef="clk_map" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="s00_nodes" spirit:portRef="m_sc_clk"/>
         <spirit:internalPortReference spirit:componentRef="m00_sc2axi" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="m00_exit_pipeline" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>m_sc_resetn_1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="clk_map" spirit:portRef="M00_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="s00_nodes" spirit:portRef="m_sc_resetn"/>
+        <spirit:internalPortReference spirit:componentRef="m00_exit_pipeline" spirit:portRef="aresetn"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -956,6 +1012,24 @@
           </spirit:portMap>
         </spirit:portMaps>
       </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.ARESETN</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>aresetn</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
       <spirit:views>
@@ -968,6 +1042,12 @@
       <spirit:ports>
         <spirit:port>
           <spirit:name>aclk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>aresetn</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
@@ -1021,6 +1101,11 @@
         <spirit:name>aclk_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="m00_exit" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>aresetn_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="m00_exit" spirit:portRef="aresetn"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -1118,6 +1203,24 @@
         </spirit:portMaps>
       </spirit:busInterface>
       <spirit:busInterface>
+        <spirit:name>RST.S_SC_RESETN</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>s_sc_resetn</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
         <spirit:name>CLK.M_SC_CLK</spirit:name>
         <spirit:displayName>Clk</spirit:displayName>
         <spirit:description>Clock</spirit:description>
@@ -1131,6 +1234,24 @@
             </spirit:logicalPort>
             <spirit:physicalPort>
               <spirit:name>m_sc_clk</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.M_SC_RESETN</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>m_sc_resetn</spirit:name>
             </spirit:physicalPort>
           </spirit:portMap>
         </spirit:portMaps>
@@ -1152,7 +1273,19 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
+          <spirit:name>s_sc_resetn</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
           <spirit:name>m_sc_clk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>m_sc_resetn</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
@@ -1443,6 +1576,24 @@
         <spirit:internalPortReference spirit:componentRef="s00_r_node" spirit:portRef="s_sc_aclk"/>
         <spirit:internalPortReference spirit:componentRef="s00_b_node" spirit:portRef="s_sc_aclk"/>
       </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>s_sc_resetn_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="s_sc_resetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_ar_node" spirit:portRef="s_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_aw_node" spirit:portRef="s_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_w_node" spirit:portRef="s_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_r_node" spirit:portRef="m_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_b_node" spirit:portRef="m_sc_aresetn"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>m_sc_resetn_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="m_sc_resetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_ar_node" spirit:portRef="m_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_aw_node" spirit:portRef="m_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_w_node" spirit:portRef="m_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_r_node" spirit:portRef="s_sc_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_b_node" spirit:portRef="s_sc_aresetn"/>
+      </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
       <spirit:hierConnection spirit:interfaceRef="M_SC_AR/s00_ar_node_M_SC">
@@ -1514,6 +1665,24 @@
           </spirit:portMap>
         </spirit:portMaps>
       </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.ARESETN</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>aresetn</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
       <spirit:views>
@@ -1526,6 +1695,12 @@
       <spirit:ports>
         <spirit:port>
           <spirit:name>aclk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>aresetn</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
@@ -1641,6 +1816,13 @@
         <spirit:internalPortReference spirit:componentRef="s00_mmu" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="s00_si_converter" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="s00_transaction_regulator" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>aresetn_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_mmu" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_si_converter" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="s00_transaction_regulator" spirit:portRef="aresetn"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -1768,6 +1950,42 @@
         </spirit:portMaps>
       </spirit:busInterface>
       <spirit:busInterface>
+        <spirit:name>RST.ARESETN</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>aresetn</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.ARESETN_OUT</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>aresetn_out</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
         <spirit:name>CLK.ACLK</spirit:name>
         <spirit:displayName>Clk</spirit:displayName>
         <spirit:description>Clock</spirit:description>
@@ -1823,6 +2041,10 @@
           <spirit:name>S00_ARESETN</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
@@ -1835,6 +2057,10 @@
           <spirit:name>M00_ARESETN</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
@@ -1845,6 +2071,22 @@
         </spirit:port>
         <spirit:port>
           <spirit:name>swbd_aresetn</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>aresetn</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>aresetn_out</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -1870,17 +2112,85 @@
     <spirit:library>BlockDiagram/bd_d445_imp</spirit:library>
     <spirit:name>clk_map_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>one</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">bd_d445_one_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>psr0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="proc_sys_reset" spirit:vendor="xilinx.com" spirit:version="5.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">bd_d445_psr0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_AUX_RESET_HIGH">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_AUX_RST_WIDTH">1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>psr_aclk</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="proc_sys_reset" spirit:vendor="xilinx.com" spirit:version="5.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">bd_d445_psr_aclk_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_AUX_RESET_HIGH">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_AUX_RST_WIDTH">1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>psr_aclk1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="proc_sys_reset" spirit:vendor="xilinx.com" spirit:version="5.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">bd_d445_psr_aclk1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_AUX_RESET_HIGH">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_AUX_RST_WIDTH">1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>clk_map_aresetn_net</spirit:name>
+        <spirit:externalPortReference spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="psr0" spirit:portRef="aux_reset_in"/>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk" spirit:portRef="aux_reset_in"/>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk1" spirit:portRef="aux_reset_in"/>
+      </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>clk_map_aclk1_net</spirit:name>
         <spirit:externalPortReference spirit:portRef="aclk1"/>
         <spirit:externalPortReference spirit:portRef="M00_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="psr0" spirit:portRef="slowest_sync_clk"/>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk1" spirit:portRef="slowest_sync_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>clk_map_aclk_net</spirit:name>
         <spirit:externalPortReference spirit:portRef="aclk"/>
         <spirit:externalPortReference spirit:portRef="S00_ACLK"/>
         <spirit:externalPortReference spirit:portRef="swbd_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk" spirit:portRef="slowest_sync_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>one_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="one" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="psr0" spirit:portRef="ext_reset_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>psr_aclk_interconnect_aresetn</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk" spirit:portRef="interconnect_aresetn"/>
+        <spirit:externalPortReference spirit:portRef="S00_ARESETN"/>
+        <spirit:externalPortReference spirit:portRef="swbd_aresetn"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>psr_aclk1_interconnect_aresetn</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk1" spirit:portRef="interconnect_aresetn"/>
+        <spirit:externalPortReference spirit:portRef="M00_ARESETN"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>psr0_interconnect_aresetn</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="psr0" spirit:portRef="interconnect_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk" spirit:portRef="ext_reset_in"/>
+        <spirit:internalPortReference spirit:componentRef="psr_aclk1" spirit:portRef="ext_reset_in"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
   </spirit:design>

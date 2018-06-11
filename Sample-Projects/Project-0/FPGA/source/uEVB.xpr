@@ -61,23 +61,17 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xci">
-          <Proxy FileSetName="Top_util_ds_buf_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_xdma_0_0/Top_xdma_0_0.xci">
           <Proxy FileSetName="Top_xdma_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_xlconstant_1_0/Top_xlconstant_1_0.xci">
-          <Proxy FileSetName="Top_xlconstant_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_mig_7series_0_0/Top_mig_7series_0_0.xci">
-          <Proxy FileSetName="Top_mig_7series_0_0"/>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xci">
+          <Proxy FileSetName="Top_util_ds_buf_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_axi_smc_0/Top_axi_smc_0.xci">
           <Proxy FileSetName="Top_axi_smc_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_xlconstant_0_0/Top_xlconstant_0_0.xci">
-          <Proxy FileSetName="Top_xlconstant_0_0"/>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_xlconstant_1_0/Top_xlconstant_1_0.xci">
+          <Proxy FileSetName="Top_xlconstant_1_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/Top/hdl/Top_wrapper.v">
@@ -142,21 +136,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Top_xlconstant_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Top_xlconstant_0_0">
-      <Config>
-        <Option Name="TopModule" Val="Top_xlconstant_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="Top_axi_smc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Top_axi_smc_0">
       <Config>
         <Option Name="TopModule" Val="Top_axi_smc_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="Top_mig_7series_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Top_mig_7series_0_0">
-      <Config>
-        <Option Name="TopModule" Val="Top_mig_7series_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -213,25 +195,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="Top_xlconstant_0_0_synth_1" Type="Ft3:Synth" SrcSet="Top_xlconstant_0_0" Part="xc7a200tfbg484-2" ConstrsSet="Top_xlconstant_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Top_xlconstant_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="Top_axi_smc_0_synth_1" Type="Ft3:Synth" SrcSet="Top_axi_smc_0" Part="xc7a200tfbg484-2" ConstrsSet="Top_axi_smc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Top_axi_smc_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="Top_mig_7series_0_0_synth_1" Type="Ft3:Synth" SrcSet="Top_mig_7series_0_0" Part="xc7a200tfbg484-2" ConstrsSet="Top_mig_7series_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Top_mig_7series_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
@@ -298,39 +262,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="Top_xlconstant_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg484-2" ConstrsSet="Top_xlconstant_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="Top_xlconstant_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="Top_axi_smc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg484-2" ConstrsSet="Top_axi_smc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="Top_axi_smc_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="Top_mig_7series_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg484-2" ConstrsSet="Top_mig_7series_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="Top_mig_7series_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>

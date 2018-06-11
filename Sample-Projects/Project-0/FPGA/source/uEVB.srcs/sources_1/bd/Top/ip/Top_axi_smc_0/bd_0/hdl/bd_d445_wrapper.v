@@ -78,7 +78,8 @@ module bd_d445_wrapper
     S00_AXI_wstrb,
     S00_AXI_wvalid,
     aclk,
-    aclk1);
+    aclk1,
+    aresetn);
   output [28:0]M00_AXI_araddr;
   output [1:0]M00_AXI_arburst;
   output [3:0]M00_AXI_arcache;
@@ -151,6 +152,7 @@ module bd_d445_wrapper
   input S00_AXI_wvalid;
   input aclk;
   input aclk1;
+  input aresetn;
 
   wire [28:0]M00_AXI_araddr;
   wire [1:0]M00_AXI_arburst;
@@ -224,6 +226,7 @@ module bd_d445_wrapper
   wire S00_AXI_wvalid;
   wire aclk;
   wire aclk1;
+  wire aresetn;
 
   bd_d445 bd_d445_i
        (.M00_AXI_araddr(M00_AXI_araddr),
@@ -297,5 +300,6 @@ module bd_d445_wrapper
         .S00_AXI_wstrb(S00_AXI_wstrb),
         .S00_AXI_wvalid(S00_AXI_wvalid),
         .aclk(aclk),
-        .aclk1(aclk1));
+        .aclk1(aclk1),
+        .aresetn(aresetn));
 endmodule

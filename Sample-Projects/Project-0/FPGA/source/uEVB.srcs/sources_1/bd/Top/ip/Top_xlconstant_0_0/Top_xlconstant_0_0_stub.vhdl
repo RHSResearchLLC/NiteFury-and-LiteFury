@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
 -- Date        : Sun Jun  3 21:37:28 2018
 -- Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_0_0/Top_xlconstant_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top Top_xlconstant_0_0 -prefix
+--               Top_xlconstant_0_0_ Top_xlconstant_0_0_stub.vhdl
 -- Design      : Top_xlconstant_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a200tfbg484-2

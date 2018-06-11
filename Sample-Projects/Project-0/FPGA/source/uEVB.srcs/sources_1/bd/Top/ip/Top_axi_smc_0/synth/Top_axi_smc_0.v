@@ -52,11 +52,12 @@
 
 (* X_CORE_INFO = "bd_d445,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "Top_axi_smc_0,bd_d445,{}" *)
-(* CORE_GENERATION_INFO = "Top_axi_smc_0,bd_d445,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,NUM_MI=1,NUM_SI=1,NUM_CLKS=2,HAS_ARESETN=0,ADVANCED_PROPERTIES=0,Component_Name=Top_axi_smc_0}" *)
+(* CORE_GENERATION_INFO = "Top_axi_smc_0,bd_d445,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,NUM_MI=1,NUM_SI=1,NUM_CLKS=2,HAS_ARESETN=1,ADVANCED_PROPERTIES=0,Component_Name=Top_axi_smc_0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Top_axi_smc_0 (
   aclk,
   aclk1,
+  aresetn,
   S00_AXI_awid,
   S00_AXI_awaddr,
   S00_AXI_awlen,
@@ -135,6 +136,9 @@ input wire aclk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.aclk1, FREQ_HZ 100000000, PHASE 0, CLK_DOMAIN Top_mig_7series_0_0_ui_clk, ASSOCIATED_BUSIF M00_AXI, ASSOCIATED_CLKEN s_sc_aclken" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.aclk1 CLK" *)
 input wire aclk1;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.aresetn, POLARITY ACTIVE_LOW" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.aresetn RST" *)
+input wire aresetn;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWID" *)
 input wire [3 : 0] S00_AXI_awid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
@@ -283,6 +287,7 @@ output wire M00_AXI_rready;
   bd_d445 inst (
     .aclk(aclk),
     .aclk1(aclk1),
+    .aresetn(aresetn),
     .S00_AXI_awid(S00_AXI_awid),
     .S00_AXI_awaddr(S00_AXI_awaddr),
     .S00_AXI_awlen(S00_AXI_awlen),

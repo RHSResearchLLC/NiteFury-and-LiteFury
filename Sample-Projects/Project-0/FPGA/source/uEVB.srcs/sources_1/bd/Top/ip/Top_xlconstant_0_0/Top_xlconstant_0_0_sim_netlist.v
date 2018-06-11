@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
 // Date        : Sun Jun  3 21:37:28 2018
 // Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_xlconstant_0_0/Top_xlconstant_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Top_xlconstant_0_0 -prefix
+//               Top_xlconstant_0_0_ Top_xlconstant_0_0_sim_netlist.v
 // Design      : Top_xlconstant_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x7E904C308138A1B9" bd:device="xc7a200tfbg484-2" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.1" bd:top="Top" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xCFF32C83ED21B000" bd:device="xc7a200tfbg484-2" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.1" bd:top="Top" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -227,13 +227,41 @@
       </spirit:views>
       <spirit:ports>
         <spirit:port>
+          <spirit:name>pcie_clkreq_l</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
           <spirit:name>pci_reset</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>pcie_clkreq_l</spirit:name>
+          <spirit:name>LED_A1</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LED_A2</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LED_A3</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LED_A4</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -293,14 +321,7 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_axi_smc_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_SI">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_CLKS">2</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="HAS_ARESETN">0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_xlconstant_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="HAS_ARESETN">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -308,6 +329,14 @@
         <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_xlconstant_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconstant_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_xlconstant_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -325,12 +354,6 @@
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
-        <spirit:name>reset_rtl_0_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="pci_reset"/>
-        <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="sys_rst"/>
-        <spirit:internalPortReference spirit:componentRef="xdma_0" spirit:portRef="sys_rst_n"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>util_ds_buf_IBUF_OUT</spirit:name>
         <spirit:internalPortReference spirit:componentRef="util_ds_buf" spirit:portRef="IBUF_OUT"/>
         <spirit:internalPortReference spirit:componentRef="xdma_0" spirit:portRef="sys_clk"/>
@@ -346,14 +369,41 @@
         <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aclk1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
+        <spirit:name>xlconstant_1_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconstant_1" spirit:portRef="dout"/>
+        <spirit:externalPortReference spirit:portRef="pcie_clkreq_l"/>
+        <spirit:externalPortReference spirit:portRef="LED_A4"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>pci_reset_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="pci_reset"/>
+        <spirit:internalPortReference spirit:componentRef="xdma_0" spirit:portRef="sys_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="sys_rst"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xdma_0_axi_aresetn</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xdma_0" spirit:portRef="axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
         <spirit:name>xlconstant_0_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
         <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>xlconstant_1_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_1" spirit:portRef="dout"/>
-        <spirit:externalPortReference spirit:portRef="pcie_clkreq_l"/>
+        <spirit:name>mig_7series_0_init_calib_complete</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="init_calib_complete"/>
+        <spirit:externalPortReference spirit:portRef="LED_A1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>mig_7series_0_mmcm_locked</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="mmcm_locked"/>
+        <spirit:externalPortReference spirit:portRef="LED_A2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xdma_0_user_lnk_up</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xdma_0" spirit:portRef="user_lnk_up"/>
+        <spirit:externalPortReference spirit:portRef="LED_A3"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

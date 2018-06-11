@@ -6,7 +6,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "bd_d445,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_d445,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=15,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=Global}" *) (* HW_HANDOFF = "Top_axi_smc_0.hwdef" *) 
+(* CORE_GENERATION_INFO = "bd_d445,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_d445,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=Global}" *) (* HW_HANDOFF = "Top_axi_smc_0.hwdef" *) 
 module bd_d445
    (M00_AXI_araddr,
     M00_AXI_arburst,
@@ -79,7 +79,8 @@ module bd_d445
     S00_AXI_wstrb,
     S00_AXI_wvalid,
     aclk,
-    aclk1);
+    aclk1,
+    aresetn);
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M00_AXI ARADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M00_AXI, ADDR_WIDTH 29, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN Top_mig_7series_0_0_ui_clk, DATA_WIDTH 64, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 1, HAS_CACHE 1, HAS_LOCK 1, HAS_PROT 1, HAS_QOS 1, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 2, NUM_WRITE_THREADS 1, PHASE 0, PROTOCOL AXI4, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) output [28:0]M00_AXI_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M00_AXI ARBURST" *) output [1:0]M00_AXI_arburst;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M00_AXI ARCACHE" *) output [3:0]M00_AXI_arcache;
@@ -152,6 +153,7 @@ module bd_d445
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WVALID" *) input S00_AXI_wvalid;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.ACLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.ACLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_CLKEN m_sc_aclken, CLK_DOMAIN Top_xdma_0_0_axi_aclk, FREQ_HZ 250000000, PHASE 0.000" *) input aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.ACLK1 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.ACLK1, ASSOCIATED_BUSIF M00_AXI, ASSOCIATED_CLKEN s_sc_aclken, CLK_DOMAIN Top_mig_7series_0_0_ui_clk, FREQ_HZ 100000000, PHASE 0" *) input aclk1;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.ARESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.ARESETN, POLARITY ACTIVE_LOW" *) input aresetn;
 
   wire [63:0]S00_AXI_1_ARADDR;
   wire [1:0]S00_AXI_1_ARBURST;
@@ -218,6 +220,9 @@ module bd_d445
   wire aclk1_1;
   wire aclk_1;
   wire aclk_net;
+  wire aresetn_1;
+  wire [0:0]aresetn_2;
+  wire aresetn_net;
   wire [28:0]m00_exit_pipeline_m_axi_ARADDR;
   wire [1:0]m00_exit_pipeline_m_axi_ARBURST;
   wire [3:0]m00_exit_pipeline_m_axi_ARCACHE;
@@ -290,6 +295,7 @@ module bd_d445
   wire [1023:0]m00_sc2axi_M_AXI_WUSER;
   wire m00_sc2axi_M_AXI_WVALID;
   wire m_sc_clk_1;
+  wire [0:0]m_sc_resetn_1;
   wire [63:0]s00_entry_pipeline_m_axi_ARADDR;
   wire [3:0]s00_entry_pipeline_m_axi_ARCACHE;
   wire [0:0]s00_entry_pipeline_m_axi_ARID;
@@ -354,7 +360,7 @@ module bd_d445
   wire s00_nodes_M_SC_W_REQ;
   wire s00_nodes_M_SC_W_SEND;
   wire swbd_aclk_net;
-  wire swbd_aresetn_net;
+  wire [0:0]swbd_aresetn_net;
 
   assign M00_AXI_araddr[28:0] = m00_exit_pipeline_m_axi_ARADDR;
   assign M00_AXI_arburst[1:0] = m00_exit_pipeline_m_axi_ARBURST;
@@ -419,6 +425,7 @@ module bd_d445
   assign S00_AXI_wready = S00_AXI_1_WREADY;
   assign aclk1_1 = aclk1;
   assign aclk_net = aclk;
+  assign aresetn_1 = aresetn;
   assign m00_exit_pipeline_m_axi_ARREADY = M00_AXI_arready;
   assign m00_exit_pipeline_m_axi_AWREADY = M00_AXI_awready;
   assign m00_exit_pipeline_m_axi_BRESP = M00_AXI_bresp[1:0];
@@ -430,13 +437,18 @@ module bd_d445
   assign m00_exit_pipeline_m_axi_WREADY = M00_AXI_wready;
   clk_map_imp_MHK1X2 clk_map
        (.M00_ACLK(m_sc_clk_1),
+        .M00_ARESETN(m_sc_resetn_1),
         .S00_ACLK(aclk_1),
+        .S00_ARESETN(aresetn_2),
         .aclk(aclk_net),
         .aclk1(aclk1_1),
+        .aresetn(aresetn_1),
+        .aresetn_out(aresetn_net),
         .swbd_aclk(swbd_aclk_net),
         .swbd_aresetn(swbd_aresetn_net));
   m00_exit_pipeline_imp_1B2GJFX m00_exit_pipeline
        (.aclk(m_sc_clk_1),
+        .aresetn(m_sc_resetn_1),
         .m_axi_araddr(m00_exit_pipeline_m_axi_ARADDR),
         .m_axi_arburst(m00_exit_pipeline_m_axi_ARBURST),
         .m_axi_arcache(m00_exit_pipeline_m_axi_ARCACHE),
@@ -640,6 +652,7 @@ module bd_d445
         .s_sc_r_send(s00_nodes_M_SC_R_SEND));
   s00_entry_pipeline_imp_BSXV8U s00_entry_pipeline
        (.aclk(aclk_1),
+        .aresetn(aresetn_2),
         .m_axi_araddr(s00_entry_pipeline_m_axi_ARADDR),
         .m_axi_arcache(s00_entry_pipeline_m_axi_ARCACHE),
         .m_axi_arid(s00_entry_pipeline_m_axi_ARID),
@@ -767,7 +780,9 @@ module bd_d445
         .S_SC_W_req(S_SC_W_1_REQ),
         .S_SC_W_send(S_SC_W_1_SEND),
         .m_sc_clk(m_sc_clk_1),
-        .s_sc_clk(aclk_1));
+        .m_sc_resetn(m_sc_resetn_1),
+        .s_sc_clk(aclk_1),
+        .s_sc_resetn(aresetn_2));
 endmodule
 
 module clk_map_imp_MHK1X2
@@ -777,29 +792,66 @@ module clk_map_imp_MHK1X2
     S00_ARESETN,
     aclk,
     aclk1,
+    aresetn,
+    aresetn_out,
     swbd_aclk,
     swbd_aresetn);
   output M00_ACLK;
-  output M00_ARESETN;
+  output [0:0]M00_ARESETN;
   output S00_ACLK;
-  output S00_ARESETN;
+  output [0:0]S00_ARESETN;
   input aclk;
   input aclk1;
+  input aresetn;
+  output aresetn_out;
   output swbd_aclk;
-  output swbd_aresetn;
+  output [0:0]swbd_aresetn;
 
   wire clk_map_aclk1_net;
   wire clk_map_aclk_net;
+  wire clk_map_aresetn_net;
+  wire [0:0]one_dout;
+  wire [0:0]psr0_interconnect_aresetn;
+  wire [0:0]psr_aclk1_interconnect_aresetn;
+  wire [0:0]psr_aclk_interconnect_aresetn;
 
   assign M00_ACLK = clk_map_aclk1_net;
+  assign M00_ARESETN[0] = psr_aclk1_interconnect_aresetn;
   assign S00_ACLK = clk_map_aclk_net;
+  assign S00_ARESETN[0] = psr_aclk_interconnect_aresetn;
   assign clk_map_aclk1_net = aclk1;
   assign clk_map_aclk_net = aclk;
+  assign clk_map_aresetn_net = aresetn;
   assign swbd_aclk = clk_map_aclk_net;
+  assign swbd_aresetn[0] = psr_aclk_interconnect_aresetn;
+  bd_d445_one_0 one
+       (.dout(one_dout));
+  bd_d445_psr0_0 psr0
+       (.aux_reset_in(clk_map_aresetn_net),
+        .dcm_locked(1'b1),
+        .ext_reset_in(one_dout),
+        .interconnect_aresetn(psr0_interconnect_aresetn),
+        .mb_debug_sys_rst(1'b0),
+        .slowest_sync_clk(clk_map_aclk1_net));
+  bd_d445_psr_aclk_0 psr_aclk
+       (.aux_reset_in(clk_map_aresetn_net),
+        .dcm_locked(1'b1),
+        .ext_reset_in(psr0_interconnect_aresetn),
+        .interconnect_aresetn(psr_aclk_interconnect_aresetn),
+        .mb_debug_sys_rst(1'b0),
+        .slowest_sync_clk(clk_map_aclk_net));
+  bd_d445_psr_aclk1_0 psr_aclk1
+       (.aux_reset_in(clk_map_aresetn_net),
+        .dcm_locked(1'b1),
+        .ext_reset_in(psr0_interconnect_aresetn),
+        .interconnect_aresetn(psr_aclk1_interconnect_aresetn),
+        .mb_debug_sys_rst(1'b0),
+        .slowest_sync_clk(clk_map_aclk1_net));
 endmodule
 
 module m00_exit_pipeline_imp_1B2GJFX
    (aclk,
+    aresetn,
     m_axi_araddr,
     m_axi_arburst,
     m_axi_arcache,
@@ -872,6 +924,7 @@ module m00_exit_pipeline_imp_1B2GJFX
     s_axi_wuser,
     s_axi_wvalid);
   input aclk;
+  input aresetn;
   output [28:0]m_axi_araddr;
   output [1:0]m_axi_arburst;
   output [3:0]m_axi_arcache;
@@ -945,6 +998,7 @@ module m00_exit_pipeline_imp_1B2GJFX
   input s_axi_wvalid;
 
   wire aclk_1;
+  wire aresetn_1;
   wire [28:0]m00_exit_M_AXI_ARADDR;
   wire [1:0]m00_exit_M_AXI_ARBURST;
   wire [3:0]m00_exit_M_AXI_ARCACHE;
@@ -1018,6 +1072,7 @@ module m00_exit_pipeline_imp_1B2GJFX
   wire s_axi_1_WVALID;
 
   assign aclk_1 = aclk;
+  assign aresetn_1 = aresetn;
   assign m00_exit_M_AXI_ARREADY = m_axi_arready;
   assign m00_exit_M_AXI_AWREADY = m_axi_awready;
   assign m00_exit_M_AXI_BRESP = m_axi_bresp[1:0];
@@ -1091,7 +1146,7 @@ module m00_exit_pipeline_imp_1B2GJFX
   assign s_axi_wready = s_axi_1_WREADY;
   bd_d445_m00e_0 m00_exit
        (.aclk(aclk_1),
-        .aresetn(1'b1),
+        .aresetn(aresetn_1),
         .m_axi_araddr(m00_exit_M_AXI_ARADDR),
         .m_axi_arburst(m00_exit_M_AXI_ARBURST),
         .m_axi_arcache(m00_exit_M_AXI_ARCACHE),
@@ -1167,6 +1222,7 @@ endmodule
 
 module s00_entry_pipeline_imp_BSXV8U
    (aclk,
+    aresetn,
     m_axi_araddr,
     m_axi_arcache,
     m_axi_arid,
@@ -1243,6 +1299,7 @@ module s00_entry_pipeline_imp_BSXV8U
     s_axi_wstrb,
     s_axi_wvalid);
   input aclk;
+  input aresetn;
   output [63:0]m_axi_araddr;
   output [3:0]m_axi_arcache;
   output [0:0]m_axi_arid;
@@ -1320,6 +1377,7 @@ module s00_entry_pipeline_imp_BSXV8U
   input s_axi_wvalid;
 
   wire aclk_1;
+  wire aresetn_1;
   wire [63:0]s00_mmu_M_AXI_ARADDR;
   wire [1:0]s00_mmu_M_AXI_ARBURST;
   wire [3:0]s00_mmu_M_AXI_ARCACHE;
@@ -1477,6 +1535,7 @@ module s00_entry_pipeline_imp_BSXV8U
   wire s_axi_1_WVALID;
 
   assign aclk_1 = aclk;
+  assign aresetn_1 = aresetn;
   assign m_axi_araddr[63:0] = s00_si_converter_M_AXI_ARADDR;
   assign m_axi_arcache[3:0] = s00_si_converter_M_AXI_ARCACHE;
   assign m_axi_arid[0] = s00_si_converter_M_AXI_ARID;
@@ -1554,7 +1613,7 @@ module s00_entry_pipeline_imp_BSXV8U
   assign s_axi_wready = s_axi_1_WREADY;
   bd_d445_s00mmu_0 s00_mmu
        (.aclk(aclk_1),
-        .aresetn(1'b1),
+        .aresetn(aresetn_1),
         .m_axi_araddr(s00_mmu_M_AXI_ARADDR),
         .m_axi_arburst(s00_mmu_M_AXI_ARBURST),
         .m_axi_arcache(s00_mmu_M_AXI_ARCACHE),
@@ -1636,7 +1695,7 @@ module s00_entry_pipeline_imp_BSXV8U
         .s_axi_wvalid(s_axi_1_WVALID));
   bd_d445_s00sic_0 s00_si_converter
        (.aclk(aclk_1),
-        .aresetn(1'b1),
+        .aresetn(aresetn_1),
         .m_axi_araddr(s00_si_converter_M_AXI_ARADDR),
         .m_axi_arcache(s00_si_converter_M_AXI_ARCACHE),
         .m_axi_arid(s00_si_converter_M_AXI_ARID),
@@ -1715,7 +1774,7 @@ module s00_entry_pipeline_imp_BSXV8U
         .s_axi_wvalid(s00_transaction_regulator_M_AXI_WVALID));
   bd_d445_s00tr_0 s00_transaction_regulator
        (.aclk(aclk_1),
-        .aresetn(1'b1),
+        .aresetn(aresetn_1),
         .m_axi_araddr(s00_transaction_regulator_M_AXI_ARADDR),
         .m_axi_arcache(s00_transaction_regulator_M_AXI_ARCACHE),
         .m_axi_arid(s00_transaction_regulator_M_AXI_ARID),
@@ -1850,7 +1909,9 @@ module s00_nodes_imp_HJAT84
     S_SC_W_req,
     S_SC_W_send,
     m_sc_clk,
-    s_sc_clk);
+    m_sc_resetn,
+    s_sc_clk,
+    s_sc_resetn);
   output [0:0]M_SC_AR_info;
   output [169:0]M_SC_AR_payld;
   input M_SC_AR_recv;
@@ -1902,7 +1963,9 @@ module s00_nodes_imp_HJAT84
   input [0:0]S_SC_W_req;
   input [0:0]S_SC_W_send;
   input m_sc_clk;
+  input m_sc_resetn;
   input s_sc_clk;
+  input s_sc_resetn;
 
   wire [0:0]S_SC_AR_1_INFO;
   wire [169:0]S_SC_AR_1_PAYLD;
@@ -1930,6 +1993,7 @@ module s00_nodes_imp_HJAT84
   wire [0:0]S_SC_W_1_REQ;
   wire [0:0]S_SC_W_1_SEND;
   wire m_sc_clk_1;
+  wire m_sc_resetn_1;
   wire [0:0]s00_ar_node_M_SC_INFO;
   wire [169:0]s00_ar_node_M_SC_PAYLD;
   wire s00_ar_node_M_SC_RECV;
@@ -1956,6 +2020,7 @@ module s00_nodes_imp_HJAT84
   wire [0:0]s00_w_node_M_SC_REQ;
   wire [0:0]s00_w_node_M_SC_SEND;
   wire s_sc_clk_1;
+  wire s_sc_resetn_1;
 
   assign M_SC_AR_info[0] = s00_ar_node_M_SC_INFO;
   assign M_SC_AR_payld[169:0] = s00_ar_node_M_SC_PAYLD;
@@ -2003,22 +2068,24 @@ module s00_nodes_imp_HJAT84
   assign S_SC_W_1_SEND = S_SC_W_send[0];
   assign S_SC_W_recv[0] = S_SC_W_1_RECV;
   assign m_sc_clk_1 = m_sc_clk;
+  assign m_sc_resetn_1 = m_sc_resetn;
   assign s00_ar_node_M_SC_RECV = M_SC_AR_recv;
   assign s00_aw_node_M_SC_RECV = M_SC_AW_recv;
   assign s00_b_node_M_SC_RECV = M_SC_B_recv[0];
   assign s00_r_node_M_SC_RECV = M_SC_R_recv[0];
   assign s00_w_node_M_SC_RECV = M_SC_W_recv;
   assign s_sc_clk_1 = s_sc_clk;
+  assign s_sc_resetn_1 = s_sc_resetn;
   bd_d445_sarn_0 s00_ar_node
        (.m_sc_aclk(m_sc_clk_1),
-        .m_sc_aresetn(1'b1),
+        .m_sc_aresetn(m_sc_resetn_1),
         .m_sc_info(s00_ar_node_M_SC_INFO),
         .m_sc_payld(s00_ar_node_M_SC_PAYLD),
         .m_sc_recv(s00_ar_node_M_SC_RECV),
         .m_sc_req(s00_ar_node_M_SC_REQ),
         .m_sc_send(s00_ar_node_M_SC_SEND),
         .s_sc_aclk(s_sc_clk_1),
-        .s_sc_aresetn(1'b1),
+        .s_sc_aresetn(s_sc_resetn_1),
         .s_sc_info(S_SC_AR_1_INFO),
         .s_sc_payld(S_SC_AR_1_PAYLD),
         .s_sc_recv(S_SC_AR_1_RECV),
@@ -2026,14 +2093,14 @@ module s00_nodes_imp_HJAT84
         .s_sc_send(S_SC_AR_1_SEND));
   bd_d445_sawn_0 s00_aw_node
        (.m_sc_aclk(m_sc_clk_1),
-        .m_sc_aresetn(1'b1),
+        .m_sc_aresetn(m_sc_resetn_1),
         .m_sc_info(s00_aw_node_M_SC_INFO),
         .m_sc_payld(s00_aw_node_M_SC_PAYLD),
         .m_sc_recv(s00_aw_node_M_SC_RECV),
         .m_sc_req(s00_aw_node_M_SC_REQ),
         .m_sc_send(s00_aw_node_M_SC_SEND),
         .s_sc_aclk(s_sc_clk_1),
-        .s_sc_aresetn(1'b1),
+        .s_sc_aresetn(s_sc_resetn_1),
         .s_sc_info(S_SC_AW_1_INFO),
         .s_sc_payld(S_SC_AW_1_PAYLD),
         .s_sc_recv(S_SC_AW_1_RECV),
@@ -2041,14 +2108,14 @@ module s00_nodes_imp_HJAT84
         .s_sc_send(S_SC_AW_1_SEND));
   bd_d445_sbn_0 s00_b_node
        (.m_sc_aclk(s_sc_clk_1),
-        .m_sc_aresetn(1'b1),
+        .m_sc_aresetn(s_sc_resetn_1),
         .m_sc_info(s00_b_node_M_SC_INFO),
         .m_sc_payld(s00_b_node_M_SC_PAYLD),
         .m_sc_recv(s00_b_node_M_SC_RECV),
         .m_sc_req(s00_b_node_M_SC_REQ),
         .m_sc_send(s00_b_node_M_SC_SEND),
         .s_sc_aclk(m_sc_clk_1),
-        .s_sc_aresetn(1'b1),
+        .s_sc_aresetn(m_sc_resetn_1),
         .s_sc_info(S_SC_B_1_INFO),
         .s_sc_payld(S_SC_B_1_PAYLD),
         .s_sc_recv(S_SC_B_1_RECV),
@@ -2056,14 +2123,14 @@ module s00_nodes_imp_HJAT84
         .s_sc_send(S_SC_B_1_SEND));
   bd_d445_srn_0 s00_r_node
        (.m_sc_aclk(s_sc_clk_1),
-        .m_sc_aresetn(1'b1),
+        .m_sc_aresetn(s_sc_resetn_1),
         .m_sc_info(s00_r_node_M_SC_INFO),
         .m_sc_payld(s00_r_node_M_SC_PAYLD),
         .m_sc_recv(s00_r_node_M_SC_RECV),
         .m_sc_req(s00_r_node_M_SC_REQ),
         .m_sc_send(s00_r_node_M_SC_SEND),
         .s_sc_aclk(m_sc_clk_1),
-        .s_sc_aresetn(1'b1),
+        .s_sc_aresetn(m_sc_resetn_1),
         .s_sc_info(S_SC_R_1_INFO),
         .s_sc_payld(S_SC_R_1_PAYLD),
         .s_sc_recv(S_SC_R_1_RECV),
@@ -2071,14 +2138,14 @@ module s00_nodes_imp_HJAT84
         .s_sc_send(S_SC_R_1_SEND));
   bd_d445_swn_0 s00_w_node
        (.m_sc_aclk(m_sc_clk_1),
-        .m_sc_aresetn(1'b1),
+        .m_sc_aresetn(m_sc_resetn_1),
         .m_sc_info(s00_w_node_M_SC_INFO),
         .m_sc_payld(s00_w_node_M_SC_PAYLD),
         .m_sc_recv(s00_w_node_M_SC_RECV),
         .m_sc_req(s00_w_node_M_SC_REQ),
         .m_sc_send(s00_w_node_M_SC_SEND),
         .s_sc_aclk(s_sc_clk_1),
-        .s_sc_aresetn(1'b1),
+        .s_sc_aresetn(s_sc_resetn_1),
         .s_sc_info(S_SC_W_1_INFO),
         .s_sc_payld(S_SC_W_1_PAYLD),
         .s_sc_recv(S_SC_W_1_RECV),

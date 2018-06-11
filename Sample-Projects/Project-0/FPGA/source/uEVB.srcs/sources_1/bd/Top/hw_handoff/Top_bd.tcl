@@ -321,6 +321,10 @@ proc create_root_design { parentCell } {
    ] $sys_clk
 
   # Create ports
+  set LED_A1 [ create_bd_port -dir O LED_A1 ]
+  set LED_A2 [ create_bd_port -dir O LED_A2 ]
+  set LED_A3 [ create_bd_port -dir O LED_A3 ]
+  set LED_A4 [ create_bd_port -dir O -from 0 -to 0 LED_A4 ]
   set pci_reset [ create_bd_port -dir I -type rst pci_reset ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
@@ -330,7 +334,7 @@ proc create_root_design { parentCell } {
   # Create instance: axi_smc, and set properties
   set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
   set_property -dict [ list \
-   CONFIG.HAS_ARESETN {0} \
+   CONFIG.HAS_ARESETN {1} \
    CONFIG.NUM_CLKS {2} \
    CONFIG.NUM_SI {1} \
  ] $axi_smc
@@ -376,6 +380,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: xlconstant_1, and set properties
   set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+ ] $xlconstant_1
 
   # Create interface connections
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
@@ -386,12 +393,16 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net xdma_0_pcie_mgt [get_bd_intf_ports pcie_mgt] [get_bd_intf_pins xdma_0/pcie_mgt]
 
   # Create port connections
+  connect_bd_net -net mig_7series_0_init_calib_complete [get_bd_ports LED_A1] [get_bd_pins mig_7series_0/init_calib_complete]
+  connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_ports LED_A2] [get_bd_pins mig_7series_0/mmcm_locked]
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_smc/aclk1] [get_bd_pins mig_7series_0/ui_clk]
-  connect_bd_net -net reset_rtl_0_1 [get_bd_ports pci_reset] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/sys_rst_n]
+  connect_bd_net -net pci_reset_1 [get_bd_ports pci_reset] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/sys_rst_n]
   connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
   connect_bd_net -net xdma_0_axi_aclk [get_bd_pins axi_smc/aclk] [get_bd_pins xdma_0/axi_aclk]
+  connect_bd_net -net xdma_0_axi_aresetn [get_bd_pins axi_smc/aresetn] [get_bd_pins xdma_0/axi_aresetn]
+  connect_bd_net -net xdma_0_user_lnk_up [get_bd_ports LED_A3] [get_bd_pins xdma_0/user_lnk_up]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins mig_7series_0/aresetn] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_ports LED_A4] [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces xdma_0/M_AXI] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr

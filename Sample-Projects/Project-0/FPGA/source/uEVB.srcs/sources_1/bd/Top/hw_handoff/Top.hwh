@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun  3 22:22:58 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jun  9 22:06:02 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="Top" PACKAGE="fbg484" SPEEDGRADE="-2"/>
 
@@ -26,13 +26,33 @@
     <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="pcie_clkin_clk_n" RIGHT="0" SIGIS="clk"/>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk_clk_p" SIGIS="clk"/>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk_clk_n" SIGIS="clk"/>
-    <PORT DIR="I" NAME="pci_reset" SIGIS="rst" SIGNAME="External_Ports_pci_reset">
+    <PORT DIR="O" LEFT="0" NAME="pcie_clkreq_l" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="mig_7series_0" PORT="sys_rst"/>
-        <CONNECTION INSTANCE="xdma_0" PORT="sys_rst_n"/>
+        <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="0" NAME="pcie_clkreq_l" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+    <PORT DIR="I" NAME="pci_reset" SIGIS="rst" SIGNAME="External_Ports_pci_reset">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xdma_0" PORT="sys_rst_n"/>
+        <CONNECTION INSTANCE="mig_7series_0" PORT="sys_rst"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED_A1" SIGIS="undef" SIGNAME="mig_7series_0_init_calib_complete">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mig_7series_0" PORT="init_calib_complete"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED_A2" SIGIS="undef" SIGNAME="mig_7series_0_mmcm_locked">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mig_7series_0" PORT="mmcm_locked"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED_A3" SIGIS="undef" SIGNAME="xdma_0_user_lnk_up">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xdma_0" PORT="user_lnk_up"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="LED_A4" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
       </CONNECTIONS>
@@ -107,7 +127,7 @@
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
         <PARAMETER NAME="NUM_CLKS" VALUE="2"/>
-        <PARAMETER NAME="HAS_ARESETN" VALUE="0"/>
+        <PARAMETER NAME="HAS_ARESETN" VALUE="1"/>
         <PARAMETER NAME="ADVANCED_PROPERTIES" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="Top_axi_smc_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
@@ -121,6 +141,11 @@
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="xdma_0_axi_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xdma_0" PORT="axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="3" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="axi_smc_S00_AXI_awid">
@@ -1965,10 +1990,18 @@
             <CONNECTION INSTANCE="axi_smc" PORT="M00_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="mmcm_locked" SIGIS="undef"/>
+        <PORT DIR="O" NAME="mmcm_locked" SIGIS="undef" SIGNAME="mig_7series_0_mmcm_locked">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LED_A2"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="sys_clk_p" SIGIS="clk"/>
         <PORT DIR="I" NAME="sys_clk_n" SIGIS="clk"/>
-        <PORT DIR="O" NAME="init_calib_complete" SIGIS="undef"/>
+        <PORT DIR="O" NAME="init_calib_complete" SIGIS="undef" SIGNAME="mig_7series_0_init_calib_complete">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LED_A1"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
@@ -3234,7 +3267,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="pci_reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="user_lnk_up" SIGIS="undef"/>
+        <PORT DIR="O" NAME="user_lnk_up" SIGIS="undef" SIGNAME="xdma_0_user_lnk_up">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LED_A3"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="3" NAME="pci_exp_txp" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="3" NAME="pci_exp_txn" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="pci_exp_rxp" RIGHT="0" SIGIS="undef"/>
@@ -3244,7 +3281,11 @@
             <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="axi_aresetn" SIGIS="rst"/>
+        <PORT DIR="O" NAME="axi_aresetn" SIGIS="rst" SIGNAME="xdma_0_axi_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="usr_irq_req" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="usr_irq_ack" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" NAME="msi_enable" SIGIS="undef"/>
@@ -3532,7 +3573,7 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x0"/>
         <PARAMETER NAME="Component_Name" VALUE="Top_xlconstant_1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -3540,6 +3581,7 @@
         <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="pcie_clkreq_l"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="LED_A4"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

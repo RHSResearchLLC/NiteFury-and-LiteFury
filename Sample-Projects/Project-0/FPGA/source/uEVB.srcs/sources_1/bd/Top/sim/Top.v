@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Sun Jun  3 22:22:50 2018
+//Date        : Sat Jun  9 22:05:48 2018
 //Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
 //Command     : generate_target Top.bd
 //Design      : Top
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=2,da_xdma_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Top.hwdef" *) 
+(* CORE_GENERATION_INFO = "Top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=3,da_xdma_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Top.hwdef" *) 
 module Top
    (DDR3_addr,
     DDR3_ba,
@@ -25,6 +25,10 @@ module Top
     DDR3_ras_n,
     DDR3_reset_n,
     DDR3_we_n,
+    LED_A1,
+    LED_A2,
+    LED_A3,
+    LED_A4,
     pci_reset,
     pcie_clkin_clk_n,
     pcie_clkin_clk_p,
@@ -49,6 +53,10 @@ module Top
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 RAS_N" *) output DDR3_ras_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 RESET_N" *) output DDR3_reset_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 WE_N" *) output DDR3_we_n;
+  output LED_A1;
+  output LED_A2;
+  output LED_A3;
+  output [0:0]LED_A4;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.PCI_RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.PCI_RESET, POLARITY ACTIVE_LOW" *) input pci_reset;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 pcie_clkin CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME pcie_clkin, CAN_DEBUG false, FREQ_HZ 100000000" *) input [0:0]pcie_clkin_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 pcie_clkin CLK_P" *) input [0:0]pcie_clkin_clk_p;
@@ -111,8 +119,10 @@ module Top
   wire mig_7series_0_DDR3_RAS_N;
   wire mig_7series_0_DDR3_RESET_N;
   wire mig_7series_0_DDR3_WE_N;
+  wire mig_7series_0_init_calib_complete;
+  wire mig_7series_0_mmcm_locked;
   wire mig_7series_0_ui_clk;
-  wire reset_rtl_0_1;
+  wire pci_reset_1;
   wire [0:0]util_ds_buf_IBUF_OUT;
   wire [63:0]xdma_0_M_AXI_ARADDR;
   wire [1:0]xdma_0_M_AXI_ARBURST;
@@ -150,10 +160,12 @@ module Top
   wire [7:0]xdma_0_M_AXI_WSTRB;
   wire xdma_0_M_AXI_WVALID;
   wire xdma_0_axi_aclk;
+  wire xdma_0_axi_aresetn;
   wire [3:0]xdma_0_pcie_mgt_rxn;
   wire [3:0]xdma_0_pcie_mgt_rxp;
   wire [3:0]xdma_0_pcie_mgt_txn;
   wire [3:0]xdma_0_pcie_mgt_txp;
+  wire xdma_0_user_lnk_up;
   wire [0:0]xlconstant_0_dout;
   wire [0:0]xlconstant_1_dout;
 
@@ -168,14 +180,18 @@ module Top
   assign DDR3_ras_n = mig_7series_0_DDR3_RAS_N;
   assign DDR3_reset_n = mig_7series_0_DDR3_RESET_N;
   assign DDR3_we_n = mig_7series_0_DDR3_WE_N;
+  assign LED_A1 = mig_7series_0_init_calib_complete;
+  assign LED_A2 = mig_7series_0_mmcm_locked;
+  assign LED_A3 = xdma_0_user_lnk_up;
+  assign LED_A4[0] = xlconstant_1_dout;
   assign diff_clock_rtl_0_1_CLK_N = pcie_clkin_clk_n[0];
   assign diff_clock_rtl_0_1_CLK_P = pcie_clkin_clk_p[0];
   assign diff_clock_rtl_1_1_CLK_N = sys_clk_clk_n;
   assign diff_clock_rtl_1_1_CLK_P = sys_clk_clk_p;
+  assign pci_reset_1 = pci_reset;
   assign pcie_clkreq_l[0] = xlconstant_1_dout;
   assign pcie_mgt_txn[3:0] = xdma_0_pcie_mgt_txn;
   assign pcie_mgt_txp[3:0] = xdma_0_pcie_mgt_txp;
-  assign reset_rtl_0_1 = pci_reset;
   assign xdma_0_pcie_mgt_rxn = pcie_mgt_rxn[3:0];
   assign xdma_0_pcie_mgt_rxp = pcie_mgt_rxp[3:0];
   Top_axi_smc_0 axi_smc
@@ -250,7 +266,8 @@ module Top
         .S00_AXI_wstrb(xdma_0_M_AXI_WSTRB),
         .S00_AXI_wvalid(xdma_0_M_AXI_WVALID),
         .aclk(xdma_0_axi_aclk),
-        .aclk1(mig_7series_0_ui_clk));
+        .aclk1(mig_7series_0_ui_clk),
+        .aresetn(xdma_0_axi_aresetn));
   Top_mig_7series_0_0 mig_7series_0
        (.aresetn(xlconstant_0_dout),
         .ddr3_addr(mig_7series_0_DDR3_ADDR),
@@ -267,6 +284,8 @@ module Top
         .ddr3_ras_n(mig_7series_0_DDR3_RAS_N),
         .ddr3_reset_n(mig_7series_0_DDR3_RESET_N),
         .ddr3_we_n(mig_7series_0_DDR3_WE_N),
+        .init_calib_complete(mig_7series_0_init_calib_complete),
+        .mmcm_locked(mig_7series_0_mmcm_locked),
         .s_axi_araddr(axi_smc_M00_AXI_ARADDR),
         .s_axi_arburst(axi_smc_M00_AXI_ARBURST),
         .s_axi_arcache(axi_smc_M00_AXI_ARCACHE),
@@ -304,7 +323,7 @@ module Top
         .s_axi_wvalid(axi_smc_M00_AXI_WVALID),
         .sys_clk_n(diff_clock_rtl_1_1_CLK_N),
         .sys_clk_p(diff_clock_rtl_1_1_CLK_P),
-        .sys_rst(reset_rtl_0_1),
+        .sys_rst(pci_reset_1),
         .ui_clk(mig_7series_0_ui_clk));
   Top_util_ds_buf_0 util_ds_buf
        (.IBUF_DS_N(diff_clock_rtl_0_1_CLK_N),
@@ -312,6 +331,7 @@ module Top
         .IBUF_OUT(util_ds_buf_IBUF_OUT));
   Top_xdma_0_0 xdma_0
        (.axi_aclk(xdma_0_axi_aclk),
+        .axi_aresetn(xdma_0_axi_aresetn),
         .m_axi_araddr(xdma_0_M_AXI_ARADDR),
         .m_axi_arburst(xdma_0_M_AXI_ARBURST),
         .m_axi_arcache(xdma_0_M_AXI_ARCACHE),
@@ -352,7 +372,8 @@ module Top
         .pci_exp_txn(xdma_0_pcie_mgt_txn),
         .pci_exp_txp(xdma_0_pcie_mgt_txp),
         .sys_clk(util_ds_buf_IBUF_OUT),
-        .sys_rst_n(reset_rtl_0_1),
+        .sys_rst_n(pci_reset_1),
+        .user_lnk_up(xdma_0_user_lnk_up),
         .usr_irq_req(1'b0));
   Top_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));

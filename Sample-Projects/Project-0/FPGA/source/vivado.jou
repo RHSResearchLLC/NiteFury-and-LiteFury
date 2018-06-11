@@ -2,75 +2,23 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sun Jun  3 22:01:19 2018
-# Process ID: 6960
+# Start of session at: Tue Jun  5 22:00:42 2018
+# Process ID: 2680
 # Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2116 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8368 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
 # Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.log
 # Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xpr
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
 update_compile_order -fileset sources_1
-open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_run impl_1
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit" } -file "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/R1.mcs"
 close_design
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd]
-synth_design -rtl -name rtl_1
-set_property package_pin "" [get_ports [list  {pcie_mgt_txp[3]}]]
-set_property package_pin "" [get_ports [list  {pcie_mgt_rxp[2]}]]
-close_design
-open_run synth_1 -name synth_1
-set_property target_constrs_file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xdc [current_fileset -constrset]
-set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[3]}]]
-set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[2]}]]
-set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[1]}]]
-set_property package_pin "" [get_ports [list  {pcie_mgt_rxn[0]}]]
-place_ports {pcie_mgt_rxn[0]} A10
-place_ports {pcie_mgt_rxn[1]} A8
-place_ports {pcie_mgt_rxn[2]} C11
-place_ports {pcie_mgt_rxn[3]} C9
-save_constraints
-place_ports {pcie_clkin_clk_p[0]} F6
-save_constraints
 open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd}
-create_bd_port -dir O pcie_clkreq_l
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1
-endgroup
-regenerate_bd_layout
-regenerate_bd_layout
-set_property location {2.5 664 43} [get_bd_cells xlconstant_1]
-startgroup
-connect_bd_net [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
-endgroup
-regenerate_bd_layout
-set_property name pci_reset [get_bd_ports sys_reset_n]
-save_bd_design
-validate_bd_design
-save_bd_design
-generate_target all [get_files C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd]
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd]
-launch_runs Top_mig_7series_0_0_synth_1
-wait_on_run Top_mig_7series_0_0_synth_1
-launch_runs Top_xlconstant_1_0_synth_1
-wait_on_run Top_xlconstant_1_0_synth_1
-synth_design -rtl -name rtl_1
-place_ports {pcie_clkreq_l[0]} G1
-set_property IOSTANDARD LVCMOS33 [get_ports [list {pcie_clkreq_l[0]}]]
-set_property IOSTANDARD LVDS_25 [get_ports [list sys_clk_clk_p]]
-set_property OFFCHIP_TERM NONE [get_ports [list sys_clk_clk_p]]
-set_property PULLTYPE NONE [get_ports [list sys_clk_clk_p]]
-place_ports pci_reset J1
-set_property IOSTANDARD LVCMOS33 [get_ports [list pci_reset]]
-save_constraints
-close_design
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-close_design
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1

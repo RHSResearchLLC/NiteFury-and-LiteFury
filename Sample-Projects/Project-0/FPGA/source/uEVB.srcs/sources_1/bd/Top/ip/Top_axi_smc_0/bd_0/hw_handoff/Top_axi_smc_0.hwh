@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun  3 22:22:57 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jun  9 22:06:01 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="bd_d445" PACKAGE="fbg484" SPEEDGRADE="-2"/>
 
@@ -15,6 +15,7 @@
         <CONNECTION INSTANCE="s00_nodes_s00_w_node" PORT="s_sc_aclk"/>
         <CONNECTION INSTANCE="s00_nodes_s00_r_node" PORT="m_sc_aclk"/>
         <CONNECTION INSTANCE="s00_nodes_s00_b_node" PORT="m_sc_aclk"/>
+        <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="slowest_sync_clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="External_Ports_aclk1">
@@ -26,6 +27,15 @@
         <CONNECTION INSTANCE="s00_nodes_s00_b_node" PORT="s_sc_aclk"/>
         <CONNECTION INSTANCE="m00_sc2axi" PORT="aclk"/>
         <CONNECTION INSTANCE="m00_exit_pipeline_m00_exit" PORT="aclk"/>
+        <CONNECTION INSTANCE="clk_map_psr0" PORT="slowest_sync_clk"/>
+        <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="slowest_sync_clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_map_psr0" PORT="aux_reset_in"/>
+        <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="aux_reset_in"/>
+        <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="aux_reset_in"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="3" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef"/>
@@ -244,6 +254,183 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE FULLNAME="/clk_map/one" HWVERSION="1.1" INSTANCE="clk_map_one" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bd_d445_one_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="clk_map_one_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr0" PORT="ext_reset_in"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/clk_map/psr0" HWVERSION="5.0" INSTANCE="clk_map_psr0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="artix7"/>
+        <PARAMETER NAME="C_EXT_RST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_AUX_RST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_EXT_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_AUX_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_NUM_BUS_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_INTERCONNECT_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bd_d445_psr0_0"/>
+        <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
+        <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="External_Ports_aclk1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ext_reset_in" SIGIS="rst" SIGNAME="clk_map_one_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_one" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aux_reset_in" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="mb_debug_sys_rst" SIGIS="rst"/>
+        <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
+        <PORT DIR="O" NAME="mb_reset" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="clk_map_psr0_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="ext_reset_in"/>
+            <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="ext_reset_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/clk_map/psr_aclk" HWVERSION="5.0" INSTANCE="clk_map_psr_aclk" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="artix7"/>
+        <PARAMETER NAME="C_EXT_RST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_AUX_RST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_EXT_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_AUX_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_NUM_BUS_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_INTERCONNECT_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bd_d445_psr_aclk_0"/>
+        <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
+        <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ext_reset_in" SIGIS="rst" SIGNAME="clk_map_psr0_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr0" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aux_reset_in" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="mb_debug_sys_rst" SIGIS="rst"/>
+        <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
+        <PORT DIR="O" NAME="mb_reset" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="s00_entry_pipeline_s00_mmu" PORT="aresetn"/>
+            <CONNECTION INSTANCE="s00_entry_pipeline_s00_si_converter" PORT="aresetn"/>
+            <CONNECTION INSTANCE="s00_entry_pipeline_s00_transaction_regulator" PORT="aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_ar_node" PORT="s_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_aw_node" PORT="s_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_w_node" PORT="s_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_r_node" PORT="m_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_b_node" PORT="m_sc_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/clk_map/psr_aclk1" HWVERSION="5.0" INSTANCE="clk_map_psr_aclk1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="artix7"/>
+        <PARAMETER NAME="C_EXT_RST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_AUX_RST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_EXT_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_AUX_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_NUM_BUS_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_INTERCONNECT_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bd_d445_psr_aclk1_0"/>
+        <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
+        <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="External_Ports_aclk1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ext_reset_in" SIGIS="rst" SIGNAME="clk_map_psr0_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr0" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aux_reset_in" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="mb_debug_sys_rst" SIGIS="rst"/>
+        <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
+        <PORT DIR="O" NAME="mb_reset" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="clk_map_psr_aclk1_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="s00_nodes_s00_ar_node" PORT="m_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_aw_node" PORT="m_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_w_node" PORT="m_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_r_node" PORT="s_sc_aresetn"/>
+            <CONNECTION INSTANCE="s00_nodes_s00_b_node" PORT="s_sc_aresetn"/>
+            <CONNECTION INSTANCE="m00_exit_pipeline_m00_exit" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE FULLNAME="/m00_exit_pipeline/m00_exit" HWVERSION="1.0" INSTANCE="m00_exit_pipeline_m00_exit" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="sc_exit" VLNV="xilinx.com:ip:sc_exit:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
@@ -570,7 +757,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk1_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_axi_awid" RIGHT="0" SIGIS="undef" SIGNAME="m00_exit_pipeline_m00_exit_s_axi_awid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="m_axi_awid"/>
@@ -3832,7 +4023,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="3" NAME="s_axi_awid" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="63" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="7" NAME="s_axi_awlen" RIGHT="0" SIGIS="undef"/>
@@ -5196,7 +5391,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_axi_awid" RIGHT="0" SIGIS="undef" SIGNAME="s00_entry_pipeline_s00_si_converter_s_axi_awid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_entry_pipeline_s00_transaction_regulator" PORT="m_axi_awid"/>
@@ -5777,7 +5976,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="3" NAME="s_axi_awid" RIGHT="0" SIGIS="undef" SIGNAME="s00_entry_pipeline_s00_mmu_m_axi_awid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_entry_pipeline_s00_mmu" PORT="m_axi_awid"/>
@@ -6436,7 +6639,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_ar_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_ar_req"/>
@@ -6467,7 +6674,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk1_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m00_sc2axi_s_sc_ar_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_ar_recv"/>
@@ -6612,7 +6823,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_aw_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_aw_req"/>
@@ -6643,7 +6858,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk1_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m00_sc2axi_s_sc_aw_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_aw_recv"/>
@@ -6788,7 +7007,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk1_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m00_sc2axi_m_sc_b_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="m_sc_b_req"/>
@@ -6819,7 +7042,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_s_sc_b_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="s_sc_b_recv"/>
@@ -6964,7 +7191,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk1_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m00_sc2axi_m_sc_r_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="m_sc_r_req"/>
@@ -6995,7 +7226,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_s_sc_r_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="s_sc_r_recv"/>
@@ -7140,7 +7375,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="s_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_w_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_w_req"/>
@@ -7171,7 +7410,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst"/>
+        <PORT DIR="I" NAME="m_sc_aresetn" SIGIS="rst" SIGNAME="clk_map_psr_aclk1_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_map_psr_aclk1" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m00_sc2axi_s_sc_w_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_w_recv"/>
