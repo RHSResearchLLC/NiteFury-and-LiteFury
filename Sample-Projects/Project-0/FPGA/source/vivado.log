@@ -2,10 +2,10 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Tue Jun  5 22:00:42 2018
-# Process ID: 2680
+# Start of session at: Sun Jun 10 22:09:55 2018
+# Process ID: 2280
 # Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8368 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8024 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
 # Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.log
 # Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source\vivado.jou
 #-----------------------------------------------------------
@@ -13,79 +13,169 @@ start_gui
 open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xpr
 Scanning sources...
 Finished scanning sources
-WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'Top_xdma_0_0_synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'Top_util_ds_buf_0_synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'Top_axi_smc_0_synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'Top_xlconstant_1_0_synth_1' not found
 WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
-WARNING: [IP_Flow 19-3664] IP 'Top_mig_7series_0_0' generated file not found 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-9340-DESKTOP-HN3HE5I/coregen/Top_mig_7series_0_0/Top_mig_7series_0_0.dcp'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'Top_mig_7series_0_0' generated file not found 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-9340-DESKTOP-HN3HE5I/coregen/Top_mig_7series_0_0/Top_mig_7series_0_0_stub.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'Top_mig_7series_0_0' generated file not found 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-9340-DESKTOP-HN3HE5I/coregen/Top_mig_7series_0_0/Top_mig_7series_0_0_stub.vhdl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'Top_mig_7series_0_0' generated file not found 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-9340-DESKTOP-HN3HE5I/coregen/Top_mig_7series_0_0/Top_mig_7series_0_0_sim_netlist.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'Top_mig_7series_0_0' generated file not found 'c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-9340-DESKTOP-HN3HE5I/coregen/Top_mig_7series_0_0/Top_mig_7series_0_0_sim_netlist.vhdl'. Please regenerate to continue.
-open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:18 . Memory (MB): peak = 795.246 ; gain = 127.973
-launch_runs synth_1 -jobs 2
-[Tue Jun  5 22:01:53 2018] Launched Top_xdma_0_0_synth_1, Top_util_ds_buf_0_synth_1, Top_axi_smc_0_synth_1, Top_xlconstant_1_0_synth_1, Top_mig_7series_0_0_synth_1...
-Run output will be captured here:
-Top_xdma_0_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_xdma_0_0_synth_1/runme.log
-Top_util_ds_buf_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_util_ds_buf_0_synth_1/runme.log
-Top_axi_smc_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_axi_smc_0_synth_1/runme.log
-Top_xlconstant_1_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_xlconstant_1_0_synth_1/runme.log
-Top_mig_7series_0_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_mig_7series_0_0_synth_1/runme.log
-[Tue Jun  5 22:01:55 2018] Launched synth_1...
-Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1/runme.log
-launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 832.805 ; gain = 6.957
+open_project: Time (s): cpu = 00:00:35 ; elapsed = 00:00:23 . Memory (MB): peak = 869.977 ; gain = 221.219
 update_compile_order -fileset sources_1
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-19:32:53
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249A0D865
+set_property PROGRAM.FILE {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit} [get_hw_devices xc7a200t_0]
+current_hw_device [get_hw_devices xc7a200t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl128sxxxxxx1-spi-x1_x2_x4}] 0]
+open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd}
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- xilinx.com:ip:xdma:4.1 - xdma_0
+Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf
+Adding cell -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Successfully read diagram <Top> from BD file <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd>
+open_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1590.105 ; gain = 58.977
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+connect_bd_net [get_bd_pins c_counter_binary_0/Q] [get_bd_pins xlslice_0/Din]
+regenerate_bd_layout
+regenerate_bd_layout
+group_bd_cells LED_BLINKER [get_bd_cells c_counter_binary_0] [get_bd_cells xlslice_0]
+create_bd_pin -dir I LED_BLINKER/CLK
+create_bd_pin -dir I LED_BLINKER/RESET_L
+create_bd_pin -dir I LED_BLINKER/OK
+set_property location {-9 43} [get_bd_pins LED_BLINKER/CLK]
+startgroup
+connect_bd_net [get_bd_pins LED_BLINKER/CLK] [get_bd_pins LED_BLINKER/c_counter_binary_0/CLK]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Output_Width {26}] [get_bd_cells LED_BLINKER/c_counter_binary_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.DIN_TO {25} CONFIG.DIN_FROM {25} CONFIG.DIN_WIDTH {26} CONFIG.DIN_FROM {25} CONFIG.DOUT_WIDTH {1}] [get_bd_cells LED_BLINKER/xlslice_0]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 LED_BLINKER/util_vector_logic_0
+endgroup
+set_property location {1 244 194} [get_bd_cells LED_BLINKER/util_vector_logic_0]
+set_property -dict [list CONFIG.C_SIZE {1} CONFIG.C_OPERATION {not} CONFIG.LOGO_FILE {data/sym_notgate.png}] [get_bd_cells LED_BLINKER/util_vector_logic_0]
+connect_bd_net [get_bd_pins LED_BLINKER/OK] [get_bd_pins LED_BLINKER/util_vector_logic_0/Op1]
+copy_bd_objs LED_BLINKER  [get_bd_cells {LED_BLINKER/util_vector_logic_0}]
+set_property -dict [list CONFIG.C_OPERATION {or} CONFIG.LOGO_FILE {data/sym_orgate.png}] [get_bd_cells LED_BLINKER/util_vector_logic_1]
+connect_bd_net [get_bd_pins LED_BLINKER/xlslice_0/Dout] [get_bd_pins LED_BLINKER/util_vector_logic_1/Op1]
+connect_bd_net [get_bd_pins LED_BLINKER/util_vector_logic_1/Op2] [get_bd_pins LED_BLINKER/util_vector_logic_0/Res]
+regenerate_bd_layout -hierarchy [get_bd_cell LED_BLINKER]
+copy_bd_objs LED_BLINKER  [get_bd_cells {LED_BLINKER/util_vector_logic_1}]
+connect_bd_net [get_bd_pins LED_BLINKER/RESET_L] [get_bd_pins LED_BLINKER/util_vector_logic_2/Op1]
+connect_bd_net [get_bd_pins LED_BLINKER/util_vector_logic_1/Res] [get_bd_pins LED_BLINKER/util_vector_logic_2/Op2]
+regenerate_bd_layout -hierarchy [get_bd_cell LED_BLINKER]
+create_bd_pin -dir O LED_BLINKER/LED_ON_L
+connect_bd_net [get_bd_pins LED_BLINKER/LED_ON_L] [get_bd_pins LED_BLINKER/util_vector_logic_2/Res]
+regenerate_bd_layout -hierarchy [get_bd_cell LED_BLINKER]
+save_bd_design
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_ad598355.ui> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_e2b9eb60.ui> 
+startgroup
+set_property -dict [list CONFIG.C_OPERATION {and} CONFIG.LOGO_FILE {data/sym_andgate.png}] [get_bd_cells LED_BLINKER/util_vector_logic_2]
+endgroup
+set_property location {3 819 448} [get_bd_cells LED_BLINKER]
+connect_bd_net [get_bd_pins LED_BLINKER/CLK] [get_bd_pins util_ds_buf/IBUF_OUT]
+connect_bd_net [get_bd_ports pci_reset] [get_bd_pins LED_BLINKER/RESET_L]
+connect_bd_net [get_bd_pins LED_BLINKER/OK] [get_bd_pins xdma_0/user_lnk_up]
+delete_bd_objs [get_bd_nets xdma_0_user_lnk_up]
+connect_bd_net [get_bd_pins LED_BLINKER/OK] [get_bd_pins xdma_0/user_lnk_up]
+connect_bd_net [get_bd_ports LED_A3] [get_bd_pins LED_BLINKER/LED_ON_L]
+set_property location {1261 439} [get_bd_ports LED_A3]
+regenerate_bd_layout
+save_bd_design
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_ad598355.ui> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_e2b9eb60.ui> 
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_ad598355.ui> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_e2b9eb60.ui> 
+VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v
+VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/sim/Top.v
+VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hdl/Top_wrapper.v
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_ad598355.ui> 
+Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_e2b9eb60.ui> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf .
+Exporting to file c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/bd_0/hw_handoff/Top_axi_smc_0.hwh
+Generated Block Design Tcl file c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/bd_0/hw_handoff/Top_axi_smc_0_bd.tcl
+Generated Hardware Definition File c:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/ip/Top_axi_smc_0/bd_0/synth/Top_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block LED_BLINKER/c_counter_binary_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block LED_BLINKER/xlslice_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block LED_BLINKER/util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block LED_BLINKER/util_vector_logic_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block LED_BLINKER/util_vector_logic_2 .
+Exporting to file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hw_handoff/Top.hwh
+Generated Block Design Tcl file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/hw_handoff/Top_bd.tcl
+Generated Hardware Definition File C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Top_mig_7series_0_0, cache-ID = 2c79e4653b045413; cache size = 65.526 MB.
+config_ip_cache: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1896.254 ; gain = 22.652
+[Sun Jun 10 22:29:35 2018] Launched Top_c_counter_binary_0_0_synth_1, Top_util_vector_logic_1_0_synth_1, Top_xlslice_0_0_synth_1, Top_util_vector_logic_0_1_synth_1, Top_util_vector_logic_0_0_synth_1...
+Run output will be captured here:
+Top_c_counter_binary_0_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_c_counter_binary_0_0_synth_1/runme.log
+Top_util_vector_logic_1_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_util_vector_logic_1_0_synth_1/runme.log
+Top_xlslice_0_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_xlslice_0_0_synth_1/runme.log
+Top_util_vector_logic_0_1_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_util_vector_logic_0_1_synth_1/runme.log
+Top_util_vector_logic_0_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/Top_util_vector_logic_0_0_synth_1/runme.log
+[Sun Jun 10 22:29:36 2018] Launched synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1896.254 ; gain = 246.316
 launch_runs impl_1 -jobs 2
-[Tue Jun  5 22:23:45 2018] Launched impl_1...
+[Sun Jun 10 22:34:38 2018] Launched impl_1...
 Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream -jobs 2
-[Tue Jun  5 22:40:58 2018] Launched impl_1...
+[Sun Jun 10 22:50:51 2018] Launched impl_1...
 Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/runme.log
-open_run impl_1
-INFO: [Netlist 29-17] Analyzing 2236 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2018.1
-INFO: [Device 21-403] Loading part xc7a200tfbg484-2
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Timing 38-478] Restoring timing data from binary archive.
-INFO: [Timing 38-479] Binary timing data restore complete.
-INFO: [Project 1-856] Restoring constraints from binary archive.
-INFO: [Project 1-853] Binary constraint restore complete.
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2249.855 ; gain = 21.684
-Restored from archive | CPU: 9.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2249.855 ; gain = 21.684
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 825 instances were transformed.
-  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
-  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
-  LUT6_2 => LUT6_2 (LUT5, LUT6): 15 instances
-  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
-  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 48 instances
-  RAM16X1S => RAM32X1S (RAMS32): 13 instances
-  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 700 instances
-  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 20 instances
-  RAM64X1S => RAM64X1S (RAMS64E): 9 instances
-  SRLC32E => SRL16E: 1 instances
-
-open_run: Time (s): cpu = 00:01:24 ; elapsed = 00:01:14 . Memory (MB): peak = 2305.668 ; gain = 1329.887
-open_report: Time (s): cpu = 00:00:49 ; elapsed = 00:00:27 . Memory (MB): peak = 2460.480 ; gain = 146.051
-CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
-WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
-write_cfgmem  -format mcs -size 16 -interface SPIx4 -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit" } -file "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/R1.mcs"
-Command: write_cfgmem -format mcs -size 16 -interface SPIx4 -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit" } -file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/R1.mcs
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jun 10 22:55:48 2018] Launched synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Sun Jun 10 22:56:16 2018] Launched synth_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/synth_1/runme.log
+[Sun Jun 10 22:56:16 2018] Launched impl_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jun 10 23:12:53 2018] Launched impl_1...
+Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/runme.log
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit" } -file "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs"
+Command: write_cfgmem -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit" } -file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs
 Creating config memory files...
 Creating bitstream load up from address 0x00000000
 Loading bitfile C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit
-Writing file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/R1.mcs
-Writing log file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/R1.prm
+Writing file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs
+Writing log file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.prm
 ===================================
 Configuration Memory information
 ===================================
@@ -96,72 +186,30 @@ Start Address      0x00000000
 End Address        0x00FFFFFF
 
 Addr1         Addr2         Date                    File(s)
-0x00000000    0x002E6303    Jun  5 22:44:07 2018    C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit
+0x00000000    0x00304403    Jun 10 23:15:33 2018    C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit
 0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_cfgmem completed successfully
-close_design
-open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd}
-Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
-Adding cell -- xilinx.com:ip:xdma:4.1 - xdma_0
-Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf
-Adding cell -- xilinx.com:ip:smartconnect:1.0 - axi_smc
-Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
-Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
-Successfully read diagram <Top> from BD file <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd>
-open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 3420.969 ; gain = 0.000
-not writing pins
-WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting value property on PARAM_VALUE.ECC_EN is not allowed in procedure update_gui_for_PARAM_VALUE.parity_settings
-WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting enabled property on PARAM_VALUE.ECC_EN is not allowed in procedure update_gui_for_PARAM_VALUE.parity_settings
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-not writing pins
-WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting value property on PARAM_VALUE.ECC_EN is not allowed in procedure update_gui_for_PARAM_VALUE.parity_settings
-WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting enabled property on PARAM_VALUE.ECC_EN is not allowed in procedure update_gui_for_PARAM_VALUE.parity_settings
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFE0000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
-INFO: [xilinx.com:ip:xdma:4.1-1] Top_xdma_0_0:  Val_hex_64:FFFFF000
+set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.FILES [list "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+startgroup 
+if {![string equal [get_property PROGRAM.HW_CFGMEM_TYPE  [lindex [get_hw_devices xc7a200t_0] 0]] [get_property MEM_TYPE [get_property CFGMEM_PART [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]]]] }  { create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a200t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a200t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a200t_0] 0]; }; 
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+Mfg ID : 1   Memory Type : 20   Memory Capacity : 18   Device ID 1 : 0   Device ID 2 : 0
+Performing Erase Operation...
+Erase Operation successful.
+Performing Program and Verify Operations...
+Program/Verify Operation successful.
+INFO: [Labtoolstcl 44-377] Flash programming completed successfully
+program_hw_cfgmem: Time (s): cpu = 00:00:02 ; elapsed = 00:00:54 . Memory (MB): peak = 2168.816 ; gain = 0.000
+endgroup
+close_hw
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Jun  5 22:56:07 2018...
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 10 23:38:51 2018...

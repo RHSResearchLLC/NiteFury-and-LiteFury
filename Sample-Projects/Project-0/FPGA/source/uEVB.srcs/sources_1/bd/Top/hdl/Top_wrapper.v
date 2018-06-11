@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Sat Jun  9 22:05:48 2018
+//Date        : Sun Jun 10 22:29:15 2018
 //Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
 //Command     : generate_target Top_wrapper.bd
 //Design      : Top_wrapper
@@ -54,7 +54,7 @@ module Top_wrapper
   output DDR3_we_n;
   output LED_A1;
   output LED_A2;
-  output LED_A3;
+  output [0:0]LED_A3;
   output [0:0]LED_A4;
   input pci_reset;
   input [0:0]pcie_clkin_clk_n;
@@ -83,7 +83,7 @@ module Top_wrapper
   wire DDR3_we_n;
   wire LED_A1;
   wire LED_A2;
-  wire LED_A3;
+  wire [0:0]LED_A3;
   wire [0:0]LED_A4;
   wire pci_reset;
   wire [0:0]pcie_clkin_clk_n;

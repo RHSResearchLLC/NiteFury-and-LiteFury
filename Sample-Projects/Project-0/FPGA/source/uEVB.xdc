@@ -49,6 +49,31 @@ set_property IOSTANDARD LVDS_25 [get_ports sys_clk_clk_p]
 set_property IOSTANDARD LVDS_25 [get_ports sys_clk_clk_n]
 
 ###############################################################################
+# LEDs (4)
+###############################################################################
+
+set_property PACKAGE_PIN G3 [get_ports LED_A1]
+set_property IOSTANDARD LVCMOS33 [get_ports LED_A1]
+set_property PULLUP true [get_ports LED_A1]
+set_property DRIVE 8 [get_ports LED_A1]
+
+set_property PACKAGE_PIN H3 [get_ports LED_A2]
+set_property IOSTANDARD LVCMOS33 [get_ports LED_A2]
+set_property PULLUP true [get_ports LED_A2]
+set_property DRIVE 8 [get_ports LED_A2]
+
+set_property PACKAGE_PIN G4 [get_ports LED_A3]
+set_property IOSTANDARD LVCMOS33 [get_ports LED_A3]
+set_property PULLUP true [get_ports LED_A3]
+set_property DRIVE 8 [get_ports LED_A3]
+
+set_property PACKAGE_PIN H4 [get_ports LED_A4]
+set_property IOSTANDARD LVCMOS33 [get_ports LED_A4]
+set_property PULLUP true [get_ports LED_A4]
+set_property DRIVE 8 [get_ports LED_A4]
+
+
+###############################################################################
 # Timing Constraints
 ###############################################################################
 

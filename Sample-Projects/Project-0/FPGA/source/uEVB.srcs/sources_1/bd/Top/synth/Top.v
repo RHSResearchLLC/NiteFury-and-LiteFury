@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Sat Jun  9 22:05:48 2018
+//Date        : Sun Jun 10 22:29:15 2018
 //Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
 //Command     : generate_target Top.bd
 //Design      : Top
@@ -9,7 +9,49 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=3,da_xdma_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Top.hwdef" *) 
+module LED_BLINKER_imp_1N3NND2
+   (CLK,
+    LED_ON_L,
+    OK,
+    RESET_L);
+  input CLK;
+  output [0:0]LED_ON_L;
+  input OK;
+  input RESET_L;
+
+  wire CLK_1;
+  wire OK_1;
+  wire RESET_L_1;
+  wire [25:0]c_counter_binary_0_Q;
+  wire [0:0]util_vector_logic_0_Res;
+  wire [0:0]util_vector_logic_1_Res;
+  wire [0:0]util_vector_logic_2_Res;
+  wire [0:0]xlslice_0_Dout;
+
+  assign CLK_1 = CLK;
+  assign LED_ON_L[0] = util_vector_logic_2_Res;
+  assign OK_1 = OK;
+  assign RESET_L_1 = RESET_L;
+  Top_c_counter_binary_0_0 c_counter_binary_0
+       (.CLK(CLK_1),
+        .Q(c_counter_binary_0_Q));
+  Top_util_vector_logic_0_0 util_vector_logic_0
+       (.Op1(OK_1),
+        .Res(util_vector_logic_0_Res));
+  Top_util_vector_logic_0_1 util_vector_logic_1
+       (.Op1(xlslice_0_Dout),
+        .Op2(util_vector_logic_0_Res),
+        .Res(util_vector_logic_1_Res));
+  Top_util_vector_logic_1_0 util_vector_logic_2
+       (.Op1(RESET_L_1),
+        .Op2(util_vector_logic_1_Res),
+        .Res(util_vector_logic_2_Res));
+  Top_xlslice_0_0 xlslice_0
+       (.Din(c_counter_binary_0_Q),
+        .Dout(xlslice_0_Dout));
+endmodule
+
+(* CORE_GENERATION_INFO = "Top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=3,da_xdma_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Top.hwdef" *) 
 module Top
    (DDR3_addr,
     DDR3_ba,
@@ -55,7 +97,7 @@ module Top
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 WE_N" *) output DDR3_we_n;
   output LED_A1;
   output LED_A2;
-  output LED_A3;
+  output [0:0]LED_A3;
   output [0:0]LED_A4;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.PCI_RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.PCI_RESET, POLARITY ACTIVE_LOW" *) input pci_reset;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 pcie_clkin CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME pcie_clkin, CAN_DEBUG false, FREQ_HZ 100000000" *) input [0:0]pcie_clkin_clk_n;
@@ -68,6 +110,8 @@ module Top
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 sys_clk CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, CAN_DEBUG false, FREQ_HZ 100000000" *) input sys_clk_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 sys_clk CLK_P" *) input sys_clk_clk_p;
 
+  wire [0:0]LED_BLINKER_LED_ON_L;
+  wire OK_1;
   wire [28:0]axi_smc_M00_AXI_ARADDR;
   wire [1:0]axi_smc_M00_AXI_ARBURST;
   wire [3:0]axi_smc_M00_AXI_ARCACHE;
@@ -165,7 +209,6 @@ module Top
   wire [3:0]xdma_0_pcie_mgt_rxp;
   wire [3:0]xdma_0_pcie_mgt_txn;
   wire [3:0]xdma_0_pcie_mgt_txp;
-  wire xdma_0_user_lnk_up;
   wire [0:0]xlconstant_0_dout;
   wire [0:0]xlconstant_1_dout;
 
@@ -182,7 +225,7 @@ module Top
   assign DDR3_we_n = mig_7series_0_DDR3_WE_N;
   assign LED_A1 = mig_7series_0_init_calib_complete;
   assign LED_A2 = mig_7series_0_mmcm_locked;
-  assign LED_A3 = xdma_0_user_lnk_up;
+  assign LED_A3[0] = LED_BLINKER_LED_ON_L;
   assign LED_A4[0] = xlconstant_1_dout;
   assign diff_clock_rtl_0_1_CLK_N = pcie_clkin_clk_n[0];
   assign diff_clock_rtl_0_1_CLK_P = pcie_clkin_clk_p[0];
@@ -194,6 +237,11 @@ module Top
   assign pcie_mgt_txp[3:0] = xdma_0_pcie_mgt_txp;
   assign xdma_0_pcie_mgt_rxn = pcie_mgt_rxn[3:0];
   assign xdma_0_pcie_mgt_rxp = pcie_mgt_rxp[3:0];
+  LED_BLINKER_imp_1N3NND2 LED_BLINKER
+       (.CLK(util_ds_buf_IBUF_OUT),
+        .LED_ON_L(LED_BLINKER_LED_ON_L),
+        .OK(OK_1),
+        .RESET_L(pci_reset_1));
   Top_axi_smc_0 axi_smc
        (.M00_AXI_araddr(axi_smc_M00_AXI_ARADDR),
         .M00_AXI_arburst(axi_smc_M00_AXI_ARBURST),
@@ -373,7 +421,7 @@ module Top
         .pci_exp_txp(xdma_0_pcie_mgt_txp),
         .sys_clk(util_ds_buf_IBUF_OUT),
         .sys_rst_n(pci_reset_1),
-        .user_lnk_up(xdma_0_user_lnk_up),
+        .user_lnk_up(OK_1),
         .usr_irq_req(1'b0));
   Top_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));

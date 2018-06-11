@@ -2,39 +2,41 @@
    ExpandedHierarchyInLayout: "",
    guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
 #  -string -flagsOSRD
-preplace port LED_A2 -pg 1 -y 200 -defaultsOSRD
-preplace port LED_A3 -pg 1 -y 310 -defaultsOSRD
-preplace port pcie_clkin -pg 1 -y 330 -defaultsOSRD
-preplace port sys_clk -pg 1 -y 470 -defaultsOSRD
-preplace port pcie_mgt -pg 1 -y 290 -defaultsOSRD
-preplace port DDR3 -pg 1 -y 140 -defaultsOSRD
-preplace port LED_A1 -pg 1 -y 220 -defaultsOSRD
-preplace port pci_reset -pg 1 -y 400 -defaultsOSRD
-preplace portBus LED_A4 -pg 1 -y 470 -defaultsOSRD
-preplace portBus pcie_clkreq_l -pg 1 -y 370 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 3 -y 220 -defaultsOSRD
-preplace inst mig_7series_0 -pg 1 -lvl 4 -y 180 -defaultsOSRD
-preplace inst xlconstant_1 -pg 1 -lvl 4 -y 370 -defaultsOSRD
-preplace inst axi_smc -pg 1 -lvl 3 -y 90 -defaultsOSRD
-preplace inst util_ds_buf -pg 1 -lvl 1 -y 330 -defaultsOSRD
-preplace inst xdma_0 -pg 1 -lvl 2 -y 340 -defaultsOSRD
+preplace port LED_A2 -pg 1 -y 120 -defaultsOSRD
+preplace port LED_A3 -pg 1 -y 320 -defaultsOSRD
+preplace port pcie_clkin -pg 1 -y 430 -defaultsOSRD
+preplace port sys_clk -pg 1 -y 90 -defaultsOSRD
+preplace port pcie_mgt -pg 1 -y 390 -defaultsOSRD
+preplace port DDR3 -pg 1 -y 60 -defaultsOSRD
+preplace port LED_A1 -pg 1 -y 140 -defaultsOSRD
+preplace port pci_reset -pg 1 -y 500 -defaultsOSRD
+preplace portBus LED_A4 -pg 1 -y 430 -defaultsOSRD
+preplace portBus pcie_clkreq_l -pg 1 -y 450 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 150 -defaultsOSRD
+preplace inst mig_7series_0 -pg 1 -lvl 4 -y 100 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 4 -y 450 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 3 -y 300 -defaultsOSRD
+preplace inst util_ds_buf -pg 1 -lvl 1 -y 430 -defaultsOSRD
+preplace inst LED_BLINKER -pg 1 -lvl 4 -y 320 -defaultsOSRD
+preplace inst xdma_0 -pg 1 -lvl 2 -y 440 -defaultsOSRD
 preplace netloc mig_7series_0_mmcm_locked 1 4 1 NJ
-preplace netloc xlconstant_1_dout 1 4 1 1230J
+preplace netloc xlconstant_1_dout 1 4 1 1250J
+preplace netloc OK_1 1 2 2 NJ 410 970
 preplace netloc mig_7series_0_DDR3 1 4 1 NJ
 preplace netloc mig_7series_0_init_calib_complete 1 4 1 NJ
-preplace netloc util_ds_buf_IBUF_OUT 1 1 1 NJ
+preplace netloc util_ds_buf_IBUF_OUT 1 1 3 320 570 NJ 570 960
 preplace netloc axi_smc_M00_AXI 1 3 1 930
-preplace netloc xdma_0_user_lnk_up 1 2 3 NJ 310 NJ 310 NJ
-preplace netloc xdma_0_axi_aclk 1 2 1 630
+preplace netloc xdma_0_axi_aclk 1 2 1 640
 preplace netloc diff_clock_rtl_0_1 1 0 1 NJ
-preplace netloc xdma_0_axi_aresetn 1 2 1 640
-preplace netloc mig_7series_0_ui_clk 1 2 3 650 280 NJ 280 1230
+preplace netloc xdma_0_axi_aresetn 1 2 1 650
+preplace netloc mig_7series_0_ui_clk 1 2 3 650 210 NJ 210 1250
 preplace netloc xlconstant_0_dout 1 3 1 940J
-preplace netloc diff_clock_rtl_1_1 1 0 4 NJ 470 NJ 470 NJ 470 930J
-preplace netloc xdma_0_M_AXI 1 2 1 620
-preplace netloc xdma_0_pcie_mgt 1 2 3 NJ 290 NJ 290 NJ
-preplace netloc pci_reset_1 1 0 4 NJ 400 320 480 NJ 480 950
-levelinfo -pg 1 0 170 470 790 1090 1250 -top 0 -bot 530
+preplace netloc diff_clock_rtl_1_1 1 0 4 NJ 90 NJ 90 NJ 90 NJ
+preplace netloc xdma_0_M_AXI 1 2 1 630
+preplace netloc xdma_0_pcie_mgt 1 2 3 NJ 390 NJ 390 NJ
+preplace netloc LED_BLINKER_LED_ON_L 1 4 1 NJ
+preplace netloc pci_reset_1 1 0 4 NJ 500 330 580 NJ 580 950
+levelinfo -pg 1 0 170 480 790 1110 1270 -top 0 -bot 590
 ",
 }
 {
