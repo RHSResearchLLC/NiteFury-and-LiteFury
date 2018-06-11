@@ -47,8 +47,8 @@ create_clock -period 10.000 -name emc_clk [get_ports emc_clk]
 ###############################################################################
 
 # High-speed configuration so FPGA is up in time to negotiate with PCIe root complex
-#set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN Div-1 [current_design]
-set_property BITSTREAM.CONFIG.CONFIGRATE 33 [current_design]
+set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN Div-1 [current_design]
+#set_property BITSTREAM.CONFIG.CONFIGRATE 33 [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 set_property CONFIG_MODE SPIx4 [current_design]
 set_property BITSTREAM.CONFIG.SPI_FALL_EDGE YES [current_design]
