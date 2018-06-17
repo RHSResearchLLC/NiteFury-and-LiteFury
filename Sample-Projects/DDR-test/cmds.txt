@@ -1,0 +1,6 @@
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/design_1_wrapper.bit" } -file "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/mcs/out.mcs"

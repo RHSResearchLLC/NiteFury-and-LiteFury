@@ -2,105 +2,90 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sun Jun 10 22:09:55 2018
-# Process ID: 2280
+# Start of session at: Sat Jun 16 14:10:15 2018
+# Process ID: 4380
 # Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8024 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8140 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
 # Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.log
 # Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xpr
 update_compile_order -fileset sources_1
-open_hw
-connect_hw_server
-open_hw_target
-set_property PROGRAM.FILE {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit} [get_hw_devices xc7a200t_0]
-current_hw_device [get_hw_devices xc7a200t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
-create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl128sxxxxxx1-spi-x1_x2_x4}] 0]
 open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd}
 startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
 endgroup
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
-endgroup
-connect_bd_net [get_bd_pins c_counter_binary_0/Q] [get_bd_pins xlslice_0/Din]
+delete_bd_objs [get_bd_nets xdma_0_axi_aclk] [get_bd_nets mig_7series_0_ui_clk] [get_bd_nets xdma_0_axi_aresetn] [get_bd_intf_nets xdma_0_M_AXI] [get_bd_intf_nets axi_smc_M00_AXI] [get_bd_cells axi_smc]
+connect_bd_intf_net [get_bd_intf_pins xdma_0/M_AXI] -boundary_type upper [get_bd_intf_pins axi_interconnect_0/S00_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
 regenerate_bd_layout
+connect_bd_net [get_bd_pins xdma_0/axi_aclk] [get_bd_pins axi_interconnect_0/S00_ACLK]
+connect_bd_net [get_bd_pins xdma_0/axi_aresetn] [get_bd_pins axi_interconnect_0/S00_ARESETN]
+connect_bd_net [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins axi_interconnect_0/M00_ARESETN]
+connect_bd_net [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins axi_interconnect_0/M00_ACLK]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells axi_interconnect_0]
+endgroup
 regenerate_bd_layout
-group_bd_cells LED_BLINKER [get_bd_cells c_counter_binary_0] [get_bd_cells xlslice_0]
-create_bd_pin -dir I LED_BLINKER/CLK
-create_bd_pin -dir I LED_BLINKER/RESET_L
-create_bd_pin -dir I LED_BLINKER/OK
-set_property location {-9 43} [get_bd_pins LED_BLINKER/CLK]
+validate_bd_design
 startgroup
-connect_bd_net [get_bd_pins LED_BLINKER/CLK] [get_bd_pins LED_BLINKER/c_counter_binary_0/CLK]
+set_property -dict [list CONFIG.ENABLE_ADVANCED_OPTIONS {0}] [get_bd_cells axi_interconnect_0]
 endgroup
+connect_bd_net [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins util_ds_buf/IBUF_OUT]
+connect_bd_net [get_bd_ports pci_reset] [get_bd_pins axi_interconnect_0/ARESETN]
+regenerate_bd_layout
+validate_bd_design
+delete_bd_objs [get_bd_nets pci_reset_1]
+validate_bd_design
+validate_bd_design
 startgroup
-set_property -dict [list CONFIG.Output_Width {26}] [get_bd_cells LED_BLINKER/c_counter_binary_0]
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0
 endgroup
-startgroup
-set_property -dict [list CONFIG.DIN_TO {25} CONFIG.DIN_FROM {25} CONFIG.DIN_WIDTH {26} CONFIG.DIN_FROM {25} CONFIG.DOUT_WIDTH {1}] [get_bd_cells LED_BLINKER/xlslice_0]
-endgroup
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 LED_BLINKER/util_vector_logic_0
-endgroup
-set_property location {1 244 194} [get_bd_cells LED_BLINKER/util_vector_logic_0]
-set_property -dict [list CONFIG.C_SIZE {1} CONFIG.C_OPERATION {not} CONFIG.LOGO_FILE {data/sym_notgate.png}] [get_bd_cells LED_BLINKER/util_vector_logic_0]
-connect_bd_net [get_bd_pins LED_BLINKER/OK] [get_bd_pins LED_BLINKER/util_vector_logic_0/Op1]
-copy_bd_objs LED_BLINKER  [get_bd_cells {LED_BLINKER/util_vector_logic_0}]
-set_property -dict [list CONFIG.C_OPERATION {or} CONFIG.LOGO_FILE {data/sym_orgate.png}] [get_bd_cells LED_BLINKER/util_vector_logic_1]
-connect_bd_net [get_bd_pins LED_BLINKER/xlslice_0/Dout] [get_bd_pins LED_BLINKER/util_vector_logic_1/Op1]
-connect_bd_net [get_bd_pins LED_BLINKER/util_vector_logic_1/Op2] [get_bd_pins LED_BLINKER/util_vector_logic_0/Res]
-regenerate_bd_layout -hierarchy [get_bd_cell LED_BLINKER]
-copy_bd_objs LED_BLINKER  [get_bd_cells {LED_BLINKER/util_vector_logic_1}]
-connect_bd_net [get_bd_pins LED_BLINKER/RESET_L] [get_bd_pins LED_BLINKER/util_vector_logic_2/Op1]
-connect_bd_net [get_bd_pins LED_BLINKER/util_vector_logic_1/Res] [get_bd_pins LED_BLINKER/util_vector_logic_2/Op2]
-regenerate_bd_layout -hierarchy [get_bd_cell LED_BLINKER]
-create_bd_pin -dir O LED_BLINKER/LED_ON_L
-connect_bd_net [get_bd_pins LED_BLINKER/LED_ON_L] [get_bd_pins LED_BLINKER/util_vector_logic_2/Res]
-regenerate_bd_layout -hierarchy [get_bd_cell LED_BLINKER]
+set_property -dict [list CONFIG.C_SIZE {1} CONFIG.C_OPERATION {not} CONFIG.LOGO_FILE {data/sym_notgate.png}] [get_bd_cells util_vector_logic_0]
+delete_bd_objs [get_bd_nets mig_7series_0_ui_clk_sync_rst]
+set_property location {3.5 970 483} [get_bd_cells util_vector_logic_0]
+connect_bd_net [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins util_vector_logic_0/Op1]
+connect_bd_net [get_bd_pins util_vector_logic_0/Res] [get_bd_pins axi_interconnect_0/M00_ARESETN]
+regenerate_bd_layout
+validate_bd_design
+connect_bd_net [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/axi_aresetn]
+validate_bd_design
+connect_bd_net [get_bd_ports pci_reset] [get_bd_pins xdma_0/sys_rst_n]
+validate_bd_design
+regenerate_bd_layout
 save_bd_design
-startgroup
-set_property -dict [list CONFIG.C_OPERATION {and} CONFIG.LOGO_FILE {data/sym_andgate.png}] [get_bd_cells LED_BLINKER/util_vector_logic_2]
-endgroup
-set_property location {3 819 448} [get_bd_cells LED_BLINKER]
-connect_bd_net [get_bd_pins LED_BLINKER/CLK] [get_bd_pins util_ds_buf/IBUF_OUT]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+reset_run synth_1
+reset_run Top_auto_cc_0_synth_1
 connect_bd_net [get_bd_ports pci_reset] [get_bd_pins LED_BLINKER/RESET_L]
-connect_bd_net [get_bd_pins LED_BLINKER/OK] [get_bd_pins xdma_0/user_lnk_up]
-delete_bd_objs [get_bd_nets xdma_0_user_lnk_up]
-connect_bd_net [get_bd_pins LED_BLINKER/OK] [get_bd_pins xdma_0/user_lnk_up]
-connect_bd_net [get_bd_ports LED_A3] [get_bd_pins LED_BLINKER/LED_ON_L]
-set_property location {1261 439} [get_bd_ports LED_A3]
 regenerate_bd_layout
-save_bd_design
+copy_bd_objs /  [get_bd_cells {LED_BLINKER}]
+delete_bd_objs [get_bd_nets xlconstant_1_dout]
+connect_bd_net [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
+connect_bd_net [get_bd_ports LED_A4] [get_bd_pins LED_BLINKER1/LED_ON_L]
+connect_bd_net [get_bd_pins LED_BLINKER1/CLK] [get_bd_pins util_vector_logic_0/Res]
+undo
+copy_bd_objs /  [get_bd_cells {util_ds_buf}]
+undo
+copy_bd_objs /  [get_bd_cells {util_ds_buf}]
+set_property -dict [list CONFIG.C_BUF_TYPE {IBUFDS}] [get_bd_cells util_ds_buf1]
+delete_bd_objs [get_bd_cells util_ds_buf1]
+regenerate_bd_layout
+connect_bd_net [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins LED_BLINKER1/CLK]
+connect_bd_net [get_bd_pins LED_BLINKER1/RESET_L] [get_bd_pins xdma_0/axi_aresetn]
+connect_bd_net [get_bd_pins mig_7series_0/init_calib_complete] [get_bd_pins LED_BLINKER1/OK]
+regenerate_bd_layout
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design
+update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit" } -file "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs"
-set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.FILES [list "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-startgroup 
-if {![string equal [get_property PROGRAM.HW_CFGMEM_TYPE  [lindex [get_hw_devices xc7a200t_0] 0]] [get_property MEM_TYPE [get_property CFGMEM_PART [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]]]] }  { create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a200t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a200t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a200t_0] 0]; }; 
-program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-endgroup
-close_hw
+close_bd_design [get_bd_designs Top]
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/design_1_wrapper.bit" } -file "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/mcs/out.mcs"

@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sun Jun 10 21:58:41 2018
+# Process ID: 10052
+# Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7444 C:\Users\dr\GitHub\uEVB\Sample-Projects\TnD\uEVB-TnD.xpr
+# Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/vivado.log
+# Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/uEVB-TnD.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "C:/Users/dr/Xilinx_proj/uEVB-TnD/uEVB-TnD.runs/impl_1/design_1_wrapper.bit" } -file "C:/Users/dr/Xilinx_proj/uEVB-TnD/mcs/out.mcs"
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/design_1_wrapper.bit" } -file "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/mcs/out.mcs"
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a200t_0]
+current_hw_device [get_hw_devices xc7a200t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
+create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl128sxxxxxx1-spi-x1_x2_x4}] 0]
+set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.FILES [list "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/mcs/out.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+startgroup 
+if {![string equal [get_property PROGRAM.HW_CFGMEM_TYPE  [lindex [get_hw_devices xc7a200t_0] 0]] [get_property MEM_TYPE [get_property CFGMEM_PART [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]]]] }  { create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a200t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a200t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a200t_0] 0]; }; 
+program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+endgroup
+close_hw

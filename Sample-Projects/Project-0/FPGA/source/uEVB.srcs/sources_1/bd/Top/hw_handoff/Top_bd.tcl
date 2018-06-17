@@ -275,6 +275,101 @@ proc write_mig_file_Top_mig_7series_0_0 { str_mig_prj_filepath } {
 ##################################################################
 
 
+# Hierarchical cell: LED_BLINKER1
+proc create_hier_cell_LED_BLINKER1 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_LED_BLINKER1() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I CLK
+  create_bd_pin -dir O -from 0 -to 0 LED_ON_L
+  create_bd_pin -dir I OK
+  create_bd_pin -dir I RESET_L
+
+  # Create instance: c_counter_binary_0, and set properties
+  set c_counter_binary_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0 ]
+  set_property -dict [ list \
+   CONFIG.Output_Width {26} \
+ ] $c_counter_binary_0
+
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {and} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_andgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {25} \
+   CONFIG.DIN_TO {25} \
+   CONFIG.DIN_WIDTH {26} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_0
+
+  # Create port connections
+  connect_bd_net -net CLK_1 [get_bd_pins CLK] [get_bd_pins c_counter_binary_0/CLK]
+  connect_bd_net -net OK_1 [get_bd_pins OK] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net RESET_L_1 [get_bd_pins RESET_L] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net c_counter_binary_0_Q [get_bd_pins c_counter_binary_0/Q] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op2]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins util_vector_logic_1/Res] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins LED_ON_L] [get_bd_pins util_vector_logic_2/Res]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins util_vector_logic_1/Op1] [get_bd_pins xlslice_0/Dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
 # Hierarchical cell: LED_BLINKER
 proc create_hier_cell_LED_BLINKER { parentCell nameHier } {
 
@@ -429,13 +524,15 @@ proc create_root_design { parentCell } {
   # Create instance: LED_BLINKER
   create_hier_cell_LED_BLINKER [current_bd_instance .] LED_BLINKER
 
-  # Create instance: axi_smc, and set properties
-  set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
+  # Create instance: LED_BLINKER1
+  create_hier_cell_LED_BLINKER1 [current_bd_instance .] LED_BLINKER1
+
+  # Create instance: axi_interconnect_0, and set properties
+  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
-   CONFIG.HAS_ARESETN {1} \
-   CONFIG.NUM_CLKS {2} \
-   CONFIG.NUM_SI {1} \
- ] $axi_smc
+   CONFIG.ENABLE_ADVANCED_OPTIONS {0} \
+   CONFIG.NUM_MI {1} \
+ ] $axi_interconnect_0
 
   # Create instance: mig_7series_0, and set properties
   set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:4.1 mig_7series_0 ]
@@ -460,6 +557,14 @@ proc create_root_design { parentCell } {
    CONFIG.C_BUF_TYPE {IBUFDSGTE} \
  ] $util_ds_buf
 
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_0
+
   # Create instance: xdma_0, and set properties
   set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.1 xdma_0 ]
   set_property -dict [ list \
@@ -483,25 +588,28 @@ proc create_root_design { parentCell } {
  ] $xlconstant_1
 
   # Create interface connections
-  connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
   connect_bd_intf_net -intf_net diff_clock_rtl_0_1 [get_bd_intf_ports pcie_clkin] [get_bd_intf_pins util_ds_buf/CLK_IN_D]
   connect_bd_intf_net -intf_net diff_clock_rtl_1_1 [get_bd_intf_ports sys_clk] [get_bd_intf_pins mig_7series_0/SYS_CLK]
   connect_bd_intf_net -intf_net mig_7series_0_DDR3 [get_bd_intf_ports DDR3] [get_bd_intf_pins mig_7series_0/DDR3]
-  connect_bd_intf_net -intf_net xdma_0_M_AXI [get_bd_intf_pins axi_smc/S00_AXI] [get_bd_intf_pins xdma_0/M_AXI]
+  connect_bd_intf_net -intf_net xdma_0_M_AXI [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins xdma_0/M_AXI]
   connect_bd_intf_net -intf_net xdma_0_pcie_mgt [get_bd_intf_ports pcie_mgt] [get_bd_intf_pins xdma_0/pcie_mgt]
 
   # Create port connections
+  connect_bd_net -net LED_BLINKER1_LED_ON_L [get_bd_ports LED_A4] [get_bd_pins LED_BLINKER1/LED_ON_L]
   connect_bd_net -net LED_BLINKER_LED_ON_L [get_bd_ports LED_A3] [get_bd_pins LED_BLINKER/LED_ON_L]
   connect_bd_net -net OK_1 [get_bd_pins LED_BLINKER/OK] [get_bd_pins xdma_0/user_lnk_up]
-  connect_bd_net -net mig_7series_0_init_calib_complete [get_bd_ports LED_A1] [get_bd_pins mig_7series_0/init_calib_complete]
+  connect_bd_net -net mig_7series_0_init_calib_complete [get_bd_ports LED_A1] [get_bd_pins LED_BLINKER1/OK] [get_bd_pins mig_7series_0/init_calib_complete]
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_ports LED_A2] [get_bd_pins mig_7series_0/mmcm_locked]
-  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_smc/aclk1] [get_bd_pins mig_7series_0/ui_clk]
-  connect_bd_net -net pci_reset_1 [get_bd_ports pci_reset] [get_bd_pins LED_BLINKER/RESET_L] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/sys_rst_n]
-  connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins LED_BLINKER/CLK] [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
-  connect_bd_net -net xdma_0_axi_aclk [get_bd_pins axi_smc/aclk] [get_bd_pins xdma_0/axi_aclk]
-  connect_bd_net -net xdma_0_axi_aresetn [get_bd_pins axi_smc/aresetn] [get_bd_pins xdma_0/axi_aresetn]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins mig_7series_0/aresetn] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_ports LED_A4] [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins LED_BLINKER1/CLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins mig_7series_0/ui_clk]
+  connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net pci_reset_1 [get_bd_ports pci_reset] [get_bd_pins LED_BLINKER/RESET_L] [get_bd_pins xdma_0/sys_rst_n]
+  connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins LED_BLINKER/CLK] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net xdma_0_axi_aclk [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins xdma_0/axi_aclk]
+  connect_bd_net -net xdma_0_axi_aresetn [get_bd_pins LED_BLINKER1/RESET_L] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/axi_aresetn]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces xdma_0/M_AXI] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr

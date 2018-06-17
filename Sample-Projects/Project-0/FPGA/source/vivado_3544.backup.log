@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Jun 15 20:29:24 2018
+# Process ID: 3544
+# Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1184 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr
+# Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.log
+# Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:38 ; elapsed = 00:00:22 . Memory (MB): peak = 903.219 ; gain = 214.379
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd}
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- xilinx.com:ip:xdma:4.1 - xdma_0
+Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf
+Adding cell -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - util_vector_logic_0
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - util_vector_logic_1
+Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - util_vector_logic_2
+Successfully read diagram <Top> from BD file <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd>
+open_bd_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 970.039 ; gain = 59.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 15 20:44:17 2018...

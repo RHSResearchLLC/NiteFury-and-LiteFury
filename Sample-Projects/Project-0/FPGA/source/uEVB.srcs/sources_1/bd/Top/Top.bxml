@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="35">
   <CompositeFile CompositeFileTopName="Top" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1528684164"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1528684164"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1528684164"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1528684164"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1529178143"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1529178143"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1529178143"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1529178143"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth\Top.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -36,14 +36,6 @@
       </File>
       <File Name="ip\Top_util_ds_buf_0\Top_util_ds_buf_0.xci" Type="IP">
         <Instance HierarchyPath="util_ds_buf"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Top_axi_smc_0\Top_axi_smc_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_smc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -100,6 +92,69 @@
       </File>
       <File Name="ip\Top_util_vector_logic_1_0\Top_util_vector_logic_1_0.xci" Type="IP">
         <Instance HierarchyPath="LED_BLINKER/util_vector_logic_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_axi_interconnect_0_0\Top_axi_interconnect_0_0.xci" Type="IP">
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_util_vector_logic_0_2\Top_util_vector_logic_0_2.xci" Type="IP">
+        <Instance HierarchyPath="util_vector_logic_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_c_counter_binary_0_1\Top_c_counter_binary_0_1.xci" Type="IP">
+        <Instance HierarchyPath="LED_BLINKER1/c_counter_binary_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_xlslice_0_1\Top_xlslice_0_1.xci" Type="IP">
+        <Instance HierarchyPath="LED_BLINKER1/xlslice_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_util_vector_logic_0_3\Top_util_vector_logic_0_3.xci" Type="IP">
+        <Instance HierarchyPath="LED_BLINKER1/util_vector_logic_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_util_vector_logic_1_1\Top_util_vector_logic_1_1.xci" Type="IP">
+        <Instance HierarchyPath="LED_BLINKER1/util_vector_logic_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_util_vector_logic_2_0\Top_util_vector_logic_2_0.xci" Type="IP">
+        <Instance HierarchyPath="LED_BLINKER1/util_vector_logic_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Top_auto_cc_0\Top_auto_cc_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_0/s00_couplers/auto_cc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

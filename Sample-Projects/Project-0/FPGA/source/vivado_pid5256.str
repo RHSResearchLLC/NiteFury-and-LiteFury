@@ -1,0 +1,307 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 5256
+License: Customer
+
+Current time: 	Fri Jun 15 20:25:33 CDT 2018
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 92 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	dr
+User home directory: C:/Users/dr
+User working directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.log
+Vivado journal file location: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.jou
+Engine tmp dir: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-5256-DESKTOP-HN3HE5I
+
+GUI allocated memory:	161 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 532 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// [GUI Memory]: 17 MB (+15698kb) [00:00:05]
+// [Engine Memory]: 286 MB (+148081kb) [00:00:05]
+// [GUI Memory]: 21 MB (+2840kb) [00:00:10]
+// TclEventType: START_GUI
+// [GUI Memory]: 59 MB (+38437kb) [00:00:20]
+// [Engine Memory]: 500 MB (+210169kb) [00:00:20]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 72 MB (+10946kb) [00:00:24]
+// [Engine Memory]: 566 MB (+42820kb) [00:00:24]
+// HMemoryUtils.trashcanNow. Engine heap size: 567 MB. GUI used memory: 39 MB. Current time: 6/15/18 8:25:35 PM CDT
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 596 MB (+1322kb) [00:00:34]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 639 MB (+14389kb) [00:00:41]
+// [Engine Memory]: 678 MB (+6355kb) [00:00:43]
+// [GUI Memory]: 80 MB (+4766kb) [00:00:46]
+// [Engine Memory]: 726 MB (+15333kb) [00:00:46]
+// [GUI Memory]: 85 MB (+794kb) [00:00:47]
+// Tcl Message: open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 738 MB. GUI used memory: 58 MB. Current time: 6/15/18 8:25:59 PM CDT
+// Tcl Message: open_project: Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 867.668 ; gain = 189.809 
+// Project name: uEVB; location: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source; part: xc7a200tfbg484-2
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, ch)
+// PAPropertyPanels.initPanels (Top.bd) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Block Designs, Top]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Block Designs, Top]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// bv (ch):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd} 
+// Tcl Message: Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0 Adding cell -- xilinx.com:ip:xdma:4.1 - xdma_0 Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf Adding cell -- xilinx.com:ip:smartconnect:1.0 - axi_smc Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1 Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0 
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 801 MB (+41010kb) [00:01:07]
+// [GUI Memory]: 90 MB (+260kb) [00:01:07]
+// PAPropertyPanels.initPanels (Top.bd) elapsed time: 0.2s
+// [GUI Memory]: 95 MB (+1021kb) [00:01:08]
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0 Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_0 Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - util_vector_logic_0 Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - util_vector_logic_1 Adding cell -- xilinx.com:ip:util_vector_logic:2.0 - util_vector_logic_2 Successfully read diagram <Top> from BD file <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd> 
+// HMemoryUtils.trashcanNow. Engine heap size: 827 MB. GUI used memory: 62 MB. Current time: 6/15/18 8:26:20 PM CDT
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 946.957 ; gain = 66.363 
+dismissDialog("Open Block Design"); // bv (ch)
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_1_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, ch) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bv (ch):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// PAPropertyPanels.initPanels (Top.bd) elapsed time: 0.2s
+// Tcl Message: open_hw 
+// [Engine Memory]: 842 MB (+797kb) [00:01:29]
+dismissDialog("Open Hardware Manager"); // bv (ch)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cM, ch)
+// [GUI Memory]: 102 MB (+2547kb) [00:01:37]
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bv (ch):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.1   **** Build date : Apr  4 2018-19:32:53     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210205A0C719A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit} [get_hw_devices xc7a200t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a200t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_CREATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// [Engine Memory]: 1,461 MB (+604257kb) [00:01:48]
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Tcl Message: create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl128sxxxxxx1-spi-x1_x2_x4}] 0] 
+dismissDialog("Auto Connect"); // bv (ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,461 MB. GUI used memory: 66 MB. Current time: 6/15/18 8:27:01 PM CDT
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "s25fl128sxxxxxx1-spi-x1_x2_x4 ;   ", 4, "s25fl128sxxxxxx1-spi-x1_x2_x4", 0, false); // t (O, ch)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "s25fl128sxxxxxx1-spi-x1_x2_x4 ;   ", 4, "s25fl128sxxxxxx1-spi-x1_x2_x4", 0, false, false, false, false, true, false); // t (O, ch) - Popup Trigger
+// PAPropertyPanels.initPanels (localhost:3121/xilinx_tcf/Digilent/210205A0C719A) elapsed time: 0.2s
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Digilent/210205A0C719A (1) ; Open", 1, "xilinx_tcf/Digilent/210205A0C719A (1)", 0, true, false, false, false, true, false); // t (O, ch) - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a200t_0 (2) ; Programmed", 2, "xc7a200t_0 (2)", 0, true, false, false, false, true, false); // t (O, ch) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bB (ch): Program Device: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (bB)
+// 'I' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // bB (ch)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "s25fl128sxxxxxx1-spi-x1_x2_x4 ;   ", 4, "s25fl128sxxxxxx1-spi-x1_x2_x4", 0, false, false, false, false, true, false); // t (O, ch) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_CONFIG_MEMORY, "Program Configuration Memory Device..."); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_CONFIG_MEMORY
+// aE (ch): Program Configuration Memory Device: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+// 'aa' command handler elapsed time: 6 seconds
+dismissDialog("Program Configuration Memory Device"); // aE (ch)
+// Tcl Message: set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.FILES [list "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: startgroup  
+// TclEventType: HW_DEVICE_CHANGE
+// bv (ch):  Program Configuration Memory Device : addNotify
+// Tcl Message: if {![string equal [get_property PROGRAM.HW_CFGMEM_TYPE  [lindex [get_hw_devices xc7a200t_0] 0]] [get_property MEM_TYPE [get_property CFGMEM_PART [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]]]] }  { create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a200t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a200t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a200t_0] 0]; };  
+// HMemoryUtils.trashcanNow. Engine heap size: 1,497 MB. GUI used memory: 68 MB. Current time: 6/15/18 8:27:36 PM CDT
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// Tcl Message: program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: Mfg ID : 1   Memory Type : 20   Memory Capacity : 18   Device ID 1 : 0   Device ID 2 : 0 Performing Erase Operation... 
+// Tcl Message: Erase Operation successful. Performing Program and Verify Operations... 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: Program/Verify Operation successful. 
+// Tcl Message: INFO: [Labtoolstcl 44-377] Flash programming completed successfully 
+// Tcl Message: program_hw_cfgmem: Time (s): cpu = 00:00:04 ; elapsed = 00:00:53 . Memory (MB): peak = 1630.602 ; gain = 9.242 
+// Tcl Message: endgroup 
+// Elapsed time: 58 seconds
+selectButton("PAResourceOtoP.ProgramCfgMem_FLASH_PROGRAMMING_COMPLETED_SUCCESSFULLY_OK", "OK"); // JButton (A, G)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "s25fl128sxxxxxx1-spi-x1_x2_x4 ;   ", 4, "s25fl128sxxxxxx1-spi-x1_x2_x4", 0, false, false, false, false, true, false); // t (O, ch) - Popup Trigger
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a200t_0 (2) ; Programmed", 2, "xc7a200t_0 (2)", 0, true, false, false, false, true, false); // t (O, ch) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_BOOT_DEVICE, "Boot from Configuration Memory Device"); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_BOOT_DEVICE
+// Tcl Message: boot_hw_device  [lindex [get_hw_devices xc7a200t_0] 0] 
+// Tcl Message: INFO: [Labtoolstcl 44-664] Will wait up to 180 seconds for booting to complete. 
+// bv (ch):  Boot from Configuration Memory Device : addNotify
+// Tcl Message: INFO: [Labtools 27-32] Done pin status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Boot from Configuration Memory Device"); // bv (ch)
+// [GUI Memory]: 109 MB (+2058kb) [00:03:44]
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210205A0C719A 
+// n (ch): Close Hardware Target: addNotify
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Elapsed time: 30 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (n)
+dismissDialog("Close Hardware Target"); // n (ch)

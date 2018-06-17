@@ -1,0 +1,233 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 6780
+License: Customer
+
+Current time: 	Fri Jun 15 20:59:57 CDT 2018
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 92 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	dr
+User home directory: C:/Users/dr
+User working directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.log
+Vivado journal file location: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/vivado.jou
+Engine tmp dir: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/.Xil/Vivado-6780-DESKTOP-HN3HE5I
+
+GUI allocated memory:	173 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 533 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// [GUI Memory]: 16 MB (+14754kb) [00:00:05]
+// [Engine Memory]: 286 MB (+148158kb) [00:00:05]
+// [GUI Memory]: 20 MB (+2887kb) [00:00:10]
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0\FPGA\source\uEVB.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 66 MB (+46946kb) [00:00:20]
+// [Engine Memory]: 514 MB (+223948kb) [00:00:20]
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 40 MB. Current time: 6/15/18 8:59:59 PM CDT
+// [Engine Memory]: 580 MB (+42426kb) [00:00:25]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 644 MB (+37339kb) [00:00:35]
+// [Engine Memory]: 700 MB (+24858kb) [00:00:38]
+// [GUI Memory]: 74 MB (+4984kb) [00:00:38]
+// Tcl Message: open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// [GUI Memory]: 83 MB (+5858kb) [00:00:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 734 MB. GUI used memory: 58 MB. Current time: 6/15/18 9:00:18 PM CDT
+// Tcl Message: open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:22 . Memory (MB): peak = 892.047 ; gain = 196.180 
+// Project name: uEVB; location: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source; part: xc7a200tfbg484-2
+// [Engine Memory]: 743 MB (+8161kb) [00:00:44]
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, ch) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bv (ch):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Open Hardware Manager"); // bv (ch)
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 96 MB (+8749kb) [00:00:51]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cM, ch)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bv (ch):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.1   **** Build date : Apr  4 2018-19:32:53     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210205A0C719A 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,348 MB. GUI used memory: 59 MB. Current time: 6/15/18 9:00:42 PM CDT
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source/uEVB.runs/impl_1/Top_wrapper.bit} [get_hw_devices xc7a200t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a200t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 1,350 MB (+597432kb) [00:01:06]
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_CREATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Tcl Message: create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl128sxxxxxx1-spi-x1_x2_x4}] 0] 
+dismissDialog("Auto Connect"); // bv (ch)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "s25fl128sxxxxxx1-spi-x1_x2_x4 ;   ", 4, "s25fl128sxxxxxx1-spi-x1_x2_x4", 0, false); // t (O, ch)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "s25fl128sxxxxxx1-spi-x1_x2_x4 ;   ", 4, "s25fl128sxxxxxx1-spi-x1_x2_x4", 0, false, false, false, false, true, false); // t (O, ch) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_CONFIG_MEMORY, "Program Configuration Memory Device..."); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_CONFIG_MEMORY
+// aE (ch): Program Configuration Memory Device: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+// 'aa' command handler elapsed time: 6 seconds
+dismissDialog("Program Configuration Memory Device"); // aE (ch)
+// Tcl Message: set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.FILES [list "C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/mcs/out.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: startgroup  
+// TclEventType: HW_DEVICE_CHANGE
+// bv (ch):  Program Configuration Memory Device : addNotify
+// Tcl Message: if {![string equal [get_property PROGRAM.HW_CFGMEM_TYPE  [lindex [get_hw_devices xc7a200t_0] 0]] [get_property MEM_TYPE [get_property CFGMEM_PART [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]]]] }  { create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a200t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a200t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a200t_0] 0]; };  
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// Tcl Message: program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]] 
+// Tcl Message: Mfg ID : 1   Memory Type : 20   Memory Capacity : 18   Device ID 1 : 0   Device ID 2 : 0 Performing Erase Operation... 
+// Tcl Message: Erase Operation successful. Performing Program and Verify Operations... 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,401 MB. GUI used memory: 59 MB. Current time: 6/15/18 9:01:14 PM CDT
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: Program/Verify Operation successful. 
+// Tcl Message: INFO: [Labtoolstcl 44-377] Flash programming completed successfully 
+// Tcl Message: program_hw_cfgmem: Time (s): cpu = 00:00:04 ; elapsed = 00:00:52 . Memory (MB): peak = 1568.793 ; gain = 19.141 
+// Tcl Message: endgroup 
+// Elapsed time: 56 seconds
+selectButton("PAResourceOtoP.ProgramCfgMem_FLASH_PROGRAMMING_COMPLETED_SUCCESSFULLY_OK", "OK"); // JButton (A, G)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "s25fl128sxxxxxx1-spi-x1_x2_x4 ;   ", 4, "s25fl128sxxxxxx1-spi-x1_x2_x4", 0, false, false, false, false, true, false); // t (O, ch) - Popup Trigger
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a200t_0 (2) ; Programmed", 2, "xc7a200t_0 (2)", 0, true, false, false, false, true, false); // t (O, ch) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_BOOT_DEVICE, "Boot from Configuration Memory Device"); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_BOOT_DEVICE
+// bv (ch):  Boot from Configuration Memory Device : addNotify
+// Tcl Message: boot_hw_device  [lindex [get_hw_devices xc7a200t_0] 0] 
+// Tcl Message: INFO: [Labtoolstcl 44-664] Will wait up to 180 seconds for booting to complete. 
+// Tcl Message: INFO: [Labtools 27-32] Done pin status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Boot from Configuration Memory Device"); // bv (ch)
+// [GUI Memory]: 101 MB (+18kb) [00:02:43]
+// Elapsed time: 13 seconds
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a200t_0 (2) ; Programmed", 2, "xc7a200t_0 (2)", 0, true, false, false, false, true, false); // t (O, ch) - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Digilent/210205A0C719A (1) ; Open", 1, "xilinx_tcf/Digilent/210205A0C719A (1)", 0, true, false, false, false, true, false); // t (O, ch) - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a200t_0 (2) ; Programmed", 2, "xc7a200t_0 (2)", 0, true); // t (O, ch) - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "XADC ;   ", 3, "XADC", 0, false); // t (O, ch)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "XADC ;   ", 3, "XADC", 0, false, false, false, false, true, false); // t (O, ch) - Popup Trigger
+selectMenu(PAResourceItoN.LabtoolsMenu_JTAG_SCAN_RATE, "JTAG Scan Rate"); // Z (ai, ch)
+selectMenu(PAResourceCommand.PACommandNames_CREATE_HARDWARE_DASHBOARDS, "Dashboard"); // Z (ai, ch)
+selectMenuItem(PAResourceCommand.PACommandNames_NEW_HARDWARE_DASHBOARD, "New Dashboard..."); // ac (ch)
+// Run Command: PAResourceCommand.PACommandNames_NEW_HARDWARE_DASHBOARD
+// a (ch): New Dashboard: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (a)
+// [GUI Memory]: 107 MB (+1712kb) [00:02:58]
+// TclEventType: HW_SYSMON_CHANGE
+// 'M' command handler elapsed time: 4 seconds
+// [Engine Memory]: 1,419 MB (+1558kb) [00:02:58]
+dismissDialog("New Dashboard"); // a (ch)
+// TclEventType: HW_SYSMON_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,424 MB. GUI used memory: 69 MB. Current time: 6/15/18 9:02:49 PM CDT
+// TclEventType: HW_SYSMON_CHANGE
+// Elapsed time: 177 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aC, ch)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aC, ch)
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+closeView(PAResourceOtoP.PAViews_DASHBOARD, "dashboard_1"); // i
+// TclEventType: HW_TARGET_CLOSE
+// Tcl Message: close_hw 
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// bv (ch):  CLose Hardware Manager : addNotify
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+dismissDialog("CLose Hardware Manager"); // bv (ch)
+// [GUI Memory]: 114 MB (+993kb) [00:14:26]
+// [GUI Memory]: 120 MB (+252kb) [00:24:27]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,437 MB. GUI used memory: 60 MB. Current time: 6/15/18 9:32:49 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,437 MB. GUI used memory: 58 MB. Current time: 6/15/18 10:02:50 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,437 MB. GUI used memory: 55 MB. Current time: 6/15/18 10:32:50 PM CDT
