@@ -1,0 +1,735 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 8620
+License: Customer
+
+Current time: 	Tue Jun 19 20:50:11 EDT 2018
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 91 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	dr
+User home directory: C:/Users/dr
+User working directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/dr/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/vivado.log
+Vivado journal file location: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/vivado.jou
+Engine tmp dir: 	C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/.Xil/Vivado-8620-DESKTOP-HN3HE5I
+
+GUI allocated memory:	153 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 510 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// [GUI Memory]: 16 MB (+14754kb) [00:00:05]
+// [Engine Memory]: 286 MB (+148425kb) [00:00:05]
+// [GUI Memory]: 20 MB (+2887kb) [00:00:10]
+// [GUI Memory]: 25 MB (+3642kb) [00:00:15]
+// [GUI Memory]: 30 MB (+4350kb) [00:00:20]
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0-x1\FPGA\source\uEVB.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// [GUI Memory]: 70 MB (+40359kb) [00:00:30]
+// [Engine Memory]: 483 MB (+191286kb) [00:00:30]
+// Tcl Message: open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xpr 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 560 MB. GUI used memory: 39 MB. Current time: 6/19/18 8:50:13 PM EDT
+// [Engine Memory]: 560 MB (+55686kb) [00:00:35]
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 596 MB (+8066kb) [00:00:45]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 632 MB (+6463kb) [00:00:49]
+// [Engine Memory]: 684 MB (+22161kb) [00:00:51]
+// [Engine Memory]: 719 MB (+263kb) [00:00:53]
+// Tcl Message: open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0/FPGA/source' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 719 MB. GUI used memory: 54 MB. Current time: 6/19/18 8:50:35 PM EDT
+// Tcl Message: open_project: Time (s): cpu = 00:00:35 ; elapsed = 00:00:25 . Memory (MB): peak = 855.113 ; gain = 196.992 
+// Project name: uEVB; location: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source; part: xc7a200tfbg484-2
+// [GUI Memory]: 77 MB (+3593kb) [00:00:57]
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // u (O, ch)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bv (ch):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd} 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 772 MB (+18291kb) [00:01:07]
+// [GUI Memory]: 85 MB (+4152kb) [00:01:08]
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 910.871 ; gain = 48.180 
+// 'bA' command handler elapsed time: 7 seconds
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+dismissDialog("Open Block Design"); // bv (ch)
+// [GUI Memory]: 91 MB (+2218kb) [00:01:09]
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (xdma_0) elapsed time: 0.2s
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+selectButton(PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC, "System_customize_rsb_block"); // B (f, ch)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// O (ch):  Re-customize IP : addNotify
+// [Engine Memory]: 854 MB (+45142kb) [00:01:21]
+// r (ch): Re-customize IP: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 872 MB. GUI used memory: 77 MB. Current time: 6/19/18 8:51:02 PM EDT
+dismissDialog("Re-customize IP"); // O (ch)
+// Elapsed time: 12 seconds
+selectComboBox("Lane Width (pl_link_cap_max_link_width)", "X2", 1); // z (C, r)
+// [GUI Memory]: 98 MB (+2652kb) [00:01:35]
+selectComboBox("Lane Width (pl_link_cap_max_link_width)", "X4", 2); // z (C, r)
+// Elapsed time: 10 seconds
+selectComboBox("Lane Width (pl_link_cap_max_link_width)", "X1", 0); // z (C, r)
+// [GUI Memory]: 105 MB (+1813kb) [00:02:08]
+// Elapsed time: 22 seconds
+setText("AXI Address Width", "64"); // z (aY, r)
+// Elapsed time: 11 seconds
+selectRadioButton((HResource) null, "5.0 GT/s"); // aJ
+// Elapsed time: 24 seconds
+setText("AXI Address Width", "64"); // z (aY, r)
+// [GUI Memory]: 112 MB (+2181kb) [00:02:52]
+selectComboBox("Mode (mode_selection)", "Advanced", 1); // z (C, r)
+// HMemoryUtils.trashcanNow. Engine heap size: 891 MB. GUI used memory: 80 MB. Current time: 6/19/18 8:52:39 PM EDT
+// Elapsed time: 11 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Shared Logic", 5); // aX (C, r)
+// Elapsed time: 13 seconds
+selectCheckBox((HResource) null, "Include Shared Logic in core", true); // g (m, r): TRUE
+selectCheckBox((HResource) null, "Include Shared Logic in core", false); // g (m, r): FALSE
+selectCheckBox((HResource) null, "Include Shared Logic (Transceiver GT_COMMON) in example design", true); // g (m, r): TRUE
+selectCheckBox((HResource) null, "Include Shared Logic (Transceiver GT_COMMON) in example design", false); // g (m, r): FALSE
+selectCheckBox((HResource) null, "Include Shared Logic (Clocking) in example design", true); // g (m, r): TRUE
+selectCheckBox((HResource) null, "Include Shared Logic (Clocking) in example design", false); // g (m, r): FALSE
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // aX (C, r)
+selectComboBox("Mode (mode_selection)", "Basic", 0); // z (C, r)
+// Elapsed time: 19 seconds
+selectRadioButton((HResource) null, "5.0 GT/s"); // aJ
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+dismissDialog("Re-customize IP"); // r (ch)
+// Tcl Command: 'set_property -dict [list CONFIG.mode_selection {Basic} CONFIG.pl_link_cap_max_link_width {X1} CONFIG.pl_link_cap_max_link_speed {5.0_GT/s} CONFIG.axisten_freq {62.5} CONFIG.pf0_device_id {7021} CONFIG.Shared_Logic_Gtc_7xG2 {false} CONFIG.Shared_Logic_Clk_7xG2 {false} CONFIG.Shared_Logic_Both_7xG2 {false} CONFIG.plltype {QPLL1} CONFIG.PF0_DEVICE_ID_mqdma {9021} CONFIG.PF2_DEVICE_ID_mqdma {9021} CONFIG.PF3_DEVICE_ID_mqdma {9021}] [get_bd_cells xdma_0]'
+// r (ch): Re-customize IP: addNotify
+// bv (r):  Customize IP : addNotify
+// Tcl Message: startgroup 
+// Tcl Message: set_property -dict [list CONFIG.mode_selection {Basic} CONFIG.pl_link_cap_max_link_width {X1} CONFIG.pl_link_cap_max_link_speed {5.0_GT/s} CONFIG.axisten_freq {62.5} CONFIG.pf0_device_id {7021} CONFIG.Shared_Logic_Gtc_7xG2 {false} CONFIG.Shared_Logic_Clk_7xG2 {false} CONFIG.Shared_Logic_Both_7xG2 {false} CONFIG.plltype {QPLL1} CONFIG.PF0_DEVICE_ID_mqdma {9021} CONFIG.PF2_DEVICE_ID_mqdma {9021} CONFIG.PF3_DEVICE_ID_mqdma {9021}] [get_bd_cells xdma_0] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// [Engine Memory]: 938 MB (+43267kb) [00:04:07]
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a200tfbg484-2 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,002 MB. GUI used memory: 83 MB. Current time: 6/19/18 8:53:49 PM EDT
+// [Engine Memory]: 1,110 MB (+131572kb) [00:04:12]
+// TclEventType: REPORT_IP_STATUS_STALE
+// Tcl Message: xit::create_sub_core: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.805 ; gain = 269.668 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: endgroup 
+// Elapsed time: 16 seconds
+dismissDialog("Customize IP"); // bv (r)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// Elapsed time: 19 seconds
+selectButton(PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, "System_validate_bd_design_rsb"); // B (f, ch)
+// Run Command: PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN
+// Tcl Command: 'validate_bd_design'
+// TclEventType: RSB_PARAM_PROP
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: validate_bd_design 
+// TclEventType: FILE_SET_CHANGE
+// bv (ch):  Validate Design : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PARAM_PROP
+dismissDialog("Validate Design"); // bv (ch)
+selectButton("PAResourceTtoZ.ValidateRSBDesign_VALIDATION_SUCCESSFUL_THERE_NO_OK", "OK"); // JButton (A, G)
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ch)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bv (ch):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run Top_xdma_0_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// an (ch): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (an)
+// bv (ch):  Save Constraints : addNotify
+dismissDialog("Save Project"); // an (ch)
+// TclEventType: RSB_SAVE_DIAGRAM
+// CommandFailedException: ERROR: [BD 41-45] Cell path not found: /Top 
+// Tcl Message: save_bd_design 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd>  Wrote  : <C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/ui/bd_ad598355.ui>  
+// bv (ch):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Save Constraints"); // bv (ch)
+// [Engine Memory]: 1,171 MB (+5666kb) [00:04:51]
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// bv (ch):  Starting Design Runs : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// CommandFailedException: ERROR: [BD 41-45] Cell path not found: /Top 
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// CommandFailedException: ERROR: [BD 41-45] Cell path not found: /Top 
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// Tcl Message: INFO: [BD 41-1662] The design 'Top.bd' is already validated. Therefore parameter propagation will not be re-run. 
+// Tcl Message: VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.v VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/sim/Top.v VHDL Output written to : C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/hdl/Top_wrapper.v 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 . 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 78 MB. Current time: 6/19/18 8:54:34 PM EDT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_clock_converter_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_2 . 
+// Tcl Message: Exporting to file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/hw_handoff/Top.hwh Generated Block Design Tcl file C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/hw_handoff/Top_bd.tcl Generated Hardware Definition File C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/synth/Top.hwdef 
+// TclEventType: RUN_ADD
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Jun 19 20:54:52 2018] Launched Top_xdma_0_0_synth_1, Top_axi_clock_converter_0_0_synth_1... Run output will be captured here: Top_xdma_0_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.runs/Top_xdma_0_0_synth_1/runme.log Top_axi_clock_converter_0_0_synth_1: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.runs/Top_axi_clock_converter_0_0_synth_1/runme.log [Tue Jun 19 20:54:52 2018] Launched synth_1... Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.runs/synth_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1295.355 ; gain = 39.508 
+// 'k' command handler elapsed time: 26 seconds
+// Elapsed time: 21 seconds
+dismissDialog("Starting Design Runs"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,226 MB. GUI used memory: 85 MB. Current time: 6/19/18 8:57:04 PM EDT
+// [GUI Memory]: 119 MB (+1094kb) [00:09:04]
+// [GUI Memory]: 125 MB (+312kb) [00:09:24]
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_vector_logic_0_Res 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_vector_logic_0_Res 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_vector_logic_0_Res 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_vector_logic_0_Res 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_vector_logic_0_Res 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_vector_logic_0_Res 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_vector_logic_0_Res 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// [GUI Memory]: 133 MB (+2000kb) [00:16:24]
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /util_ds_buf_IBUF_OUT 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// Elapsed time: 745 seconds
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aE (Q, ch)
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "Top ;  ; Running Submodule Runs ; 88 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Tue Jun 05 22:02:02 EDT 2018 ; 335:05:16 ;  ;  ;  ; ", 3); // ax (O, ch)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 3000 ms.
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 289 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (O, ch)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bv (ch):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 2 
+// Tcl Message: [Tue Jun 19 21:12:11 2018] Launched impl_1... Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bv (ch)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 142 MB (+1525kb) [00:35:13]
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// Elapsed time: 858 seconds
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aE (Q, ch)
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // g (aQ, ch): FALSE
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // g (aQ, ch): FALSE
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xdc:18]. ]", 2); // ah (O, ch)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xdc:18]. ]", 2); // ah (O, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,226 MB. GUI used memory: 94 MB. Current time: 6/19/18 9:27:04 PM EDT
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /pci_reset_1 
+// Elapsed time: 587 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xdc:18]. ]", 2); // ah (O, ch)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xdc:18]. , [Common 17-55] 'set_property' expects at least one object. [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xdc:19]. ]", 3, false); // ah (O, ch)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0-x1\FPGA\source\uEVB.xdc;-;;-;16;-;line;-;19;-;;-;16;-;"); // ah (O, ch)
+// Elapsed time: 69 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, ch)
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_init_calib_complete 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mig_7series_0_ui_clk_sync_rst 
+// Elapsed time: 52 seconds
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 5); // u (O, ch)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ch)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// bv (ch):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// Tcl Message: [Tue Jun 19 21:38:39 2018] Launched impl_1... Run output will be captured here: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bv (ch)
+// Elapsed time: 23 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xdc:18]. ]", 2, true); // ah (O, ch) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0-x1\FPGA\source\uEVB.xdc;-;;-;16;-;line;-;18;-;;-;16;-;"); // ah (O, ch)
+// Elapsed time: 53 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aE (Q, ch)
+// Tcl Command: 'rdi::info_commands {pw*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "pwd", true); // az (Y, ch)
+// Tcl Command: 'pwd'
+// Tcl Command: 'pwd'
+// Tcl Message: pwd 
+// Tcl Message: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source 
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 113 seconds
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, Popup.HeavyWeightWindow)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 \"./uEVB.runs/impl_1/design_1_wrapper.bit\" } -file \"../mcs/out.mcs\""); // az (Y, ch)
+// Tcl Command: 'write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/design_1_wrapper.bit" } -file "../mcs/out.mcs"'
+// Tcl Command: 'write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/design_1_wrapper.bit" } -file "../mcs/out.mcs"'
+// Tcl Message: write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/design_1_wrapper.bit" } -file "../mcs/out.mcs" 
+// Tcl Message: Command: write_cfgmem -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/design_1_wrapper.bit" } -file ../mcs/out.mcs Creating config memory files... Creating bitstream load up from address 0x00000000 Loading bitfile ./uEVB.runs/impl_1/design_1_wrapper.bit 
+// Tcl Message: ERROR: [Bitstream 40-47] File ./uEVB.runs/impl_1/design_1_wrapper.bit does not exist. ERROR: [Bitstream 40-46] File ./uEVB.runs/impl_1/design_1_wrapper.bit cannot be opened for input. ERROR: [Writecfgmem 68-7] Could not load bitfile ./uEVB.runs/impl_1/design_1_wrapper.bit. 
+// Tcl Message: 0 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered. write_cfgmem failed 
+// Tcl Message: ERROR: [Common 17-39] 'write_cfgmem' failed due to earlier errors. 
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'bd::match_path {write_cfgmem} {"../mcs/} {out.mcs"}'
+// Elapsed time: 56 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 \"./uEVB.runs/impl_1/Top_wrapper.bit\" } -file \"../mcs/out.mcs\"", true); // az (Y, ch)
+// Tcl Command: 'write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/Top_wrapper.bit" } -file "../mcs/out.mcs"'
+// Tcl Command: 'write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/Top_wrapper.bit" } -file "../mcs/out.mcs"'
+// Tcl Message: write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/Top_wrapper.bit" } -file "../mcs/out.mcs" 
+// Tcl Message: Command: write_cfgmem -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/Top_wrapper.bit" } -file ../mcs/out.mcs Creating config memory files... Creating bitstream load up from address 0x00000000 Loading bitfile ./uEVB.runs/impl_1/Top_wrapper.bit 
+// bv (ch):  Tcl Command Line : addNotify
+// Tcl Message: Writing file ../mcs/out.mcs 
+// Tcl Message: Writing log file ../mcs/out.prm =================================== Configuration Memory information =================================== File Format        MCS Interface          SPIX4 Size               16M Start Address      0x00000000 End Address        0x00FFFFFF  Addr1         Addr2         Date                    File(s) 0x00000000    0x002BA40B    Jun 19 21:41:12 2018    ./uEVB.runs/impl_1/Top_wrapper.bit 0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered. write_cfgmem completed successfully 
+dismissDialog("Tcl Command Line"); // bv (ch)

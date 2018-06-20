@@ -527,12 +527,8 @@ proc create_root_design { parentCell } {
   # Create instance: LED_BLINKER1
   create_hier_cell_LED_BLINKER1 [current_bd_instance .] LED_BLINKER1
 
-  # Create instance: axi_interconnect_0, and set properties
-  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
-  set_property -dict [ list \
-   CONFIG.ENABLE_ADVANCED_OPTIONS {0} \
-   CONFIG.NUM_MI {1} \
- ] $axi_interconnect_0
+  # Create instance: axi_clock_converter_0, and set properties
+  set axi_clock_converter_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_clock_converter:2.1 axi_clock_converter_0 ]
 
   # Create instance: mig_7series_0, and set properties
   set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:4.1 mig_7series_0 ]
@@ -587,12 +583,15 @@ proc create_root_design { parentCell } {
    CONFIG.CONST_VAL {0} \
  ] $xlconstant_1
 
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+
   # Create interface connections
-  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
+  connect_bd_intf_net -intf_net axi_clock_converter_0_M_AXI [get_bd_intf_pins axi_clock_converter_0/M_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
   connect_bd_intf_net -intf_net diff_clock_rtl_0_1 [get_bd_intf_ports pcie_clkin] [get_bd_intf_pins util_ds_buf/CLK_IN_D]
   connect_bd_intf_net -intf_net diff_clock_rtl_1_1 [get_bd_intf_ports sys_clk] [get_bd_intf_pins mig_7series_0/SYS_CLK]
   connect_bd_intf_net -intf_net mig_7series_0_DDR3 [get_bd_intf_ports DDR3] [get_bd_intf_pins mig_7series_0/DDR3]
-  connect_bd_intf_net -intf_net xdma_0_M_AXI [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins xdma_0/M_AXI]
+  connect_bd_intf_net -intf_net xdma_0_M_AXI [get_bd_intf_pins axi_clock_converter_0/S_AXI] [get_bd_intf_pins xdma_0/M_AXI]
   connect_bd_intf_net -intf_net xdma_0_pcie_mgt [get_bd_intf_ports pcie_mgt] [get_bd_intf_pins xdma_0/pcie_mgt]
 
   # Create port connections
@@ -601,15 +600,16 @@ proc create_root_design { parentCell } {
   connect_bd_net -net OK_1 [get_bd_pins LED_BLINKER/OK] [get_bd_pins xdma_0/user_lnk_up]
   connect_bd_net -net mig_7series_0_init_calib_complete [get_bd_ports LED_A1] [get_bd_pins LED_BLINKER1/OK] [get_bd_pins mig_7series_0/init_calib_complete]
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_ports LED_A2] [get_bd_pins mig_7series_0/mmcm_locked]
-  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins LED_BLINKER1/CLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins mig_7series_0/ui_clk]
+  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins LED_BLINKER1/CLK] [get_bd_pins axi_clock_converter_0/m_axi_aclk] [get_bd_pins mig_7series_0/ui_clk]
   connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net pci_reset_1 [get_bd_ports pci_reset] [get_bd_pins LED_BLINKER/RESET_L] [get_bd_pins xdma_0/sys_rst_n]
-  connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins LED_BLINKER/CLK] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins util_vector_logic_0/Res]
-  connect_bd_net -net xdma_0_axi_aclk [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins xdma_0/axi_aclk]
-  connect_bd_net -net xdma_0_axi_aresetn [get_bd_pins LED_BLINKER1/RESET_L] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xdma_0/axi_aresetn]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins LED_BLINKER/CLK] [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins axi_clock_converter_0/m_axi_aresetn] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net xdma_0_axi_aclk [get_bd_pins axi_clock_converter_0/s_axi_aclk] [get_bd_pins xdma_0/axi_aclk]
+  connect_bd_net -net xdma_0_axi_aresetn [get_bd_pins axi_clock_converter_0/s_axi_aresetn] [get_bd_pins xdma_0/axi_aresetn]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins mig_7series_0/aresetn] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_ports pcie_clkreq_l] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces xdma_0/M_AXI] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr

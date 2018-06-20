@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue Jun 19 20:49:33 2018
+# Process ID: 8620
+# Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9796 C:\Users\dr\GitHub\uEVB\Sample-Projects\Project-0-x1\FPGA\source\uEVB.xpr
+# Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/vivado.log
+# Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.xpr
+open_bd_design {C:/Users/dr/GitHub/uEVB/Sample-Projects/Project-0-x1/FPGA/source/uEVB.srcs/sources_1/bd/Top/Top.bd}
+update_compile_order -fileset sources_1
+startgroup
+set_property -dict [list CONFIG.mode_selection {Basic} CONFIG.pl_link_cap_max_link_width {X1} CONFIG.pl_link_cap_max_link_speed {5.0_GT/s} CONFIG.axisten_freq {62.5} CONFIG.pf0_device_id {7021} CONFIG.Shared_Logic_Gtc_7xG2 {false} CONFIG.Shared_Logic_Clk_7xG2 {false} CONFIG.Shared_Logic_Both_7xG2 {false} CONFIG.plltype {QPLL1} CONFIG.PF0_DEVICE_ID_mqdma {9021} CONFIG.PF2_DEVICE_ID_mqdma {9021} CONFIG.PF3_DEVICE_ID_mqdma {9021}] [get_bd_cells xdma_0]
+endgroup
+validate_bd_design
+reset_run Top_xdma_0_0_synth_1
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+pwd
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/design_1_wrapper.bit" } -file "../mcs/out.mcs"
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -force -loadbit {up 0x00000000 "./uEVB.runs/impl_1/Top_wrapper.bit" } -file "../mcs/out.mcs"
