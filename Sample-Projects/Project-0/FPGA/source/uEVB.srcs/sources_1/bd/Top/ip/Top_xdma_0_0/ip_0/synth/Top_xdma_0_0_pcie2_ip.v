@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "Top_xdma_0_0_pcie2_ip_pcie2_top,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "Top_xdma_0_0_pcie2_ip,Top_xdma_0_0_pcie2_ip_pcie2_top,{}" *)
-(* CORE_GENERATION_INFO = "Top_xdma_0_0_pcie2_ip,Top_xdma_0_0_pcie2_ip_pcie2_top,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=pcie_7x,x_ipVersion=3.3,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,c_component_name=Top_xdma_0_0_pcie2_ip,dev_port_type=0000,c_dev_port_type=0,c_header_type=00,c_upstream_facing=TRUE,max_lnk_wdt=000100,max_lnk_spd=2,c_gen1=true,pci_exp_int_freq=3,c_pcie_fast_config=0,bar_0=FFFF0000,bar_1=00000000,bar_2=00000000,bar_3=00000000,bar_4=00000000,bar_5=00000\
+(* CORE_GENERATION_INFO = "Top_xdma_0_0_pcie2_ip,Top_xdma_0_0_pcie2_ip_pcie2_top,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=pcie_7x,x_ipVersion=3.3,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,c_component_name=Top_xdma_0_0_pcie2_ip,dev_port_type=0000,c_dev_port_type=0,c_header_type=00,c_upstream_facing=TRUE,max_lnk_wdt=000100,max_lnk_spd=2,c_gen1=true,pci_exp_int_freq=2,c_pcie_fast_config=0,bar_0=FFFF0000,bar_1=00000000,bar_2=00000000,bar_3=00000000,bar_4=00000000,bar_5=00000\
 000,xrom_bar=00000000,cost_table=1,ven_id=10EE,dev_id=7024,rev_id=00,subsys_ven_id=10EE,subsys_id=0007,class_code=070001,cardbus_cis_ptr=00000000,cap_ver=2,c_pcie_cap_slot_implemented=FALSE,mps=010,cmps=2,ext_tag_fld_sup=TRUE,c_dev_control_ext_tag_default=FALSE,phantm_func_sup=00,c_phantom_functions=0,ep_l0s_accpt_lat=000,c_ep_l0s_accpt_lat=0,ep_l1_accpt_lat=111,c_ep_l1_accpt_lat=7,c_cpl_timeout_disable_sup=FALSE,c_cpl_timeout_range=0010,c_cpl_timeout_ranges_sup=2,c_buf_opt_bma=TRUE,c_perf_level\
 _high=TRUE,c_tx_last_tlp=29,c_rx_ram_limit=7FF,c_fc_ph=32,c_fc_pd=437,c_fc_nph=12,c_fc_npd=24,c_fc_cplh=36,c_fc_cpld=461,c_cpl_inf=TRUE,c_cpl_infinite=TRUE,c_dll_lnk_actv_cap=FALSE,c_trgt_lnk_spd=2,c_hw_auton_spd_disable=FALSE,c_de_emph=FALSE,slot_clk=TRUE,c_rcb=0,c_root_cap_crs=FALSE,c_slot_cap_attn_butn=FALSE,c_slot_cap_attn_ind=FALSE,c_slot_cap_pwr_ctrl=FALSE,c_slot_cap_pwr_ind=FALSE,c_slot_cap_hotplug_surprise=FALSE,c_slot_cap_hotplug_cap=FALSE,c_slot_cap_mrl=FALSE,c_slot_cap_elec_interlock=\
 FALSE,c_slot_cap_no_cmd_comp_sup=FALSE,c_slot_cap_pwr_limit_value=0,c_slot_cap_pwr_limit_scale=0,c_slot_cap_physical_slot_num=0,intx=TRUE,int_pin=1,c_msi_cap_on=TRUE,c_pm_cap_next_ptr=48,c_msi_64b_addr=TRUE,c_msi=0,c_msi_mult_msg_extn=0,c_msi_per_vctr_mask_cap=FALSE,c_msix_cap_on=FALSE,c_msix_next_ptr=00,c_pcie_cap_next_ptr=00,c_msix_table_size=000,c_msix_table_offset=0,c_msix_table_bir=0,c_msix_pba_offset=0,c_msix_pba_bir=0,dsi=0,c_dsi_bool=FALSE,d1_sup=0,c_d1_support=FALSE,d2_sup=0,c_d2_suppor\
@@ -60,8 +60,8 @@ t=FALSE,pme_sup=0F,c_pme_support=0F,no_soft_rst=TRUE,pwr_con_d0_state=00,con_scl
 ect_snoop=FALSE,c_vsec_cap_enabled=FALSE,c_vsec_base_ptr=000,c_vsec_next_ptr=000,c_dsn_next_ptr=000,c_vc_next_ptr=000,c_pci_cfg_space_addr=3F,c_ext_pci_cfg_space_addr=3FF,c_last_cfg_dw=10C,c_enable_msg_route=00000000000,bram_lat=0,c_rx_raddr_lat=0,c_rx_rdata_lat=2,c_rx_write_lat=0,c_tx_raddr_lat=0,c_tx_rdata_lat=2,c_tx_write_lat=0,c_ll_ack_timeout_enable=FALSE,c_ll_ack_timeout_function=0,c_ll_ack_timeout=0000,c_ll_replay_timeout_enable=FALSE,c_ll_replay_timeout_func=1,c_ll_replay_timeout=0000,c_\
 dis_lane_reverse=TRUE,c_upconfig_capable=TRUE,c_disable_scrambling=FALSE,c_disable_tx_aspm_l0s=FALSE,c_pcie_dbg_ports=FALSE,pci_exp_ref_freq=0,c_xlnx_ref_board=NONE,c_pcie_blk_locn=0,c_ur_atomic=FALSE,c_dev_cap2_atomicop32_completer_supported=FALSE,c_dev_cap2_atomicop64_completer_supported=FALSE,c_dev_cap2_cas128_completer_supported=FALSE,c_dev_cap2_tph_completer_supported=00,c_dev_cap2_ari_forwarding_supported=FALSE,c_dev_cap2_atomicop_routing_supported=FALSE,c_link_cap_aspm_optionality=FALSE,c\
 _aer_cap_on=FALSE,c_aer_base_ptr=000,c_aer_cap_nextptr=000,c_aer_cap_ecrc_check_capable=FALSE,c_aer_cap_ecrc_gen_capable=FALSE,c_aer_cap_multiheader=FALSE,c_aer_cap_permit_rooterr_update=FALSE,c_rbar_cap_on=FALSE,c_rbar_base_ptr=000,c_rbar_cap_nextptr=000,c_rbar_num=0,c_rbar_cap_sup0=00001,c_rbar_cap_index0=0,c_rbar_cap_control_encodedbar0=00,c_rbar_cap_sup1=00001,c_rbar_cap_index1=0,c_rbar_cap_control_encodedbar1=00,c_rbar_cap_sup2=00001,c_rbar_cap_index2=0,c_rbar_cap_control_encodedbar2=00,c_r\
-bar_cap_sup3=00001,c_rbar_cap_index3=0,c_rbar_cap_control_encodedbar3=00,c_rbar_cap_sup4=00001,c_rbar_cap_index4=0,c_rbar_cap_control_encodedbar4=00,c_rbar_cap_sup5=00001,c_rbar_cap_index5=0,c_rbar_cap_control_encodedbar5=00,c_recrc_check=0,c_recrc_check_trim=FALSE,c_disable_rx_poisoned_resp=FALSE,c_trn_np_fc=FALSE,c_ur_inv_req=TRUE,c_ur_prs_response=TRUE,c_silicon_rev=2,c_aer_cap_optional_err_support=000000,LINK_CAP_MAX_LINK_WIDTH=4,C_DATA_WIDTH=64,PIPE_SIM=FALSE,PCIE_EXT_CLK=FALSE,PCIE_EXT_GT_\
-COMMON=FALSE,EXT_CH_GT_DRP=FALSE,TRANSCEIVER_CTRL_STATUS_PORTS=FALSE,SHARED_LOGIC_IN_CORE=FALSE,ERR_REPORTING_IF=TRUE,PL_INTERFACE=TRUE,CFG_MGMT_IF=TRUE,CFG_CTL_IF=TRUE,CFG_STATUS_IF=TRUE,RCV_MSG_IF=TRUE,CFG_FC_IF=TRUE,EXT_PIPE_INTERFACE=FALSE,EXT_STARTUP_PRIMITIVE=FALSE,KEEP_WIDTH=8,PCIE_ASYNC_EN=FALSE,ENABLE_JTAG_DBG=FALSE}" *)
+bar_cap_sup3=00001,c_rbar_cap_index3=0,c_rbar_cap_control_encodedbar3=00,c_rbar_cap_sup4=00001,c_rbar_cap_index4=0,c_rbar_cap_control_encodedbar4=00,c_rbar_cap_sup5=00001,c_rbar_cap_index5=0,c_rbar_cap_control_encodedbar5=00,c_recrc_check=0,c_recrc_check_trim=FALSE,c_disable_rx_poisoned_resp=FALSE,c_trn_np_fc=FALSE,c_ur_inv_req=TRUE,c_ur_prs_response=TRUE,c_silicon_rev=2,c_aer_cap_optional_err_support=000000,LINK_CAP_MAX_LINK_WIDTH=4,C_DATA_WIDTH=128,PIPE_SIM=FALSE,PCIE_EXT_CLK=FALSE,PCIE_EXT_GT\
+_COMMON=FALSE,EXT_CH_GT_DRP=FALSE,TRANSCEIVER_CTRL_STATUS_PORTS=FALSE,SHARED_LOGIC_IN_CORE=FALSE,ERR_REPORTING_IF=TRUE,PL_INTERFACE=TRUE,CFG_MGMT_IF=TRUE,CFG_CTL_IF=TRUE,CFG_STATUS_IF=TRUE,RCV_MSG_IF=TRUE,CFG_FC_IF=TRUE,EXT_PIPE_INTERFACE=FALSE,EXT_STARTUP_PRIMITIVE=FALSE,KEEP_WIDTH=16,PCIE_ASYNC_EN=FALSE,ENABLE_JTAG_DBG=FALSE}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Top_xdma_0_0_pcie2_ip (
   pci_exp_txp,
@@ -247,29 +247,29 @@ output wire tx_err_drop;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TREADY" *)
 output wire s_axis_tx_tready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TDATA" *)
-input wire [63 : 0] s_axis_tx_tdata;
+input wire [127 : 0] s_axis_tx_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TKEEP" *)
-input wire [7 : 0] s_axis_tx_tkeep;
+input wire [15 : 0] s_axis_tx_tkeep;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TLAST" *)
 input wire s_axis_tx_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TVALID" *)
 input wire s_axis_tx_tvalid;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_tx, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 4, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_tx, TDATA_NUM_BYTES 16, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 4, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TUSER" *)
 input wire [3 : 0] s_axis_tx_tuser;
 (* X_INTERFACE_INFO = "xilinx.com:interface:pcie2_cfg_control:1.0 pcie2_cfg_control tx_cfg_gnt" *)
 input wire tx_cfg_gnt;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TDATA" *)
-output wire [63 : 0] m_axis_rx_tdata;
+output wire [127 : 0] m_axis_rx_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TKEEP" *)
-output wire [7 : 0] m_axis_rx_tkeep;
+output wire [15 : 0] m_axis_rx_tkeep;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TLAST" *)
 output wire m_axis_rx_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TVALID" *)
 output wire m_axis_rx_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TREADY" *)
 input wire m_axis_rx_tready;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_rx, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 22, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_rx, TDATA_NUM_BYTES 16, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 22, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TUSER" *)
 output wire [21 : 0] m_axis_rx_tuser;
 (* X_INTERFACE_INFO = "xilinx.com:interface:pcie2_cfg_control:1.0 pcie2_cfg_control rx_np_ok" *)
@@ -548,7 +548,7 @@ input wire sys_rst_n;
     .max_lnk_wdt("000100"),
     .max_lnk_spd("2"),
     .c_gen1(1'B1),
-    .pci_exp_int_freq(3),
+    .pci_exp_int_freq(2),
     .c_pcie_fast_config(0),
     .bar_0("FFFF0000"),
     .bar_1("00000000"),
@@ -733,7 +733,7 @@ input wire sys_rst_n;
     .c_silicon_rev("2"),
     .c_aer_cap_optional_err_support("000000"),
     .LINK_CAP_MAX_LINK_WIDTH(4),
-    .C_DATA_WIDTH(64),
+    .C_DATA_WIDTH(128),
     .PIPE_SIM("FALSE"),
     .PCIE_EXT_CLK("FALSE"),
     .PCIE_EXT_GT_COMMON("FALSE"),
@@ -749,7 +749,7 @@ input wire sys_rst_n;
     .CFG_FC_IF("TRUE"),
     .EXT_PIPE_INTERFACE("FALSE"),
     .EXT_STARTUP_PRIMITIVE("FALSE"),
-    .KEEP_WIDTH(8),
+    .KEEP_WIDTH(16),
     .PCIE_ASYNC_EN("FALSE"),
     .ENABLE_JTAG_DBG("FALSE")
   ) inst (

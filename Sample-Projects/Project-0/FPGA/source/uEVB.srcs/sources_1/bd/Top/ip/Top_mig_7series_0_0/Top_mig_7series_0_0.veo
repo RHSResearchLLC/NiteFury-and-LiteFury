@@ -109,8 +109,8 @@
     .s_axi_awvalid                  (s_axi_awvalid),  // input			s_axi_awvalid
     .s_axi_awready                  (s_axi_awready),  // output			s_axi_awready
     // Slave Interface Write Data Ports
-    .s_axi_wdata                    (s_axi_wdata),  // input [63:0]			s_axi_wdata
-    .s_axi_wstrb                    (s_axi_wstrb),  // input [7:0]			s_axi_wstrb
+    .s_axi_wdata                    (s_axi_wdata),  // input [127:0]			s_axi_wdata
+    .s_axi_wstrb                    (s_axi_wstrb),  // input [15:0]			s_axi_wstrb
     .s_axi_wlast                    (s_axi_wlast),  // input			s_axi_wlast
     .s_axi_wvalid                   (s_axi_wvalid),  // input			s_axi_wvalid
     .s_axi_wready                   (s_axi_wready),  // output			s_axi_wready
@@ -133,7 +133,7 @@
     .s_axi_arready                  (s_axi_arready),  // output			s_axi_arready
     // Slave Interface Read Data Ports
     .s_axi_rid                      (s_axi_rid),  // output [3:0]			s_axi_rid
-    .s_axi_rdata                    (s_axi_rdata),  // output [63:0]			s_axi_rdata
+    .s_axi_rdata                    (s_axi_rdata),  // output [127:0]			s_axi_rdata
     .s_axi_rresp                    (s_axi_rresp),  // output [1:0]			s_axi_rresp
     .s_axi_rlast                    (s_axi_rlast),  // output			s_axi_rlast
     .s_axi_rvalid                   (s_axi_rvalid),  // output			s_axi_rvalid

@@ -89,7 +89,7 @@ module Top_xdma_0_0_pcie2_ip_core_top # (
   parameter [31:0]  BAR4 = 32'h00000000,
   parameter [31:0]  BAR5 = 32'h00000000,
 
-  parameter         C_DATA_WIDTH = 64,
+  parameter         C_DATA_WIDTH = 128,
   parameter [31:0]  CARDBUS_CIS_POINTER = 32'h00000000,
   parameter [23:0]  CLASS_CODE = 24'h070001,
   parameter         CMD_INTX_IMPLEMENTED = "TRUE",
@@ -221,7 +221,7 @@ module Top_xdma_0_0_pcie2_ip_core_top # (
   parameter         TL_RX_RAM_RDATA_LATENCY = 2,
   parameter         TL_TX_RAM_RDATA_LATENCY = 2,
   parameter         TRN_NP_FC = "FALSE",
-  parameter         TRN_DW = "FALSE",
+  parameter         TRN_DW = "TRUE",
 
   parameter         UPCONFIG_CAPABLE = "TRUE",
   parameter         UPSTREAM_FACING = "TRUE",
@@ -229,7 +229,7 @@ module Top_xdma_0_0_pcie2_ip_core_top # (
   parameter         UR_INV_REQ = "TRUE",
   parameter         UR_PRS_RESPONSE = "TRUE",
   parameter         USER_CLK_FREQ = 3,
-  parameter         USER_CLK2_DIV2 = "FALSE",
+  parameter         USER_CLK2_DIV2 = "TRUE",
 
   parameter [11:0]  VC_BASE_PTR = 12'h000,
   parameter [11:0]  VC_CAP_NEXTPTR = 12'h000,

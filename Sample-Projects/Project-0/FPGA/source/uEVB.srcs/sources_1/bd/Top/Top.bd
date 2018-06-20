@@ -289,7 +289,7 @@
         <spirit:componentRef spirit:library="ip" spirit:name="mig_7series" spirit:vendor="xilinx.com" spirit:version="4.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_mig_7series_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="XML_INPUT_FILE">mig_b.prj</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="XML_INPUT_FILE">mig_a.prj</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="RESET_BOARD_INTERFACE">Custom</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="MIG_DONT_TOUCH_PARAM">Custom</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="BOARD_MIG_PARAM">Custom</spirit:configurableElementValue>
@@ -302,10 +302,10 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_xdma_0_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="pl_link_cap_max_link_width">X4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="pl_link_cap_max_link_speed">5.0_GT/s</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="axi_data_width">64_bit</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="axisten_freq">250</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="xdma_rnum_chnl">2</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="xdma_wnum_chnl">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="axi_data_width">128_bit</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="axisten_freq">125</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="xdma_rnum_chnl">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="xdma_wnum_chnl">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="xdma_axi_intf_mm">AXI_Memory_Mapped</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="cfg_mgmt_if">false</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -346,6 +346,7 @@
         <spirit:componentRef spirit:library="ip" spirit:name="axi_clock_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_axi_clock_converter_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DATA_WIDTH">128</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -408,8 +409,8 @@
       <spirit:adHocConnection>
         <spirit:name>mig_7series_0_ui_clk</spirit:name>
         <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="ui_clk"/>
-        <spirit:internalPortReference spirit:componentRef="LED_BLINKER1" spirit:portRef="CLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_clock_converter_0" spirit:portRef="m_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="LED_BLINKER1" spirit:portRef="CLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>pci_reset_1</spirit:name>

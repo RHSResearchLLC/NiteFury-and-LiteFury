@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Sun Jun 17 09:05:49 2018
+//Date        : Wed Jun 20 13:01:36 2018
 //Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
 //Command     : generate_target Top.bd
 //Design      : Top
@@ -181,16 +181,16 @@ module Top
   wire axi_clock_converter_0_M_AXI_BREADY;
   wire [1:0]axi_clock_converter_0_M_AXI_BRESP;
   wire axi_clock_converter_0_M_AXI_BVALID;
-  wire [63:0]axi_clock_converter_0_M_AXI_RDATA;
+  wire [127:0]axi_clock_converter_0_M_AXI_RDATA;
   wire [3:0]axi_clock_converter_0_M_AXI_RID;
   wire axi_clock_converter_0_M_AXI_RLAST;
   wire axi_clock_converter_0_M_AXI_RREADY;
   wire [1:0]axi_clock_converter_0_M_AXI_RRESP;
   wire axi_clock_converter_0_M_AXI_RVALID;
-  wire [63:0]axi_clock_converter_0_M_AXI_WDATA;
+  wire [127:0]axi_clock_converter_0_M_AXI_WDATA;
   wire axi_clock_converter_0_M_AXI_WLAST;
   wire axi_clock_converter_0_M_AXI_WREADY;
-  wire [7:0]axi_clock_converter_0_M_AXI_WSTRB;
+  wire [15:0]axi_clock_converter_0_M_AXI_WSTRB;
   wire axi_clock_converter_0_M_AXI_WVALID;
   wire [0:0]diff_clock_rtl_0_1_CLK_N;
   wire [0:0]diff_clock_rtl_0_1_CLK_P;
@@ -241,16 +241,16 @@ module Top
   wire xdma_0_M_AXI_BREADY;
   wire [1:0]xdma_0_M_AXI_BRESP;
   wire xdma_0_M_AXI_BVALID;
-  wire [63:0]xdma_0_M_AXI_RDATA;
+  wire [127:0]xdma_0_M_AXI_RDATA;
   wire [3:0]xdma_0_M_AXI_RID;
   wire xdma_0_M_AXI_RLAST;
   wire xdma_0_M_AXI_RREADY;
   wire [1:0]xdma_0_M_AXI_RRESP;
   wire xdma_0_M_AXI_RVALID;
-  wire [63:0]xdma_0_M_AXI_WDATA;
+  wire [127:0]xdma_0_M_AXI_WDATA;
   wire xdma_0_M_AXI_WLAST;
   wire xdma_0_M_AXI_WREADY;
-  wire [7:0]xdma_0_M_AXI_WSTRB;
+  wire [15:0]xdma_0_M_AXI_WSTRB;
   wire xdma_0_M_AXI_WVALID;
   wire xdma_0_axi_aclk;
   wire xdma_0_axi_aresetn;

@@ -1151,8 +1151,8 @@ Top_xdma_0_0_pcie2_ip_pcie_bram_top_7x #(
   )
   pcie_block_i (
   
-    .TRNTD                               ({{(128-C_DATA_WIDTH){1'b0}},trn_td}          ),
-    .TRNTREM                             ({1'b0,trn_trem}          ),
+    .TRNTD                               (trn_td                                     ),
+    .TRNTREM                             (trn_trem                                   ),
 
 
     .TRNTSOF                             (trn_tsof                                   ),

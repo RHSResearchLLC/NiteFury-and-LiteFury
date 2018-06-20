@@ -237,29 +237,29 @@ output wire tx_err_drop;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TREADY" *)
 output wire s_axis_tx_tready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TDATA" *)
-input wire [63 : 0] s_axis_tx_tdata;
+input wire [127 : 0] s_axis_tx_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TKEEP" *)
-input wire [7 : 0] s_axis_tx_tkeep;
+input wire [15 : 0] s_axis_tx_tkeep;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TLAST" *)
 input wire s_axis_tx_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TVALID" *)
 input wire s_axis_tx_tvalid;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_tx, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 4, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_tx, TDATA_NUM_BYTES 16, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 4, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_tx TUSER" *)
 input wire [3 : 0] s_axis_tx_tuser;
 (* X_INTERFACE_INFO = "xilinx.com:interface:pcie2_cfg_control:1.0 pcie2_cfg_control tx_cfg_gnt" *)
 input wire tx_cfg_gnt;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TDATA" *)
-output wire [63 : 0] m_axis_rx_tdata;
+output wire [127 : 0] m_axis_rx_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TKEEP" *)
-output wire [7 : 0] m_axis_rx_tkeep;
+output wire [15 : 0] m_axis_rx_tkeep;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TLAST" *)
 output wire m_axis_rx_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TVALID" *)
 output wire m_axis_rx_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TREADY" *)
 input wire m_axis_rx_tready;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_rx, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 22, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_rx, TDATA_NUM_BYTES 16, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 22, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_rx TUSER" *)
 output wire [21 : 0] m_axis_rx_tuser;
 (* X_INTERFACE_INFO = "xilinx.com:interface:pcie2_cfg_control:1.0 pcie2_cfg_control rx_np_ok" *)
@@ -538,7 +538,7 @@ input wire sys_rst_n;
     .max_lnk_wdt("000100"),
     .max_lnk_spd("2"),
     .c_gen1(1'B1),
-    .pci_exp_int_freq(3),
+    .pci_exp_int_freq(2),
     .c_pcie_fast_config(0),
     .bar_0("FFFF0000"),
     .bar_1("00000000"),
@@ -723,7 +723,7 @@ input wire sys_rst_n;
     .c_silicon_rev("2"),
     .c_aer_cap_optional_err_support("000000"),
     .LINK_CAP_MAX_LINK_WIDTH(4),
-    .C_DATA_WIDTH(64),
+    .C_DATA_WIDTH(128),
     .PIPE_SIM("FALSE"),
     .PCIE_EXT_CLK("FALSE"),
     .PCIE_EXT_GT_COMMON("FALSE"),
@@ -739,7 +739,7 @@ input wire sys_rst_n;
     .CFG_FC_IF("TRUE"),
     .EXT_PIPE_INTERFACE("FALSE"),
     .EXT_STARTUP_PRIMITIVE("FALSE"),
-    .KEEP_WIDTH(8),
+    .KEEP_WIDTH(16),
     .PCIE_ASYNC_EN("FALSE"),
     .ENABLE_JTAG_DBG("FALSE")
   ) inst (

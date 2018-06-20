@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun 17 09:06:28 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jun 20 13:01:55 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="Top" PACKAGE="fbg484" SPEEDGRADE="-2"/>
 
@@ -461,7 +461,7 @@
         <PARAMETER NAME="C_FAMILY" VALUE="artix7"/>
         <PARAMETER NAME="C_AXI_ID_WIDTH" VALUE="4"/>
         <PARAMETER NAME="C_AXI_ADDR_WIDTH" VALUE="64"/>
-        <PARAMETER NAME="C_AXI_DATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="C_AXI_DATA_WIDTH" VALUE="128"/>
         <PARAMETER NAME="C_S_AXI_ACLK_RATIO" VALUE="1"/>
         <PARAMETER NAME="C_M_AXI_ACLK_RATIO" VALUE="2"/>
         <PARAMETER NAME="C_AXI_IS_ACLK_ASYNC" VALUE="1"/>
@@ -478,7 +478,7 @@
         <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
         <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="64"/>
-        <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="4"/>
         <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
@@ -492,7 +492,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="xdma_0_axi_aclk">
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="xdma_0_axi_aclk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xdma_0" PORT="axi_aclk"/>
           </CONNECTIONS>
@@ -554,12 +554,12 @@
             <CONNECTION INSTANCE="xdma_0" PORT="m_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="63" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wdata">
+        <PORT DIR="I" LEFT="127" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xdma_0" PORT="m_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wstrb">
+        <PORT DIR="I" LEFT="15" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xdma_0" PORT="m_axi_wstrb"/>
           </CONNECTIONS>
@@ -656,7 +656,7 @@
             <CONNECTION INSTANCE="xdma_0" PORT="m_axi_rid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="63" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_rdata">
+        <PORT DIR="O" LEFT="127" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xdma_0" PORT="m_axi_rdata"/>
           </CONNECTIONS>
@@ -747,12 +747,12 @@
             <CONNECTION INSTANCE="mig_7series_0" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="63" NAME="m_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wdata">
+        <PORT DIR="O" LEFT="127" NAME="m_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_7series_0" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="m_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wstrb">
+        <PORT DIR="O" LEFT="15" NAME="m_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_7series_0" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
@@ -853,7 +853,7 @@
             <CONNECTION INSTANCE="mig_7series_0" PORT="s_axi_rid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="63" NAME="m_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_rdata">
+        <PORT DIR="I" LEFT="127" NAME="m_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_7series_0" PORT="s_axi_rdata"/>
           </CONNECTIONS>
@@ -880,10 +880,10 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="xdma_0_M_AXI" DATAWIDTH="64" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
+        <BUSINTERFACE BUSNAME="xdma_0_M_AXI" DATAWIDTH="128" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="4"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="64"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -907,8 +907,8 @@
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="Top_xdma_0_0_axi_aclk"/>
-          <PARAMETER NAME="NUM_READ_THREADS" VALUE="2"/>
-          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="2"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
           <PORTMAPS>
@@ -953,8 +953,8 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_rready"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="axi_clock_converter_0_M_AXI" DATAWIDTH="64" NAME="M_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
+        <BUSINTERFACE BUSNAME="axi_clock_converter_0_M_AXI" DATAWIDTH="128" NAME="M_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="4"/>
@@ -980,8 +980,8 @@
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
           <PARAMETER NAME="PHASE" VALUE="0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="Top_mig_7series_0_0_ui_clk"/>
-          <PARAMETER NAME="NUM_READ_THREADS" VALUE="2"/>
-          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="2"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
           <PORTMAPS>
@@ -1124,7 +1124,7 @@
         <PARAMETER NAME="C_S_AXI_CTRL_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_CTRL_MEM_SIZE" VALUE="1048576"/>
         <PARAMETER NAME="C_S_AXI_ID_WIDTH" VALUE="4"/>
-        <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="128"/>
         <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="29"/>
         <PARAMETER NAME="C_S_AXI_MEM_SIZE" VALUE="536870912"/>
         <PARAMETER NAME="QDRIIP_NUM_DEVICES" VALUE="1"/>
@@ -2181,7 +2181,7 @@
         <PARAMETER NAME="C7_RLDIII_ADDR_WIDTH" VALUE="29"/>
         <PARAMETER NAME="C7_RLDIII_nCK_PER_CLK" VALUE="1"/>
         <PARAMETER NAME="C7_POLARITY" VALUE="ACTIVE_LOW"/>
-        <PARAMETER NAME="XML_INPUT_FILE" VALUE="mig_b.prj"/>
+        <PARAMETER NAME="XML_INPUT_FILE" VALUE="mig_a.prj"/>
         <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
         <PARAMETER NAME="MIG_DONT_TOUCH_PARAM" VALUE="Custom"/>
         <PARAMETER NAME="BOARD_MIG_PARAM" VALUE="Custom"/>
@@ -2218,8 +2218,8 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="ui_clk" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LED_BLINKER1_c_counter_binary_0" PORT="CLK"/>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_aclk"/>
+            <CONNECTION INSTANCE="LED_BLINKER1_c_counter_binary_0" PORT="CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="3" NAME="s_axi_awid" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_awid">
@@ -2277,12 +2277,12 @@
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="63" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wdata">
+        <PORT DIR="I" LEFT="127" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wstrb">
+        <PORT DIR="I" LEFT="15" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_wstrb"/>
           </CONNECTIONS>
@@ -2387,7 +2387,7 @@
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_rid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="63" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_rdata">
+        <PORT DIR="O" LEFT="127" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_rdata"/>
           </CONNECTIONS>
@@ -2459,9 +2459,9 @@
             <PORTMAP LOGICAL="ODT" PHYSICAL="ddr3_odt"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="axi_clock_converter_0_M_AXI" DATAWIDTH="64" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+        <BUSINTERFACE BUSNAME="axi_clock_converter_0_M_AXI" DATAWIDTH="128" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
+          <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="4"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="29"/>
@@ -2486,8 +2486,8 @@
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
           <PARAMETER NAME="PHASE" VALUE="0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="Top_mig_7series_0_0_ui_clk"/>
-          <PARAMETER NAME="NUM_READ_THREADS" VALUE="2"/>
-          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="2"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
           <PORTMAPS>
@@ -2610,10 +2610,10 @@
         <PARAMETER NAME="DRP_CLK_SEL" VALUE="0"/>
         <PARAMETER NAME="FREE_RUN_FREQ" VALUE="0"/>
         <PARAMETER NAME="AXI_ADDR_WIDTH" VALUE="64"/>
-        <PARAMETER NAME="AXI_DATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="AXI_DATA_WIDTH" VALUE="128"/>
         <PARAMETER NAME="CORE_CLK_FREQ" VALUE="2"/>
         <PARAMETER NAME="PLL_TYPE" VALUE="2"/>
-        <PARAMETER NAME="USER_CLK_FREQ" VALUE="3"/>
+        <PARAMETER NAME="USER_CLK_FREQ" VALUE="2"/>
         <PARAMETER NAME="SILICON_REV" VALUE="Pre-Production"/>
         <PARAMETER NAME="PIPE_SIM" VALUE="false"/>
         <PARAMETER NAME="EXT_CH_GT_DRP" VALUE="false"/>
@@ -2673,8 +2673,8 @@
         <PARAMETER NAME="XDMA_PCIE_64BIT_EN" VALUE="xdma_pcie_64bit_en"/>
         <PARAMETER NAME="XDMA_AXILITE_MASTER" VALUE="FALSE"/>
         <PARAMETER NAME="XDMA_AXIST_BYPASS" VALUE="FALSE"/>
-        <PARAMETER NAME="XDMA_RNUM_CHNL" VALUE="2"/>
-        <PARAMETER NAME="XDMA_WNUM_CHNL" VALUE="2"/>
+        <PARAMETER NAME="XDMA_RNUM_CHNL" VALUE="1"/>
+        <PARAMETER NAME="XDMA_WNUM_CHNL" VALUE="1"/>
         <PARAMETER NAME="XDMA_AXILITE_SLAVE" VALUE="FALSE"/>
         <PARAMETER NAME="XDMA_NUM_USR_IRQ" VALUE="1"/>
         <PARAMETER NAME="XDMA_RNUM_RIDS" VALUE="32"/>
@@ -2685,7 +2685,7 @@
         <PARAMETER NAME="XDMA_NUM_PCIE_TAG" VALUE="64"/>
         <PARAMETER NAME="EN_AXI_MASTER_IF" VALUE="TRUE"/>
         <PARAMETER NAME="EN_WCHNL_0" VALUE="TRUE"/>
-        <PARAMETER NAME="EN_WCHNL_1" VALUE="TRUE"/>
+        <PARAMETER NAME="EN_WCHNL_1" VALUE="FALSE"/>
         <PARAMETER NAME="EN_WCHNL_2" VALUE="FALSE"/>
         <PARAMETER NAME="EN_WCHNL_3" VALUE="FALSE"/>
         <PARAMETER NAME="EN_WCHNL_4" VALUE="FALSE"/>
@@ -2693,7 +2693,7 @@
         <PARAMETER NAME="EN_WCHNL_6" VALUE="FALSE"/>
         <PARAMETER NAME="EN_WCHNL_7" VALUE="FALSE"/>
         <PARAMETER NAME="EN_RCHNL_0" VALUE="TRUE"/>
-        <PARAMETER NAME="EN_RCHNL_1" VALUE="TRUE"/>
+        <PARAMETER NAME="EN_RCHNL_1" VALUE="FALSE"/>
         <PARAMETER NAME="EN_RCHNL_2" VALUE="FALSE"/>
         <PARAMETER NAME="EN_RCHNL_3" VALUE="FALSE"/>
         <PARAMETER NAME="EN_RCHNL_4" VALUE="FALSE"/>
@@ -2757,7 +2757,7 @@
         <PARAMETER NAME="C_S_AXI_NUM_READ" VALUE="8"/>
         <PARAMETER NAME="C_M_AXI_NUM_READ" VALUE="8"/>
         <PARAMETER NAME="C_S_AXI_NUM_WRITE" VALUE="8"/>
-        <PARAMETER NAME="C_M_AXI_NUM_WRITE" VALUE="4"/>
+        <PARAMETER NAME="C_M_AXI_NUM_WRITE" VALUE="8"/>
         <PARAMETER NAME="MSIX_IMPL_EXT" VALUE="FALSE"/>
         <PARAMETER NAME="AXI_ACLK_LOOPBACK" VALUE="FALSE"/>
         <PARAMETER NAME="PF0_BAR0_APERTURE_SIZE" VALUE="0x0A"/>
@@ -2855,8 +2855,8 @@
         <PARAMETER NAME="VF_BARLITE_INT_PF1" VALUE="0x01"/>
         <PARAMETER NAME="VF_BARLITE_INT_PF2" VALUE="0x01"/>
         <PARAMETER NAME="VF_BARLITE_INT_PF3" VALUE="0x01"/>
-        <PARAMETER NAME="C_C2H_NUM_CHNL" VALUE="2"/>
-        <PARAMETER NAME="C_H2C_NUM_CHNL" VALUE="2"/>
+        <PARAMETER NAME="C_C2H_NUM_CHNL" VALUE="1"/>
+        <PARAMETER NAME="C_H2C_NUM_CHNL" VALUE="1"/>
         <PARAMETER NAME="H2C_XDMA_CHNL" VALUE="0x0F"/>
         <PARAMETER NAME="C2H_XDMA_CHNL" VALUE="0x0F"/>
         <PARAMETER NAME="AXISTEN_IF_ENABLE_MSG_ROUTE" VALUE="0x00000"/>
@@ -2886,8 +2886,8 @@
         <PARAMETER NAME="drp_clk_sel" VALUE="Internal"/>
         <PARAMETER NAME="free_run_freq" VALUE="100_MHz"/>
         <PARAMETER NAME="axi_addr_width" VALUE="64"/>
-        <PARAMETER NAME="axi_data_width" VALUE="64_bit"/>
-        <PARAMETER NAME="axisten_freq" VALUE="250"/>
+        <PARAMETER NAME="axi_data_width" VALUE="128_bit"/>
+        <PARAMETER NAME="axisten_freq" VALUE="125"/>
         <PARAMETER NAME="en_axi_slave_if" VALUE="true"/>
         <PARAMETER NAME="en_axi_master_if" VALUE="true"/>
         <PARAMETER NAME="pipe_sim" VALUE="false"/>
@@ -2938,8 +2938,8 @@
         <PARAMETER NAME="Shared_Logic_Clk_7xG2" VALUE="false"/>
         <PARAMETER NAME="Shared_Logic_Both_7xG2" VALUE="false"/>
         <PARAMETER NAME="en_transceiver_status_ports" VALUE="false"/>
-        <PARAMETER NAME="xdma_rnum_chnl" VALUE="2"/>
-        <PARAMETER NAME="xdma_wnum_chnl" VALUE="2"/>
+        <PARAMETER NAME="xdma_rnum_chnl" VALUE="1"/>
+        <PARAMETER NAME="xdma_wnum_chnl" VALUE="1"/>
         <PARAMETER NAME="xdma_axilite_slave" VALUE="false"/>
         <PARAMETER NAME="xdma_num_usr_irq" VALUE="1"/>
         <PARAMETER NAME="xdma_rnum_rids" VALUE="32"/>
@@ -3718,7 +3718,7 @@
         <PORT DIR="O" LEFT="3" NAME="pci_exp_txn" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="pci_exp_rxp" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="pci_exp_rxn" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="250000000" DIR="O" NAME="axi_aclk" SIGIS="clk" SIGNAME="xdma_0_axi_aclk">
+        <PORT CLKFREQUENCY="125000000" DIR="O" NAME="axi_aclk" SIGIS="clk" SIGNAME="xdma_0_axi_aclk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="s_axi_aclk"/>
           </CONNECTIONS>
@@ -3767,7 +3767,7 @@
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="s_axi_rid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="63" NAME="m_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_rdata">
+        <PORT DIR="I" LEFT="127" NAME="m_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="s_axi_rdata"/>
           </CONNECTIONS>
@@ -3832,12 +3832,12 @@
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="s_axi_awcache"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="63" NAME="m_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wdata">
+        <PORT DIR="O" LEFT="127" NAME="m_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="m_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wstrb">
+        <PORT DIR="O" LEFT="15" NAME="m_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_s_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
@@ -3909,12 +3909,12 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="xdma_0_M_AXI" DATAWIDTH="64" NAME="M_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
+        <BUSINTERFACE BUSNAME="xdma_0_M_AXI" DATAWIDTH="128" NAME="M_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
           <PARAMETER NAME="HAS_BURST" VALUE="0"/>
-          <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
+          <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="4"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="64"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3936,8 +3936,8 @@
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="Top_xdma_0_0_axi_aclk"/>
-          <PARAMETER NAME="NUM_READ_THREADS" VALUE="2"/>
-          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="2"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
           <PORTMAPS>
