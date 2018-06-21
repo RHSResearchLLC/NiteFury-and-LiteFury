@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jun 20 13:01:55 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jun 20 19:41:39 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="Top" PACKAGE="fbg484" SPEEDGRADE="-2"/>
 
@@ -246,7 +246,11 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="LED_BLINKER1_util_vector_logic_1_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_BLINKER1_util_vector_logic_1" PORT="Res"/>
@@ -2214,6 +2218,7 @@
         <PORT DIR="O" NAME="ui_clk_sync_rst" SIGIS="rst" SIGNAME="mig_7series_0_ui_clk_sync_rst">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="ui_clk" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
@@ -2590,6 +2595,29 @@
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/util_vector_logic_1" HWVERSION="2.0" INSTANCE="util_vector_logic_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_util_vector_logic_0_2"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="mig_7series_0_ui_clk_sync_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk_sync_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="LED_BLINKER1_util_vector_logic_2" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

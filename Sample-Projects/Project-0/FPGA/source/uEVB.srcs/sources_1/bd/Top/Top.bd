@@ -365,6 +365,15 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_xlconstant_0_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>util_vector_logic_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">Top_util_vector_logic_0_2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SIZE">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_OPERATION">not</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -447,6 +456,7 @@
         <spirit:name>mig_7series_0_ui_clk_sync_rst</spirit:name>
         <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="ui_clk_sync_rst"/>
         <spirit:internalPortReference spirit:componentRef="util_vector_logic_0" spirit:portRef="Op1"/>
+        <spirit:internalPortReference spirit:componentRef="util_vector_logic_1" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>xlconstant_0_dout</spirit:name>
@@ -457,6 +467,11 @@
         <spirit:name>xlconstant_2_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="xlconstant_2" spirit:portRef="dout"/>
         <spirit:internalPortReference spirit:componentRef="mig_7series_0" spirit:portRef="sys_rst"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>RESET_L_1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="util_vector_logic_1" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="LED_BLINKER1" spirit:portRef="RESET_L"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

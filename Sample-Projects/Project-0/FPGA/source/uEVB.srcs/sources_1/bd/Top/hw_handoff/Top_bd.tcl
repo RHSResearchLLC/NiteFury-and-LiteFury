@@ -564,6 +564,14 @@ proc create_root_design { parentCell } {
    CONFIG.LOGO_FILE {data/sym_notgate.png} \
  ] $util_vector_logic_0
 
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
   # Create instance: xdma_0, and set properties
   set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.1 xdma_0 ]
   set_property -dict [ list \
@@ -601,10 +609,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net LED_BLINKER1_LED_ON_L [get_bd_ports LED_A4] [get_bd_pins LED_BLINKER1/LED_ON_L]
   connect_bd_net -net LED_BLINKER_LED_ON_L [get_bd_ports LED_A3] [get_bd_pins LED_BLINKER/LED_ON_L]
   connect_bd_net -net OK_1 [get_bd_pins LED_BLINKER/OK] [get_bd_pins xdma_0/user_lnk_up]
+  connect_bd_net -net RESET_L_1 [get_bd_pins LED_BLINKER1/RESET_L] [get_bd_pins util_vector_logic_1/Res]
   connect_bd_net -net mig_7series_0_init_calib_complete [get_bd_ports LED_A1] [get_bd_pins LED_BLINKER1/OK] [get_bd_pins mig_7series_0/init_calib_complete]
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_ports LED_A2] [get_bd_pins mig_7series_0/mmcm_locked]
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins LED_BLINKER1/CLK] [get_bd_pins axi_clock_converter_0/m_axi_aclk] [get_bd_pins mig_7series_0/ui_clk]
-  connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins util_vector_logic_0/Op1] [get_bd_pins util_vector_logic_1/Op1]
   connect_bd_net -net pci_reset_1 [get_bd_ports pci_reset] [get_bd_pins LED_BLINKER/RESET_L] [get_bd_pins xdma_0/sys_rst_n]
   connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins LED_BLINKER/CLK] [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
   connect_bd_net -net util_vector_logic_0_Res [get_bd_pins axi_clock_converter_0/m_axi_aresetn] [get_bd_pins util_vector_logic_0/Res]
