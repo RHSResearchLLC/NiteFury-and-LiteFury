@@ -27,6 +27,9 @@ NiteFury has 6x the processing power of PicoEVB, and is comparable with midrange
 ![Image of NiteFury bottom](./images/Bot-R1-A.png)
 
 
+## Verified configurations
+- XC7A200T-2 with 4Gb DDR3-800
+
 ## More information
 
 info@nanoevb.com
