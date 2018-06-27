@@ -12,6 +12,11 @@ NiteFury is Xilinx Artix A200 FPGA & DDR3 in a small form factor (M.2 2280 M key
 ## Block Diagram
 ![NiteFury block diagram](./images/uEVB-BD.png)
 
+## DSP Processing metrics (DSP slices)
+![DSP metrics diagram](./images/dsp-metrics.jpg)
+
+NiteFury has 6x the processing power of PicoEVB, and is comparable with midrange Kintex devices
+
 ## Rendering
 
 ![Image of NiteFury top](./images/top.png)
