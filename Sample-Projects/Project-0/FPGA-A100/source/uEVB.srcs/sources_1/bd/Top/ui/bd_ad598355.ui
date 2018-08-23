@@ -1,0 +1,57 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port LED_A2 -pg 1 -y 120 -defaultsOSRD
+preplace port pcie_clkin -pg 1 -y 620 -defaultsOSRD
+preplace port sys_clk -pg 1 -y 90 -defaultsOSRD
+preplace port pcie_mgt -pg 1 -y 580 -defaultsOSRD
+preplace port DDR3 -pg 1 -y 60 -defaultsOSRD
+preplace port pci_reset -pg 1 -y 690 -defaultsOSRD
+preplace port LED_A1 -pg 1 -y 140 -defaultsOSRD
+preplace portBus LED_A3 -pg 1 -y 510 -defaultsOSRD
+preplace portBus LED_A4 -pg 1 -y 300 -defaultsOSRD
+preplace portBus pcie_clkreq_l -pg 1 -y 640 -defaultsOSRD
+preplace inst axi_clock_converter_0 -pg 1 -lvl 4 -y 460 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 250 -defaultsOSRD
+preplace inst mig_7series_0 -pg 1 -lvl 5 -y 100 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 5 -y 640 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 3 -y 150 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -y 500 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 4 -y 300 -defaultsOSRD
+preplace inst util_ds_buf -pg 1 -lvl 1 -y 620 -defaultsOSRD
+preplace inst xdma_0 -pg 1 -lvl 3 -y 630 -defaultsOSRD
+preplace inst LED_BLINKER1 -pg 1 -lvl 5 -y 300 -defaultsOSRD
+preplace inst LED_BLINKER -pg 1 -lvl 5 -y 510 -defaultsOSRD
+preplace netloc xlconstant_1_dout 1 5 1 NJ
+preplace netloc mig_7series_0_mmcm_locked 1 5 1 NJ
+preplace netloc xlconstant_2_dout 1 3 2 940J 110 NJ
+preplace netloc OK_1 1 3 2 NJ 600 1320
+preplace netloc mig_7series_0_DDR3 1 5 1 NJ
+preplace netloc mig_7series_0_init_calib_complete 1 4 2 1320 210 1630
+preplace netloc util_ds_buf_IBUF_OUT 1 1 4 NJ 610 620 770 NJ 770 1300
+preplace netloc util_vector_logic_0_Res 1 2 2 NJ 500 NJ
+preplace netloc xdma_0_axi_aclk 1 3 1 950
+preplace netloc diff_clock_rtl_0_1 1 0 1 NJ
+preplace netloc xdma_0_axi_aresetn 1 3 1 960
+preplace netloc mig_7series_0_ui_clk 1 3 3 970 240 1310 200 1610
+preplace netloc xlconstant_0_dout 1 3 2 960J 130 NJ
+preplace netloc LED_BLINKER1_LED_ON_L 1 5 1 NJ
+preplace netloc diff_clock_rtl_1_1 1 0 5 NJ 90 NJ 90 NJ 90 NJ 90 NJ
+preplace netloc xdma_0_M_AXI 1 3 1 940
+preplace netloc axi_clock_converter_0_M_AXI 1 4 1 1300
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 5 320 360 NJ 360 940 360 1310J 370 1620
+preplace netloc xdma_0_pcie_mgt 1 3 3 NJ 580 NJ 580 NJ
+preplace netloc RESET_L_1 1 4 1 NJ
+preplace netloc pci_reset_1 1 0 5 NJ 690 NJ 690 630 760 NJ 760 1310
+preplace netloc LED_BLINKER_LED_ON_L 1 5 1 NJ
+levelinfo -pg 1 0 170 470 790 1140 1470 1650 -top 0 -bot 780
+",
+}
+{
+   da_axi4_cnt: "1",
+   da_board_cnt: "3",
+   da_bram_cntlr_cnt: "2",
+   da_clkrst_cnt: "3",
+   da_xdma_cnt: "1",
+}
