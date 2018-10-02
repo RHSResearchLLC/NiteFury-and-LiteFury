@@ -49,6 +49,8 @@ NiteFury has 6x the processing power of PicoEVB, and is comparable with midrange
 
 ## More information
 
+Sign up for notifications on an upcoming crowdfunding campaign: <https://www.crowdsupply.com/rhs-research/nitefury>.
+
 info@nanoevb.com
 
 
