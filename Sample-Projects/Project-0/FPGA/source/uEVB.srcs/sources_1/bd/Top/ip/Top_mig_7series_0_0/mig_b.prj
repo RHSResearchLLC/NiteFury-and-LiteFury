@@ -18,7 +18,7 @@
     <dci_hr_inouts_inputs>50 Ohms</dci_hr_inouts_inputs>
     <dci_cascade>0</dci_cascade>
     <Controller number="0" >
-        <MemoryDevice>DDR3_SDRAM/Components/MT41K256M16XX-107</MemoryDevice>
+        <MemoryDevice>DDR3_SDRAM/Components/MT41K256M16XX-125</MemoryDevice>
         <TimePeriod>2500</TimePeriod>
         <VccAuxIO>1.8V</VccAuxIO>
         <PHYRatio>4:1</PHYRatio>
@@ -36,13 +36,13 @@
         <ECC>Disabled</ECC>
         <Ordering>Strict</Ordering>
         <BankMachineCnt>4</BankMachineCnt>
-        <CustomPart>FALSE</CustomPart>
-        <NewPartName></NewPartName>
-        <RowAddress>15</RowAddress>
+        <CustomPart>TRUE</CustomPart>
+        <NewPartName>MT41K512M16XX-125</NewPartName>
+        <RowAddress>16</RowAddress>
         <ColAddress>10</ColAddress>
         <BankAddress>3</BankAddress>
         <MemoryVoltage>1.5V</MemoryVoltage>
-        <C0_MEM_SIZE>536870912</C0_MEM_SIZE>
+        <C0_MEM_SIZE>1073741824</C0_MEM_SIZE>
         <UserMemoryAddressMap>BANK_ROW_COLUMN</UserMemoryAddressMap>
         <PinSelection>
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="M15" SLEW="" name="ddr3_addr[0]" IN_TERM="" />
@@ -51,6 +51,7 @@
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="K22" SLEW="" name="ddr3_addr[12]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="N18" SLEW="" name="ddr3_addr[13]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="N22" SLEW="" name="ddr3_addr[14]" IN_TERM="" />
+            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="J22" SLEW="" name="ddr3_addr[15]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="L21" SLEW="" name="ddr3_addr[1]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="M16" SLEW="" name="ddr3_addr[2]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="L18" SLEW="" name="ddr3_addr[3]" IN_TERM="" />
@@ -103,7 +104,7 @@
             <Pin PADName="No connect" Bank="Select Bank" name="tg_compare_error" />
         </System_Control>
         <TimingParameters>
-            <Parameters twtr="7.5" trrd="6" trefi="7.8" tfaw="35" trtp="7.5" tcke="5" trfc="260" trp="13.91" tras="34" trcd="13.91" />
+            <Parameters twtr="7.5" trrd="7.5" trefi="7.8" tfaw="40" trtp="7.5" tcke="5" trfc="260" trp="13.75" tras="35" trcd="13.75" />
         </TimingParameters>
         <mrBurstLength name="Burst Length" >8 - Fixed</mrBurstLength>
         <mrBurstType name="Read Burst Type and Length" >Sequential</mrBurstType>
@@ -128,8 +129,8 @@
         <PortInterface>AXI</PortInterface>
         <AXIParameters>
             <C0_C_RD_WR_ARB_ALGORITHM>RD_PRI_REG</C0_C_RD_WR_ARB_ALGORITHM>
-            <C0_S_AXI_ADDR_WIDTH>29</C0_S_AXI_ADDR_WIDTH>
-            <C0_S_AXI_DATA_WIDTH>64</C0_S_AXI_DATA_WIDTH>
+            <C0_S_AXI_ADDR_WIDTH>30</C0_S_AXI_ADDR_WIDTH>
+            <C0_S_AXI_DATA_WIDTH>128</C0_S_AXI_DATA_WIDTH>
             <C0_S_AXI_ID_WIDTH>4</C0_S_AXI_ID_WIDTH>
             <C0_S_AXI_SUPPORTS_NARROW_BURST>0</C0_S_AXI_SUPPORTS_NARROW_BURST>
         </AXIParameters>

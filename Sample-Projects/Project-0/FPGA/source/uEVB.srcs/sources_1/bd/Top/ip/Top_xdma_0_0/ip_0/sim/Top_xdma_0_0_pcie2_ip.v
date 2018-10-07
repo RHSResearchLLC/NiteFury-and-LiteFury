@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.3
-// IP Revision: 8
+// IP Revision: 9
 
 `timescale 1ns/1ps
 

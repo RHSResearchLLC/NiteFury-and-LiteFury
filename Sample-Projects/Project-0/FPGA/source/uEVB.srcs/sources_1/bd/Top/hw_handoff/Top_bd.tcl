@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2018.1
+set scripts_vivado_version 2018.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -164,13 +164,13 @@ proc write_mig_file_Top_mig_7series_0_0 { str_mig_prj_filepath } {
    puts $mig_prj_file {        <ECC>Disabled</ECC>}
    puts $mig_prj_file {        <Ordering>Strict</Ordering>}
    puts $mig_prj_file {        <BankMachineCnt>4</BankMachineCnt>}
-   puts $mig_prj_file {        <CustomPart>FALSE</CustomPart>}
-   puts $mig_prj_file {        <NewPartName></NewPartName>}
-   puts $mig_prj_file {        <RowAddress>15</RowAddress>}
+   puts $mig_prj_file {        <CustomPart>TRUE</CustomPart>}
+   puts $mig_prj_file {        <NewPartName>MT41K512M16XX-107</NewPartName>}
+   puts $mig_prj_file {        <RowAddress>16</RowAddress>}
    puts $mig_prj_file {        <ColAddress>10</ColAddress>}
    puts $mig_prj_file {        <BankAddress>3</BankAddress>}
    puts $mig_prj_file {        <MemoryVoltage>1.5V</MemoryVoltage>}
-   puts $mig_prj_file {        <C0_MEM_SIZE>536870912</C0_MEM_SIZE>}
+   puts $mig_prj_file {        <C0_MEM_SIZE>1073741824</C0_MEM_SIZE>}
    puts $mig_prj_file {        <UserMemoryAddressMap>BANK_ROW_COLUMN</UserMemoryAddressMap>}
    puts $mig_prj_file {        <PinSelection>}
    puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="M15" SLEW="" name="ddr3_addr[0]" IN_TERM="" />}
@@ -179,6 +179,7 @@ proc write_mig_file_Top_mig_7series_0_0 { str_mig_prj_filepath } {
    puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="K22" SLEW="" name="ddr3_addr[12]" IN_TERM="" />}
    puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="N18" SLEW="" name="ddr3_addr[13]" IN_TERM="" />}
    puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="N22" SLEW="" name="ddr3_addr[14]" IN_TERM="" />}
+   puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="J22" SLEW="" name="ddr3_addr[15]" IN_TERM="" />}
    puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="L21" SLEW="" name="ddr3_addr[1]" IN_TERM="" />}
    puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="M16" SLEW="" name="ddr3_addr[2]" IN_TERM="" />}
    puts $mig_prj_file {            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="L18" SLEW="" name="ddr3_addr[3]" IN_TERM="" />}
@@ -256,7 +257,7 @@ proc write_mig_file_Top_mig_7series_0_0 { str_mig_prj_filepath } {
    puts $mig_prj_file {        <PortInterface>AXI</PortInterface>}
    puts $mig_prj_file {        <AXIParameters>}
    puts $mig_prj_file {            <C0_C_RD_WR_ARB_ALGORITHM>RD_PRI_REG</C0_C_RD_WR_ARB_ALGORITHM>}
-   puts $mig_prj_file {            <C0_S_AXI_ADDR_WIDTH>29</C0_S_AXI_ADDR_WIDTH>}
+   puts $mig_prj_file {            <C0_S_AXI_ADDR_WIDTH>30</C0_S_AXI_ADDR_WIDTH>}
    puts $mig_prj_file {            <C0_S_AXI_DATA_WIDTH>128</C0_S_AXI_DATA_WIDTH>}
    puts $mig_prj_file {            <C0_S_AXI_ID_WIDTH>4</C0_S_AXI_ID_WIDTH>}
    puts $mig_prj_file {            <C0_S_AXI_SUPPORTS_NARROW_BURST>0</C0_S_AXI_SUPPORTS_NARROW_BURST>}
@@ -575,11 +576,16 @@ proc create_root_design { parentCell } {
   # Create instance: xdma_0, and set properties
   set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.1 xdma_0 ]
   set_property -dict [ list \
+   CONFIG.PF0_DEVICE_ID_mqdma {9024} \
+   CONFIG.PF2_DEVICE_ID_mqdma {9024} \
+   CONFIG.PF3_DEVICE_ID_mqdma {9024} \
    CONFIG.axi_data_width {128_bit} \
    CONFIG.axisten_freq {125} \
    CONFIG.cfg_mgmt_if {false} \
+   CONFIG.pf0_device_id {7024} \
    CONFIG.pl_link_cap_max_link_speed {5.0_GT/s} \
    CONFIG.pl_link_cap_max_link_width {X4} \
+   CONFIG.plltype {QPLL1} \
    CONFIG.xdma_axi_intf_mm {AXI_Memory_Mapped} \
    CONFIG.xdma_rnum_chnl {1} \
    CONFIG.xdma_wnum_chnl {1} \

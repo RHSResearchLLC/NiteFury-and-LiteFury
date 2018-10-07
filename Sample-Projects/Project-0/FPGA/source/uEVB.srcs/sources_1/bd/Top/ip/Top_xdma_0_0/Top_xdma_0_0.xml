@@ -6145,6 +6145,14 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
+            <spirit:name>cq_np_req_count</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pcie_cq_np_req_count_sd</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
             <spirit:name>current_speed</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
@@ -16190,21 +16198,11 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>DATA_FLIT_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CXS_TX.DATA_FLIT_WIDTH">256</spirit:value>
-          <spirit:vendorExtensions>
-            <xilinx:parameterInfo>
-              <xilinx:parameterUsage>none</xilinx:parameterUsage>
-            </xilinx:parameterInfo>
-          </spirit:vendorExtensions>
+          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.CXS_TX.DATA_FLIT_WIDTH" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.AXI_DATA_WIDTH&apos;))">128</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_PKT_PER_FLIT</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CXS_TX.MAX_PKT_PER_FLIT">2</spirit:value>
-          <spirit:vendorExtensions>
-            <xilinx:parameterInfo>
-              <xilinx:parameterUsage>none</xilinx:parameterUsage>
-            </xilinx:parameterInfo>
-          </spirit:vendorExtensions>
+          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.CXS_TX.MAX_PKT_PER_FLIT" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.AXI_DATA_WIDTH&apos;)) = 512 ) ? 4 : 2)">2</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>DATACHECK</spirit:name>
@@ -16365,21 +16363,11 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>DATA_FLIT_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CXS_RX.DATA_FLIT_WIDTH">256</spirit:value>
-          <spirit:vendorExtensions>
-            <xilinx:parameterInfo>
-              <xilinx:parameterUsage>none</xilinx:parameterUsage>
-            </xilinx:parameterInfo>
-          </spirit:vendorExtensions>
+          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.CXS_RX.DATA_FLIT_WIDTH" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.AXI_DATA_WIDTH&apos;))">128</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_PKT_PER_FLIT</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CXS_RX.MAX_PKT_PER_FLIT">2</spirit:value>
-          <spirit:vendorExtensions>
-            <xilinx:parameterInfo>
-              <xilinx:parameterUsage>none</xilinx:parameterUsage>
-            </xilinx:parameterInfo>
-          </spirit:vendorExtensions>
+          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.CXS_RX.MAX_PKT_PER_FLIT" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.AXI_DATA_WIDTH&apos;)) = 512 ) ? 4 : 2)">2</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>DATACHECK</spirit:name>
@@ -17839,7 +17827,7 @@
       <spirit:addressBlock>
         <spirit:name>CTL0</spirit:name>
         <spirit:baseAddress spirit:format="long">0</spirit:baseAddress>
-        <spirit:range spirit:format="long" spirit:resolve="generated">256M</spirit:range>
+        <spirit:range spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.FUNC_MODE&apos;)) = 1) ? spirit:pow(2,16) : spirit:pow(2,29))">65536</spirit:range>
         <spirit:width spirit:format="long">32</spirit:width>
         <spirit:usage>memory</spirit:usage>
         <spirit:access>read-write</spirit:access>
@@ -17860,7 +17848,7 @@
       <spirit:addressBlock>
         <spirit:name>CTL0</spirit:name>
         <spirit:baseAddress spirit:format="long">0</spirit:baseAddress>
-        <spirit:range spirit:format="long" spirit:resolve="generated">256M</spirit:range>
+        <spirit:range spirit:format="long" spirit:resolve="generated">512M</spirit:range>
         <spirit:width spirit:format="long">32</spirit:width>
         <spirit:usage>memory</spirit:usage>
         <spirit:access>read-write</spirit:access>
@@ -18041,12 +18029,8 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jun 04 01:28:47 UTC 2018</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:ce925546</spirit:value>
+            <spirit:value>8:c1145ac8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18062,11 +18046,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 20 17:01:44 UTC 2018</spirit:value>
+            <spirit:value>Sun Sep 23 23:22:11 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:12319b6e</spirit:value>
+            <spirit:value>8:71dd54b5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18082,11 +18066,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 20 17:01:44 UTC 2018</spirit:value>
+            <spirit:value>Sun Sep 23 23:22:11 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:12319b6e</spirit:value>
+            <spirit:value>8:71dd54b5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18102,11 +18086,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 20 17:01:44 UTC 2018</spirit:value>
+            <spirit:value>Sun Sep 23 23:22:11 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:050e2a5e</spirit:value>
+            <spirit:value>8:6b1d0368</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18122,11 +18106,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 20 17:01:45 UTC 2018</spirit:value>
+            <spirit:value>Sun Sep 23 23:22:12 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:050e2a5e</spirit:value>
+            <spirit:value>8:6b1d0368</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18140,11 +18124,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 20 17:01:45 UTC 2018</spirit:value>
+            <spirit:value>Sun Sep 23 23:22:12 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:12319b6e</spirit:value>
+            <spirit:value>8:71dd54b5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18158,11 +18142,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 20 17:18:05 UTC 2018</spirit:value>
+            <spirit:value>Sun Sep 23 23:43:42 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:12319b6e</spirit:value>
+            <spirit:value>8:71dd54b5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -43259,6 +43243,33 @@
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
+        <spirit:name>pcie_cq_np_req_count_sd</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">5</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.pcie_cq_np_req_count_sd" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.SPLIT_DMA&apos;)) == &quot;TRUE&quot;)">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>pcie_tfc_nph_av_sd</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
@@ -45341,6 +45352,29 @@
           <xilinx:portInfo>
             <xilinx:enablement>
               <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cxs0_data_chk_rx" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.CCIX_ENABLE&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.PCIE_BLK_TYPE&apos;)) = 1)">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ccix_optimized_tlp_tx_and_rx_enable_in</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.ccix_optimized_tlp_tx_and_rx_enable_in" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.CCIX_DVSEC&apos;)) != &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.CCIX_ENABLE&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.PCIE_BLK_TYPE&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -48246,7 +48280,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>MSI_ENABLED</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.MSI_ENABLED">true</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.MSI_ENABLED">TRUE</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DEV_PORT_TYPE</spirit:name>
@@ -48782,6 +48816,11 @@
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DMA_RESET_SOURCE_SEL">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
+        <spirit:name>PF1_BAR0_APERTURE_SIZE</spirit:name>
+        <spirit:displayName>Pf0 Bar0 Aperture Size</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR0_APERTURE_SIZE" spirit:bitStringLength="8">0x12</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR0_CONTROL</spirit:name>
         <spirit:displayName>Pf0 Bar0 Control</spirit:displayName>
         <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR0_CONTROL" spirit:bitStringLength="3">0x4</spirit:value>
@@ -48789,7 +48828,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR1_APERTURE_SIZE</spirit:name>
         <spirit:displayName>Pf0 Bar1 Aperture Size</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR1_APERTURE_SIZE" spirit:bitStringLength="8">0x05</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR1_APERTURE_SIZE" spirit:bitStringLength="8">0x0A</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR1_CONTROL</spirit:name>
@@ -48799,7 +48838,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR2_APERTURE_SIZE</spirit:name>
         <spirit:displayName>Pf0 Bar2 Aperture Size</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR2_APERTURE_SIZE" spirit:bitStringLength="8">0x05</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR2_APERTURE_SIZE" spirit:bitStringLength="8">0x0A</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR2_CONTROL</spirit:name>
@@ -48809,7 +48848,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR3_APERTURE_SIZE</spirit:name>
         <spirit:displayName>Pf0 Bar3 Aperture Size</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR3_APERTURE_SIZE" spirit:bitStringLength="8">0x05</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR3_APERTURE_SIZE" spirit:bitStringLength="8">0x0A</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR3_CONTROL</spirit:name>
@@ -48819,7 +48858,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR4_APERTURE_SIZE</spirit:name>
         <spirit:displayName>Pf0 Bar4 Aperture Size</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR4_APERTURE_SIZE" spirit:bitStringLength="8">0x05</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR4_APERTURE_SIZE" spirit:bitStringLength="8">0x0A</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR4_CONTROL</spirit:name>
@@ -48829,7 +48868,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR5_APERTURE_SIZE</spirit:name>
         <spirit:displayName>Pf0 Bar5 Aperture Size</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR5_APERTURE_SIZE" spirit:bitStringLength="8">0x05</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF1_BAR5_APERTURE_SIZE" spirit:bitStringLength="8">0x0A</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_BAR5_CONTROL</spirit:name>
@@ -49113,6 +49152,10 @@
         <spirit:name>C_MSI_RX_PIN_EN</spirit:name>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MSI_RX_PIN_EN">0</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_INTX_RX_PIN_EN</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_INTX_RX_PIN_EN">1</spirit:value>
+      </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>PCIE_ID_IF</spirit:name>
         <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PCIE_ID_IF">FALSE</spirit:value>
@@ -49120,6 +49163,10 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>TL_PF_ENABLE_REG</spirit:name>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TL_PF_ENABLE_REG">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="string">
+        <spirit:name>AXSIZE_BYTE_ACCESS_EN</spirit:name>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.AXSIZE_BYTE_ACCESS_EN">FALSE</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -49384,22 +49431,6 @@
       <spirit:enumeration>5</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_8efdc62d</spirit:name>
-      <spirit:enumeration>None</spirit:enumeration>
-      <spirit:enumeration>VCU117</spirit:enumeration>
-      <spirit:enumeration>VCU119</spirit:enumeration>
-      <spirit:enumeration>ZCU117</spirit:enumeration>
-      <spirit:enumeration>KCU116</spirit:enumeration>
-      <spirit:enumeration>VCU1262</spirit:enumeration>
-      <spirit:enumeration>VCU1299</spirit:enumeration>
-      <spirit:enumeration>VCU1525</spirit:enumeration>
-      <spirit:enumeration>KC705</spirit:enumeration>
-      <spirit:enumeration>KCU1500</spirit:enumeration>
-      <spirit:enumeration>XIL-ACCEL-RD-VU9P</spirit:enumeration>
-      <spirit:enumeration>XIL-ACCEL-RD-KU115</spirit:enumeration>
-      <spirit:enumeration>VCU1550</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
       <spirit:name>choice_list_8f346c48</spirit:name>
       <spirit:enumeration>User_Reset</spirit:enumeration>
     </spirit:choice>
@@ -49526,6 +49557,23 @@
       <spirit:enumeration>MSI-X_External</spirit:enumeration>
       <spirit:enumeration>MSI-X_Internal</spirit:enumeration>
       <spirit:enumeration>MSI-X_AXI4-Stream</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_c0448d62</spirit:name>
+      <spirit:enumeration>None</spirit:enumeration>
+      <spirit:enumeration>VCU117</spirit:enumeration>
+      <spirit:enumeration>VCU119</spirit:enumeration>
+      <spirit:enumeration>ZCU117</spirit:enumeration>
+      <spirit:enumeration>KCU116</spirit:enumeration>
+      <spirit:enumeration>VCU1262</spirit:enumeration>
+      <spirit:enumeration>VCU1299</spirit:enumeration>
+      <spirit:enumeration>VCU1525</spirit:enumeration>
+      <spirit:enumeration>KC705</spirit:enumeration>
+      <spirit:enumeration>KCU1500</spirit:enumeration>
+      <spirit:enumeration>XIL-ACCEL-RD-VU9P</spirit:enumeration>
+      <spirit:enumeration>XIL-ACCEL-RD-KU115</spirit:enumeration>
+      <spirit:enumeration>VCU1550</spirit:enumeration>
+      <spirit:enumeration>XBB1551</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_c15e8c67</spirit:name>
@@ -49709,19 +49757,19 @@
         <spirit:userFileType>xml</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>ip_1/xdma_v4_1_0_blk_mem_64_reg_be.xci</spirit:name>
+        <spirit:name>ip_1/xdma_v4_1_1_blk_mem_64_reg_be.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>ip_1/xdma_v4_1_0_blk_mem_64_reg_be.xml</spirit:name>
+        <spirit:name>ip_1/xdma_v4_1_1_blk_mem_64_reg_be.xml</spirit:name>
         <spirit:userFileType>xml</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>ip_2/xdma_v4_1_0_blk_mem_64_noreg_be.xci</spirit:name>
+        <spirit:name>ip_2/xdma_v4_1_1_blk_mem_64_noreg_be.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>ip_2/xdma_v4_1_0_blk_mem_64_noreg_be.xml</spirit:name>
+        <spirit:name>ip_2/xdma_v4_1_1_blk_mem_64_noreg_be.xml</spirit:name>
         <spirit:userFileType>xml</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -49744,189 +49792,189 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/pciedmacoredefines.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/pciedmacoredefines.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/xdma_axi4mm_axi_bridge.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/xdma_axi4mm_axi_bridge.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_soft_defines.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_soft_defines.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_defines.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_defines.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/pcie_dma_attr_defines.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/pcie_dma_attr_defines.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/axidma_fifo.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/axidma_fifo.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_defines.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_defines.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/axi_infrastructure_header.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/axi_infrastructure_header.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_cc_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_cc_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_cq_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_cq_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_rc_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_rc_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_rq_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_rq_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_c2h_crdt_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_c2h_crdt_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_dsc_in_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_dsc_in_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_dsc_out_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_dsc_out_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_fabric_input_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_fabric_input_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_fabric_output_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_fabric_output_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_gic_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_gic_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_h2c_crdt_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_h2c_crdt_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_2Bx2048_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_2Bx2048_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_4Bx2048_4Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_4Bx2048_4Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_8Bx2048_4Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_8Bx2048_4Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_16Bx2048_4Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_16Bx2048_4Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_64Bx128_32Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_64Bx128_32Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_64Bx256_32Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_64Bx256_32Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_64Bx512_32Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_64Bx512_32Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_dsc_cpld_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_dsc_cpld_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_dsc_cpli_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_dsc_cpli_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_misc_input_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_misc_input_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_misc_output_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_misc_output_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/xdma_v4_1_vl_rfs.sv</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/xdma_v4_1_vl_rfs.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>xdma_v4_1/hdl/verilog/Top_xdma_0_0_dma_cpl.sv</spirit:name>
@@ -50013,220 +50061,220 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/pciedmacoredefines.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/pciedmacoredefines.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/xdma_axi4mm_axi_bridge.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/xdma_axi4mm_axi_bridge.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_soft_defines.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_soft_defines.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/pcie_dma_attr_defines.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/pcie_dma_attr_defines.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_defines.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_defines.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/axidma_fifo.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/axidma_fifo.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_defines.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_defines.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/axi_infrastructure_header.vh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/axi_infrastructure_header.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_cc_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_cc_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_cq_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_cq_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_rc_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_rc_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_axis_rq_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_axis_rq_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_c2h_crdt_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_c2h_crdt_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_dsc_in_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_dsc_in_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_dsc_out_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_dsc_out_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_fabric_input_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_fabric_input_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_fabric_output_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_fabric_output_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_gic_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_gic_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_h2c_crdt_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_h2c_crdt_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_2Bx2048_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_2Bx2048_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_4Bx2048_4Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_4Bx2048_4Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_8Bx2048_4Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_8Bx2048_4Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_16Bx2048_4Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_16Bx2048_4Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_64Bx128_32Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_64Bx128_32Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_64Bx256_32Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_64Bx256_32Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_64Bx512_32Bwe_ram_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_64Bx512_32Bwe_ram_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_dsc_cpld_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_dsc_cpld_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_mi_dsc_cpli_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_mi_dsc_cpli_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_misc_input_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_misc_input_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/verilog/dma_pcie_misc_output_if.svh</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/verilog/dma_pcie_misc_output_if.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9119/hdl/xdma_v4_1_vl_rfs.sv</spirit:name>
+        <spirit:name>../../ipshared/a03e/hdl/xdma_v4_1_vl_rfs.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>xdma_v4_1_0</spirit:logicalName>
+        <spirit:logicalName>xdma_v4_1_1</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>xdma_v4_1/hdl/verilog/Top_xdma_0_0_dma_cpl.sv</spirit:name>
@@ -53344,7 +53392,7 @@
     <spirit:parameter>
       <spirit:name>xlnx_ref_board</spirit:name>
       <spirit:displayName>Xlnx Ref Board</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.xlnx_ref_board" spirit:choiceRef="choice_list_8efdc62d" spirit:order="330">None</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.xlnx_ref_board" spirit:choiceRef="choice_list_c0448d62" spirit:order="330">None</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -53609,6 +53657,10 @@
     <spirit:parameter>
       <spirit:name>vu9p_tul_ex</spirit:name>
       <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.vu9p_tul_ex" spirit:order="356">false</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>vcu1525_ddr_ex</spirit:name>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.vcu1525_ddr_ex" spirit:order="356.1">false</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>en_bridge</spirit:name>
@@ -58051,6 +58103,10 @@
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.msi_rx_pin_en" spirit:choiceRef="choice_list_e7c484ae" spirit:order="464">FALSE</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
+      <spirit:name>intx_rx_pin_en</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.intx_rx_pin_en" spirit:choiceRef="choice_list_7a7dde49" spirit:order="464.1">true</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
       <spirit:name>msix_type</spirit:name>
       <spirit:displayName>MSI-X Type</spirit:displayName>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.msix_type" spirit:choiceRef="choice_list_38306dd1" spirit:order="465">HARD</spirit:value>
@@ -58058,6 +58114,10 @@
     <spirit:parameter>
       <spirit:name>runbit_fix</spirit:name>
       <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.runbit_fix" spirit:order="495">false</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>axsize_byte_access_en</spirit:name>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.axsize_byte_access_en" spirit:order="495.1">false</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -58068,7 +58128,7 @@
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>0</xilinx:coreRevision>
+      <xilinx:coreRevision>1</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.AXI_ACLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.AXI_ACLK.ASSOCIATED_RESET" xilinx:valuePermission="bd"/>
@@ -58077,7 +58137,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.AXI_ACLK.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.SYS_CLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.SYS_CLK.ASSOCIATED_RESET" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.SYS_CLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.SYS_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.SYS_CLK.FREQ_HZ" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.SYS_CLK.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.ADDR_WIDTH" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
@@ -58112,25 +58172,30 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.WUSER_WIDTH" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RST.SYS_RST_N.POLARITY" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RST.SYS_RST_N.TYPE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PF0_DEVICE_ID_mqdma" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PF2_DEVICE_ID_mqdma" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PF3_DEVICE_ID_mqdma" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.axi_data_width" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.axisten_freq" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.cfg_mgmt_if" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_device_id" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pl_link_cap_max_link_speed" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pl_link_cap_max_link_width" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.plltype" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.xdma_axi_intf_mm" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.xdma_rnum_chnl" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.xdma_wnum_chnl" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ac3672f7"/>
+      <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="2dc24f29"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="3b0b31fa"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="8eea6e31"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="513d0cdd"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="a938f396"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="93ea2924"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="84387fe2"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="e42e4189"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c786f374"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="f0c9eadc"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="01a1bb50"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="4706b0f3"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

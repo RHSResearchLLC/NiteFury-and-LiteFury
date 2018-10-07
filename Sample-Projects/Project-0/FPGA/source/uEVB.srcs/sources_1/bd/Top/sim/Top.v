@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Wed Jun 20 19:41:37 2018
-//Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+//Date        : Sun Oct  7 14:12:08 2018
+//Host        : dr-lt2 running 64-bit major release  (build 9200)
 //Command     : generate_target Top.bd
 //Design      : Top
 //Purpose     : IP block netlist
@@ -123,7 +123,7 @@ module Top
     pcie_mgt_txp,
     sys_clk_clk_n,
     sys_clk_clk_p);
-  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR3, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) output [14:0]DDR3_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR3, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) output [15:0]DDR3_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 BA" *) output [2:0]DDR3_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 CAS_N" *) output DDR3_cas_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3 CK_N" *) output [0:0]DDR3_ck_n;
@@ -197,7 +197,7 @@ module Top
   wire [0:0]diff_clock_rtl_0_1_CLK_P;
   wire diff_clock_rtl_1_1_CLK_N;
   wire diff_clock_rtl_1_1_CLK_P;
-  wire [14:0]mig_7series_0_DDR3_ADDR;
+  wire [15:0]mig_7series_0_DDR3_ADDR;
   wire [2:0]mig_7series_0_DDR3_BA;
   wire mig_7series_0_DDR3_CAS_N;
   wire [0:0]mig_7series_0_DDR3_CKE;
@@ -263,7 +263,7 @@ module Top
   wire [0:0]xlconstant_1_dout;
   wire [0:0]xlconstant_2_dout;
 
-  assign DDR3_addr[14:0] = mig_7series_0_DDR3_ADDR;
+  assign DDR3_addr[15:0] = mig_7series_0_DDR3_ADDR;
   assign DDR3_ba[2:0] = mig_7series_0_DDR3_BA;
   assign DDR3_cas_n = mig_7series_0_DDR3_CAS_N;
   assign DDR3_ck_n[0] = mig_7series_0_DDR3_CK_N;
@@ -397,7 +397,7 @@ module Top
         .ddr3_we_n(mig_7series_0_DDR3_WE_N),
         .init_calib_complete(mig_7series_0_init_calib_complete),
         .mmcm_locked(mig_7series_0_mmcm_locked),
-        .s_axi_araddr(axi_clock_converter_0_M_AXI_ARADDR[28:0]),
+        .s_axi_araddr(axi_clock_converter_0_M_AXI_ARADDR[29:0]),
         .s_axi_arburst(axi_clock_converter_0_M_AXI_ARBURST),
         .s_axi_arcache(axi_clock_converter_0_M_AXI_ARCACHE),
         .s_axi_arid(axi_clock_converter_0_M_AXI_ARID),
@@ -408,7 +408,7 @@ module Top
         .s_axi_arready(axi_clock_converter_0_M_AXI_ARREADY),
         .s_axi_arsize(axi_clock_converter_0_M_AXI_ARSIZE),
         .s_axi_arvalid(axi_clock_converter_0_M_AXI_ARVALID),
-        .s_axi_awaddr(axi_clock_converter_0_M_AXI_AWADDR[28:0]),
+        .s_axi_awaddr(axi_clock_converter_0_M_AXI_AWADDR[29:0]),
         .s_axi_awburst(axi_clock_converter_0_M_AXI_AWBURST),
         .s_axi_awcache(axi_clock_converter_0_M_AXI_AWCACHE),
         .s_axi_awid(axi_clock_converter_0_M_AXI_AWID),

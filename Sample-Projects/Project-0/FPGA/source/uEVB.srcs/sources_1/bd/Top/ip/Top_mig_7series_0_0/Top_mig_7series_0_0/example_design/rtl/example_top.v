@@ -119,9 +119,9 @@ module example_top #
    parameter nBANK_MACHS           = 4,
    parameter RANKS                 = 1,
                                      // # of Ranks.
-   parameter ROW_WIDTH             = 15,
+   parameter ROW_WIDTH             = 16,
                                      // # of memory Row Address bits.
-   parameter ADDR_WIDTH            = 29,
+   parameter ADDR_WIDTH            = 30,
                                      // # = RANK_WIDTH + BANK_WIDTH
                                      //     + ROW_WIDTH + COL_WIDTH;
                                      // Chip Select is always tied to low for
@@ -194,7 +194,7 @@ module example_top #
    parameter C_S_AXI_ID_WIDTH              = 4,
                                              // Width of all master and slave ID signals.
                                              // # = >= 1.
-   parameter C_S_AXI_ADDR_WIDTH            = 29,
+   parameter C_S_AXI_ADDR_WIDTH            = 30,
                                              // Width of S_AXI_AWADDR, S_AXI_ARADDR, M_AXI_AWADDR and
                                              // M_AXI_ARADDR for all SI/MI slots.
                                              // # = 32.
@@ -226,7 +226,7 @@ module example_top #
    inout [1:0]                        ddr3_dqs_p,
 
    // Outputs
-   output [14:0]                       ddr3_addr,
+   output [15:0]                       ddr3_addr,
    output [2:0]                      ddr3_ba,
    output                                       ddr3_ras_n,
    output                                       ddr3_cas_n,

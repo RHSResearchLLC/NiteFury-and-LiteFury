@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:axi_clock_converter:2.1
-// IP Revision: 15
+// IP Revision: 16
 
-(* X_CORE_INFO = "axi_clock_converter_v2_1_15_axi_clock_converter,Vivado 2018.1" *)
-(* CHECK_LICENSE_TYPE = "Top_axi_clock_converter_0_0,axi_clock_converter_v2_1_15_axi_clock_converter,{}" *)
-(* CORE_GENERATION_INFO = "Top_axi_clock_converter_0_0,axi_clock_converter_v2_1_15_axi_clock_converter,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_clock_converter,x_ipVersion=2.1,x_ipCoreRevision=15,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_AXI_ID_WIDTH=4,C_AXI_ADDR_WIDTH=64,C_AXI_DATA_WIDTH=128,C_S_AXI_ACLK_RATIO=1,C_M_AXI_ACLK_RATIO=2,C_AXI_IS_ACLK_ASYNC=1,C_AXI_PROTOCOL=0,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI\
+(* X_CORE_INFO = "axi_clock_converter_v2_1_16_axi_clock_converter,Vivado 2018.2" *)
+(* CHECK_LICENSE_TYPE = "Top_axi_clock_converter_0_0,axi_clock_converter_v2_1_16_axi_clock_converter,{}" *)
+(* CORE_GENERATION_INFO = "Top_axi_clock_converter_0_0,axi_clock_converter_v2_1_16_axi_clock_converter,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_clock_converter,x_ipVersion=2.1,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_AXI_ID_WIDTH=4,C_AXI_ADDR_WIDTH=64,C_AXI_DATA_WIDTH=128,C_S_AXI_ACLK_RATIO=1,C_M_AXI_ACLK_RATIO=2,C_AXI_IS_ACLK_ASYNC=1,C_AXI_PROTOCOL=0,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI\
 _RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_AXI_SUPPORTS_WRITE=1,C_AXI_SUPPORTS_READ=1,C_SYNCHRONIZER_STAGE=3}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Top_axi_clock_converter_0_0 (
@@ -313,7 +313,7 @@ EADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  axi_clock_converter_v2_1_15_axi_clock_converter #(
+  axi_clock_converter_v2_1_16_axi_clock_converter #(
     .C_FAMILY("artix7"),
     .C_AXI_ID_WIDTH(4),
     .C_AXI_ADDR_WIDTH(64),

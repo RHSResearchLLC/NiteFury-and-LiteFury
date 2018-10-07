@@ -57,7 +57,7 @@
 `timescale 1ns/1ps
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Top_xdma_0_0_pcie2_ip_pcie2_top # (
-parameter     c_component_name ="pcie_7x_v3_3_8",
+parameter     c_component_name ="pcie_7x_v3_3_9",
 parameter     dev_port_type ="0000",
 parameter     c_dev_port_type ="0",
 parameter     c_header_type ="00",

@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.3
-// IP Revision: 8
+// IP Revision: 9
 
-(* X_CORE_INFO = "Top_xdma_0_0_pcie2_ip_pcie2_top,Vivado 2018.1" *)
+(* X_CORE_INFO = "Top_xdma_0_0_pcie2_ip_pcie2_top,Vivado 2018.2" *)
 (* CHECK_LICENSE_TYPE = "Top_xdma_0_0_pcie2_ip,Top_xdma_0_0_pcie2_ip_pcie2_top,{}" *)
-(* CORE_GENERATION_INFO = "Top_xdma_0_0_pcie2_ip,Top_xdma_0_0_pcie2_ip_pcie2_top,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=pcie_7x,x_ipVersion=3.3,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,c_component_name=Top_xdma_0_0_pcie2_ip,dev_port_type=0000,c_dev_port_type=0,c_header_type=00,c_upstream_facing=TRUE,max_lnk_wdt=000100,max_lnk_spd=2,c_gen1=true,pci_exp_int_freq=2,c_pcie_fast_config=0,bar_0=FFFF0000,bar_1=00000000,bar_2=00000000,bar_3=00000000,bar_4=00000000,bar_5=00000\
+(* CORE_GENERATION_INFO = "Top_xdma_0_0_pcie2_ip,Top_xdma_0_0_pcie2_ip_pcie2_top,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=pcie_7x,x_ipVersion=3.3,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,c_component_name=Top_xdma_0_0_pcie2_ip,dev_port_type=0000,c_dev_port_type=0,c_header_type=00,c_upstream_facing=TRUE,max_lnk_wdt=000100,max_lnk_spd=2,c_gen1=true,pci_exp_int_freq=2,c_pcie_fast_config=0,bar_0=FFFF0000,bar_1=00000000,bar_2=00000000,bar_3=00000000,bar_4=00000000,bar_5=00000\
 000,xrom_bar=00000000,cost_table=1,ven_id=10EE,dev_id=7024,rev_id=00,subsys_ven_id=10EE,subsys_id=0007,class_code=070001,cardbus_cis_ptr=00000000,cap_ver=2,c_pcie_cap_slot_implemented=FALSE,mps=010,cmps=2,ext_tag_fld_sup=TRUE,c_dev_control_ext_tag_default=FALSE,phantm_func_sup=00,c_phantom_functions=0,ep_l0s_accpt_lat=000,c_ep_l0s_accpt_lat=0,ep_l1_accpt_lat=111,c_ep_l1_accpt_lat=7,c_cpl_timeout_disable_sup=FALSE,c_cpl_timeout_range=0010,c_cpl_timeout_ranges_sup=2,c_buf_opt_bma=TRUE,c_perf_level\
 _high=TRUE,c_tx_last_tlp=29,c_rx_ram_limit=7FF,c_fc_ph=32,c_fc_pd=437,c_fc_nph=12,c_fc_npd=24,c_fc_cplh=36,c_fc_cpld=461,c_cpl_inf=TRUE,c_cpl_infinite=TRUE,c_dll_lnk_actv_cap=FALSE,c_trgt_lnk_spd=2,c_hw_auton_spd_disable=FALSE,c_de_emph=FALSE,slot_clk=TRUE,c_rcb=0,c_root_cap_crs=FALSE,c_slot_cap_attn_butn=FALSE,c_slot_cap_attn_ind=FALSE,c_slot_cap_pwr_ctrl=FALSE,c_slot_cap_pwr_ind=FALSE,c_slot_cap_hotplug_surprise=FALSE,c_slot_cap_hotplug_cap=FALSE,c_slot_cap_mrl=FALSE,c_slot_cap_elec_interlock=\
 FALSE,c_slot_cap_no_cmd_comp_sup=FALSE,c_slot_cap_pwr_limit_value=0,c_slot_cap_pwr_limit_scale=0,c_slot_cap_physical_slot_num=0,intx=TRUE,int_pin=1,c_msi_cap_on=TRUE,c_pm_cap_next_ptr=48,c_msi_64b_addr=TRUE,c_msi=0,c_msi_mult_msg_extn=0,c_msi_per_vctr_mask_cap=FALSE,c_msix_cap_on=FALSE,c_msix_next_ptr=00,c_pcie_cap_next_ptr=00,c_msix_table_size=000,c_msix_table_offset=0,c_msix_table_bir=0,c_msix_pba_offset=0,c_msix_pba_bir=0,dsi=0,c_dsi_bool=FALSE,d1_sup=0,c_d1_support=FALSE,d2_sup=0,c_d2_suppor\

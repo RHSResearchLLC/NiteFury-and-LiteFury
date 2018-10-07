@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:xdma:4.1
-// IP Revision: 0
+// IP Revision: 1
 
 `timescale 1ns/1ps
 
@@ -271,7 +271,7 @@ output wire m_axi_rready;
     .ULTRASCALE("FALSE"),
     .ULTRASCALE_PLUS("FALSE"),
     .V7_GEN3("FALSE"),
-    .MSI_ENABLED("true"),
+    .MSI_ENABLED("TRUE"),
     .DEV_PORT_TYPE(0),
     .XDMA_AXI_INTF_MM(1),
     .XDMA_PCIE_64BIT_EN("xdma_pcie_64bit_en"),
@@ -400,16 +400,17 @@ output wire m_axi_rready;
     .FUNC_MODE(1),
     .PF1_ENABLED(0),
     .DMA_RESET_SOURCE_SEL(0),
+    .PF1_BAR0_APERTURE_SIZE('H12),
     .PF1_BAR0_CONTROL('H4),
-    .PF1_BAR1_APERTURE_SIZE('H05),
+    .PF1_BAR1_APERTURE_SIZE('H0A),
     .PF1_BAR1_CONTROL('H0),
-    .PF1_BAR2_APERTURE_SIZE('H05),
+    .PF1_BAR2_APERTURE_SIZE('H0A),
     .PF1_BAR2_CONTROL('H6),
-    .PF1_BAR3_APERTURE_SIZE('H05),
+    .PF1_BAR3_APERTURE_SIZE('H0A),
     .PF1_BAR3_CONTROL('H0),
-    .PF1_BAR4_APERTURE_SIZE('H05),
+    .PF1_BAR4_APERTURE_SIZE('H0A),
     .PF1_BAR4_CONTROL('H6),
-    .PF1_BAR5_APERTURE_SIZE('H05),
+    .PF1_BAR5_APERTURE_SIZE('H0A),
     .PF1_BAR5_CONTROL('H0),
     .PF1_PCIEBAR2AXIBAR_0('H0000000000000000),
     .PF1_PCIEBAR2AXIBAR_1('H0000000000000000),
@@ -479,8 +480,10 @@ output wire m_axi_rready;
     .SOFT_RESET_EN("FALSE"),
     .INTERRUPT_OUT_WIDTH(1),
     .C_MSI_RX_PIN_EN(0),
+    .C_INTX_RX_PIN_EN(1),
     .PCIE_ID_IF("FALSE"),
-    .TL_PF_ENABLE_REG(0)
+    .TL_PF_ENABLE_REG(0),
+    .AXSIZE_BYTE_ACCESS_EN("FALSE")
   ) inst (
     .sys_clk(sys_clk),
     .sys_clk_ce_out(),
@@ -1516,6 +1519,7 @@ output wire m_axi_rready;
     .user_clk_sd(1'B0),
     .user_reset_sd(1'B0),
     .pcie_cq_np_req_sd(),
+    .pcie_cq_np_req_count_sd(6'B0),
     .pcie_tfc_nph_av_sd(4'B0),
     .pcie_tfc_npd_av_sd(4'B0),
     .pcie_rq_seq_num_vld0_sd(1'B0),
@@ -1605,6 +1609,7 @@ output wire m_axi_rready;
     .cxs0_crdrtn_chk_rx(),
     .cxs0_cntl_chk_rx(),
     .cxs0_data_chk_rx(),
+    .ccix_optimized_tlp_tx_and_rx_enable_in(1'B0),
     .s_aclk(1'B0),
     .s_aresetn(1'B0),
     .s_axi_araddr(14'B0),

@@ -72,7 +72,7 @@
   Top_mig_7series_0_0 u_Top_mig_7series_0_0 (
 
     // Memory interface ports
-    .ddr3_addr                      (ddr3_addr),  // output [14:0]		ddr3_addr
+    .ddr3_addr                      (ddr3_addr),  // output [15:0]		ddr3_addr
     .ddr3_ba                        (ddr3_ba),  // output [2:0]		ddr3_ba
     .ddr3_cas_n                     (ddr3_cas_n),  // output			ddr3_cas_n
     .ddr3_ck_n                      (ddr3_ck_n),  // output [0:0]		ddr3_ck_n
@@ -98,7 +98,7 @@
     .app_zq_ack                     (app_zq_ack),  // output			app_zq_ack
     // Slave Interface Write Address Ports
     .s_axi_awid                     (s_axi_awid),  // input [3:0]			s_axi_awid
-    .s_axi_awaddr                   (s_axi_awaddr),  // input [28:0]			s_axi_awaddr
+    .s_axi_awaddr                   (s_axi_awaddr),  // input [29:0]			s_axi_awaddr
     .s_axi_awlen                    (s_axi_awlen),  // input [7:0]			s_axi_awlen
     .s_axi_awsize                   (s_axi_awsize),  // input [2:0]			s_axi_awsize
     .s_axi_awburst                  (s_axi_awburst),  // input [1:0]			s_axi_awburst
@@ -121,7 +121,7 @@
     .s_axi_bready                   (s_axi_bready),  // input			s_axi_bready
     // Slave Interface Read Address Ports
     .s_axi_arid                     (s_axi_arid),  // input [3:0]			s_axi_arid
-    .s_axi_araddr                   (s_axi_araddr),  // input [28:0]			s_axi_araddr
+    .s_axi_araddr                   (s_axi_araddr),  // input [29:0]			s_axi_araddr
     .s_axi_arlen                    (s_axi_arlen),  // input [7:0]			s_axi_arlen
     .s_axi_arsize                   (s_axi_arsize),  // input [2:0]			s_axi_arsize
     .s_axi_arburst                  (s_axi_arburst),  // input [1:0]			s_axi_arburst
