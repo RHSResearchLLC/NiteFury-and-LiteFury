@@ -36,8 +36,8 @@ Controller Options :
    DIVCLK_DIVIDE (PLL)           : 1
    VCC_AUX IO                    : 1.8V
    Memory Type                   : Components
-   Memory Part                   : MT41K256M16XX-107
-   Equivalent Part(s)            : MT41K256M16HA-107
+   Memory Part                   : MT41K512M16XX-107
+   Equivalent Part(s)            : --
    Data Width                    : 16
    ECC                           : Disabled
    Data Mask                     : enabled

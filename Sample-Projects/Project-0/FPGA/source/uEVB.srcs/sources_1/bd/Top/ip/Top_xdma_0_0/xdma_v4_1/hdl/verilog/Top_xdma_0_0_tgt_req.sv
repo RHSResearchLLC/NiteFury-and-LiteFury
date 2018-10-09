@@ -794,7 +794,7 @@ wire [2:0] req_bar;
           s_axis_cq_tlast  = 1'b1;             
 //          s_axis_cq_tuser  = 85'b0 ; // FBE set
 
-          m_axis_rx_tready = s_axis_cq_tready;
+          m_axis_rx_tready = (req_4dw) ? s_axis_cq_tready : 1'b0;
         end       
 
 

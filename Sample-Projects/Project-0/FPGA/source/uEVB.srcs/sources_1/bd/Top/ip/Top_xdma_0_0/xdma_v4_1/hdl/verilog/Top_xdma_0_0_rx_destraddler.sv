@@ -221,7 +221,8 @@ if(C_AXI_DATA_WIDTH == 128) begin : data_width_128
                              8'hFF
                            };
 
-        m_axis_rx_tlast  = (s_axis_rx_tuser[21] && s_axis_rx_tuser[20]) ? 1'b0 : 1'b1;
+      //  m_axis_rx_tlast  = (s_axis_rx_tuser[21] && s_axis_rx_tuser[20]) ? 1'b0 : 1'b1;
+         m_axis_rx_tlast  = s_axis_rx_tuser[20] ? 1'b0 : 1'b1;
 
         // If SOF seen previously, zero out EOF. If EOF or (EOF and SOF) currently, zero out SOF field.
         m_axis_rx_tuser  = prev_user_half[14] ? {5'b0, prev_user_half[16:0]} :
@@ -238,7 +239,7 @@ if(C_AXI_DATA_WIDTH == 128) begin : data_width_128
         s_axis_rx_tready = 1'b0;
 
         m_axis_rx_tkeep  = { 8'h0, 
-                             ((prev_user_half[20:19] == 2'b00) ? 8'h0F : 8'hFF)
+                             ((prev_user_half[20:19] == 2'b10) ? 8'h0F : 8'hFF)
                            };
 
         m_axis_rx_tlast  = 1'b1;

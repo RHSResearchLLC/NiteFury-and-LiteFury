@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jun 20 19:41:39 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Oct  7 14:12:10 2018" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="Top" PACKAGE="fbg484" SPEEDGRADE="-2"/>
 
@@ -7,7 +7,7 @@
     <PORT DIR="IO" LEFT="15" NAME="DDR3_dq" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="IO" LEFT="1" NAME="DDR3_dqs_p" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="IO" LEFT="1" NAME="DDR3_dqs_n" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" LEFT="14" NAME="DDR3_addr" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="15" NAME="DDR3_addr" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" LEFT="2" NAME="DDR3_ba" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" NAME="DDR3_ras_n" SIGIS="undef"/>
     <PORT DIR="O" NAME="DDR3_cas_n" SIGIS="undef"/>
@@ -1035,7 +1035,7 @@
     <MODULE FULLNAME="/mig_7series_0" HWVERSION="4.1" INSTANCE="mig_7series_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY_CNTLR" MODTYPE="mig_7series" VLNV="xilinx.com:ip:mig_7series:4.1">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
-        <ADDRESSBLOCK ACCESS="read-write" INTERFACE="memmap" NAME="memaddr" RANGE="536870912" USAGE="memory"/>
+        <ADDRESSBLOCK ACCESS="read-write" INTERFACE="memmap" NAME="memaddr" RANGE="1073741824" USAGE="memory"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
         <PARAMETER NAME="NoOfControllers" VALUE="1"/>
@@ -1050,7 +1050,7 @@
         <PARAMETER NAME="ECC" VALUE="OFF"/>
         <PARAMETER NAME="DDR3_DQ_WIDTH" VALUE="16"/>
         <PARAMETER NAME="DDR3_DQS_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="DDR3_ROW_WIDTH" VALUE="15"/>
+        <PARAMETER NAME="DDR3_ROW_WIDTH" VALUE="16"/>
         <PARAMETER NAME="DDR3_BANK_WIDTH" VALUE="3"/>
         <PARAMETER NAME="DDR3_CK_WIDTH" VALUE="1"/>
         <PARAMETER NAME="DDR3_CKE_WIDTH" VALUE="1"/>
@@ -1100,7 +1100,7 @@
         <PARAMETER NAME="DDRX_ADDR_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DDRX_nCK_PER_CLK" VALUE="2"/>
         <PARAMETER NAME="DDRX_DATA_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="DDR3_ADDR_WIDTH" VALUE="29"/>
+        <PARAMETER NAME="DDR3_ADDR_WIDTH" VALUE="30"/>
         <PARAMETER NAME="DDR3_nCK_PER_CLK" VALUE="4"/>
         <PARAMETER NAME="DDR3_DATA_WIDTH" VALUE="16"/>
         <PARAMETER NAME="DDR2_ADDR_WIDTH" VALUE="8"/>
@@ -1129,8 +1129,8 @@
         <PARAMETER NAME="C_S_AXI_CTRL_MEM_SIZE" VALUE="1048576"/>
         <PARAMETER NAME="C_S_AXI_ID_WIDTH" VALUE="4"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="128"/>
-        <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="29"/>
-        <PARAMETER NAME="C_S_AXI_MEM_SIZE" VALUE="536870912"/>
+        <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="30"/>
+        <PARAMETER NAME="C_S_AXI_MEM_SIZE" VALUE="1073741824"/>
         <PARAMETER NAME="QDRIIP_NUM_DEVICES" VALUE="1"/>
         <PARAMETER NAME="QDRIIP_DATA_WIDTH" VALUE="18"/>
         <PARAMETER NAME="QDRIIP_ADDR_WIDTH" VALUE="29"/>
@@ -2204,7 +2204,7 @@
         <PORT DIR="IO" LEFT="15" NAME="ddr3_dq" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="IO" LEFT="1" NAME="ddr3_dqs_p" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="IO" LEFT="1" NAME="ddr3_dqs_n" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="14" NAME="ddr3_addr" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="15" NAME="ddr3_addr" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="2" NAME="ddr3_ba" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" NAME="ddr3_ras_n" SIGIS="undef"/>
         <PORT DIR="O" NAME="ddr3_cas_n" SIGIS="undef"/>
@@ -2232,7 +2232,7 @@
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_awid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="28" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_awaddr">
+        <PORT DIR="I" LEFT="29" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_awaddr"/>
           </CONNECTIONS>
@@ -2332,7 +2332,7 @@
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_arid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="28" NAME="s_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_araddr">
+        <PORT DIR="I" LEFT="29" NAME="s_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_clock_converter_0_m_axi_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_clock_converter_0" PORT="m_axi_araddr"/>
           </CONNECTIONS>
@@ -2469,7 +2469,7 @@
           <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="4"/>
-          <PARAMETER NAME="ADDR_WIDTH" VALUE="29"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="30"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
@@ -2695,7 +2695,7 @@
         <PARAMETER NAME="ULTRASCALE" VALUE="FALSE"/>
         <PARAMETER NAME="ULTRASCALE_PLUS" VALUE="FALSE"/>
         <PARAMETER NAME="V7_GEN3" VALUE="FALSE"/>
-        <PARAMETER NAME="MSI_ENABLED" VALUE="true"/>
+        <PARAMETER NAME="MSI_ENABLED" VALUE="TRUE"/>
         <PARAMETER NAME="DEV_PORT_TYPE" VALUE="0"/>
         <PARAMETER NAME="XDMA_AXI_INTF_MM" VALUE="1"/>
         <PARAMETER NAME="XDMA_PCIE_64BIT_EN" VALUE="xdma_pcie_64bit_en"/>
@@ -2822,16 +2822,17 @@
         <PARAMETER NAME="FUNC_MODE" VALUE="1"/>
         <PARAMETER NAME="PF1_ENABLED" VALUE="0"/>
         <PARAMETER NAME="DMA_RESET_SOURCE_SEL" VALUE="0"/>
+        <PARAMETER NAME="PF1_BAR0_APERTURE_SIZE" VALUE="0x12"/>
         <PARAMETER NAME="PF1_BAR0_CONTROL" VALUE="0x4"/>
-        <PARAMETER NAME="PF1_BAR1_APERTURE_SIZE" VALUE="0x05"/>
+        <PARAMETER NAME="PF1_BAR1_APERTURE_SIZE" VALUE="0x0A"/>
         <PARAMETER NAME="PF1_BAR1_CONTROL" VALUE="0x0"/>
-        <PARAMETER NAME="PF1_BAR2_APERTURE_SIZE" VALUE="0x05"/>
+        <PARAMETER NAME="PF1_BAR2_APERTURE_SIZE" VALUE="0x0A"/>
         <PARAMETER NAME="PF1_BAR2_CONTROL" VALUE="0x6"/>
-        <PARAMETER NAME="PF1_BAR3_APERTURE_SIZE" VALUE="0x05"/>
+        <PARAMETER NAME="PF1_BAR3_APERTURE_SIZE" VALUE="0x0A"/>
         <PARAMETER NAME="PF1_BAR3_CONTROL" VALUE="0x0"/>
-        <PARAMETER NAME="PF1_BAR4_APERTURE_SIZE" VALUE="0x05"/>
+        <PARAMETER NAME="PF1_BAR4_APERTURE_SIZE" VALUE="0x0A"/>
         <PARAMETER NAME="PF1_BAR4_CONTROL" VALUE="0x6"/>
-        <PARAMETER NAME="PF1_BAR5_APERTURE_SIZE" VALUE="0x05"/>
+        <PARAMETER NAME="PF1_BAR5_APERTURE_SIZE" VALUE="0x0A"/>
         <PARAMETER NAME="PF1_BAR5_CONTROL" VALUE="0x0"/>
         <PARAMETER NAME="PF1_PCIEBAR2AXIBAR_0" VALUE="0x0000000000000000"/>
         <PARAMETER NAME="PF1_PCIEBAR2AXIBAR_1" VALUE="0x0000000000000000"/>
@@ -2901,8 +2902,10 @@
         <PARAMETER NAME="SOFT_RESET_EN" VALUE="FALSE"/>
         <PARAMETER NAME="INTERRUPT_OUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_MSI_RX_PIN_EN" VALUE="0"/>
+        <PARAMETER NAME="C_INTX_RX_PIN_EN" VALUE="1"/>
         <PARAMETER NAME="PCIE_ID_IF" VALUE="FALSE"/>
         <PARAMETER NAME="TL_PF_ENABLE_REG" VALUE="0"/>
+        <PARAMETER NAME="AXSIZE_BYTE_ACCESS_EN" VALUE="FALSE"/>
         <PARAMETER NAME="Component_Name" VALUE="Top_xdma_0_0"/>
         <PARAMETER NAME="functional_mode" VALUE="DMA"/>
         <PARAMETER NAME="mode_selection" VALUE="Basic"/>
@@ -3275,6 +3278,7 @@
         <PARAMETER NAME="pipe_line_stage" VALUE="2"/>
         <PARAMETER NAME="axis_pipe_line_stage" VALUE="0"/>
         <PARAMETER NAME="vu9p_tul_ex" VALUE="false"/>
+        <PARAMETER NAME="vcu1525_ddr_ex" VALUE="false"/>
         <PARAMETER NAME="en_bridge" VALUE="false"/>
         <PARAMETER NAME="enable_ccix" VALUE="FALSE"/>
         <PARAMETER NAME="enable_dvsec" VALUE="FALSE"/>
@@ -3722,8 +3726,10 @@
         <PARAMETER NAME="gen_pipe_debug" VALUE="false"/>
         <PARAMETER NAME="soft_reset_en" VALUE="false"/>
         <PARAMETER NAME="msi_rx_pin_en" VALUE="FALSE"/>
+        <PARAMETER NAME="intx_rx_pin_en" VALUE="true"/>
         <PARAMETER NAME="msix_type" VALUE="HARD"/>
         <PARAMETER NAME="runbit_fix" VALUE="false"/>
+        <PARAMETER NAME="axsize_byte_access_en" VALUE="false"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>

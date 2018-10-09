@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Wed Jun 20 19:41:37 2018
-//Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+//Date        : Sun Oct  7 14:12:08 2018
+//Host        : dr-lt2 running 64-bit major release  (build 9200)
 //Command     : generate_target Top_wrapper.bd
 //Design      : Top_wrapper
 //Purpose     : IP block netlist
@@ -38,7 +38,7 @@ module Top_wrapper
     pcie_mgt_txp,
     sys_clk_clk_n,
     sys_clk_clk_p);
-  output [14:0]DDR3_addr;
+  output [15:0]DDR3_addr;
   output [2:0]DDR3_ba;
   output DDR3_cas_n;
   output [0:0]DDR3_ck_n;
@@ -67,7 +67,7 @@ module Top_wrapper
   input sys_clk_clk_n;
   input sys_clk_clk_p;
 
-  wire [14:0]DDR3_addr;
+  wire [15:0]DDR3_addr;
   wire [2:0]DDR3_ba;
   wire DDR3_cas_n;
   wire [0:0]DDR3_ck_n;

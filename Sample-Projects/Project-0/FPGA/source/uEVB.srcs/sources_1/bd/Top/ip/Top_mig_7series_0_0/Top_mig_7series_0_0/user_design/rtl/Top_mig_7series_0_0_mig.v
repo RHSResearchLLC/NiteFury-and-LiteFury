@@ -122,9 +122,9 @@ module Top_mig_7series_0_0_mig #
                                      // # of Ranks.
    parameter ODT_WIDTH             = 1,
                                      // # of ODT outputs to memory.
-   parameter ROW_WIDTH             = 15,
+   parameter ROW_WIDTH             = 16,
                                      // # of memory Row Address bits.
-   parameter ADDR_WIDTH            = 29,
+   parameter ADDR_WIDTH            = 30,
                                      // # = RANK_WIDTH + BANK_WIDTH
                                      //     + ROW_WIDTH + COL_WIDTH;
                                      // Chip Select is always tied to low for
@@ -337,14 +337,14 @@ module Top_mig_7series_0_0_mig #
                                      // position indicates a data byte lane and
                                      // a '0' indicates a control byte lane
    parameter PHY_0_BITLANES        = 48'h000_000_3F7_2FF,
-   parameter PHY_1_BITLANES        = 48'h000_DBC_FFF_00B,
+   parameter PHY_1_BITLANES        = 48'h000_FBC_FFF_00B,
    parameter PHY_2_BITLANES        = 48'h000_000_000_000,
 
    // control/address/data pin mapping parameters
    parameter CK_BYTE_MAP
      = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_10,
    parameter ADDR_MAP
-     = 192'h000_11B_113_12A_11A_122_112_110_111_125_115_12B_114_100_124_101,
+     = 192'h129_11B_113_12A_11A_122_112_110_111_125_115_12B_114_100_124_101,
    parameter BANK_MAP   = 36'h116_123_117,
    parameter CAS_MAP    = 12'h119,
    parameter CKE_ODT_BYTE_MAP = 8'h00,
@@ -479,9 +479,9 @@ module Top_mig_7series_0_0_mig #
    parameter C_S_AXI_ID_WIDTH              = 4,
                                              // Width of all master and slave ID signals.
                                              // # = >= 1.
-   parameter C_S_AXI_MEM_SIZE              = "536870912",
+   parameter C_S_AXI_MEM_SIZE              = "1073741824",
                                      // Address Space required for this component
-   parameter C_S_AXI_ADDR_WIDTH            = 29,
+   parameter C_S_AXI_ADDR_WIDTH            = 30,
                                              // Width of S_AXI_AWADDR, S_AXI_ARADDR, M_AXI_AWADDR and
                                              // M_AXI_ARADDR for all SI/MI slots.
                                              // # = 32.

@@ -194,6 +194,7 @@ module Top_xdma_0_0_core_top
         parameter       FUNC_MODE                    = 1,
         parameter       INTERRUPT_OUT_WIDTH          = 1,
         parameter       C_MSI_RX_PIN_EN              = 0,
+        parameter       C_INTX_RX_PIN_EN             = 1,
         parameter       PF1_ENABLED                  = 0,
         parameter       PF2_ENABLED                  = 0,
         parameter       PF3_ENABLED                  = 0,
@@ -273,7 +274,7 @@ module Top_xdma_0_0_core_top
         parameter       C_AXIBAR_AS_3                = 1,
         parameter       C_AXIBAR_AS_4                = 1,
         parameter       C_AXIBAR_AS_5                = 1,
-        parameter       C_MSI_ENABLED                = (MSI_ENABLED == "true")? "TRUE" : "FALSE",
+        parameter       C_MSI_ENABLED                = MSI_ENABLED,
         parameter       C_NUM_DSC_PCIE_RID           = 32,
         parameter       C_NUM_PCIE_DSC_CPL_DID       = 256,
         parameter       C_NUM_AXI_DSC_CPL_DID        = 64,
@@ -426,7 +427,8 @@ module Top_xdma_0_0_core_top
         parameter [1:0] TL_PF_ENABLE_REG             = 2'h0,
         parameter       PCIE_ID_IF                   = "FALSE",
         parameter[31:0] C_OST_PR_CAP                 = 32'h0,
-		parameter       RUNBIT_FIX                   = "FALSE"
+        parameter       AXSIZE_BYTE_ACCESS_EN        = "FALSE",
+        parameter       RUNBIT_FIX                   = "FALSE"
 )
 (
   sys_clk,
@@ -1567,6 +1569,7 @@ module Top_xdma_0_0_core_top
   user_clk_sd,
   user_reset_sd,
   pcie_cq_np_req_sd,
+  pcie_cq_np_req_count_sd,
   pcie_tfc_nph_av_sd,
   pcie_tfc_npd_av_sd,
   pcie_rq_seq_num_vld0_sd,
@@ -1669,6 +1672,7 @@ module Top_xdma_0_0_core_top
   cxs0_crdrtn_chk_rx,
   cxs0_cntl_chk_rx,
   cxs0_data_chk_rx,
+  ccix_optimized_tlp_tx_and_rx_enable_in,
 
   //s_axil_awaddr_ats,
   //s_axil_awvalid_ats,
@@ -2692,6 +2696,7 @@ module Top_xdma_0_0_core_top
    output          cxs0_crdrtn_chk_rx;
    output          cxs0_cntl_chk_rx;
    output [AXIS_CCIX_RX_TDATA_WIDTH/8-1:0]   cxs0_data_chk_rx;
+   input           ccix_optimized_tlp_tx_and_rx_enable_in;                          
 
    //input [C_M_AXI_ADDR_WIDTH-1:0]         s_axil_awaddr_ats;
    //input                                  s_axil_awvalid_ats;
@@ -3112,6 +3117,7 @@ module Top_xdma_0_0_core_top
   input                                user_clk_sd;
   input                                user_reset_sd;
   output [1:0]                         pcie_cq_np_req_sd;
+  input  [5:0]                         pcie_cq_np_req_count_sd;
   input  [3:0]                         pcie_tfc_nph_av_sd;
   input  [3:0]                         pcie_tfc_npd_av_sd;
   input                                pcie_rq_seq_num_vld0_sd;
@@ -3906,6 +3912,7 @@ endgenerate
   assign attr_dma.ch_multq_ll  = 'h0;
   assign attr_dma.ch_multq_max = 'h0;
   assign attr_dma.ch_multq     = 'h0;
+  assign attr_dma.cq_rcfg_en   = 1'b1;
   
   // PCIE to AXI BAR information. assign bar length for PF0.
   
@@ -4004,6 +4011,7 @@ assign msix_enable = cfg_interrupt_msix_enable_int[0];
 assign axis_rq.tready = axis_rq_tready[0];
 assign axis_cc.tready = s_axis_cc_tready[0];
 
+assign pcie_dma_in.pcie_cq_np_req_count           = pcie_cq_np_req_count; 
 assign pcie_dma_in.cfg_interrupt_msi_mask_update  = cfg_interrupt_msi_mask_update;
 assign pcie_dma_in.cfg_err_cor_out                = cfg_err_cor_out;
 assign pcie_dma_in.cfg_err_fatal_out              = cfg_err_fatal_out;
@@ -4104,12 +4112,13 @@ assign cfg_interrupt_msi_function_number                 = pcie_dma_out.cfg_inte
 assign cfg_interrupt_int                                 = pcie_dma_out.cfg_interrupt_int;
 assign cfg_interrupt_pending                             = pcie_dma_out.cfg_interrupt_pending;
 
-    xdma_v4_1_0_udma_wrapper #(
+    xdma_v4_1_1_udma_wrapper #(
       .C_PARITY_CHECK              (C_PARITY_CHECK),
       .C_PARITY_GEN                (C_PARITY_GEN),
       .C_PARITY_PROP               (C_PARITY_PROP),
       .RQ_SEQ_NUM_IGNORE           (RQ_SEQ_NUM_IGNORE),
       .C_MSI_RX_PIN_EN             (C_MSI_RX_PIN_EN),
+      .C_INTX_RX_PIN_EN            (C_INTX_RX_PIN_EN),
       .VERSION                     (VERSION),
       .TCQ                         (TCQ),
       .USE_ATTR                    (USE_ATTR),
@@ -4270,7 +4279,9 @@ assign cfg_interrupt_pending                             = pcie_dma_out.cfg_inte
       .C_PR_CAP_NEXTPTR(C_PR_CAP_NEXTPTR),
       .C_INV_QUEUE_DEPTH(C_INV_QUEUE_DEPTH),
       .C_OST_PR_CAP(C_OST_PR_CAP),
-	  .RUN_BIT_FIX(RUN_BIT_FIX)
+      .C_M_INT_W_ORDER_EN(C_INCLUDE_RC ? 1 : 0),
+      .AXSIZE_BYTE_ACCESS_EN(AXSIZE_BYTE_ACCESS_EN),
+      .RUN_BIT_FIX(RUN_BIT_FIX)
     )
    udma_wrapper (
      //-- AXI Global
@@ -4630,7 +4641,7 @@ assign cfg_interrupt_pending                             = pcie_dma_out.cfg_inte
     .blk_cfg_ext_read_data_valid_o                 ( blk_cfg_ext_read_data_valid )
 	
    );
-xdma_v4_1_0_udma_ram_top
+xdma_v4_1_1_udma_ram_top
    #(
     .TCQ                (TCQ),
     .IMPL_TARGET        (IMPL_TARGET),

@@ -106,9 +106,9 @@ module sim_tb_top;
                                      // # of Ranks.
    parameter ODT_WIDTH             = 1;
                                      // # of ODT outputs to memory.
-   parameter ROW_WIDTH             = 15;
+   parameter ROW_WIDTH             = 16;
                                      // # of memory Row Address bits.
-   parameter ADDR_WIDTH            = 29;
+   parameter ADDR_WIDTH            = 30;
                                      // # = RANK_WIDTH + BANK_WIDTH
                                      //     + ROW_WIDTH + COL_WIDTH;
                                      // Chip Select is always tied to low for
@@ -177,7 +177,7 @@ module sim_tb_top;
    parameter C_S_AXI_ID_WIDTH              = 4;
                                              // Width of all master and slave ID signals.
                                              // # = >= 1.
-   parameter C_S_AXI_ADDR_WIDTH            = 29;
+   parameter C_S_AXI_ADDR_WIDTH            = 30;
                                              // Width of S_AXI_AWADDR, S_AXI_ARADDR, M_AXI_AWADDR and
                                              // M_AXI_ARADDR for all SI/MI slots.
                                              // # = 32.

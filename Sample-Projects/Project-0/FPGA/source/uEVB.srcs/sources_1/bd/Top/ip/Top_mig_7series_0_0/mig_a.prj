@@ -36,13 +36,13 @@
         <ECC>Disabled</ECC>
         <Ordering>Strict</Ordering>
         <BankMachineCnt>4</BankMachineCnt>
-        <CustomPart>FALSE</CustomPart>
-        <NewPartName></NewPartName>
-        <RowAddress>15</RowAddress>
+        <CustomPart>TRUE</CustomPart>
+        <NewPartName>MT41K512M16XX-107</NewPartName>
+        <RowAddress>16</RowAddress>
         <ColAddress>10</ColAddress>
         <BankAddress>3</BankAddress>
         <MemoryVoltage>1.5V</MemoryVoltage>
-        <C0_MEM_SIZE>536870912</C0_MEM_SIZE>
+        <C0_MEM_SIZE>1073741824</C0_MEM_SIZE>
         <UserMemoryAddressMap>BANK_ROW_COLUMN</UserMemoryAddressMap>
         <PinSelection>
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="M15" SLEW="" name="ddr3_addr[0]" IN_TERM="" />
@@ -51,6 +51,7 @@
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="K22" SLEW="" name="ddr3_addr[12]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="N18" SLEW="" name="ddr3_addr[13]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="N22" SLEW="" name="ddr3_addr[14]" IN_TERM="" />
+            <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="J22" SLEW="" name="ddr3_addr[15]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="L21" SLEW="" name="ddr3_addr[1]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="M16" SLEW="" name="ddr3_addr[2]" IN_TERM="" />
             <Pin VCCAUX_IO="" IOSTANDARD="SSTL15" PADName="L18" SLEW="" name="ddr3_addr[3]" IN_TERM="" />
@@ -128,7 +129,7 @@
         <PortInterface>AXI</PortInterface>
         <AXIParameters>
             <C0_C_RD_WR_ARB_ALGORITHM>RD_PRI_REG</C0_C_RD_WR_ARB_ALGORITHM>
-            <C0_S_AXI_ADDR_WIDTH>29</C0_S_AXI_ADDR_WIDTH>
+            <C0_S_AXI_ADDR_WIDTH>30</C0_S_AXI_ADDR_WIDTH>
             <C0_S_AXI_DATA_WIDTH>128</C0_S_AXI_DATA_WIDTH>
             <C0_S_AXI_ID_WIDTH>4</C0_S_AXI_ID_WIDTH>
             <C0_S_AXI_SUPPORTS_NARROW_BURST>0</C0_S_AXI_SUPPORTS_NARROW_BURST>
