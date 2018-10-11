@@ -28,18 +28,18 @@ Since the project_bd.tcl requires Vivado 2018.2 (exactly), if you want to upgrad
 ### Creating/opening/building the project (Windows)
 - First, create the project by running create-project.bat
 - Go into the newly created folder `p0-cle-215p` and double-click the .xpr file
-- In TCL console run `source scripts/build.tcl`
+- In TCL console run `source ../scripts/build.tcl` or use the project flow
 
 ### Creating/opening/building the project (Linux)
 - Open Vivado 2018.2, and in the tcl console run: 
 - cd (directory where create-project.tcl lives)
 - `source create-project.tcl`
 - `cd p0-cle-215p`
-- `source scripts/build.tcl`
+- `source ../scripts/build.tcl` or use the project flow
 
 ### Creating MCS for programming the flash
 
-The easiest way is to do: `source scripts/make-mcs.tcl`
+The easiest way is to do: `source ../scripts/make-mcs.tcl`
 
 ### Programming the flash
 
@@ -84,9 +84,9 @@ This project uses the second option
 | 0x10000  | see IP       | AXI-SPI   |
 
 ### Memory Map
-| Address  | Size  | Function  |
-| ---      | ---   | ---       |
-| 0        |  1MiB | Mapped to DRAM |
+| Address  | Size  | Function               |
+| ---      | ---   | ---                    |
+| 0        |  1GiB | Mapped to onboard DRAM |
 
 
 
