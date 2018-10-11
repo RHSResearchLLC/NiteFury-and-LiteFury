@@ -8,9 +8,13 @@ def mem_test_random():
     test_ok = True
     test_msg="OK\n"
 
+    # This is the only number that should need to change- how many MB to generate
+    # 256M16 part is 512MB; 512M16 part is 1024GB
+    NUM_MB=1024
+
     # Generate some data
     TRANSFER_SIZE = 1024*1024*4
-    NUM_TRANSFERS = 128
+    NUM_TRANSFERS = int(NUM_MB/4)
     tx_data=[]
     rx_data=[]
     for page in range(NUM_TRANSFERS):
@@ -51,6 +55,9 @@ def mem_test_random():
 
     with open('err.log', 'a') as errlog:
        errlog.write(test_msg)
+
+    os.close(fd_h2c)
+    os.close(fd_c2h)
 
 
 ##############################################    
