@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Wed Apr 24 10:23:39 2019
+//Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+//Date        : Wed Apr 24 10:52:27 2019
 //Host        : dr-lt2 running 64-bit major release  (build 9200)
 //Command     : generate_target Top_wrapper.bd
 //Design      : Top_wrapper
@@ -45,7 +45,7 @@ module Top_wrapper
     real_spi_ss,
     sys_clk_clk_n,
     sys_clk_clk_p);
-  output [15:0]DDR3_addr;
+  output [14:0]DDR3_addr;
   output [2:0]DDR3_ba;
   output DDR3_cas_n;
   output [0:0]DDR3_ck_n;
@@ -81,7 +81,7 @@ module Top_wrapper
   input sys_clk_clk_n;
   input sys_clk_clk_p;
 
-  wire [15:0]DDR3_addr;
+  wire [14:0]DDR3_addr;
   wire [2:0]DDR3_ba;
   wire DDR3_cas_n;
   wire [0:0]DDR3_ck_n;
