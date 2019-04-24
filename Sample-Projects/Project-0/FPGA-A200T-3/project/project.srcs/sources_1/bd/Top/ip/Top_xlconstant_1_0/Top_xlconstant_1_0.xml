@@ -62,8 +62,8 @@
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4fffd426"/>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="224ff974"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="905deaa3"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="0fa77f35"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f74432fe"/>

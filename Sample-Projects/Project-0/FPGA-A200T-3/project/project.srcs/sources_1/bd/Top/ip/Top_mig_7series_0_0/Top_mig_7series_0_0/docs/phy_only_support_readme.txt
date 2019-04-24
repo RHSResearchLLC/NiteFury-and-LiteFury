@@ -9,3 +9,4 @@ This file includes the information about the PHY layer support:
    - Refer to User Guide (UG586) section "Physical Layer Interface (Non-Memory
      Controller Design)" for more details on PHY interface signaling,
      parameter(s) and timing information.
+

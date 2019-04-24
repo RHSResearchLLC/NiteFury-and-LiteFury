@@ -1628,10 +1628,10 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>AXI Interconnect</xilinx:displayName>
-      <xilinx:coreRevision>18</xilinx:coreRevision>
+      <xilinx:coreRevision>19</xilinx:coreRevision>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2192f355"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="e3c1d15b"/>
     </xilinx:packagingInfo>
