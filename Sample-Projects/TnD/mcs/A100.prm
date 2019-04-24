@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x0005A653    Aug  3 21:44:30 2018    C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/design_1_wrapper.bit

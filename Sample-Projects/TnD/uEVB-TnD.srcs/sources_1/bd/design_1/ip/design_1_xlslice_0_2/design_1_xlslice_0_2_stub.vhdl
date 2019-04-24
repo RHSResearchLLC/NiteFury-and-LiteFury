@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Fri Jun 15 17:44:27 2018
--- Host        : DESKTOP-HN3HE5I running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+-- Date        : Wed Oct 24 11:36:51 2018
+-- Host        : dr-lt2 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_xlslice_0_2 -prefix
 --               design_1_xlslice_0_2_ design_1_xlslice_1_0_stub.vhdl
 -- Design      : design_1_xlslice_1_0

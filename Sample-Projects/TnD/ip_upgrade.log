@@ -1,0 +1,205 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Oct 24 11:36:01 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_util_ds_buf_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_util_ds_buf_0_0 (xilinx.com:ip:util_ds_buf:2.1) from (Rev. 8) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:40:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_xlslice_1_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_xlslice_1_0 (xilinx.com:ip:xlslice:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:40:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_xlslice_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_xlslice_0_2 (xilinx.com:ip:xlslice:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:40:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_xlslice_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_xlslice_0_1 (xilinx.com:ip:xlslice:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:40:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_xlslice_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_xlslice_0_0 (xilinx.com:ip:xlslice:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:40:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_util_ds_buf_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_util_ds_buf_0_0 (xilinx.com:ip:util_ds_buf:2.1 (Rev. 10)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:40:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_c_counter_binary_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_c_counter_binary_0_1 (xilinx.com:ip:c_counter_binary:12.0 (Rev. 12)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:40:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_c_counter_binary_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_c_counter_binary_0_0 (xilinx.com:ip:c_counter_binary:12.0 (Rev. 12)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 13 13:38:17 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_util_ds_buf_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_util_ds_buf_0_0 (xilinx.com:ip:util_ds_buf:2.1) from (Rev. 8) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Fri Aug  3 21:23:29 2018
+| Host         : dr-lt2 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_util_ds_buf_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_util_ds_buf_0_0 (xilinx.com:ip:util_ds_buf:2.1) from (Rev. 8) to (Rev. 10)
+

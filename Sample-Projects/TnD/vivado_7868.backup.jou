@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Oct 13 13:37:45 2018
+# Process ID: 7868
+# Current directory: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2780 C:\Users\dr-lt2\Desktop\github\NiteFury\Sample-Projects\TnD\uEVB-TnD.xpr
+# Log file: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/vivado.log
+# Journal file: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.xpr
+report_ip_status -name ip_status 
+update_compile_order -fileset sources_1
+upgrade_ip -vlnv xilinx.com:ip:util_ds_buf:2.1 [get_ips  design_1_util_ds_buf_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_util_ds_buf_0_0] -no_script -sync -force -quiet
+set_property part xc7a100tfgg484-2 [current_project]

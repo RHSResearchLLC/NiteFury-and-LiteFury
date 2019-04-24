@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Oct 13 13:37:45 2018
+# Process ID: 7868
+# Current directory: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2780 C:\Users\dr-lt2\Desktop\github\NiteFury\Sample-Projects\TnD\uEVB-TnD.xpr
+# Log file: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/vivado.log
+# Journal file: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_1_util_ds_buf_0_0
+
+INFO: [Project 1-230] Project 'uEVB-TnD.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 820.781 ; gain = 95.645
+report_ip_status -name ip_status 
+update_compile_order -fileset sources_1
+upgrade_ip -vlnv xilinx.com:ip:util_ds_buf:2.1 [get_ips  design_1_util_ds_buf_0_0] -log ip_upgrade.log
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_1
+Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_0
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_1
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_2
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_3
+Successfully read diagram <design_1> from BD file <C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/design_1.bd>
+Upgrading 'C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_util_ds_buf_0_0 (Utility Buffer 2.1) from revision 8 to revision 10
+Wrote  : <C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_util_ds_buf_0_0] -no_script -sync -force -quiet
+set_property part xc7a100tfgg484-2 [current_project]
+WARNING: [IP_Flow 19-2162] IP 'design_1_xlslice_0_1' is locked:
+* Current project part 'xc7a100tfgg484-2' and the part 'xc7a200tfbg484-2' used to customize the IP 'design_1_xlslice_0_1' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'design_1_xlslice_0_0' is locked:
+* Current project part 'xc7a100tfgg484-2' and the part 'xc7a200tfbg484-2' used to customize the IP 'design_1_xlslice_0_0' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'design_1_c_counter_binary_0_1' is locked:
+* Current project part 'xc7a100tfgg484-2' and the part 'xc7a200tfbg484-2' used to customize the IP 'design_1_c_counter_binary_0_1' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'design_1_xlslice_1_0' is locked:
+* Current project part 'xc7a100tfgg484-2' and the part 'xc7a200tfbg484-2' used to customize the IP 'design_1_xlslice_1_0' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'design_1_xlslice_0_2' is locked:
+* Current project part 'xc7a100tfgg484-2' and the part 'xc7a200tfbg484-2' used to customize the IP 'design_1_xlslice_0_2' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 13 13:39:56 2018...

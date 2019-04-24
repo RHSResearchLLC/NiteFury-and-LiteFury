@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:util_ds_buf:2.1
--- IP Revision: 8
+-- IP Revision: 10
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -103,11 +103,11 @@ ARCHITECTURE design_1_util_ds_buf_0_0_arch OF design_1_util_ds_buf_0_0 IS
     );
   END COMPONENT util_ds_buf;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF design_1_util_ds_buf_0_0_arch: ARCHITECTURE IS "util_ds_buf,Vivado 2018.1";
+  ATTRIBUTE X_CORE_INFO OF design_1_util_ds_buf_0_0_arch: ARCHITECTURE IS "util_ds_buf,Vivado 2018.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_util_ds_buf_0_0_arch : ARCHITECTURE IS "design_1_util_ds_buf_0_0,util_ds_buf,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_util_ds_buf_0_0_arch: ARCHITECTURE IS "design_1_util_ds_buf_0_0,util_ds_buf,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=util_ds_buf,x_ipVersion=2.1,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_BUF_TYPE=IBUFDS,C_SIZE=1}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_util_ds_buf_0_0_arch: ARCHITECTURE IS "design_1_util_ds_buf_0_0,util_ds_buf,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=util_ds_buf,x_ipVersion=2.1,x_ipCoreRevision=10,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_BUF_TYPE=IBUFDS,C_SIZE=1}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF IBUF_OUT: SIGNAL IS "XIL_INTERFACENAME IBUF_OUT, FREQ_HZ 100000000, CLK_DOMAIN design_1_util_ds_buf_0_0_IBUF_OUT";

@@ -24,7 +24,7 @@ preplace netloc ddr_1 1 0 1 NJ
 preplace netloc c_counter_binary_0_Q 1 2 1 470
 preplace netloc xlslice_2_Dout 1 3 1 NJ
 preplace netloc xlslice_0_Dout 1 3 1 NJ
-levelinfo -pg 1 0 150 380 570 690 -top 0 -bot 420
+levelinfo -pg 1 0 150 380 590 720 -top 0 -bot 420
 ",
 }
 0

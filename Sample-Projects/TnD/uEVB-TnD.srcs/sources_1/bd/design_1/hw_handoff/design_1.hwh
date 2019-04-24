@@ -1,16 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jun 15 20:18:52 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Oct 24 11:36:14 2018" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a200t" NAME="design_1" PACKAGE="fbg484" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
     <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="ddr_clk_p" RIGHT="0" SIGIS="clk"/>
     <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="ddr_clk_n" RIGHT="0" SIGIS="clk"/>
-    <PORT DIR="I" NAME="emc_clk" SIGIS="undef" SIGNAME="External_Ports_emc_clk">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="c_counter_binary_1" PORT="CLK"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" LEFT="0" NAME="LED_A1" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
@@ -29,6 +24,11 @@
     <PORT DIR="O" LEFT="0" NAME="LED_A3" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="emc_clk" SIGIS="undef" SIGNAME="External_Ports_emc_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="c_counter_binary_1" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>

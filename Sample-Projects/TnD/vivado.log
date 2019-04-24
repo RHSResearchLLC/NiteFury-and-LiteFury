@@ -1,51 +1,121 @@
 #-----------------------------------------------------------
-# Vivado v2018.1 (64-bit)
-# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
-# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri Jun 15 20:44:24 2018
-# Process ID: 3916
-# Current directory: C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9620 C:\Users\dr\GitHub\uEVB\Sample-Projects\TnD\uEVB-TnD.xpr
-# Log file: C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/vivado.log
-# Journal file: C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD\vivado.jou
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Oct 24 11:35:22 2018
+# Process ID: 5612
+# Current directory: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3172 C:\Users\dr-lt2\Desktop\github\NiteFury\Sample-Projects\TnD\uEVB-TnD.xpr
+# Log file: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/vivado.log
+# Journal file: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/uEVB-TnD.xpr
+open_project C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
-open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 765.266 ; gain = 122.617
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_1_util_ds_buf_0_0
+
+INFO: [Project 1-230] Project 'uEVB-TnD.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 797.754 ; gain = 79.172
+report_ip_status -name ip_status 
 update_compile_order -fileset sources_1
+upgrade_ip -vlnv xilinx.com:ip:util_ds_buf:2.1 [get_ips  design_1_util_ds_buf_0_0] -log ip_upgrade.log
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_1
+Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_0
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_1
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_2
+Adding cell -- xilinx.com:ip:xlslice:1.0 - xlslice_3
+Successfully read diagram <design_1> from BD file <C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/design_1.bd>
+Upgrading 'C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_util_ds_buf_0_0 (Utility Buffer 2.1) from revision 8 to revision 10
+Wrote  : <C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_util_ds_buf_0_0] -no_script -sync -force -quiet
+reset_run design_1_xlslice_0_1_synth_1
+reset_run design_1_xlslice_0_0_synth_1
+reset_run design_1_c_counter_binary_0_1_synth_1
+reset_run design_1_xlslice_1_0_synth_1
+reset_run design_1_xlslice_0_2_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+Wrote  : <C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/design_1.bd> 
+VHDL Output written to : C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_3 .
+Exporting to file C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Wed Oct 24 11:36:16 2018] Launched design_1_xlslice_0_1_synth_1, design_1_xlslice_0_0_synth_1, design_1_c_counter_binary_0_1_synth_1, design_1_xlslice_1_0_synth_1, design_1_xlslice_0_2_synth_1, design_1_util_ds_buf_0_0_synth_1...
+Run output will be captured here:
+design_1_xlslice_0_1_synth_1: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/design_1_xlslice_0_1_synth_1/runme.log
+design_1_xlslice_0_0_synth_1: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/design_1_xlslice_0_0_synth_1/runme.log
+design_1_c_counter_binary_0_1_synth_1: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/design_1_c_counter_binary_0_1_synth_1/runme.log
+design_1_xlslice_1_0_synth_1: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/design_1_xlslice_1_0_synth_1/runme.log
+design_1_xlslice_0_2_synth_1: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/design_1_xlslice_0_2_synth_1/runme.log
+design_1_util_ds_buf_0_0_synth_1: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/design_1_util_ds_buf_0_0_synth_1/runme.log
+[Wed Oct 24 11:36:16 2018] Launched synth_1...
+Run output will be captured here: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 6
+[Wed Oct 24 11:37:47 2018] Launched impl_1...
+Run output will be captured here: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Wed Oct 24 11:39:37 2018] Launched impl_1...
+Run output will be captured here: C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/runme.log
+pwd
+C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD
 open_hw
 connect_hw_server
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
 INFO: [Labtools 27-2222] Launching hw_server...
 INFO: [Labtools 27-2221] Launch Output:
 
-****** Xilinx hw_server v2018.1
-  **** Build date : Apr  4 2018-19:32:53
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210205A0C719A
-ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210205A0C719A.
-Check cable connectivity and that the target board is powered up then
-use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
-ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210205A0C719A
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210205A0C719A
+set_property PROGRAM.FILE {C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/uEVB-TnD.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a200t_0]
+current_hw_device [get_hw_devices xc7a200t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 WARNING: [Labtools 27-3361] The debug hub core was not detected.
 Resolution: 
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
 2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
 For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
-set_property PROGRAM.FILES [list "C:/Users/dr/GitHub/uEVB/Sample-Projects/TnD/mcs/out.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+create_hw_cfgmem -hw_device [lindex [get_hw_devices xc7a200t_0] 0] [lindex [get_cfgmem_parts {s25fl128sxxxxxx1-spi-x1_x2_x4}] 0]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROGRAM.ADDRESS_RANGE  {entire_device} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+set_property PROGRAM.FILES [list "C:/Users/dr-lt2/Desktop/github/NiteFury/Sample-Projects/TnD/mcs/out.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
 set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
 set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
 set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
@@ -57,23 +127,23 @@ startgroup
 if {![string equal [get_property PROGRAM.HW_CFGMEM_TYPE  [lindex [get_hw_devices xc7a200t_0] 0]] [get_property MEM_TYPE [get_property CFGMEM_PART [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]]]] }  { create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a200t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a200t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a200t_0] 0]; }; 
 INFO: [Labtools 27-3164] End of startup status: HIGH
 program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a200t_0] 0]]
+INFO: [Xicom 50-104] The verify operation will only be performed on the address range specified by the Memory Configuration File (MCS).
 Mfg ID : 1   Memory Type : 20   Memory Capacity : 18   Device ID 1 : 0   Device ID 2 : 0
 Performing Erase Operation...
 Erase Operation successful.
 Performing Program and Verify Operations...
 Program/Verify Operation successful.
 INFO: [Labtoolstcl 44-377] Flash programming completed successfully
-program_hw_cfgmem: Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 1432.973 ; gain = 1.793
+program_hw_cfgmem: Time (s): cpu = 00:00:01 ; elapsed = 00:00:38 . Memory (MB): peak = 1786.094 ; gain = 6.672
 endgroup
-boot_hw_device  [lindex [get_hw_devices xc7a200t_0] 0]
-INFO: [Labtoolstcl 44-664] Will wait up to 180 seconds for booting to complete.
-INFO: [Labtools 27-32] Done pin status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210205A0C719A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210205A0C719A
 INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 WARNING: [Labtools 27-3361] The debug hub core was not detected.
 Resolution: 
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
 2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
 For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
 exit
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 15 20:59:17 2018...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 24 11:43:20 2018...
