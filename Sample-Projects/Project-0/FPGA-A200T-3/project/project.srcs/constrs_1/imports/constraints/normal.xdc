@@ -71,6 +71,9 @@ set_false_path -from [get_ports pci_reset]
 # Additional design / project settings
 ###############################################################################
 
+# Power down on overtemp
+set_property BITSTREAM.CONFIG.OVERTEMPPOWERDOWN ENABLE [current_design]
+
 # High-speed configuration so FPGA is up in time to negotiate with PCIe root complex
 set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN Div-1 [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
