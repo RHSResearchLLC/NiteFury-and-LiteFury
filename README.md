@@ -1,55 +1,49 @@
-# NiteFury: FPGA-based coprocessor in M.2 format
+# NiteFury and Litefury: Xilinx FPGA development board kit in M.2 form factor
 
-NiteFury is Xilinx Artix A200 FPGA & DDR3 in a small form factor (M.2 2280 M key).
+Every wanted to work with FPGA, and connect to DDR and PCI express without spending a small fortune?
 
-## Features
-- Xilinx A200T FPGA: Just under 1000 GMAC/s
-- 8Gb DDR3 on board. DDR3-800 x16 (1.6GB/s)
+NiteFury and Litefury are compact, full-featured FPGA developement boards featuring a decent size FGPA, DDR3, and PCI express connectivity in a small form factor, for a low price.
+
+## Features and general specifications
+- Xilinx FPGA
+- Onboard DDR3
+- Onboard configuration flash (S25FL series)
 - PCIe x4 gen 2 interface to FGPA (2GB/s)
 - IO: 4x LVDS pairs and 4 general purpose
+- 4 user controlled LEDs
+- External I/O via I/O connector: 12 Total, 4 selectable analog or digital
+- External I/O via PCIe connector: 1x 3.3V digital I/O (LED), SMBus
 
 
 ## Specifications
-
-| Feature | Specification |
-| --- | --- |
-| FPGA | Xilinx Artix XC7A200T-2FBG484E |
-| RAM | DDR3, 8Gb (512MBx16) |
-| Form Factor | M.2 (NGFF), keyed for M slot |
-| Dimensions | 22x80x4.7mm (without heatsink) |
-| Host Interface | PCIe x4 gen 2 (20 Gb/s) |
-| Host Tools | Vivado  |
-| Built-in JTAG | No |
-| External I/O <BR/> via I/O connector | 12 Total, 4 selectable analog or digital  |
-| External I/O via PCIe connector | 1x 3.3V digital I/O (LED), SMBus |
-| User-controllable LEDs | 4 |
-
-
+| Feature | Nitefury | Litefury |
+| --- | --- | --- |
+| FPGA | XC7A200T-3FBG484E | XC7A100T-L2FGG484E |
+| RAM | 512MB DDR3-1066 | 256MB DDR3-800 |
+| RAM Bandwidth | 2.1GB/s | 1.6GB/s |
+| Flash | 128Mb | 256Mb |
+| Max power on VCCINT | 8W | 10W |
+| Dimensions | 22x80x8mm | 22x80x28mm |
+| MSRP | $349 | $99 |
 
 ## Block Diagram
-![NiteFury block diagram](./images/uEVB-BD.png)
+![block diagram](./images/BD-NF-LF.PNG)
 
-## DSP Processing metrics (DSP slices)
-![DSP metrics diagram](./images/dsp-metrics.jpg)
+## Litefury
+![LiteFury top](./images/lf-top-close.jpg)
+![LiteFury bottom](./images/lf-bottom.jpg)
+![LiteFury with cables](./images/lf-wcables.jpg)
 
-NiteFury has 6x the processing power of PicoEVB, and is comparable with midrange Kintex devices
+## How to get Litefury 
 
-## Rendering
+*Note: Expected in stock on 7/20/2020 for Crowd Supply, and 7/27/2020 for Amazon *
 
-![Image of NiteFury top](./images/top.png)
-![Image of NiteFury bottom](./images/bot.png)
-
-## Prototype pics
-![Image of NiteFury top](./images/Top-R1-A.png)
-![Image of NiteFury bottom](./images/Bot-R1-A.png)
+- [Amazon](https://www.amazon.com/dp/B08BKSVJH5)
+- [Crowd Supply](https://www.crowdsupply.com/search?q=litefury)
 
 
-## Verified configurations
-- XC7A200T-2 with 4Gb DDR3-800
-
-## How to get one
-
-- [Crowd Supply](https://www.crowdsupply.com/rhs-research/nitefury)
+## How to get Nitefury
+sorry, currently unavailable
 
 
 ## More information
