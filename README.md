@@ -36,8 +36,7 @@ NiteFury and Litefury are compact, full-featured FPGA developement boards featur
 
 ## How to get Litefury 
 
-*Note: Expected in stock on 7/20/2020 for Crowd Supply, and 7/27/2020 for Amazon *
-
+- [RHS Research store](https://rhsresearch.com)
 - [Amazon](https://www.amazon.com/dp/B08BKSVJH5)
 - [Crowd Supply](https://www.crowdsupply.com/search?q=litefury)
 
