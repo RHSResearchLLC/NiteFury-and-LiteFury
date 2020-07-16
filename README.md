@@ -21,7 +21,7 @@ NiteFury and Litefury are compact, full-featured FPGA developement boards featur
 | FPGA | XC7A200T-3FBG484E | XC7A100T-L2FGG484E |
 | RAM | 512MB DDR3-1066 | 256MB DDR3-800 |
 | RAM Bandwidth | 2.1GB/s | 1.6GB/s |
-| Flash | 128Mb | 256Mb |
+| Flash | 256Mb | 128Mb |
 | Max power on VCCINT | 8W | 10W |
 | Dimensions | 22x80x8mm | 22x80x28mm |
 | MSRP | $349 | $99 |
