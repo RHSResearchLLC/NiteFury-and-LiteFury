@@ -1,6 +1,6 @@
 # NiteFury and Litefury: Xilinx FPGA development board kit in M.2 form factor
 
-Every wanted to work with FPGA, and connect to DDR and PCI express without spending a small fortune?
+Ever wanted to work with FPGA, and connect to DDR and PCI express without spending a small fortune?
 
 NiteFury and Litefury are compact, full-featured FPGA developement boards featuring a decent size FGPA, DDR3, and PCI express connectivity in a small form factor, for a low price.
 
@@ -13,7 +13,6 @@ NiteFury and Litefury are compact, full-featured FPGA developement boards featur
 - 4 user controlled LEDs
 - External I/O via I/O connector: 12 Total, 4 selectable analog or digital
 - External I/O via PCIe connector: 1x 3.3V digital I/O (LED), SMBus
-
 
 ## Specifications
 | Feature | Nitefury | Litefury |
@@ -40,13 +39,9 @@ NiteFury and Litefury are compact, full-featured FPGA developement boards featur
 - [Amazon](https://www.amazon.com/dp/B08BKSVJH5)
 - [Crowd Supply](https://www.crowdsupply.com/search?q=litefury)
 
-
 ## How to get Nitefury
 sorry, currently unavailable
-
 
 ## More information
 
 info@nanoevb.com
-
-
