@@ -43,7 +43,7 @@ This project uses the second option
 
 | Address  | Size (bytes) | Function  |
 | ---      | ---          | ---       |
-| 0        |  4           | "NITE"    |
+| 0        |  4           | "LITE"    |
 | 4        |  4           | version   |
 | 8-0xFFFF | 64K-8        | unused    |
 | 0x10000  | see IP       | AXI-SPI   |
