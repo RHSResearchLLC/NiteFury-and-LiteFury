@@ -1,0 +1,4 @@
+The code in the LIB folder is reused and modified from Xilinx SDK, and as such those files have a special licence, included as a header in the files.
+
+The rest of the files in this repo are licensed under MIT license
+
