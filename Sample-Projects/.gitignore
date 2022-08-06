@@ -2,3 +2,5 @@
 **/*.hw
 **/*.runs
 **/*.sim
+**/*.gen
+**/*.ip_user_files
