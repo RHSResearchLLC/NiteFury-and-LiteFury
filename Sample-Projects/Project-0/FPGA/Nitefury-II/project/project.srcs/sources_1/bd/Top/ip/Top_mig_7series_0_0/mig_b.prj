@@ -19,7 +19,7 @@
 
   <XADC_En>Enabled</XADC_En>
 
-  <TargetFPGA>xc7a200t-fbg484/-3</TargetFPGA>
+  <TargetFPGA>xc7a200t-fbg484/-2</TargetFPGA>
 
   <Version>4.2</Version>
 
@@ -42,7 +42,7 @@
     <TimePeriod>2500</TimePeriod>
     <VccAuxIO>1.8V</VccAuxIO>
     <PHYRatio>4:1</PHYRatio>
-    <InputClkFreq>400</InputClkFreq>
+    <InputClkFreq>200</InputClkFreq>
     <UIExtraClocks>0</UIExtraClocks>
     <MMCM_VCO>800</MMCM_VCO>
     <MMCMClkOut0> 1.000</MMCMClkOut0>

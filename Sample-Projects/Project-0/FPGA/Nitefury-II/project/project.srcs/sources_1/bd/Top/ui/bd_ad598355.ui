@@ -38,19 +38,19 @@ preplace netloc LED_BLINKER_LED_ON_L 1 5 1 NJ 1100
 preplace netloc M00_ARESETN_1 1 2 2 NJ 480 NJ
 preplace netloc OK_1 1 3 2 NJ 920 1290
 preplace netloc RESET_L_1 1 4 1 NJ 110
-preplace netloc S00_ACLK_1 1 3 2 960 550 1320
-preplace netloc S00_ARESETN_1 1 3 2 980 560 1290
-preplace netloc axi_quad_spi_0_ss_o 1 5 1 1630 540n
-preplace netloc mig_7series_0_init_calib_complete 1 4 2 1300 10 1640
-preplace netloc mig_7series_0_ui_clk 1 3 3 990 170 1290 160 1620
-preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 5 300 600 NJ 600 940 540 1300J 360 1630
+preplace netloc S00_ACLK_1 1 3 2 950 550 1320
+preplace netloc S00_ARESETN_1 1 3 2 970 560 1290
+preplace netloc axi_quad_spi_0_ss_o 1 5 1 1620 540n
+preplace netloc mig_7series_0_init_calib_complete 1 4 2 1300 10 1630
+preplace netloc mig_7series_0_ui_clk 1 3 3 980 170 1290 160 1610
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 5 310 600 NJ 600 930 540 1300J 360 1620
 preplace netloc pci_reset_1 1 0 5 NJ 1000 NJ 1000 610 1120 NJ 1120 NJ
-preplace netloc util_ds_buf_IBUF_OUT 1 1 4 NJ 920 610 800 930J 890 1310J
-preplace netloc xlconstant_0_dout 1 3 2 980J 290 NJ
-preplace netloc xlconstant_1_dout 1 5 1 1630J 400n
-preplace netloc xlconstant_2_dout 1 3 2 930J 270 NJ
-preplace netloc xlconstant_3_dout 1 5 1 1640 700n
-preplace netloc xlconstant_4_dout 1 5 1 1620 740n
+preplace netloc util_ds_buf_IBUF_OUT 1 1 4 NJ 920 610 800 920J 890 1310J
+preplace netloc xlconstant_0_dout 1 3 2 970J 290 NJ
+preplace netloc xlconstant_1_dout 1 5 1 1620J 400n
+preplace netloc xlconstant_2_dout 1 3 2 920J 270 NJ
+preplace netloc xlconstant_3_dout 1 5 1 1630 700n
+preplace netloc xlconstant_4_dout 1 5 1 1610 740n
 preplace netloc axi_interconnect_0_M00_AXI 1 4 1 N 690
 preplace netloc axi_interconnect_0_M01_AXI 1 4 1 1310 520n
 preplace netloc axi_interconnect_1_M00_AXI 1 4 1 1290 230n
@@ -58,11 +58,11 @@ preplace netloc axi_quad_spi_0_SPI_0 1 5 1 NJ 520
 preplace netloc diff_clock_rtl_0_1 1 0 1 NJ 930
 preplace netloc diff_clock_rtl_1_1 1 0 5 NJ 250 NJ 250 NJ 250 NJ 250 NJ
 preplace netloc mig_7series_0_DDR3 1 5 1 NJ 220
-preplace netloc xdma_0_M_AXI 1 3 1 950 360n
-preplace netloc xdma_0_M_AXI_LITE 1 3 1 970 620n
+preplace netloc xdma_0_M_AXI 1 3 1 940 360n
+preplace netloc xdma_0_M_AXI_LITE 1 3 1 960 620n
 preplace netloc xdma_0_pcie_mgt 1 3 3 NJ 900 NJ 900 NJ
 levelinfo -pg 1 -10 160 460 770 1140 1470 1660
-pagesize -pg 1 -db -bbox -sgen -130 0 1840 1270
+pagesize -pg 1 -db -bbox -sgen -130 0 1820 1270
 "
 }
 0

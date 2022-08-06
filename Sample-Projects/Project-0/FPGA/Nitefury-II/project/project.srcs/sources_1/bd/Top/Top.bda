@@ -44,6 +44,15 @@
       <data key="VT">PM</data>
     </node>
     <node id="n2">
+      <data key="VM">Top</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n3">
+      <data key="VH">2</data>
+      <data key="VM">Top</data>
+      <data key="VT">VR</data>
+    </node>
+    <node id="n4">
       <data key="BA">0x40000000</data>
       <data key="BP">C_BASEADDR</data>
       <data key="HA">0x4000FFFF</data>
@@ -61,7 +70,7 @@
       <data key="TU">register</data>
       <data key="VT">AC</data>
     </node>
-    <node id="n3">
+    <node id="n5">
       <data key="BA">0x44A00000</data>
       <data key="BP">C_BASEADDR</data>
       <data key="HA">0x44A0FFFF</data>
@@ -79,24 +88,15 @@
       <data key="TU">register</data>
       <data key="VT">AC</data>
     </node>
-    <node id="n4">
-      <data key="VM">Top</data>
-      <data key="VT">BC</data>
-    </node>
-    <node id="n5">
-      <data key="VH">2</data>
-      <data key="VM">Top</data>
-      <data key="VT">VR</data>
-    </node>
-    <edge id="e0" source="n4" target="n5"/>
-    <edge id="e1" source="n5" target="n1"/>
+    <edge id="e0" source="n2" target="n3"/>
+    <edge id="e1" source="n3" target="n1"/>
     <edge id="e2" source="n0" target="n1">
       <data key="EH">2</data>
     </edge>
-    <edge id="e3" source="n2" target="n1">
+    <edge id="e3" source="n4" target="n1">
       <data key="EH">2</data>
     </edge>
-    <edge id="e4" source="n3" target="n1">
+    <edge id="e4" source="n5" target="n1">
       <data key="EH">2</data>
     </edge>
   </graph>
