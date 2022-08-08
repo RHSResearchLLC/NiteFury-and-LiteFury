@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9001BBEC54552134",
+      "boundary_crc": "0xF70650F4BF5D0528",
       "device": "xc7a100tfgg484-2L",
       "gen_directory": "../../../../project.gen/sources_1/bd/Top",
       "name": "Top",
@@ -32,7 +32,7 @@
       "mig_7series_0": "",
       "xlconstant_1": "",
       "xlconstant_2": "",
-      "xlslice_0": "",
+      "xlslice_D1": "",
       "xadc_wiz_0": "",
       "axi_interconnect_0": {
         "xbar": "",
@@ -50,12 +50,10 @@
       "util_ds_buf": "",
       "util_vector_logic_0": "",
       "xdma_0": "",
-      "const_true": "",
-      "CodeBlinker_1": "",
-      "const_1": "",
-      "CodeBlinker_2": "",
-      "CodeBlinker_0": "",
-      "const_2": ""
+      "const_true1": "",
+      "CodeBlinker_3": "",
+      "xlslice_D0": "",
+      "xlslice_D4_D2": ""
     },
     "interface_ports": {
       "DDR3": {
@@ -173,31 +171,6 @@
         "left": "0",
         "right": "0"
       },
-      "emc_clk": {
-        "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "Top_emc_clk",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "90000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          }
-        }
-      },
       "LED_A1": {
         "direction": "O",
         "left": "0",
@@ -217,6 +190,11 @@
         }
       },
       "pcie_clkreq_l": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "LED_M2": {
         "direction": "O",
         "left": "0",
         "right": "0"
@@ -343,6 +321,9 @@
               },
               "C_ALL_OUTPUTS_2": {
                 "value": "1"
+              },
+              "C_DOUT_DEFAULT_2": {
+                "value": "0x0000000C"
               },
               "C_IS_DUAL": {
                 "value": "1"
@@ -978,7 +959,7 @@
             "value": "Custom"
           },
           "XML_INPUT_FILE": {
-            "value": "mig_a.prj"
+            "value": "mig_b.prj"
           }
         }
       },
@@ -999,23 +980,23 @@
         "xci_path": "ip\\Top_xlconstant_2_0\\Top_xlconstant_2_0.xci",
         "inst_hier_path": "xlconstant_2"
       },
-      "xlslice_0": {
+      "xlslice_D1": {
         "vlnv": "xilinx.com:ip:xlslice:1.0",
         "xci_name": "Top_xlslice_0_3",
         "xci_path": "ip\\Top_xlslice_0_3\\Top_xlslice_0_3.xci",
-        "inst_hier_path": "xlslice_0",
+        "inst_hier_path": "xlslice_D1",
         "parameters": {
           "DIN_FROM": {
-            "value": "31"
+            "value": "1"
           },
           "DIN_TO": {
-            "value": "29"
+            "value": "1"
           },
           "DIN_WIDTH": {
             "value": "32"
           },
           "DOUT_WIDTH": {
-            "value": "3"
+            "value": "1"
           }
         }
       },
@@ -1909,17 +1890,17 @@
           }
         }
       },
-      "const_true": {
+      "const_true1": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "Top_xlconstant_0_0",
-        "xci_path": "ip\\Top_xlconstant_0_0\\Top_xlconstant_0_0.xci",
-        "inst_hier_path": "const_true"
+        "xci_name": "Top_const_true_1",
+        "xci_path": "ip\\Top_const_true_1\\Top_const_true_1.xci",
+        "inst_hier_path": "const_true1"
       },
-      "CodeBlinker_1": {
+      "CodeBlinker_3": {
         "vlnv": "xilinx.com:module_ref:CodeBlinker:1.0",
-        "xci_name": "Top_CodeBlinker_0_1",
-        "xci_path": "ip\\Top_CodeBlinker_0_1\\Top_CodeBlinker_0_1.xci",
-        "inst_hier_path": "CodeBlinker_1",
+        "xci_name": "Top_CodeBlinker_0_3",
+        "xci_path": "ip\\Top_CodeBlinker_0_3\\Top_CodeBlinker_0_3.xci",
+        "inst_hier_path": "CodeBlinker_3",
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "CodeBlinker",
@@ -1936,56 +1917,7 @@
               },
               "CLK_DOMAIN": {
                 "value": "Top_mig_7series_0_0_ui_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "ok": {
-            "direction": "I"
-          },
-          "code": {
-            "direction": "I",
-            "left": "2",
-            "right": "0"
-          },
-          "led": {
-            "direction": "O"
-          }
-        }
-      },
-      "const_1": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "Top_const_true_0",
-        "xci_path": "ip\\Top_const_true_0\\Top_const_true_0.xci",
-        "inst_hier_path": "const_1",
-        "parameters": {
-          "CONST_WIDTH": {
-            "value": "3"
-          }
-        }
-      },
-      "CodeBlinker_2": {
-        "vlnv": "xilinx.com:module_ref:CodeBlinker:1.0",
-        "xci_name": "Top_CodeBlinker_0_2",
-        "xci_path": "ip\\Top_CodeBlinker_0_2\\Top_CodeBlinker_0_2.xci",
-        "inst_hier_path": "CodeBlinker_2",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "CodeBlinker",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
                 "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "Top_util_ds_buf_0_IBUF_OUT",
-                "value_src": "default_prop"
               }
             }
           },
@@ -2002,51 +1934,42 @@
           }
         }
       },
-      "CodeBlinker_0": {
-        "vlnv": "xilinx.com:module_ref:CodeBlinker:1.0",
-        "xci_name": "Top_CodeBlinker_0_0",
-        "xci_path": "ip\\Top_CodeBlinker_0_0\\Top_CodeBlinker_0_0.xci",
-        "inst_hier_path": "CodeBlinker_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "CodeBlinker",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "Top_xdma_0_0_axi_aclk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "ok": {
-            "direction": "I"
-          },
-          "code": {
-            "direction": "I",
-            "left": "2",
-            "right": "0"
-          },
-          "led": {
-            "direction": "O"
-          }
-        }
-      },
-      "const_2": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "Top_const_1_0",
-        "xci_path": "ip\\Top_const_1_0\\Top_const_1_0.xci",
-        "inst_hier_path": "const_2",
+      "xlslice_D0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "Top_xlslice_0_4",
+        "xci_path": "ip\\Top_xlslice_0_4\\Top_xlslice_0_4.xci",
+        "inst_hier_path": "xlslice_D0",
         "parameters": {
-          "CONST_WIDTH": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "32"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_D4_D2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "Top_xlslice_1_0",
+        "xci_path": "ip\\Top_xlslice_1_0\\Top_xlslice_1_0.xci",
+        "inst_hier_path": "xlslice_D4_D2",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "4"
+          },
+          "DIN_TO": {
+            "value": "2"
+          },
+          "DIN_WIDTH": {
+            "value": "32"
+          },
+          "DOUT_WIDTH": {
             "value": "3"
           }
         }
@@ -2121,28 +2044,18 @@
       }
     },
     "nets": {
-      "CodeBlinker_0_led": {
+      "CodeBlinker_3_led": {
         "ports": [
-          "CodeBlinker_0/led",
+          "CodeBlinker_3/led",
           "LED_A1"
-        ]
-      },
-      "CodeBlinker_1_led": {
-        "ports": [
-          "CodeBlinker_1/led",
-          "LED_A4"
-        ]
-      },
-      "CodeBlinker_2_led": {
-        "ports": [
-          "CodeBlinker_2/led",
-          "LED_A3"
         ]
       },
       "GPIO_regs_gpio2_io_o": {
         "ports": [
           "GPIO_regs/gpio2_io_o",
-          "xlslice_0/Din"
+          "xlslice_D1/Din",
+          "xlslice_D0/Din",
+          "xlslice_D4_D2/Din"
         ]
       },
       "M00_ARESETN_1": {
@@ -2164,8 +2077,7 @@
           "axi_interconnect_1/ACLK",
           "axi_interconnect_1/S00_ACLK",
           "axi_quad_spi_0/ext_spi_clk",
-          "axi_quad_spi_0/s_axi_aclk",
-          "CodeBlinker_0/clk"
+          "axi_quad_spi_0/s_axi_aclk"
         ]
       },
       "S00_ARESETN_1": {
@@ -2186,39 +2098,31 @@
       "axi_quad_spi_0_ss_o": {
         "ports": [
           "axi_quad_spi_0/ss_o",
-          "LED_A2",
           "real_spi_ss"
         ]
       },
-      "const_1_dout": {
+      "const_true1_dout": {
         "ports": [
-          "const_1/dout",
-          "CodeBlinker_1/code"
-        ]
-      },
-      "const_2_dout": {
-        "ports": [
-          "const_2/dout",
-          "CodeBlinker_2/code"
-        ]
-      },
-      "const_true_dout": {
-        "ports": [
-          "const_true/dout",
-          "CodeBlinker_0/ok"
+          "const_true1/dout",
+          "CodeBlinker_3/ok"
         ]
       },
       "mig_7series_0_init_calib_complete": {
         "ports": [
           "mig_7series_0/init_calib_complete",
-          "CodeBlinker_1/ok"
+          "LED_A4"
+        ]
+      },
+      "mig_7series_0_ui_addn_clk_0": {
+        "ports": [
+          "mig_7series_0/ui_addn_clk_0",
+          "CodeBlinker_3/clk"
         ]
       },
       "mig_7series_0_ui_clk": {
         "ports": [
           "mig_7series_0/ui_clk",
-          "axi_interconnect_1/M00_ACLK",
-          "CodeBlinker_1/clk"
+          "axi_interconnect_1/M00_ACLK"
         ]
       },
       "mig_7series_0_ui_clk_sync_rst": {
@@ -2236,8 +2140,7 @@
       "util_ds_buf_IBUF_OUT": {
         "ports": [
           "util_ds_buf/IBUF_OUT",
-          "xdma_0/sys_clk",
-          "CodeBlinker_2/clk"
+          "xdma_0/sys_clk"
         ]
       },
       "xadc_wiz_1_temp_out": {
@@ -2249,7 +2152,7 @@
       "xdma_0_user_lnk_up": {
         "ports": [
           "xdma_0/user_lnk_up",
-          "CodeBlinker_2/ok"
+          "LED_A3"
         ]
       },
       "xlconstant_1_dout": {
@@ -2267,8 +2170,20 @@
       },
       "xlslice_0_Dout": {
         "ports": [
-          "xlslice_0/Dout",
-          "CodeBlinker_0/code"
+          "xlslice_D1/Dout",
+          "LED_M2"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_D4_D2/Dout",
+          "CodeBlinker_3/code"
+        ]
+      },
+      "xlslice_D0_Dout": {
+        "ports": [
+          "xlslice_D0/Dout",
+          "LED_A2"
         ]
       }
     },
@@ -2280,7 +2195,7 @@
               "SEG_mig_7series_0_memaddr": {
                 "address_block": "/mig_7series_0/memmap/memaddr",
                 "offset": "0x0000000000000000",
-                "range": "512M"
+                "range": "1G"
               }
             }
           },

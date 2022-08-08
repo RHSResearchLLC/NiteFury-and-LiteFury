@@ -1,75 +1,72 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.26673",
-   "Default View_TopLeft":"931,1129",
+   "Default View_ScaleFactor":"0.861087",
+   "Default View_TopLeft":"249,641",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR3 -pg 1 -lvl 7 -x 1890 -y 230 -defaultsOSRD
-preplace port SPI_0 -pg 1 -lvl 7 -x 1890 -y 1440 -defaultsOSRD
-preplace port pcie_clkin -pg 1 -lvl 0 -x 0 -y 1050 -defaultsOSRD
-preplace port pcie_mgt -pg 1 -lvl 7 -x 1890 -y 1080 -defaultsOSRD
-preplace port sys_clk -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
-preplace port port-id_emc_clk -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
-preplace port port-id_pci_reset -pg 1 -lvl 0 -x 0 -y 1120 -defaultsOSRD
-preplace portBus LED_A4 -pg 1 -lvl 7 -x 1890 -y 460 -defaultsOSRD
-preplace portBus LED_A3 -pg 1 -lvl 7 -x 1890 -y 1620 -defaultsOSRD
-preplace portBus real_spi_ss -pg 1 -lvl 7 -x 1890 -y 1480 -defaultsOSRD
-preplace portBus LED_A2 -pg 1 -lvl 7 -x 1890 -y 1460 -defaultsOSRD
-preplace portBus LED_A1 -pg 1 -lvl 7 -x 1890 -y 600 -defaultsOSRD
-preplace portBus pcie_clkreq_l -pg 1 -lvl 7 -x 1890 -y 1740 -defaultsOSRD
-preplace inst GPIO_regs -pg 1 -lvl 6 -x 1680 -y 800 -defaultsOSRD
-preplace inst mig_7series_0 -pg 1 -lvl 6 -x 1680 -y 270 -defaultsOSRD
-preplace inst xlconstant_1 -pg 1 -lvl 6 -x 1680 -y 1740 -defaultsOSRD
-preplace inst xlconstant_2 -pg 1 -lvl 3 -x 710 -y 310 -defaultsOSRD
-preplace inst xlslice_0 -pg 1 -lvl 5 -x 1290 -y 1020 -defaultsOSRD
-preplace inst xadc_wiz_0 -pg 1 -lvl 6 -x 1680 -y 1240 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 5 -x 1290 -y 800 -defaultsOSRD
-preplace inst axi_interconnect_1 -pg 1 -lvl 5 -x 1290 -y 130 -defaultsOSRD
-preplace inst axi_quad_spi_0 -pg 1 -lvl 6 -x 1680 -y 1470 -defaultsOSRD
-preplace inst util_ds_buf -pg 1 -lvl 1 -x 170 -y 1050 -defaultsOSRD
-preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 470 -y 190 -defaultsOSRD
-preplace inst xdma_0 -pg 1 -lvl 4 -x 950 -y 1120 -defaultsOSRD
-preplace inst const_true -pg 1 -lvl 5 -x 1290 -y 600 -defaultsOSRD
-preplace inst CodeBlinker_1 -pg 1 -lvl 6 -x 1680 -y 460 -defaultsOSRD
-preplace inst const_1 -pg 1 -lvl 5 -x 1290 -y 480 -defaultsOSRD
-preplace inst CodeBlinker_2 -pg 1 -lvl 6 -x 1680 -y 1620 -defaultsOSRD
-preplace inst CodeBlinker_0 -pg 1 -lvl 6 -x 1680 -y 600 -defaultsOSRD
-preplace inst const_2 -pg 1 -lvl 5 -x 1290 -y 1640 -defaultsOSRD
-preplace netloc CodeBlinker_0_led 1 6 1 NJ 600
-preplace netloc CodeBlinker_1_led 1 6 1 NJ 460
-preplace netloc CodeBlinker_2_led 1 6 1 NJ 1620
-preplace netloc GPIO_regs_gpio2_io_o 1 4 3 1140 380 NJ 380 1840
-preplace netloc M00_ARESETN_1 1 2 3 NJ 190 NJ 190 NJ
-preplace netloc S00_ACLK_1 1 4 2 1110 540 1480
-preplace netloc S00_ARESETN_1 1 4 2 1130 420 1490
-preplace netloc axi_quad_spi_0_ss_o 1 6 1 1850 1460n
-preplace netloc const_1_dout 1 5 1 NJ 480
-preplace netloc const_2_dout 1 5 1 NJ 1640
-preplace netloc const_true_dout 1 5 1 NJ 600
-preplace netloc mig_7series_0_init_calib_complete 1 5 2 1510 170 1840
-preplace netloc mig_7series_0_ui_clk 1 4 3 1140 260 1500 160 1850
-preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 6 320 10 NJ 10 NJ 10 NJ 10 NJ 10 1860
-preplace netloc pci_reset_1 1 0 4 NJ 1120 NJ 1120 NJ 1120 NJ
-preplace netloc util_ds_buf_IBUF_OUT 1 1 5 NJ 1040 NJ 1040 790 960 NJ 960 1450J
-preplace netloc xadc_wiz_1_temp_out 1 5 2 1520 370 1850
-preplace netloc xdma_0_user_lnk_up 1 4 2 NJ 1100 1440
-preplace netloc xlconstant_1_dout 1 6 1 NJ 1740
-preplace netloc xlconstant_2_dout 1 3 3 NJ 310 NJ 310 1490
-preplace netloc xlslice_0_Dout 1 5 1 1510J 620n
-preplace netloc axi_interconnect_0_M00_AXI 1 5 1 N 780
-preplace netloc axi_interconnect_0_M01_AXI 1 5 1 1470 800n
-preplace netloc axi_interconnect_0_M02_AXI 1 5 1 1460 820n
-preplace netloc axi_interconnect_1_M00_AXI 1 5 1 1490 130n
-preplace netloc axi_quad_spi_0_SPI_0 1 6 1 NJ 1440
-preplace netloc diff_clock_rtl_0_1 1 0 1 NJ 1050
-preplace netloc diff_clock_rtl_1_1 1 0 6 NJ 250 NJ 250 NJ 250 NJ 250 NJ 250 NJ
+preplace port DDR3 -pg 1 -lvl 7 -x 1850 -y 230 -defaultsOSRD
+preplace port SPI_0 -pg 1 -lvl 7 -x 1850 -y 1000 -defaultsOSRD
+preplace port pcie_clkin -pg 1 -lvl 0 -x 0 -y 810 -defaultsOSRD
+preplace port pcie_mgt -pg 1 -lvl 7 -x 1850 -y 840 -defaultsOSRD
+preplace port sys_clk -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port port-id_pci_reset -pg 1 -lvl 0 -x 0 -y 880 -defaultsOSRD
+preplace portBus LED_A4 -pg 1 -lvl 7 -x 1850 -y 330 -defaultsOSRD
+preplace portBus LED_A3 -pg 1 -lvl 7 -x 1850 -y 1160 -defaultsOSRD
+preplace portBus real_spi_ss -pg 1 -lvl 7 -x 1850 -y 1020 -defaultsOSRD
+preplace portBus LED_A2 -pg 1 -lvl 7 -x 1850 -y 1370 -defaultsOSRD
+preplace portBus LED_A1 -pg 1 -lvl 7 -x 1850 -y 1250 -defaultsOSRD
+preplace portBus pcie_clkreq_l -pg 1 -lvl 7 -x 1850 -y 1570 -defaultsOSRD
+preplace portBus LED_M2 -pg 1 -lvl 7 -x 1850 -y 1470 -defaultsOSRD
+preplace inst GPIO_regs -pg 1 -lvl 6 -x 1650 -y 770 -defaultsOSRD
+preplace inst mig_7series_0 -pg 1 -lvl 6 -x 1650 -y 280 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 6 -x 1650 -y 1570 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 3 -x 710 -y 320 -defaultsOSRD
+preplace inst xlslice_D1 -pg 1 -lvl 6 -x 1650 -y 1470 -defaultsOSRD
+preplace inst xadc_wiz_0 -pg 1 -lvl 6 -x 1650 -y 550 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 5 -x 1280 -y 1000 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 5 -x 1280 -y 140 -defaultsOSRD
+preplace inst axi_quad_spi_0 -pg 1 -lvl 6 -x 1650 -y 1030 -defaultsOSRD
+preplace inst util_ds_buf -pg 1 -lvl 1 -x 170 -y 810 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 470 -y 200 -defaultsOSRD
+preplace inst xdma_0 -pg 1 -lvl 4 -x 940 -y 880 -defaultsOSRD
+preplace inst const_true1 -pg 1 -lvl 5 -x 1280 -y 1250 -defaultsOSRD
+preplace inst CodeBlinker_3 -pg 1 -lvl 6 -x 1650 -y 1250 -defaultsOSRD
+preplace inst xlslice_D0 -pg 1 -lvl 6 -x 1650 -y 1370 -defaultsOSRD
+preplace inst xlslice_D4_D2 -pg 1 -lvl 5 -x 1280 -y 1350 -defaultsOSRD
+preplace netloc CodeBlinker_3_led 1 6 1 NJ 1250
+preplace netloc GPIO_regs_gpio2_io_o 1 4 3 1110 1410 1480 850 1810
+preplace netloc M00_ARESETN_1 1 2 3 NJ 200 NJ 200 NJ
+preplace netloc S00_ACLK_1 1 4 2 1110 560 1470
+preplace netloc S00_ARESETN_1 1 4 2 1090 580 1460
+preplace netloc axi_quad_spi_0_ss_o 1 6 1 NJ 1020
+preplace netloc const_true1_dout 1 5 1 NJ 1250
+preplace netloc mig_7series_0_ui_addn_clk_0 1 5 2 1490 390 1810
+preplace netloc mig_7series_0_ui_clk 1 4 3 1120 20 NJ 20 1810
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 6 320 10 NJ 10 NJ 10 NJ 10 NJ 10 1820
+preplace netloc pci_reset_1 1 0 4 NJ 880 NJ 880 NJ 880 NJ
+preplace netloc util_ds_buf_IBUF_OUT 1 1 3 NJ 800 NJ 800 790J
+preplace netloc xadc_wiz_1_temp_out 1 5 2 1490 170 1830
+preplace netloc xlconstant_1_dout 1 6 1 NJ 1570
+preplace netloc xlconstant_2_dout 1 3 3 NJ 320 NJ 320 1430
+preplace netloc xdma_0_user_lnk_up 1 4 3 1120J 830 1450J 940 1820J
+preplace netloc mig_7series_0_init_calib_complete 1 6 1 NJ 330
+preplace netloc xlslice_2_Dout 1 5 1 1440J 1270n
+preplace netloc xlslice_D0_Dout 1 6 1 NJ 1370
+preplace netloc xlslice_0_Dout 1 6 1 NJ 1470
+preplace netloc axi_interconnect_0_M00_AXI 1 5 1 1440 750n
+preplace netloc axi_interconnect_0_M01_AXI 1 5 1 N 1000
+preplace netloc axi_interconnect_0_M02_AXI 1 5 1 1430 520n
+preplace netloc axi_interconnect_1_M00_AXI 1 5 1 1430 140n
+preplace netloc axi_quad_spi_0_SPI_0 1 6 1 NJ 1000
+preplace netloc diff_clock_rtl_0_1 1 0 1 NJ 810
+preplace netloc diff_clock_rtl_1_1 1 0 6 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ
 preplace netloc mig_7series_0_DDR3 1 6 1 NJ 230
-preplace netloc xdma_0_M_AXI 1 4 1 1100 70n
-preplace netloc xdma_0_M_AXI_LITE 1 4 1 1120 700n
-preplace netloc xdma_0_pcie_mgt 1 4 3 NJ 1080 NJ 1080 NJ
-levelinfo -pg 1 0 170 470 710 950 1290 1680 1890
-pagesize -pg 1 -db -bbox -sgen -120 0 2050 1800
+preplace netloc xdma_0_M_AXI 1 4 1 1100 80n
+preplace netloc xdma_0_M_AXI_LITE 1 4 1 1100 820n
+preplace netloc xdma_0_pcie_mgt 1 4 3 NJ 840 NJ 840 NJ
+levelinfo -pg 1 0 170 470 710 940 1280 1650 1850
+pagesize -pg 1 -db -bbox -sgen -120 0 2010 1630
 "
 }
 0

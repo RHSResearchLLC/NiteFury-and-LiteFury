@@ -74,6 +74,12 @@ module CodeBlinker(
 	// Output depends only on the state and the countdown counter
 	always @(negedge clk)
 	begin
+
+		// Sample inputs/update outputs on negative edge. Logic happens on positive edge
+		s_ok <= ok;
+		s_code <= code;
+
+
 		case (state)
 			S_ON:
 				led = LED_ON;
@@ -90,8 +96,6 @@ module CodeBlinker(
 
 	always @(posedge clk)
 	begin
-		s_ok <= ok;
-		s_code <= code;
 		if (!s_ok)
 			begin
 				state <= S_NOK;

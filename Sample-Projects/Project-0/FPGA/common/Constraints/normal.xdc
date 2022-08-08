@@ -33,6 +33,15 @@ set_property PULLUP true [get_ports {LED_A4}]
 set_property DRIVE 8 [get_ports {LED_A4}]
 
 ###############################################################################
+# M.2 LED signal
+###############################################################################
+set_property PACKAGE_PIN M1 [get_ports {LED_M2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LED_M2}]
+set_property PULLUP true [get_ports {LED_M2}]
+set_property DRIVE 8 [get_ports {LED_M2}]
+
+
+###############################################################################
 # SPI
 ###############################################################################
 set_property PACKAGE_PIN P22 [get_ports {SPI_0_io0_io}]

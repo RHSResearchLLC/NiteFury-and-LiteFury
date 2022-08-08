@@ -93,41 +93,38 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_2_0/Top_util_vector_logic_2_0.xci">
+          <Proxy FileSetName="Top_util_vector_logic_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_xdma_0_0/Top_xdma_0_0.xci">
+          <Proxy FileSetName="Top_xdma_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_c_counter_binary_0_0/Top_c_counter_binary_0_0.xci">
           <Proxy FileSetName="Top_c_counter_binary_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_0_0/Top_util_vector_logic_0_0.xci">
           <Proxy FileSetName="Top_util_vector_logic_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_axi_quad_spi_0_0/Top_axi_quad_spi_0_0.xci">
-          <Proxy FileSetName="Top_axi_quad_spi_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_mig_7series_0_0/Top_mig_7series_0_0.xci">
-          <Proxy FileSetName="Top_mig_7series_0_0"/>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_1_0/Top_util_vector_logic_1_0.xci">
+          <Proxy FileSetName="Top_util_vector_logic_1_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_0_2/Top_util_vector_logic_0_2.xci">
           <Proxy FileSetName="Top_util_vector_logic_0_2"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_2_0/Top_util_vector_logic_2_0.xci">
-          <Proxy FileSetName="Top_util_vector_logic_2_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_1_0/Top_util_vector_logic_1_0.xci">
-          <Proxy FileSetName="Top_util_vector_logic_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xci">
-          <Proxy FileSetName="Top_util_ds_buf_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_xdma_0_0/Top_xdma_0_0.xci">
-          <Proxy FileSetName="Top_xdma_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_1_1/Top_util_vector_logic_1_1.xci">
-          <Proxy FileSetName="Top_util_vector_logic_1_1"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_1_2/Top_util_vector_logic_1_2.xci">
           <Proxy FileSetName="Top_util_vector_logic_1_2"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_c_counter_binary_0_1/Top_c_counter_binary_0_1.xci">
+          <Proxy FileSetName="Top_c_counter_binary_0_1"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_xbar_0/Top_xbar_0.xci">
           <Proxy FileSetName="Top_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_axi_quad_spi_0_0/Top_axi_quad_spi_0_0.xci">
+          <Proxy FileSetName="Top_axi_quad_spi_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_1_1/Top_util_vector_logic_1_1.xci">
+          <Proxy FileSetName="Top_util_vector_logic_1_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_vector_logic_0_1/Top_util_vector_logic_0_1.xci">
           <Proxy FileSetName="Top_util_vector_logic_0_1"/>
@@ -138,8 +135,11 @@
         <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_axi_gpio_0_0/Top_axi_gpio_0_0.xci">
           <Proxy FileSetName="Top_axi_gpio_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_c_counter_binary_0_1/Top_c_counter_binary_0_1.xci">
-          <Proxy FileSetName="Top_c_counter_binary_0_1"/>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_mig_7series_0_0/Top_mig_7series_0_0.xci">
+          <Proxy FileSetName="Top_mig_7series_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Top.bd" FileRelPathName="ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xci">
+          <Proxy FileSetName="Top_util_ds_buf_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/Top/hdl/Top_wrapper.v">
