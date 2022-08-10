@@ -7,4 +7,4 @@ wait_on_run impl_1
 puts "Implementation done!"
 
 # Make the output files for flash programming
-source ../scripts/make-mcs.tcl
+source ../../common/Scripts/make-mcs.tcl

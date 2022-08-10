@@ -10,5 +10,5 @@ update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 
 # Run regular build
-source ../scripts/build.tcl
+source ../../common/Scripts/build.tcl
 
