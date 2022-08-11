@@ -284,7 +284,7 @@
             "inst_hier_path": "GPIO_regs/Version",
             "parameters": {
               "CONST_VAL": {
-                "value": "0x1"
+                "value": "0x2"
               },
               "CONST_WIDTH": {
                 "value": "32"
@@ -1686,7 +1686,7 @@
             "value": "Custom"
           },
           "XML_INPUT_FILE": {
-            "value": "mig_b.prj"
+            "value": "mig_a.prj"
           }
         }
       },

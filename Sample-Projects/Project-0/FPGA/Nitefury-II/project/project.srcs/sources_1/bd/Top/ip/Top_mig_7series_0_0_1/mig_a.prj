@@ -38,7 +38,7 @@
   <dci_cascade>0</dci_cascade>
 
   <Controller number="0">
-    <MemoryDevice>DDR3_SDRAM/Components/MT41K256M16XX-125</MemoryDevice>
+    <MemoryDevice>DDR3_SDRAM/Components/MT41J256m16XX-125</MemoryDevice>
     <TimePeriod>2500</TimePeriod>
     <VccAuxIO>1.8V</VccAuxIO>
     <PHYRatio>4:1</PHYRatio>
@@ -57,7 +57,7 @@
     <Ordering>Strict</Ordering>
     <BankMachineCnt>4</BankMachineCnt>
     <CustomPart>TRUE</CustomPart>
-    <NewPartName>MT41K512M16XX-125</NewPartName>
+    <NewPartName>IS43TR16512-125</NewPartName>
     <RowAddress>16</RowAddress>
     <ColAddress>10</ColAddress>
     <BankAddress>3</BankAddress>
@@ -124,7 +124,7 @@
       <Pin Bank="Select Bank" PADName="No connect" name="tg_compare_error"/>
     </System_Control>
     <TimingParameters>
-      <Parameters tcke="5" tfaw="40" tras="35" trcd="13.75" trefi="7.8" trfc="260" trp="13.75" trrd="7.5" trtp="7.5" twtr="7.5"/>
+      <Parameters tcke="7.5" tfaw="40" tras="35" trcd="13.75" trefi="7.8" trfc="350.0" trp="13.75" trrd="10.0" trtp="10.0" twtr="10.0"/>
     </TimingParameters>
     <mrBurstLength name="Burst Length">8 - Fixed</mrBurstLength>
     <mrBurstType name="Read Burst Type and Length">Sequential</mrBurstType>

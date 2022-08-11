@@ -8,7 +8,7 @@
 preplace port S_AXI -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
 preplace port port-id_s_axi_aclk -pg 1 -lvl 0 -x 0 -y 510 -defaultsOSRD
 preplace port port-id_s_axi_aresetn -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
-preplace portBus gpio2_io_o -pg 1 -lvl 4 -x 870 -y 470 -defaultsOSRD
+preplace portBus gpio2_io_o -pg 1 -lvl 4 -x 880 -y 470 -defaultsOSRD
 preplace inst Model -pg 1 -lvl 3 -x 690 -y 50 -defaultsOSRD
 preplace inst Version -pg 1 -lvl 3 -x 690 -y 150 -defaultsOSRD
 preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 690 -y 280 -defaultsOSRD
@@ -33,8 +33,8 @@ preplace netloc S_AXI_1 1 0 2 NJ 300 NJ
 preplace netloc axi_interconnect_1_M00_AXI 1 2 1 550 260n
 preplace netloc axi_interconnect_1_M01_AXI 1 2 1 520 400n
 preplace netloc axi_interconnect_1_M02_AXI 1 2 1 N 420
-levelinfo -pg 1 0 120 370 690 870
-pagesize -pg 1 -db -bbox -sgen -140 -10 1030 930
+levelinfo -pg 1 0 120 370 690 880
+pagesize -pg 1 -db -bbox -sgen -140 -10 1040 930
 "
 }
-
+0
