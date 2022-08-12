@@ -26,15 +26,17 @@ NiteFury and Litefury are compact, full-featured FPGA developement boards featur
 ## Block Diagram
 ![block diagram](./images/BD-NF-LFII.PNG)
 
-## Litefury
-![LiteFury top](./images/lf-top-close.jpg)
-![LiteFury bottom](./images/lf-bottom.jpg)
-![LiteFury with cables](./images/lf-wcables.jpg)
+# Images
+![Litefury](./images/lf-hero-cropped.PNG)
+![Nitefury](./images/nf-hero-cropped.PNG)
+![contents](./images/contents.PNG)
 
 ## Where to buy
 
 - [RHS Research store](https://rhsresearch.com)
-- [Amazon](https://www.amazon.com/dp/B08BKSVJH5)
+- [Amazon] (https://www.amazon.com/dp/B0B9G97JN2)
+- [Amazon Litefury] (https://www.amazon.com/dp/B08BKSVJH5)
+- [Amazon Nitefury] (https://www.amazon.com/dp/B0B9FMBF6C)
 
 ## More information
 
