@@ -13,7 +13,7 @@
 // This is ugly, but a side effect of reusing Xilinx code
 // We need another parameter to do I/O via XDMA, namely, the dev file to perform I/O on
 // gAXI_FNAME is a global.
-const char* gAXI_FNAME = "/dev/xdma/card0/user";
+const char *gAXI_FNAME = "/dev/xdma0_user";
 
 
 /**
@@ -23,15 +23,23 @@ const char* gAXI_FNAME = "/dev/xdma/card0/user";
 static unsigned char readHexByte(char *data)
 {
    int val = 0;
-   if (data[0] >= '0' && data[0] <= '9'){val = (val + (data[0] - '0')) << 4;}
-   else if (data[0] >= 'a' && data[0] <= 'f'){val = (val + ((data[0] - 'a') + 10)) << 4;}
-   else if (data[0] >= 'A' && data[0] <= 'F'){val = (val + ((data[0] - 'A') + 10)) << 4;}
-   else{throw std::runtime_error("Invalid character in file");}
+   if (data[0] >= '0' && data[0] <= '9')
+   {val = (val + (data[0] - '0')) << 4;}
+   else if (data[0] >= 'a' && data[0] <= 'f')
+   {val = (val + ((data[0] - 'a') + 10)) << 4;}
+   else if (data[0] >= 'A' && data[0] <= 'F')
+   {val = (val + ((data[0] - 'A') + 10)) << 4;}
+   else
+   {throw std::runtime_error("Invalid character in file");}
 
-   if (data[1] >= '0' && data[1] <= '9'){val = val + (data[1] - '0');}
-   else if (data[1] >= 'a' && data[1] <= 'f'){val = val + ((data[1] - 'a') + 10);}
-   else if (data[1] >= 'A' && data[1] <= 'F'){val = val + ((data[1] - 'A') + 10);}
-   else{throw std::runtime_error("Invalid character in file");}
+   if (data[1] >= '0' && data[1] <= '9')
+   {val = val + (data[1] - '0');}
+   else if (data[1] >= 'a' && data[1] <= 'f')
+   {val = val + ((data[1] - 'a') + 10);}
+   else if (data[1] >= 'A' && data[1] <= 'F')
+   {val = val + ((data[1] - 'A') + 10);}
+   else
+   {throw std::runtime_error("Invalid character in file");}
 
    return val;
 }
@@ -44,14 +52,20 @@ static unsigned char readHexByte(char *data)
 static std::vector<uint8_t> LoadMCS(const char *fname)
 {
    std::vector<uint8_t> rez;
-   FILE *inmc = fopen(fname, "rb");
    char *line;
    char lineBuf[1024];
    int curline = 0;
    int len = 0;
    int lastReport = 0;
-   int address_high = 0;
    int lba = 0;
+
+   FILE* inmc = fopen(fname, "rb");
+   if (!inmc)
+   {
+      throw std::runtime_error("Unable to open " + std::string(fname));
+   }
+
+
    while ((line = fgets(lineBuf, 1024, inmc)))
    {
       if (line[0] == ':')
@@ -68,8 +82,6 @@ static std::vector<uint8_t> LoadMCS(const char *fname)
             int lba_hi = readHexByte(line + 9);
             int lba_lo = readHexByte(line + 11);
             lba = (lba_hi << 24) | (lba_lo << 16);
-            printf("Was %08x now %08x\n", address_high, lba);
-            address_high = lba;
          }
          if (recordType == 0)
          {
@@ -110,15 +122,15 @@ static std::vector<uint8_t> LoadMCS(const char *fname)
  * @param alen: Number of bytes to load (0=read all) 
  * @return Raw data to program
  */
-static std::vector<uint8_t> LoadBin(const char* fname, long int aOffset, long int aLen)
+static std::vector<uint8_t> LoadBin(const char *fname, long int aOffset, long int aLen)
 {
    // Load file data into a vector
    std::vector<uint8_t> rez(aLen);
-   FILE* fp = fopen(fname, "rb");
+   FILE *fp = fopen(fname, "rb");
    if (fp)
    {
       // obtain file size
-      fseek (fp, 0, SEEK_END);
+      fseek(fp, 0, SEEK_END);
       const auto fsize = ftell(fp);
 
       // Seek to the desired offset
@@ -170,9 +182,9 @@ static std::vector<uint8_t> LoadBin(const char* fname, long int aOffset, long in
  * 
  * @return bool T if file exists with specified permissions, F otherwise
  */
-static bool FileCheck(const char* fname, int perm = R_OK)
+static bool FileCheck(const char *fname, int perm = R_OK)
 {
-    return ( access(fname, perm ) != -1 );
+   return (access(fname, perm) != -1);
 }
 
 /**
@@ -180,8 +192,8 @@ static bool FileCheck(const char* fname, int perm = R_OK)
  */
 static void PrintUsage(void)
 {
-   printf("\nspi-loader V1.2 copyright 2019 RHS Research LLC"
-	      "\nUsage: spi-loader [-a flashaddr] [-b fileoffset] [-l len] [-d device] [-r deviceoffset] [-f binary file] [-m mcs file]"
+   printf("\nspi-loader V1.5 copyright 2019 RHS Research LLC"
+          "\nUsage: spi-loader [-v][-c] [-a flashaddr] [-b fileoffset] [-l len] [-d device] [-r deviceoffset] [-f binary file] [-m mcs file] -t[0|1]"
           "\n Loads len bytes from file at fileoffset into flash at address flashaddr\n"
 
           "\n Programming specification options"
@@ -190,6 +202,7 @@ static void PrintUsage(void)
           "\n   -l: Number of bytes to write (default of 0 means write all bytes in file)"
           "\n   -f: Data file to load (raw binary)"
           "\n   -m: Data file to load (MCS)"
+          "\n   -t: Select the flash chip to target. 0=primary chip, 1=second chip"
 
           "\n AXI-SPI core access configuration options"
           "\n   -d: Device filename where SPI core can be accessed"
@@ -197,9 +210,10 @@ static void PrintUsage(void)
 
           "\n Other options"
           "\n   -v: Verify after programming"
+          "\n   -c: Verify only (skip erase/program)"
 
           "\n Note: Numeric values default to decimal, unless prefixed with 0x\n"
-          );
+         );
 }
 
 /**
@@ -215,7 +229,7 @@ static void MyStatusCallback(const pgm_status_s& stat)
 /** 
  * MAIN 
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
    try
    {
@@ -228,29 +242,31 @@ int main(int argc, char* argv[])
       cfg.BaseAddress = 0x10000;                /**< Base address of the device */
       cfg.HasFifos = 1;                         /**< Does device have FIFOs? */
       cfg.SlaveOnly = 0;                        /**< Is the device slave only? */
-      cfg.NumSlaveBits = 1;                     /**< Num of slave select bits on the device */
+      cfg.NumSlaveBits = 2;                     /**< Num of slave select bits on the device */
       cfg.DataWidth = XSP_DATAWIDTH_BYTE;       /**< Data transfer Width. 0=byte */
       cfg.SpiMode = XSP_QUAD_MODE;              /**< Standard/Dual/Quad mode */
       cfg.AxiFullBaseAddress = 0x10000;         /**< AXI Full Interface Base address of the device */
       cfg.XipMode = 0;                          /**< 0 if Non-XIP, 1 if XIP Mode */
       cfg.Use_Startup = 1;                      /**< 1 if Starup block is used in h/w */
-      cfg.dev_fname = "/dev/xdma/card0/user";  // Default to XDMA driver, first device
+      cfg.dev_fname = "/dev/xdma0_user";        // Default to XDMA driver, first device
 
       // Unused properties
       cfg.AxiInterface = 0;             /**< AXI-Lite/AXI Full Interface */
       cfg.DeviceId = 0;                 /**< Unique ID  of device */
 
       // Storage for arguments
-      char* dataFileMCS = NULL;
-      char* dataFileBIN = NULL;
+      char *dataFileMCS = NULL;
+      char *dataFileBIN = NULL;
       long int byteLen = 0;
       long int srcInx = 0;
       long int dstInx = 0x680000;      // Default to safe area outside of bootloader area
       bool verify = false;
+      bool verifyonly = false;
+      long int slave_id = 0;
 
       // Process command line args
       int option;
-      while ((option = getopt(argc, argv, "a:b:l:d:r:f:m:v")) != -1)
+      while ((option = getopt(argc, argv, "a:b:l:d:r:f:m:vct:")) != -1)
       {
          switch (option)
          {
@@ -283,10 +299,18 @@ int main(int argc, char* argv[])
             dataFileMCS = optarg;
             break;
 
-
          case 'v':
             verify = true;
             break;
+
+         case 'c':
+            verifyonly = true;
+            break;
+
+         case 't':
+            slave_id = strtol(optarg, NULL, 0);
+            break;
+
 
          default:
             break;
@@ -322,7 +346,15 @@ int main(int argc, char* argv[])
       if (!FileCheck(cfg.dev_fname, R_OK | W_OK))
       {
          printf("Device file not found:%s. Is the XDMA driver installed and working?\n", cfg.dev_fname);
-         return 1; 
+         return 1;
+// << early exit
+      }
+
+      // Check slave_id
+      if (slave_id > 1)
+      {
+         printf("Slave ID must be 0 (primary flash) or 1 (secondary flash)\n");
+         return 1;
 // << early exit
       }
 
@@ -341,7 +373,7 @@ int main(int argc, char* argv[])
       if (data_to_write.empty())
       {
          printf("Data file empty- no data to write\n");
-         return 1; 
+         return 1;
 // << early exit
       }
 
@@ -367,55 +399,70 @@ int main(int argc, char* argv[])
       fifc.RegisterStatusCallback(MyStatusCallback);
 
       // Init
-      printf("\nInitializing...\n");
-      fifc.Init(cfg);
+      printf("\nInitializing flash index %ld...\n", slave_id);
+      fifc.Init(cfg, slave_id);
 
       // Mark erase/program start
       const auto elap_start = std::chrono::steady_clock::now();
+      auto start = std::chrono::steady_clock::now();
 
       // Erase
-      printf("\nErasing...\n");
-      auto start = std::chrono::steady_clock::now();
-      fifc.EraseRange(dstInx, data_to_write.size());
-      std::chrono::duration<double> dt = std::chrono::steady_clock::now() - start;
-      printf("\nErased in %.3fs...\n", dt.count());
+      if (!verifyonly)
+      {
+         printf("\nErasing...\n");
+         fifc.EraseRange(dstInx, data_to_write.size());
+         std::chrono::duration<double> dt = std::chrono::steady_clock::now() - start;
+         printf("\nErased in %.3fs...\n", dt.count());
 
-      // Program
-      printf("\nProgramming...\n");
-      start = std::chrono::steady_clock::now();
-      fifc.Write(dstInx, data_to_write.data(), data_to_write.size());
-      dt = std::chrono::steady_clock::now() - start;
-      printf("\nProgrammed in %.3fs...\n", dt.count());
+         // Program
+         printf("\nProgramming...\n");
+         start = std::chrono::steady_clock::now();
+         fifc.Write(dstInx, data_to_write.data(), data_to_write.size());
+         dt = std::chrono::steady_clock::now() - start;
+         printf("\nProgrammed in %.3fs...\n", dt.count());
 
-      // Report erase/program time
-      dt = std::chrono::steady_clock::now() - elap_start;
-      printf("\nErase/Program took %.3fs (%.0fKiB/s)\n", dt.count(), ((static_cast<double>(data_to_write.size()) / dt.count())) / 1024.0);
+         // Report erase/program time
+         dt = std::chrono::steady_clock::now() - elap_start;
+         printf("\nErase/Program took %.3fs (%.0fKiB/s)\n", dt.count(), ((static_cast<double>(data_to_write.size()) / dt.count())) / 1024.0);
+      }
 
       // Verify
-      if (verify)
+      bool verify_failed = false;
+      if (verify || verifyonly)
       {
+         const size_t real_num_to_verify = data_to_write.size();
+
          printf("\nVerifying...\n");
          start = std::chrono::steady_clock::now();
 
          // Read section into vector
-         std::vector<uint8_t> tmp(data_to_write.size());
-         fifc.Read(dstInx, tmp.data(), tmp.size());
+         std::vector<uint8_t> tmp(real_num_to_verify);
+         fifc.Read(dstInx, tmp.data(), real_num_to_verify);
 
-         dt = std::chrono::steady_clock::now() - start;
+         std::chrono::duration<double> dt = std::chrono::steady_clock::now() - start;
          printf("\nRead in %.3fs...\n", dt.count());
 
-         // Check and report
-         if (tmp != data_to_write)
+         for (size_t xx = 0; xx < real_num_to_verify; xx++)
+         {
+            if (tmp[xx] != data_to_write[xx])
+            {
+               verify_failed = true;
+               printf("Failed at index %u(0x%X):0x%X/0x%X\n", (unsigned int) xx, (unsigned int) xx, (unsigned int) tmp[xx], (unsigned int) data_to_write[xx]);
+               break;
+            }
+         }
+
+         if (verify_failed)
          {
             printf("\nVerify failed\n");
-            return 1; 
-   // << early exit
+            return 1;
          }
          else
          {
             printf("\nVerify OK\n");
          }
       }
+
    }
    catch (const std::exception& ex)
    {

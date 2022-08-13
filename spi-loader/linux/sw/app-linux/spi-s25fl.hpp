@@ -40,8 +40,9 @@ public:
  * @brief Initialize this object with hardware-specific settings
  * 
  * @param cfg: The configuration structure that describes the hardware 
+ * @param spiIndex: Selects the SPI index as the target. 0=first part, 1=second part
  */
-   void Init(const XSpi_Config& cfg)
+   void Init(const XSpi_Config& cfg, int spiIndex)
    {
       std::lock_guard<decltype(mMutex)> lock(mMutex);
 
@@ -65,16 +66,25 @@ public:
          throw std::runtime_error("Failed configuring flash library");
       }
 
-      // We only have one slave
-      Status = XSpi_SetSlaveSelect(&mSPI, 1);
+      Status = XSpi_SetSlaveSelect(&mSPI, 1 << spiIndex);
       if (Status != XST_SUCCESS)
       {
          throw std::runtime_error("Failed configuring flash library");
       }
 
       // Get up and running, then disable interrupts before calling any other functions
-      XSpi_Start(&mSPI);
+      Status = XSpi_Start(&mSPI);
+      if (Status != XST_SUCCESS)
+      {
+         throw std::runtime_error("Failed starting flash library");
+      }
+
+
       XSpi_IntrGlobalDisable(&mSPI);
+
+      // Configure the number of dummy cycles we are adding for fast read
+      const uint8_t vcfg = (NUM_DUMMYCYCLE << 4) | 0x0B;
+      SetVolConfig(vcfg);
    }
 
 /**
@@ -199,7 +209,6 @@ public:
 
    }
 
-
 /**
  * @brief Read data from flash into buffer
  * 
@@ -209,20 +218,21 @@ public:
  */
    void Read(uint32_t flash_addr, uint8_t* dst, const size_t len)
    {
+      // Based on the number of dummy cycles, might need to read a few more bytes
+      static constexpr size_t EXTRA_BYTES = ((NUM_DUMMYCYCLE+7) / 8);
       size_t numread = 0;
-
       while (numread < len)
       {
-         // zzqq can read cross page boundary?
-         StartCommand(CMD_RANDOM_READ);
+         StartCommand(CMD_QUAD_FAST_READ);
          AddAddr(flash_addr);
 
          // Read up to one page
-         const auto flash_page_bytes = FLASH_PAGE_BYTES;  // Needed to compile C++11/C++14. Fixed in C++17. See https://stackoverflow.com/questions/8016780/undefined-reference-to-static-constexpr-char
-         const size_t real_count = std::min(flash_page_bytes, len - numread);
-         const auto* rezbuf = Execute(real_count);
+         const auto chunk_bytes = FLASH_PAGE_BYTES - EXTRA_BYTES;
+         const size_t real_count = std::min(chunk_bytes, len - numread);
+         const auto* rezbuf = Execute(real_count + EXTRA_BYTES);
 
-         memcpy(dst + numread, rezbuf, real_count);
+         // Copy to dest, taking into account the dummy cycles
+         CopyBits(dst + numread, rezbuf, real_count, NUM_DUMMYCYCLE);
 
          flash_addr += real_count;
          numread += real_count;
@@ -265,6 +275,48 @@ private:
 
       return recvbuf[1];
    }
+
+   // Write volatile config register
+   void SetVolConfig(uint8_t cfg)
+   {
+      WriteEnable();
+      StartCommand(CMD_VOLSTATUSREG_WRITE);
+      AddFromBuffer(&cfg, 1);
+      Execute(0);
+   }
+
+//--------------------------------------------------------------------------------
+// TestBit
+// Treat an array as a stream of bits, and test a bit by bit index
+//--------------------------------------------------------------------------------
+   uint8_t TestBit(size_t bitinx, const uint8_t* src)
+   {
+      const size_t bit_offs = 7-(bitinx % 8);
+      const size_t byte_inx = bitinx / 8;
+      return (src[byte_inx] & (1 << bit_offs));
+   }
+
+//--------------------------------------------------------------------------------
+// CopyBits
+// bitwise copy from source to destination, allowing for bit addressable source
+//--------------------------------------------------------------------------------
+   void CopyBits(uint8_t* dst, const uint8_t* src, size_t len, size_t bitoffset)
+   {
+      for (size_t dst_inx = 0; dst_inx < len; dst_inx++)
+      {
+         dst[dst_inx] = 0;
+         for (size_t bit_inx = 0; bit_inx < 8; bit_inx++)
+         {
+            const size_t mask = 7 - bit_inx;
+            const bool is_set = TestBit(dst_inx * 8 + bitoffset + bit_inx, src);
+            if (is_set)
+            {
+               dst[dst_inx] |= 1 << mask;
+            }
+         }
+      }
+   }
+
 
 
 //--------------------------------------------------------------------------------
@@ -321,7 +373,6 @@ private:
       mWriteBuf[mCurrWriteBufInx++] = (uint8_t)(addr >> 8);
       mWriteBuf[mCurrWriteBufInx++] = (uint8_t)(addr);
    }
-
 
 //--------------------------------------------------------------------------------
 // AddFromBuffer
@@ -429,17 +480,22 @@ private:
 
    // Sizes
    static constexpr size_t FLASH_PAGE_BYTES = 256;
-   static constexpr size_t FLASH_MAX_CMD_BYTES = 5;
+   static constexpr size_t FLASH_MAX_CMD_BYTES = 16;
    static constexpr size_t FLASH_SECTOR_BYTES = 64 * 1024;        // Not true for S25FL128xxxxxx1 devices, which have 256K
 
    // Commands. Note: All commands must use 4 byte addressing
-   static constexpr uint8_t CMD_RANDOM_READ       = 0x13;
    static constexpr uint8_t CMD_PAGEPROGRAM_WRITE = 0x12;
    static constexpr uint8_t CMD_WRITE_ENABLE	  = 0x06;
    static constexpr uint8_t CMD_SECTOR_ERASE	  = 0xDC;
    static constexpr uint8_t CMD_STATUSREG_READ    = 0x05;
    static constexpr uint8_t CMD_STATUSREG_WRITE   = 0x01;
-   static constexpr uint8_t CMD_STATUSREG_CLEAR   = 0x30;
+   static constexpr uint8_t CMD_STATUSREG_CLEAR   = 0x50;  // 0x30 for MT25
+   static constexpr uint8_t CMD_VOLSTATUSREG_WRITE = 0x81;
+
+   // Fast read and # of dummy cycles to use
+   static constexpr uint8_t CMD_QUAD_FAST_READ    = 0x0C;
+   static constexpr size_t NUM_DUMMYCYCLE = 14;  // 1 to 14 is valid range
+
 
    // Register defs
    static constexpr uint8_t SR_IS_READY_MASK = 0x01; // D0 is 1 when busy
