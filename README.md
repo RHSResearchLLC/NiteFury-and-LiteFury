@@ -38,6 +38,21 @@ NiteFury and Litefury are compact, full-featured FPGA developement boards featur
 - [Amazon Litefury] (https://www.amazon.com/dp/B08BKSVJH5)
 - [Amazon Nitefury] (https://www.amazon.com/dp/B0B9FMBF6C)
 
+## Important note on JTAG connections
+
+If you have the original, single-connector JTAG adapter, it only works with the "white" JTAG cable. As shown here
+![original](./images/jtag-R1.jpg)
+
+If you have the new dual-connector JTAG adapter, be careful to connect the cable properly. 
+If you have a white JTAG cable, it will connect to the connector labelled "WHT"
+If you have a black JTAG cable, it will connect to the connector labelled "BLK"
+
+As shown:
+
+![white cable](./images/jtag-R2-white.jpg)
+![black cable](./images/jtag-R2-black.jpg)
+
+
 ## More information
 
 info@nanoevb.com
