@@ -34,7 +34,6 @@ NiteFury and Litefury are compact, full-featured FPGA developement boards featur
 ## Where to buy
 
 - [RHS Research store](https://rhsresearch.com)
-- [Amazon] (https://www.amazon.com/dp/B0B9G97JN2)
 - [Amazon Litefury] (https://www.amazon.com/dp/B08BKSVJH5)
 - [Amazon Nitefury] (https://www.amazon.com/dp/B0B9FMBF6C)
 
