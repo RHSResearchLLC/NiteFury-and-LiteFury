@@ -7,7 +7,7 @@
       "name": "Top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2022.1",
+      "tool_version": "2022.2",
       "validated": "true"
     },
     "design_tree": {
@@ -15,6 +15,9 @@
         "Model": "",
         "Version": "",
         "xlslice_0": "",
+        "c_counter_binary_0": "",
+        "dna_reader_0": "",
+        "user_efuse_0": "",
         "axi_gpio_0": "",
         "axi_gpio_1": "",
         "axi_gpio_2": "",
@@ -24,16 +27,18 @@
           "m00_couplers": {},
           "m01_couplers": {},
           "m02_couplers": {}
-        },
-        "c_counter_binary_0": "",
-        "dna_reader_0": "",
-        "user_efuse_0": ""
+        }
       },
       "mig_7series_0": "",
       "xlconstant_1": "",
       "xlconstant_2": "",
       "xlslice_D1": "",
       "xadc_wiz_0": "",
+      "util_vector_logic_0": "",
+      "const_true1": "",
+      "CodeBlinker_3": "",
+      "xlslice_D0": "",
+      "xlslice_D4_D2": "",
       "axi_interconnect_0": {
         "xbar": "",
         "s00_couplers": {},
@@ -48,12 +53,7 @@
       },
       "axi_quad_spi_0": "",
       "util_ds_buf": "",
-      "util_vector_logic_0": "",
-      "xdma_0": "",
-      "const_true1": "",
-      "CodeBlinker_3": "",
-      "xlslice_D0": "",
-      "xlslice_D4_D2": ""
+      "xdma_0": ""
     },
     "interface_ports": {
       "DDR3": {
@@ -109,12 +109,150 @@
             "value": "1250",
             "value_src": "default"
           }
+        },
+        "port_maps": {
+          "DQ": {
+            "physical_name": "DDR3_dq",
+            "direction": "IO",
+            "left": "15",
+            "right": "0"
+          },
+          "DQS_P": {
+            "physical_name": "DDR3_dqs_p",
+            "direction": "IO",
+            "left": "1",
+            "right": "0"
+          },
+          "DQS_N": {
+            "physical_name": "DDR3_dqs_n",
+            "direction": "IO",
+            "left": "1",
+            "right": "0"
+          },
+          "ADDR": {
+            "physical_name": "DDR3_addr",
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          },
+          "BA": {
+            "physical_name": "DDR3_ba",
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "RAS_N": {
+            "physical_name": "DDR3_ras_n",
+            "direction": "O"
+          },
+          "CAS_N": {
+            "physical_name": "DDR3_cas_n",
+            "direction": "O"
+          },
+          "WE_N": {
+            "physical_name": "DDR3_we_n",
+            "direction": "O"
+          },
+          "RESET_N": {
+            "physical_name": "DDR3_reset_n",
+            "direction": "O"
+          },
+          "CK_P": {
+            "physical_name": "DDR3_ck_p",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "CK_N": {
+            "physical_name": "DDR3_ck_n",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "CKE": {
+            "physical_name": "DDR3_cke",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "DM": {
+            "physical_name": "DDR3_dm",
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "ODT": {
+            "physical_name": "DDR3_odt",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          }
         }
       },
       "SPI_0": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:spi:1.0",
-        "vlnv": "xilinx.com:interface:spi_rtl:1.0"
+        "vlnv": "xilinx.com:interface:spi_rtl:1.0",
+        "port_maps": {
+          "IO0_I": {
+            "physical_name": "SPI_0_io0_i",
+            "direction": "I"
+          },
+          "IO0_O": {
+            "physical_name": "SPI_0_io0_o",
+            "direction": "O"
+          },
+          "IO0_T": {
+            "physical_name": "SPI_0_io0_t",
+            "direction": "O"
+          },
+          "IO1_I": {
+            "physical_name": "SPI_0_io1_i",
+            "direction": "I"
+          },
+          "IO1_O": {
+            "physical_name": "SPI_0_io1_o",
+            "direction": "O"
+          },
+          "IO1_T": {
+            "physical_name": "SPI_0_io1_t",
+            "direction": "O"
+          },
+          "IO2_I": {
+            "physical_name": "SPI_0_io2_i",
+            "direction": "I"
+          },
+          "IO2_O": {
+            "physical_name": "SPI_0_io2_o",
+            "direction": "O"
+          },
+          "IO2_T": {
+            "physical_name": "SPI_0_io2_t",
+            "direction": "O"
+          },
+          "IO3_I": {
+            "physical_name": "SPI_0_io3_i",
+            "direction": "I"
+          },
+          "IO3_O": {
+            "physical_name": "SPI_0_io3_o",
+            "direction": "O"
+          },
+          "IO3_T": {
+            "physical_name": "SPI_0_io3_t",
+            "direction": "O"
+          },
+          "SS_I": {
+            "physical_name": "SPI_0_ss_i",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "SS_T": {
+            "physical_name": "SPI_0_ss_t",
+            "direction": "O"
+          }
+        }
       },
       "pcie_clkin": {
         "mode": "Slave",
@@ -128,12 +266,52 @@
           "FREQ_HZ": {
             "value": "100000000"
           }
+        },
+        "port_maps": {
+          "CLK_P": {
+            "physical_name": "pcie_clkin_clk_p",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "CLK_N": {
+            "physical_name": "pcie_clkin_clk_n",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          }
         }
       },
       "pcie_mgt": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:pcie_7x_mgt:1.0",
-        "vlnv": "xilinx.com:interface:pcie_7x_mgt_rtl:1.0"
+        "vlnv": "xilinx.com:interface:pcie_7x_mgt_rtl:1.0",
+        "port_maps": {
+          "rxn": {
+            "physical_name": "pcie_mgt_rxn",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "rxp": {
+            "physical_name": "pcie_mgt_rxp",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "txn": {
+            "physical_name": "pcie_mgt_txn",
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "txp": {
+            "physical_name": "pcie_mgt_txp",
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
       },
       "sys_clk": {
         "mode": "Slave",
@@ -146,6 +324,16 @@
           },
           "FREQ_HZ": {
             "value": "100000000"
+          }
+        },
+        "port_maps": {
+          "CLK_P": {
+            "physical_name": "sys_clk_clk_p",
+            "direction": "I"
+          },
+          "CLK_N": {
+            "physical_name": "sys_clk_clk_n",
+            "direction": "I"
           }
         }
       }
@@ -228,7 +416,7 @@
           "Model": {
             "vlnv": "xilinx.com:ip:xlconstant:1.1",
             "xci_name": "Top_Model_0",
-            "xci_path": "ip\\Top_Model_0\\Top_Model_0.xci",
+            "xci_path": "ip/Top_Model_0/Top_Model_0.xci",
             "inst_hier_path": "GPIO_regs/Model",
             "parameters": {
               "CONST_VAL": {
@@ -242,7 +430,7 @@
           "Version": {
             "vlnv": "xilinx.com:ip:xlconstant:1.1",
             "xci_name": "Top_Version_0",
-            "xci_path": "ip\\Top_Version_0\\Top_Version_0.xci",
+            "xci_path": "ip/Top_Version_0/Top_Version_0.xci",
             "inst_hier_path": "GPIO_regs/Version",
             "parameters": {
               "CONST_VAL": {
@@ -256,7 +444,7 @@
           "xlslice_0": {
             "vlnv": "xilinx.com:ip:xlslice:1.0",
             "xci_name": "Top_xlslice_0_0",
-            "xci_path": "ip\\Top_xlslice_0_0\\Top_xlslice_0_0.xci",
+            "xci_path": "ip/Top_xlslice_0_0/Top_xlslice_0_0.xci",
             "inst_hier_path": "GPIO_regs/xlslice_0",
             "parameters": {
               "DIN_FROM": {
@@ -273,10 +461,69 @@
               }
             }
           },
+          "c_counter_binary_0": {
+            "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+            "xci_name": "Top_c_counter_binary_0_0",
+            "xci_path": "ip/Top_c_counter_binary_0_0/Top_c_counter_binary_0_0.xci",
+            "inst_hier_path": "GPIO_regs/c_counter_binary_0",
+            "parameters": {
+              "Output_Width": {
+                "value": "2"
+              }
+            }
+          },
+          "dna_reader_0": {
+            "vlnv": "xilinx.com:module_ref:dna_reader:1.0",
+            "xci_name": "Top_dna_reader_0_0",
+            "xci_path": "ip/Top_dna_reader_0_0/Top_dna_reader_0_0.xci",
+            "inst_hier_path": "GPIO_regs/dna_reader_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "dna_reader",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "ready": {
+                "direction": "O"
+              },
+              "dna_ls": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "dna_ms": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              }
+            }
+          },
+          "user_efuse_0": {
+            "vlnv": "xilinx.com:module_ref:user_efuse:1.0",
+            "xci_name": "Top_user_efuse_0_0",
+            "xci_path": "ip/Top_user_efuse_0_0/Top_user_efuse_0_0.xci",
+            "inst_hier_path": "GPIO_regs/user_efuse_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "user_efuse",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "VAL": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              }
+            }
+          },
           "axi_gpio_0": {
             "vlnv": "xilinx.com:ip:axi_gpio:2.0",
             "xci_name": "Top_axi_gpio_0_0",
-            "xci_path": "ip\\Top_axi_gpio_0_0\\Top_axi_gpio_0_0.xci",
+            "xci_path": "ip/Top_axi_gpio_0_0/Top_axi_gpio_0_0.xci",
             "inst_hier_path": "GPIO_regs/axi_gpio_0",
             "parameters": {
               "C_ALL_INPUTS": {
@@ -293,7 +540,7 @@
           "axi_gpio_1": {
             "vlnv": "xilinx.com:ip:axi_gpio:2.0",
             "xci_name": "Top_axi_gpio_1_0",
-            "xci_path": "ip\\Top_axi_gpio_1_0\\Top_axi_gpio_1_0.xci",
+            "xci_path": "ip/Top_axi_gpio_1_0/Top_axi_gpio_1_0.xci",
             "inst_hier_path": "GPIO_regs/axi_gpio_1",
             "parameters": {
               "C_ALL_INPUTS": {
@@ -310,7 +557,7 @@
           "axi_gpio_2": {
             "vlnv": "xilinx.com:ip:axi_gpio:2.0",
             "xci_name": "Top_axi_gpio_2_0",
-            "xci_path": "ip\\Top_axi_gpio_2_0\\Top_axi_gpio_2_0.xci",
+            "xci_path": "ip/Top_axi_gpio_2_0/Top_axi_gpio_2_0.xci",
             "inst_hier_path": "GPIO_regs/axi_gpio_2",
             "parameters": {
               "C_ALL_INPUTS": {
@@ -332,7 +579,7 @@
           },
           "axi_interconnect_1": {
             "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-            "xci_path": "ip\\Top_axi_interconnect_1_0\\Top_axi_interconnect_1_0.xci",
+            "xci_path": "ip/Top_axi_interconnect_1_0/Top_axi_interconnect_1_0.xci",
             "inst_hier_path": "GPIO_regs/axi_interconnect_1",
             "xci_name": "Top_axi_interconnect_1_0",
             "parameters": {
@@ -447,8 +694,8 @@
             "components": {
               "xbar": {
                 "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-                "xci_name": "Top_xbar_4",
-                "xci_path": "ip\\Top_xbar_4\\Top_xbar_4.xci",
+                "xci_name": "Top_xbar_6",
+                "xci_path": "ip/Top_xbar_6/Top_xbar_6.xci",
                 "inst_hier_path": "GPIO_regs/axi_interconnect_1/xbar",
                 "parameters": {
                   "NUM_MI": {
@@ -778,65 +1025,6 @@
                 ]
               }
             }
-          },
-          "c_counter_binary_0": {
-            "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
-            "xci_name": "Top_c_counter_binary_0_0",
-            "xci_path": "ip\\Top_c_counter_binary_0_0\\Top_c_counter_binary_0_0.xci",
-            "inst_hier_path": "GPIO_regs/c_counter_binary_0",
-            "parameters": {
-              "Output_Width": {
-                "value": "2"
-              }
-            }
-          },
-          "dna_reader_0": {
-            "vlnv": "xilinx.com:module_ref:dna_reader:1.0",
-            "xci_name": "Top_dna_reader_0_0",
-            "xci_path": "ip\\Top_dna_reader_0_0\\Top_dna_reader_0_0.xci",
-            "inst_hier_path": "GPIO_regs/dna_reader_0",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "dna_reader",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk": {
-                "type": "clk",
-                "direction": "I"
-              },
-              "ready": {
-                "direction": "O"
-              },
-              "dna_ls": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "dna_ms": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              }
-            }
-          },
-          "user_efuse_0": {
-            "vlnv": "xilinx.com:module_ref:user_efuse:1.0",
-            "xci_name": "Top_user_efuse_0_0",
-            "xci_path": "ip\\Top_user_efuse_0_0\\Top_user_efuse_0_0.xci",
-            "inst_hier_path": "GPIO_regs/user_efuse_0",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "user_efuse",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "VAL": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              }
-            }
           }
         },
         "interface_nets": {
@@ -912,6 +1100,7 @@
           "s_axi_aclk_1": {
             "ports": [
               "s_axi_aclk",
+              "c_counter_binary_0/CLK",
               "axi_gpio_0/s_axi_aclk",
               "axi_gpio_1/s_axi_aclk",
               "axi_gpio_2/s_axi_aclk",
@@ -919,8 +1108,7 @@
               "axi_interconnect_1/S00_ACLK",
               "axi_interconnect_1/M00_ACLK",
               "axi_interconnect_1/M01_ACLK",
-              "axi_interconnect_1/M02_ACLK",
-              "c_counter_binary_0/CLK"
+              "axi_interconnect_1/M02_ACLK"
             ]
           },
           "user_efuse_0_VAL": {
@@ -946,7 +1134,7 @@
       "mig_7series_0": {
         "vlnv": "xilinx.com:ip:mig_7series:4.2",
         "xci_name": "Top_mig_7series_0_0",
-        "xci_path": "ip\\Top_mig_7series_0_0\\Top_mig_7series_0_0.xci",
+        "xci_path": "ip/Top_mig_7series_0_0/Top_mig_7series_0_0.xci",
         "inst_hier_path": "mig_7series_0",
         "parameters": {
           "BOARD_MIG_PARAM": {
@@ -966,7 +1154,7 @@
       "xlconstant_1": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
         "xci_name": "Top_xlconstant_1_0",
-        "xci_path": "ip\\Top_xlconstant_1_0\\Top_xlconstant_1_0.xci",
+        "xci_path": "ip/Top_xlconstant_1_0/Top_xlconstant_1_0.xci",
         "inst_hier_path": "xlconstant_1",
         "parameters": {
           "CONST_VAL": {
@@ -977,13 +1165,13 @@
       "xlconstant_2": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
         "xci_name": "Top_xlconstant_2_0",
-        "xci_path": "ip\\Top_xlconstant_2_0\\Top_xlconstant_2_0.xci",
+        "xci_path": "ip/Top_xlconstant_2_0/Top_xlconstant_2_0.xci",
         "inst_hier_path": "xlconstant_2"
       },
       "xlslice_D1": {
         "vlnv": "xilinx.com:ip:xlslice:1.0",
         "xci_name": "Top_xlslice_0_3",
-        "xci_path": "ip\\Top_xlslice_0_3\\Top_xlslice_0_3.xci",
+        "xci_path": "ip/Top_xlslice_0_3/Top_xlslice_0_3.xci",
         "inst_hier_path": "xlslice_D1",
         "parameters": {
           "DIN_FROM": {
@@ -1003,7 +1191,7 @@
       "xadc_wiz_0": {
         "vlnv": "xilinx.com:ip:xadc_wiz:3.3",
         "xci_name": "Top_xadc_wiz_1_0",
-        "xci_path": "ip\\Top_xadc_wiz_1_0\\Top_xadc_wiz_1_0.xci",
+        "xci_path": "ip/Top_xadc_wiz_1_0/Top_xadc_wiz_1_0.xci",
         "inst_hier_path": "xadc_wiz_0",
         "parameters": {
           "ADC_CONVERSION_RATE": {
@@ -1023,9 +1211,107 @@
           }
         }
       },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Top_util_vector_logic_0_2",
+        "xci_path": "ip/Top_util_vector_logic_0_2/Top_util_vector_logic_0_2.xci",
+        "inst_hier_path": "util_vector_logic_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "const_true1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "Top_const_true_1",
+        "xci_path": "ip/Top_const_true_1/Top_const_true_1.xci",
+        "inst_hier_path": "const_true1"
+      },
+      "CodeBlinker_3": {
+        "vlnv": "xilinx.com:module_ref:CodeBlinker:1.0",
+        "xci_name": "Top_CodeBlinker_0_3",
+        "xci_path": "ip/Top_CodeBlinker_0_3/Top_CodeBlinker_0_3.xci",
+        "inst_hier_path": "CodeBlinker_3",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CodeBlinker",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "PHASE": {
+                "value": "0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Top_mig_7series_0_0_ui_clk",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "ok": {
+            "direction": "I"
+          },
+          "code": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "led": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlslice_D0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "Top_xlslice_0_4",
+        "xci_path": "ip/Top_xlslice_0_4/Top_xlslice_0_4.xci",
+        "inst_hier_path": "xlslice_D0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "32"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_D4_D2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "Top_xlslice_1_0",
+        "xci_path": "ip/Top_xlslice_1_0/Top_xlslice_1_0.xci",
+        "inst_hier_path": "xlslice_D4_D2",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "4"
+          },
+          "DIN_TO": {
+            "value": "2"
+          },
+          "DIN_WIDTH": {
+            "value": "32"
+          },
+          "DOUT_WIDTH": {
+            "value": "3"
+          }
+        }
+      },
       "axi_interconnect_0": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_path": "ip\\Top_axi_interconnect_0_0\\Top_axi_interconnect_0_0.xci",
+        "xci_path": "ip/Top_axi_interconnect_0_0/Top_axi_interconnect_0_0.xci",
         "inst_hier_path": "axi_interconnect_0",
         "xci_name": "Top_axi_interconnect_0_0",
         "parameters": {
@@ -1137,8 +1423,8 @@
         "components": {
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-            "xci_name": "Top_xbar_3",
-            "xci_path": "ip\\Top_xbar_3\\Top_xbar_3.xci",
+            "xci_name": "Top_xbar_5",
+            "xci_path": "ip/Top_xbar_5/Top_xbar_5.xci",
             "inst_hier_path": "axi_interconnect_0/xbar",
             "parameters": {
               "NUM_MI": {
@@ -1471,7 +1757,7 @@
       },
       "axi_interconnect_1": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_path": "ip\\Top_axi_interconnect_1_1\\Top_axi_interconnect_1_1.xci",
+        "xci_path": "ip/Top_axi_interconnect_1_1/Top_axi_interconnect_1_1.xci",
         "inst_hier_path": "axi_interconnect_1",
         "xci_name": "Top_axi_interconnect_1_1",
         "parameters": {
@@ -1593,7 +1879,7 @@
               "auto_cc": {
                 "vlnv": "xilinx.com:ip:axi_clock_converter:2.1",
                 "xci_name": "Top_auto_cc_0",
-                "xci_path": "ip\\Top_auto_cc_0\\Top_auto_cc_0.xci",
+                "xci_path": "ip/Top_auto_cc_0/Top_auto_cc_0.xci",
                 "inst_hier_path": "axi_interconnect_1/s00_couplers/auto_cc",
                 "interface_ports": {
                   "S_AXI": {
@@ -1692,7 +1978,7 @@
       "axi_quad_spi_0": {
         "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
         "xci_name": "Top_axi_quad_spi_0_0",
-        "xci_path": "ip\\Top_axi_quad_spi_0_0\\Top_axi_quad_spi_0_0.xci",
+        "xci_path": "ip/Top_axi_quad_spi_0_0/Top_axi_quad_spi_0_0.xci",
         "inst_hier_path": "axi_quad_spi_0",
         "parameters": {
           "C_FIFO_DEPTH": {
@@ -1703,16 +1989,13 @@
           },
           "C_SPI_MODE": {
             "value": "2"
-          },
-          "C_S_AXI4_ID_WIDTH": {
-            "value": "0"
           }
         }
       },
       "util_ds_buf": {
         "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
         "xci_name": "Top_util_ds_buf_0",
-        "xci_path": "ip\\Top_util_ds_buf_0\\Top_util_ds_buf_0.xci",
+        "xci_path": "ip/Top_util_ds_buf_0/Top_util_ds_buf_0.xci",
         "inst_hier_path": "util_ds_buf",
         "parameters": {
           "C_BUF_TYPE": {
@@ -1720,24 +2003,10 @@
           }
         }
       },
-      "util_vector_logic_0": {
-        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "Top_util_vector_logic_0_2",
-        "xci_path": "ip\\Top_util_vector_logic_0_2\\Top_util_vector_logic_0_2.xci",
-        "inst_hier_path": "util_vector_logic_0",
-        "parameters": {
-          "C_OPERATION": {
-            "value": "not"
-          },
-          "C_SIZE": {
-            "value": "1"
-          }
-        }
-      },
       "xdma_0": {
         "vlnv": "xilinx.com:ip:xdma:4.1",
         "xci_name": "Top_xdma_0_0",
-        "xci_path": "ip\\Top_xdma_0_0\\Top_xdma_0_0.xci",
+        "xci_path": "ip/Top_xdma_0_0/Top_xdma_0_0.xci",
         "inst_hier_path": "xdma_0",
         "parameters": {
           "PF0_DEVICE_ID_mqdma": {
@@ -1887,90 +2156,6 @@
               "range": "4G",
               "width": "32"
             }
-          }
-        }
-      },
-      "const_true1": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "Top_const_true_1",
-        "xci_path": "ip\\Top_const_true_1\\Top_const_true_1.xci",
-        "inst_hier_path": "const_true1"
-      },
-      "CodeBlinker_3": {
-        "vlnv": "xilinx.com:module_ref:CodeBlinker:1.0",
-        "xci_name": "Top_CodeBlinker_0_3",
-        "xci_path": "ip\\Top_CodeBlinker_0_3\\Top_CodeBlinker_0_3.xci",
-        "inst_hier_path": "CodeBlinker_3",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "CodeBlinker",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "PHASE": {
-                "value": "0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "Top_mig_7series_0_0_ui_clk",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "ok": {
-            "direction": "I"
-          },
-          "code": {
-            "direction": "I",
-            "left": "2",
-            "right": "0"
-          },
-          "led": {
-            "direction": "O"
-          }
-        }
-      },
-      "xlslice_D0": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "Top_xlslice_0_4",
-        "xci_path": "ip\\Top_xlslice_0_4\\Top_xlslice_0_4.xci",
-        "inst_hier_path": "xlslice_D0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "0"
-          },
-          "DIN_TO": {
-            "value": "0"
-          },
-          "DIN_WIDTH": {
-            "value": "32"
-          },
-          "DOUT_WIDTH": {
-            "value": "1"
-          }
-        }
-      },
-      "xlslice_D4_D2": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "Top_xlslice_1_0",
-        "xci_path": "ip\\Top_xlslice_1_0\\Top_xlslice_1_0.xci",
-        "inst_hier_path": "xlslice_D4_D2",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "4"
-          },
-          "DIN_TO": {
-            "value": "2"
-          },
-          "DIN_WIDTH": {
-            "value": "32"
-          },
-          "DOUT_WIDTH": {
-            "value": "3"
           }
         }
       }
